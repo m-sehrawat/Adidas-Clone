@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
 
+
     <style>
         #parent {
             width: 1300px;
@@ -27,16 +28,12 @@
     <h1>All Products <span id="totalProductsCount"></span></h1>
 
     <div>
-        <button>GENDER</button>
+        <!-- <button>GENDER</button>
         <button>DIVISION</button>
-        <button>PRODUCT TYPE</button>
+        <button>PRODUCT TYPE</button> -->
 
-        <select>
-            <option>SORT BY</option>
-            <option id="lowPrice" value="lowPrice">Price (Low - High)</option>
-            <option id="highPrice" value="highPrice">Price (High - Low)</option>
-
-        </select>
+        <button onclick="sortLH()" value="lowPrice">Price (Low - High)</button>
+        <button onclick="sortHL()" value="highPrice">Price (High - Low)</button>
 
     </div>
 
@@ -297,12 +294,12 @@
 
     let parent = document.getElementById("parent");
 
-    let lowPrice = document.getElementById
-
     let totalProductsCount = document.getElementById("totalProductsCount");
     totalProductsCount.textContent = "[" + data.length + "]";
 
     function showProducts(d) {
+
+        parent.innerHTML = null;
 
         d.forEach(function (product) {
 
@@ -331,8 +328,6 @@
 
             parent.append(box);
         });
-
-
     }
 
     showProducts(data);
@@ -352,9 +347,23 @@
 
         console.log('productPage:', productPage)
 
-
     }
 
+    function sortLH() {
+
+        let arr = data.sort((a, b) => a.price - b.price);
+
+        //console.log(arr);
+        showProducts(arr);
+    }
+
+    function sortHL() {
+
+        let arr = data.sort((a, b) => b.price - a.price);
+
+        //console.log(arr);
+        showProducts(arr);
+    }
 
 
 </script>
