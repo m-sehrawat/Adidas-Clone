@@ -340,10 +340,14 @@
 
         var productPage = JSON.parse(localStorage.getItem("productDetails"));
 
+        productPage = []
+
         productPage.push(p);
 
         //1. For show product details we need only one item in the array so I comment out the below syntax, If you want multiple items the you can use the below syntax
         localStorage.setItem("productDetails", JSON.stringify(productPage));
+
+        //window.location.href=""
 
         console.log('productPage:', productPage)
 
