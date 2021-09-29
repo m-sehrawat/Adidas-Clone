@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cart</title>
-  
+
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
@@ -16,6 +16,10 @@
         #header {
             /* border: 1px solid gray; */
             display: flex;
+        }
+
+        body {
+            margin: 0px;
         }
 
         .adidasLogo {
@@ -68,7 +72,7 @@
             margin-top: 3%;
         }
 
-        #display{
+        #display {
             display: grid;
             gap: 3%;
         }
@@ -83,7 +87,8 @@
             color: white;
             padding: 5% 0% 10% 10%;
             font-size: 18px;
-            box-shadow:10px 5px 5px grey; ;
+            box-shadow: 10px 5px 5px grey;
+            ;
             font-family: monospace;
             font-style: normal;
             display: grid;
@@ -94,7 +99,8 @@
             text-align: right;
             margin-right: 10%;
         }
-        #checkOut>div{
+
+        #checkOut>div {
             height: 100%;
         }
 
@@ -109,7 +115,7 @@
         }
 
         .orderSummery {
-            
+
             margin-top: 10%;
             margin-bottom: 10%;
             border: 1px solid rgb(233, 233, 233);
@@ -129,8 +135,8 @@
         }
 
 
-        #footer{
-            background-color:  rgb(80, 80, 80);
+        #footer {
+            background-color: rgb(80, 80, 80);
             text-align: center;
             font-style: normal;
             color: white;
@@ -139,15 +145,16 @@
             margin-top: 10px;
         }
 
-        #mouseOver:hover{
+        #mouseOver:hover {
             background-color: black;
             color: white;
         }
-        #mouseOver_chekout:hover{
+
+        #mouseOver_chekout:hover {
 
             color: rgb(199, 199, 199);
         }
-           
+
 
         }
     </style>
@@ -159,8 +166,7 @@
     <header>
         <div id="header">
             <div>
-                <img class="adidasLogo"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDNRJXxCU1AnirWkNe7UHTAV2kCA2d1e8lfdbQpLeKz7GWCo-&s">
+                <img class="adidasLogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDNRJXxCU1AnirWkNe7UHTAV2kCA2d1e8lfdbQpLeKz7GWCo-&s">
             </div>
             <div id="rightSideBox">
                 <button>sign up</button>
@@ -190,12 +196,12 @@
 
             <div id="display"></div>
 
-          
+
             <br>
             <div id="features">
-                <span id="mouseOver">  <i class="fas fa-truck"></i> &nbsp; <u>Free delivery</u></span> <br><br>
-                <span id="mouseOver">  <i class="fas fa-exchange-alt"></i> &nbsp;<u>30* day free returns</u></span> <br><br>
-                <span id="mouseOver">  <i class="fas fa-lock"></i> &nbsp;<u>Safe & Secure payment options</u></span>
+                <span id="mouseOver"> <i class="fas fa-truck"></i> &nbsp; <u>Free delivery</u></span> <br><br>
+                <span id="mouseOver"> <i class="fas fa-exchange-alt"></i> &nbsp;<u>30* day free returns</u></span> <br><br>
+                <span id="mouseOver"> <i class="fas fa-lock"></i> &nbsp;<u>Safe & Secure payment options</u></span>
 
 
             </div>
@@ -248,7 +254,7 @@
 
             <div>
                 <p> <strong> Need Help?</strong></p>
-                
+
                 <span id="mouseOver"><u>Delivery</u></span> <br><br>
                 <span id="mouseOver"><u>Return & Refund</u></span> <br><br>
                 <span id="mouseOver"><u>Ordering & Payment</u></span><br><br>
@@ -259,19 +265,16 @@
     </div>
 
 
-    <footer  id="footer">
+    <footer id="footer">
         <div>
 
-            |  Privacy Statement  |  Terms and Conditions  |  Imprint  |
-    
+            | Privacy Statement | Terms and Conditions | Imprint |
+
             <p>© 2021 adidas India Marketing Private Limited</p>
 
-        </div> 
-    
-      
-       
+        </div>
     </footer>
-   
+
 </body>
 
 
@@ -282,35 +285,35 @@
 <script>
 
     let data = [{
-    img : "https://assets.adidas.com/images/w_280,h_280,f_auto,q_auto:sensitive/e4570dbace014404bb25ac67011e3fbf_9366/FZ4505_620_FZ4505_01_standard.jpg.jpg?sh=364&strip=false&sw=364",
-    name : "Y-3 SLIDE",
-    color : "BLACK/BLACK/RED",
-    size : "8",
-    stock : "Low in Stock",
-    price : "17000"
-    },{
-    img : "https://assets.adidas.com/images/w_280,h_280,f_auto,q_auto:sensitive/e4570dbace014404bb25ac67011e3fbf_9366/FZ4505_620_FZ4505_01_standard.jpg.jpg?sh=364&strip=false&sw=364",
-    name : "Y-3 SLIDE",
-    color : "BLACK/BLACK/RED",
-    size : "8",
-    stock : "Low in Stock",
-    price : "17000"
+        img: "https://assets.adidas.com/images/w_280,h_280,f_auto,q_auto:sensitive/e4570dbace014404bb25ac67011e3fbf_9366/FZ4505_620_FZ4505_01_standard.jpg.jpg?sh=364&strip=false&sw=364",
+        name: "Y-3 SLIDE",
+        color: "BLACK/BLACK/RED",
+        size: "8",
+        stock: "Low in Stock",
+        price: "17000"
+    }, {
+        img: "https://assets.adidas.com/images/w_280,h_280,f_auto,q_auto:sensitive/e4570dbace014404bb25ac67011e3fbf_9366/FZ4505_620_FZ4505_01_standard.jpg.jpg?sh=364&strip=false&sw=364",
+        name: "Y-3 SLIDE",
+        color: "BLACK/BLACK/RED",
+        size: "8",
+        stock: "Low in Stock",
+        price: "17000"
     }]
 
     let parent = document.getElementById("display")
 
-    function showProducts(d){
+    function showProducts(d) {
 
-   
 
-        d.forEach(function(product){
-            console.log("data := ",product)
+
+        d.forEach(function (product) {
+            console.log("data := ", product)
             let div = document.createElement("div")
-            div.style= "display : flex ; gap : 5px;border:1px solid black"
+            div.style = "display : flex ; gap : 5px;border:1px solid black"
 
 
             let div1 = document.createElement("div")
-            div1.style= "box-sizing: border-box"
+            div1.style = "box-sizing: border-box"
 
             let div2 = document.createElement("div")
             let div3 = document.createElement("div")
@@ -340,20 +343,20 @@
             price.textContent = product.price
 
 
-            div5.append(name,color,size,stock)
+            div5.append(name, color, size, stock)
             div6.append(price)
 
-            div3.append(div5,div6)
-            div2.append(div3,div4)
+            div3.append(div5, div6)
+            div2.append(div3, div4)
 
-            div.append(div1,div2)
+            div.append(div1, div2)
 
             parent.append(div)
 
-                    
-               
 
-            
+
+
+
         })
     }
 
