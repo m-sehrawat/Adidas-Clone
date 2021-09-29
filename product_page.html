@@ -8,6 +8,7 @@
     <title>Product Page</title>
     <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         * {
@@ -38,6 +39,7 @@
             display: flex;
             min-height: 50px;
             border-bottom: 1px solid #eaebec;
+            margin-bottom: 40px;
         }
 
         .adidasLogo {
@@ -122,7 +124,8 @@
         }
 
         .buttonsDiv>button {
-            padding: 10px;
+            padding: 12px;
+            margin: 5px;
             font-size: 15px;
             background-color: white;
             border: none;
@@ -158,6 +161,27 @@
             font-size: 14px;
             color: #767677;
         }
+
+        a {
+            color: black;
+        }
+
+        .adjustement>a>span {
+            font-size: 15px;
+            padding: 8px 5px;
+            margin-left: 10px;
+
+        }
+
+        .adjustement>a:first-child>span {
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .adjustement>a>span:hover {
+            background-color: black;
+            color: white;
+        }
     </style>
 </head>
 
@@ -181,11 +205,18 @@
         </div>
     </div>
 
-
     <div class="adjustement">
+
+        <a href="adidas_home_page.html"><span><i class="fa fa-long-arrow-left"></i>&nbsp; &nbsp;BACK</span></a>
+        <a href="adidas_home_page.html"><span>Home</span></a>
+
+
         <h1 id="productHeading">ALL PRODUCTS<span id="totalProductsCount"></span></h1>
 
         <div class="buttonsDiv">
+
+
+            
             <button onclick="sortLH()" value="lowPrice">Price (Low - High)</button>
             <button onclick="sortHL()" value="highPrice">Price (High - Low)</button>
             <button onclick="clearFilter()">Clear Filter</button>
