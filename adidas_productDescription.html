@@ -240,6 +240,10 @@
             }
         }
 
+        a{
+            color: black;
+        }
+
     </style>
 </head>
 <body>
@@ -353,28 +357,32 @@
                 productSizeBtnOne.style.marginLeft = "5%";
                 productSizeBtnOne.textContent = product.size[0];
                 productSizeBtnOne.onclick = function(){
-                    selectSize(productSizeBtnOne);
+                    selectSize(productSizeBtnOne, productSizeBtnTwo, 
+                    productSizeBtnThree, productSizeBtnFour);
                 }
                 //product description Box - size button
                 var productSizeBtnTwo = document.createElement("button");
                 productSizeBtnTwo.setAttribute("class", "sizeButton");
                 productSizeBtnTwo.textContent = product.size[1];
                 productSizeBtnTwo.onclick = function(){
-                    selectSize(productSizeBtnTwo);
+                    selectSize(productSizeBtnTwo, productSizeBtnOne, 
+                    productSizeBtnThree, productSizeBtnFour);
                 }
                 //product description Box - size button
                 var productSizeBtnThree = document.createElement("button");
                 productSizeBtnThree.setAttribute("class", "sizeButton");
                 productSizeBtnThree.textContent = product.size[2];
                 productSizeBtnThree.onclick = function(){
-                    selectSize(productSizeBtnThree);
+                    selectSize(productSizeBtnThree, productSizeBtnOne,
+                    productSizeBtnTwo, productSizeBtnFour);
                 }
                 //product description Box - size button
                 var productSizeBtnFour = document.createElement("button");
                 productSizeBtnFour.setAttribute("class", "sizeButton");
                 productSizeBtnFour.textContent = product.size[3];
                 productSizeBtnFour.onclick = function(){
-                    selectSize(productSizeBtnFour);
+                    selectSize(productSizeBtnFour, productSizeBtnOne,
+                    productSizeBtnTwo, productSizeBtnThree);
                 }
                 var sizeError = document.createElement("div");
                 sizeError.textContent = "Please select your size";
@@ -486,18 +494,23 @@
 
         showProducts(productDescriptionArr);
         //select size function
-        function selectSize(p){
+        function selectSize(p, a, b, c){
 
             p.setAttribute("class", "sizeButtonClicked");
+            a.setAttribute("class", "sizeButton");
+            b.setAttribute("class", "sizeButton");
+            c.setAttribute("class", "sizeButton");
 
             var sizeArr = productDescriptionArr.filter(function(el){
-                if(el.size == p.textContent);
-                el.size = p.textContent;
-                console.log(el.size);
+                if(el.size == p.textContent){
+                    el.size = p.textContent;
+                    // console.log(el.size);
+                }
             });
 
             showProducts(sizeArr);
         }
+
         //add to cart function
         if(localStorage.getItem("adidasCart") === null){
             localStorage.setItem("adidasCart", JSON.stringify([]));
@@ -521,23 +534,6 @@
             }
             count++;
         }
-
-
-        
-                
-
-
-        
-        
-
-
-
-
-
-
-
-
-
 
     </script>
     

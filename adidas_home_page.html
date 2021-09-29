@@ -31,11 +31,13 @@
         #header{
             /* border: 1px solid gray; */
             display: flex;
+            min-height: 50px;
         }
         .adidasLogo{
-            width: 100px;
-            margin-top: 3%;
-            margin-left: 2%;
+            width: 70px;
+            margin-top: 15px;
+            margin-left: 50px;    
+            cursor: pointer;
         }
         #rightSideBox{
             /* border: 1px solid red; */
@@ -43,22 +45,25 @@
             width: 10%;
             margin-top: 0.5%;
             margin-left: 80%;
+            cursor: pointer;
         }
         #rightSideBox > button{
             margin-left: 1%;
             background-color: white;
             border: 0px solid white;
             color: gray;
+            cursor: pointer;
         }
         #rightSideBox > p{
             /* border: 1px solid red; */
             margin-top: 5%;
             margin-left: 50%;
+            cursor: pointer;
         }
 
         #tileOne{
             width: 100%;
-            height: 600px;
+            height: 700px;
             border: 1px solid white;
             background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/y-3_ss21_drop3_hp_mh_d_tcm209-782054.jpg");
             background-size: cover;
@@ -163,6 +168,19 @@
             margin-top: 34%;
             color: white;
         }
+        a{
+            color: black;
+        }
+        #footer{
+                background-color:  rgb(80, 80, 80);
+                text-align: center;
+                font-style: normal;
+                font-size: 10px;
+                color: white;
+                font-family:sans-serif;
+                padding: 1%;
+                margin-top: 10px;
+        }
 
     </style>
 </head>
@@ -176,7 +194,7 @@
 
     <div id="header">
         <div>
-            <img class="adidasLogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDNRJXxCU1AnirWkNe7UHTAV2kCA2d1e8lfdbQpLeKz7GWCo-&s">
+            <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
         </div>
         <div id="rightSideBox">
             <button>sign up</button>
@@ -221,5 +239,12 @@
                 <h3>KIDS</h3></div>
         </div>
     </div>
+
+    <footer  id="footer">
+        <div>
+            |  Privacy Statement  |  Terms and Conditions  |  Imprint  |
+            <p>© 2021 adidas India Marketing Private Limited</p>
+        </div>
+   </footer>
 </body>
 </html>
