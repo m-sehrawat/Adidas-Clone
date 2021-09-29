@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adidas Product Details</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&display=swap" rel="stylesheet">
@@ -13,10 +14,6 @@
     <style>
         *{
             font-family: sans-serif;
-        }
-
-        body {
-            margin: 0px;
         }
         /* header */
         #header{
@@ -26,7 +23,8 @@
         .adidasLogo{
             width: 100px;
             margin-top: 3%;
-            margin-left: 2%;
+            margin-left: 2%;    
+            cursor: pointer;
         }
         #rightSideBox{
             /* border: 1px solid red; */
@@ -40,11 +38,13 @@
             background-color: white;
             border: 0px solid white;
             color: gray;
+            cursor: pointer;
         }
         #rightSideBox > p{
             /* border: 1px solid red; */
             margin-top: 5%;
             margin-left: 50%;
+            cursor: pointer;
         }
         
         /* product descrption box */
@@ -114,6 +114,7 @@
             color: black;
             background-color: white;
             border: 1px solid rgb(175, 170, 170);
+            cursor: pointer;
         }
         .sizeButtonClicked{
             width: 70px;
@@ -121,6 +122,12 @@
             margin-top: 20px;
             color: white;
             background-color: black;
+        }
+        .sizeerror{
+            margin-top: 2%;
+            margin-left: 5%;
+            font-size: 13px;
+            color: white;
         }
         .addtoCartBtn{
             width: 70%;
@@ -131,6 +138,7 @@
             color: white;
             text-align: left;
             font-weight: 600;
+            cursor: pointer;
         }
         .shippingDet{
             margin-left: 5%;
@@ -169,6 +177,40 @@
             height: 100px;
             margin-top: 200px;
             background-color: rgb(83, 78, 78);
+        }
+
+        @media(max-width: 600px){
+            #rightSideBox{
+                width: 30%;
+                margin-left: 5  0%;
+            }
+            #productDescription{
+                max-width: 600px;
+                height: 600px;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            #imageBox{
+                max-width: 600px;
+                height: 600px;
+            }
+            #descriptionBox{
+                width: 400px;
+                height: 500px;
+                margin-left: -5px;
+                position:relative;
+            }
+            #specificationBox{
+                width: 600px;
+                height: 600px;
+                margin-top: 20px;
+            }
+            #footer{
+                height: 10px;
+                margin-top: 1200px;
+                background-color: white;
+            }
         }
 
     </style>
@@ -297,12 +339,15 @@
                 productSizeBtnFour.onclick = function(){
                     selectSize(productSizeBtnFour);
                 }
+                var sizeError = document.createElement("div");
+                sizeError.textContent = "Please select your size";
+                sizeError.setAttribute("class", "sizeerror");
                 //product description Box - Add to cart
                 var productAddtoCartBtn = document.createElement("button");
                 productAddtoCartBtn.textContent = "ADD TO BAG";
                 productAddtoCartBtn.setAttribute("class", "addtoCartBtn");
                 productAddtoCartBtn.onclick = function(){
-                    addtocart(product);
+                    addtocart(product, sizeError);
                 }
                 //product description Box - Add to cart details
                 var shippingDetail = document.createElement("div");
@@ -316,7 +361,7 @@
 
                 descriptionBoxContainer.append(productHeading, productColor, 
                 productPrice, priceLabel, productSizeBtnLabel, productSizeBtnOne, productSizeBtnTwo, productSizeBtnThree,
-                productSizeBtnFour, productAddtoCartBtn, shippingDetail, returnDetail);
+                productSizeBtnFour, sizeError, productAddtoCartBtn, shippingDetail, returnDetail);
                 //specification box - specification heading
                 var specificationHeading = document.createElement("ul");
                 specificationHeading.textContent = "SPECIFICATIONS";
@@ -405,6 +450,7 @@
         showProducts(productDescriptionArr);
         //select size function
         function selectSize(p){
+
             p.setAttribute("class", "sizeButtonClicked");
 
             var sizeArr = productDescriptionArr.filter(function(el){
@@ -420,15 +466,23 @@
             localStorage.setItem("adidasCart", JSON.stringify([]));
         }
 
-        function addtocart(p){
+        var count = 0;
+        function addtocart(p, s){
+            
             if(p.size.length == 4){
-                alert("Please select your size");
-                // var sizeError = document.createElement("div");
-                // sizeError.textContent = "Please select your size";
+                s.style.color = "red";
             }
-            var arrProducts = JSON.parse(localStorage.getItem("adidasCart"));
-            arrProducts.push(p);
-            localStorage.setItem("adidasCart", JSON.stringify(arrProducts));
+
+            if(count > 1){
+                alert("Product is already added to cart");
+            }
+
+            else if(count <= 1 && p.size.length != 4){
+                var arrProducts = JSON.parse(localStorage.getItem("adidasCart"));
+                arrProducts.push(p);
+                localStorage.setItem("adidasCart", JSON.stringify(arrProducts));
+            }
+            count++;
         }
 
 
