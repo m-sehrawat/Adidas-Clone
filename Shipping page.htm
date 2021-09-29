@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: white;
+        }
+        
+        .header {
+            height: 110px;
+            border: 1px solid gray;
+            padding: 20px;
+        }
+        
+        .bottom {
+            display: flex;
+        }
+        
+        .left {
+            width: 60%;
+            margin: 1% 1%1% 6%;
+            padding: 1%;
+        }
+        
+        #el,
+        #pass {
+            width: 40%;
+            height: 50px;
+            margin: 10px;
+        }
+        
+        .right {
+            width: 40%;
+            margin: 1% 1%1% 6%;
+            padding: 1%;
+            display: block;
+        }
+        
+        #fname,
+        #lname,
+        #additional_info,
+        #city,
+        #state,
+        #pincode,
+        #email,
+        #mobile {
+            width: 40%;
+            height: 50px;
+            margin: 30px;
+        }
+        
+        #street,
+        #landmark {
+            width: 90%;
+            height: 50px;
+            margin: 30px;
+        }
+        
+        .country {
+            margin: 30px;
+        }
+        
+        .arrive {
+            margin: 20px 30px 10px 30px;
+            font-size: 30px;
+            display: flex;
+        }
+        
+        .heading {
+            margin-right: 20px;
+        }
+        
+        .standard {
+            border: 1px solid black;
+            height: 60px;
+            width: 90%;
+            margin: 30px;
+            padding: 20px;
+        }
+        
+        .van {
+            display: flex;
+        }
+        
+        .info {
+            margin: 30px;
+        }
+        
+        .c {
+            margin: 30px;
+        }
+        
+        .c1,
+        .c2,
+        .c3,
+        .c4 {
+            display: flex;
+        }
+        
+        .c11 {
+            width: 40px;
+            height: 50px;
+        }
+        
+        #rev {
+            width: 170px;
+            height: 50px;
+            background-color: black;
+            color: white;
+        }
+        
+        .revbtn {
+            margin-left: 50px;
+        }
+        
+        .bottom {
+            display: flex;
+        }
+        
+        .log {
+            display: flex;
+        }
+        
+        .r1 {
+            margin: 70px 30px;
+        }
+        
+        #btnone {
+            width: 300px;
+            height: 40px;
+            background-color: black;
+            color: white;
+            margin: 10px 10px;
+        }
+        
+        #promo {
+            width: 80%;
+            height: 60px;
+        }
+        
+        .pro {
+            margin: 50px;
+        }
+        
+        .need {
+            padding: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDNRJXxCU1AnirWkNe7UHTAV2kCA2d1e8lfdbQpLeKz7GWCo-&s" style="width: 100px; height: 80px;">
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="bottom">
+        <div class="left">
+            <h1 style="margin: 30px;">SHIPPING ADDRESS</h1>
+            <form>
+
+
+                <input type="text" id="fname" placeholder="First Name" required>
+
+
+                <input type="text" id="lname" placeholder="Last Name" required>
+
+
+                <input type="text" id="street" placeholder="Street Address" required>
+
+
+                <input type="text" id="landmark" placeholder="Landmark" required>
+
+
+                <input type="text" id="additional_info" placeholder="Additional Info" required>
+
+
+                <input type="text" id="city" placeholder="City" required>
+
+
+                <select id="state" required>
+                    <option value="jharkhand">Jharkhand</option>
+                    <option value="bihar">Bihar</option>
+                </select>
+
+
+                <input type="number" id="pincode" placeholder="Pin code" required>
+
+
+
+
+            </form>
+            <div class="country">country:<strong>INDIA</strong></div>
+            <div class="arrive">
+                <div class="heading">ARRIVING</div>
+                <div>
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.UZpmbWSEka2e4g1IBx9FMgAAAA&pid=Api&P=0&w=300&h=300" style="width: 40px; height: 30px;">
+                </div>
+            </div>
+            <div class="standard">
+                <div>STANDARD DELIVERY</div>
+                <div class="van">
+                    <div>
+                        <img src="https://www.graphicsprings.com/filestorage/stencils/b2d72bf45cfa33b3614ba97ffca6212f.png?width=150&height=150" style="width: 50px; height: 40px;" />
+                    </div>
+                    <div style="font-size: 15px;"> within 3-9 bussiness days </div>
+                </div>
+            </div>
+            <div class="info">
+                <h1><strong>CONTACT INFORMATION</strong></h1>
+                <P>we will use these details to keep you inform on your delivery</P>
+            </div>
+            <div class="mob">
+                <form>
+                    <input type="text" id="email" placeholder="email" required>
+                    <input type="number" id="mobile" placeholder="Mobile Number" required>
+                </form>
+            </div>
+            <div class="c">
+                <form>
+                    <div class="c1">
+                        <div class="c11">
+                            <input type="checkbox" name="check" id="">
+                        </div>
+                        <div class="c12">
+                            <label> My billing and delivery informations are same</label>
+                        </div>
+                    </div>
+
+
+                    <div class="c2">
+                        <div>
+                            <input type="checkbox" name="check">
+                        </div>
+
+                        <div>
+                            <label> I'm 18+ years old. </label>
+                        </div>
+                    </div>
+
+                    <div class="c3">
+                        <div class="">
+                            <input type="checkbox" name="check" id="">
+                        </div>
+                        <div>
+                            <label> I consent to adidas India Marketing Pvt. Ltd. using my personal data for marketing and opinion research purposes. This includes analysing my overall interactions with adidas (such as my shopping history, use of apps, social media and personal data I share with adidas) in order to send me personalised commercial messages about adidas products. adidas may contact me through email, SMS, regular email, apps or though other communication channels provided by me. What does this mean?
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="c4">
+                        <div>
+                            <input type="checkbox" name="check">
+                        </div>
+                        <div>
+                            <label> I have read and accepted the Terms & Conditions and the adidas Privacy Policy.</label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="revbtn"><a href=""><button id="rev">REVIEW & PAY</button></a></div>
+
+
+        </div>
+        <div class="right">
+            <div class="r1">
+                <h1>LOGIN</h1>
+                <form>
+                    <input type="text" id="el" placeholder="email" />
+                    <input type="password" id="pass" placeholder="password" />
+                    <p style="font-size: 18px;"><a href="">forgotten your password</a></p>
+                    <div class="log">
+                        <div>
+                            <input type="checkbox" name="keep" style="width: 40px; height: 20px;">
+                        </div>
+
+                        <div style="font-size: 18;">keep me logged in</div>
+                    </div>
+                    <div style="margin: 10px 20px;"><button id="btnone">Log IN </button></div>
+                </form>
+            </div>
+            <div style="margin: 20px;">
+                <table>
+                    <tr>
+                        <td colspan="2" style="height: 50px;font-family: 'Times New Roman', Times, serif; font-size: 25px;"><strong>ORDER SUMMARY</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 1000px; height: 25px; font-family: 'Times New Roman', Times, serif;">TOTAL ITEMS</td>
+                        <td>price</td>
+
+                    </tr>
+                    <tr>
+                        <td style="width: 1000px; height: 25px;font-family: 'Times New Roman', Times, serif;">DELIVERY</td>
+                        <td>FREE</td>
+
+                    </tr>
+                    <tr>
+                        <td style="width: 1000px; height: 25px; font-family: 'Times New Roman', Times, serif; font-size: 18;"><strong>TOTAL</strong></td>
+                        <td>total_price</td>
+
+                    </tr>
+                </table>
+
+                <div class="pro"><input type="promo" name="promo" id="promo" placeholder="enter your promo code"></div>
+            </div>
+            <div>
+                <h1>ORDERS DETAILS</h1>
+            </div>
+            <div class="order_details">
+
+            </div>
+            <div>
+                <p style="margin:10px 40px;">Need Help...</p>
+            </div>
+            <div class="need">
+                <div><a href="">Delivery</a></div>
+                <div><a href="">Return & Refund</a></div>
+                <div><a href="">ordering & payment</a></div>
+                <div><a href="">promotions &voututes</a></div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
