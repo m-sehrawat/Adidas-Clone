@@ -1,80 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adidas Product Details</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&display=swap" rel="stylesheet">
-    
+
     <style>
-        *{
+        * {
             font-family: sans-serif;
         }
+
         /* header */
-        #header{
+        #header {
             /* border: 1px solid gray; */
             display: flex;
         }
-        .adidasLogo{
+
+        .adidasLogo {
             width: 100px;
             margin-top: 3%;
-            margin-left: 2%;    
+            margin-left: 2%;
             cursor: pointer;
         }
-        #rightSideBox{
+
+        #rightSideBox {
             /* border: 1px solid red; */
             height: 100%;
             width: 10%;
             margin-top: 0.5%;
             margin-left: 80%;
         }
-        #rightSideBox > button{
+
+        #rightSideBox>button {
             margin-left: 1%;
             background-color: white;
             border: 0px solid white;
-            color: gray;
+            color: black;
             cursor: pointer;
         }
-        #rightSideBox > p{
+
+        #rightSideBox>p {
             /* border: 1px solid red; */
             margin-top: 5%;
             margin-left: 50%;
             cursor: pointer;
         }
-        
+
         /* product descrption box */
-        #productDescription{
+        #productDescription {
             width: 100%;
             height: 1100px;
             display: flex;
             flex-wrap: wrap;
             /* border: 1px solid red; */
         }
-        #imageBox{
+
+        #imageBox {
             width: 68%;
             height: 600px;
             /* border: 1px solid blue; */
         }
-        #descriptionBox{
+
+        #descriptionBox {
             width: 30%;
             height: 600px;
             margin-left: 68%;
-            position:fixed;
+            position: fixed;
             /* border: 1px solid orange; */
         }
-        #specificationBox{
+
+        #specificationBox {
             width: 68%;
             height: 500px;
             /* border: 1px solid green; */
         }
 
         /* product styling */
-        .productHeading{
+        .productHeading {
             font-family: 'Gemunu Libre', sans-serif;
             font-style: italic;
             font-weight: 600;
@@ -82,32 +90,37 @@
             margin-top: 15%;
             margin-left: 5%;
         }
-        .productColors{
+
+        .productColors {
             margin-top: 2%;
             margin-left: 5%;
             font-size: 14px;
             color: #37474F;
         }
-        .productPrice{
+
+        .productPrice {
             margin-left: 5%;
             margin-top: 5%;
             font-size: 20px;
             color: black;
             font-weight: 700;
         }
-        .productPriceLabel{
+
+        .productPriceLabel {
             margin-top: 1%;
             margin-left: 5%;
             font-size: 14px;
             color: #37474F;
         }
-        .sizeLabel{
+
+        .sizeLabel {
             margin-top: 5%;
             margin-left: 5%;
             font-size: 14px;
             font-weight: 600;
         }
-        .sizeButton{
+
+        .sizeButton {
             width: 70px;
             height: 40px;
             margin-top: 20px;
@@ -116,20 +129,23 @@
             border: 1px solid rgb(175, 170, 170);
             cursor: pointer;
         }
-        .sizeButtonClicked{
+
+        .sizeButtonClicked {
             width: 70px;
             height: 40px;
             margin-top: 20px;
             color: white;
             background-color: black;
         }
-        .sizeerror{
+
+        .sizeerror {
             margin-top: 2%;
             margin-left: 5%;
             font-size: 13px;
             color: white;
         }
-        .addtoCartBtn{
+
+        .addtoCartBtn {
             width: 70%;
             margin-left: 5%;
             margin-top: 80px;
@@ -140,31 +156,34 @@
             font-weight: 600;
             cursor: pointer;
         }
-        .shippingDet{
+
+        .shippingDet {
             margin-left: 5%;
             margin-top: 20px;
             font-size: 14px;
             color: #37474F;
         }
 
-        .specHeading{
+        .specHeading {
             font-size: 30px;
             font-weight: 750;
             margin-top: 50px;
             margin-left: 3%;
         }
-        .specLists{
+
+        .specLists {
             font-size: 14px;
             margin-left: 8%;
             padding: 10px;
             color: #37474F;
         }
 
-        .tableDet{
+        .tableDet {
             margin-top: 20px;
             margin-left: 6%;
         }
-        .tablerows{
+
+        .tablerows {
             border: 0.5px solid gray;
             width: 400px;
             font-size: 14px;
@@ -173,48 +192,53 @@
             color: #37474F;
         }
 
-        #footer{
+        #footer {
             height: 100px;
             margin-top: 200px;
             background-color: rgb(83, 78, 78);
         }
 
-        @media(max-width: 600px){
-            #rightSideBox{
+        @media(max-width: 600px) {
+            #rightSideBox {
                 width: 30%;
-                margin-left: 5  0%;
+                margin-left: 5 0%;
             }
-            #productDescription{
+
+            #productDescription {
                 max-width: 600px;
                 height: 600px;
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: row;
             }
-            #imageBox{
+
+            #imageBox {
                 max-width: 600px;
                 height: 600px;
             }
-            #descriptionBox{
+
+            #descriptionBox {
                 width: 400px;
                 height: 500px;
                 margin-left: -5px;
-                position:relative;
+                position: relative;
             }
-            #specificationBox{
+
+            #specificationBox {
                 width: 600px;
                 height: 600px;
                 margin-top: 20px;
             }
-            #footer{
+
+            #footer {
                 height: 10px;
                 margin-top: 1200px;
                 background-color: white;
             }
         }
-
     </style>
 </head>
+
 <body>
 
     <div id="header">
@@ -225,8 +249,8 @@
             <button>sign up</button>
             <button>log in</button>
             <p>
-                <i class="material-icons">shopping_bag</i>  
-            </p>  
+                <i class="material-icons">shopping_bag</i>
+            </p>
         </div>
     </div>
     <hr>
@@ -251,9 +275,9 @@
 
         var productDescriptionArr = JSON.parse(localStorage.getItem("productDetails"));
 
-        function showProducts(d){
+        function showProducts(d) {
 
-            d.forEach(function(product){
+            d.forEach(function (product) {
                 // empty the container
                 productDescriptionContainer.innerHTML = null;
                 imageBoxContainer.innerHTML = null;
@@ -267,20 +291,20 @@
                 imgOne.style.objectFit = "cover";
                 imageBoxContainer.append(imgOne);
 
-                function slideShow(p){
+                function slideShow(p) {
 
                     let count = 0;
 
-                    let interval = setInterval(function(){
+                    let interval = setInterval(function () {
                         imageBoxContainer.innerHTML = null;
-                        if(count == p.img.length){
+                        if (count == p.img.length) {
                             count = 0;
                         }
 
                         var img = document.createElement("img");
                         img.src = p.img[count];
                         img.style.minWidth = "100%";
-                        img.style.height = "600px";  
+                        img.style.height = "600px";
                         img.style.objectFit = "cover";
                         imageBoxContainer.append(img);
                         count++;
@@ -315,28 +339,28 @@
                 productSizeBtnOne.setAttribute("class", "sizeButton");
                 productSizeBtnOne.style.marginLeft = "5%";
                 productSizeBtnOne.textContent = product.size[0];
-                productSizeBtnOne.onclick = function(){
+                productSizeBtnOne.onclick = function () {
                     selectSize(productSizeBtnOne);
                 }
                 //product description Box - size button
                 var productSizeBtnTwo = document.createElement("button");
                 productSizeBtnTwo.setAttribute("class", "sizeButton");
                 productSizeBtnTwo.textContent = product.size[1];
-                productSizeBtnTwo.onclick = function(){
+                productSizeBtnTwo.onclick = function () {
                     selectSize(productSizeBtnTwo);
                 }
                 //product description Box - size button
                 var productSizeBtnThree = document.createElement("button");
                 productSizeBtnThree.setAttribute("class", "sizeButton");
                 productSizeBtnThree.textContent = product.size[2];
-                productSizeBtnThree.onclick = function(){
+                productSizeBtnThree.onclick = function () {
                     selectSize(productSizeBtnThree);
                 }
                 //product description Box - size button
                 var productSizeBtnFour = document.createElement("button");
                 productSizeBtnFour.setAttribute("class", "sizeButton");
                 productSizeBtnFour.textContent = product.size[3];
-                productSizeBtnFour.onclick = function(){
+                productSizeBtnFour.onclick = function () {
                     selectSize(productSizeBtnFour);
                 }
                 var sizeError = document.createElement("div");
@@ -346,7 +370,7 @@
                 var productAddtoCartBtn = document.createElement("button");
                 productAddtoCartBtn.textContent = "ADD TO BAG";
                 productAddtoCartBtn.setAttribute("class", "addtoCartBtn");
-                productAddtoCartBtn.onclick = function(){
+                productAddtoCartBtn.onclick = function () {
                     addtocart(product, sizeError);
                 }
                 //product description Box - Add to cart details
@@ -359,9 +383,9 @@
                 returnDetail.setAttribute("class", "shippingDet");
                 returnDetail.style.marginTop = "10px";
 
-                descriptionBoxContainer.append(productHeading, productColor, 
-                productPrice, priceLabel, productSizeBtnLabel, productSizeBtnOne, productSizeBtnTwo, productSizeBtnThree,
-                productSizeBtnFour, sizeError, productAddtoCartBtn, shippingDetail, returnDetail);
+                descriptionBoxContainer.append(productHeading, productColor,
+                    productPrice, priceLabel, productSizeBtnLabel, productSizeBtnOne, productSizeBtnTwo, productSizeBtnThree,
+                    productSizeBtnFour, sizeError, productAddtoCartBtn, shippingDetail, returnDetail);
                 //specification box - specification heading
                 var specificationHeading = document.createElement("ul");
                 specificationHeading.textContent = "SPECIFICATIONS";
@@ -387,14 +411,14 @@
                 specificationTable.setAttribute("class", "tableDet");
                 //specification box - specification table row 1
                 var specificationRowOne = document.createElement("tr");
-                
+
                 var specificationRowOnetd1 = document.createElement("td");
                 specificationRowOnetd1.setAttribute("class", "tablerows");
                 specificationRowOnetd1.style.backgroundColor = "black";
                 specificationRowOnetd1.style.color = "white";
 
                 specificationRowOnetd1.textContent = product.details[0];
-                
+
                 var specificationRowOnetd2 = document.createElement("td");
                 specificationRowOnetd2.setAttribute("class", "tablerows");
                 specificationRowOnetd2.style.backgroundColor = "black";
@@ -404,11 +428,11 @@
                 specificationRowOne.append(specificationRowOnetd1, specificationRowOnetd2);
                 //specification box - specification table row 1
                 var specificationRowTwo = document.createElement("tr");
-                
+
                 var specificationRowTwotd1 = document.createElement("td");
                 specificationRowTwotd1.setAttribute("class", "tablerows");
                 specificationRowTwotd1.textContent = product.details[2];
-                
+
                 var specificationRowTwotd2 = document.createElement("td");
                 specificationRowTwotd2.setAttribute("class", "tablerows");
                 specificationRowTwotd2.textContent = product.details[3];
@@ -416,11 +440,11 @@
                 specificationRowTwo.append(specificationRowTwotd1, specificationRowTwotd2);
                 //specification box - specification table row 1
                 var specificationRowThree = document.createElement("tr");
-                
+
                 var specificationRowThreetd1 = document.createElement("td");
                 specificationRowThreetd1.setAttribute("class", "tablerows");
                 specificationRowThreetd1.textContent = product.details[4];
-                
+
                 var specificationRowThreetd2 = document.createElement("td");
                 specificationRowThreetd2.setAttribute("class", "tablerows");
                 specificationRowThreetd2.textContent = product.details[5];
@@ -428,11 +452,11 @@
                 specificationRowThree.append(specificationRowThreetd1, specificationRowThreetd2);
                 //specification box - specification table row 1
                 var specificationRowFour = document.createElement("tr");
-                
+
                 var specificationRowFourtd1 = document.createElement("td");
                 specificationRowFourtd1.setAttribute("class", "tablerows");
                 specificationRowFourtd1.textContent = product.details[6];
-                
+
                 var specificationRowFourtd2 = document.createElement("td");
                 specificationRowFourtd2.setAttribute("class", "tablerows");
                 specificationRowFourtd2.textContent = product.details[7];
@@ -443,18 +467,18 @@
                 specificationBoxContainer.append(specificationHeading, specificationOne, specificationTwo, specificationThree, specificationFour, specificationTable);
 
                 productDescriptionContainer.append(imageBoxContainer, descriptionBoxContainer, specificationBoxContainer);
-                
+
             });
         }
 
         showProducts(productDescriptionArr);
         //select size function
-        function selectSize(p){
+        function selectSize(p) {
 
             p.setAttribute("class", "sizeButtonClicked");
 
-            var sizeArr = productDescriptionArr.filter(function(el){
-                if(el.size == p.textContent);
+            var sizeArr = productDescriptionArr.filter(function (el) {
+                if (el.size == p.textContent);
                 el.size = p.textContent;
                 console.log(el.size);
             });
@@ -462,22 +486,22 @@
             showProducts(sizeArr);
         }
         //add to cart function
-        if(localStorage.getItem("adidasCart") === null){
+        if (localStorage.getItem("adidasCart") === null) {
             localStorage.setItem("adidasCart", JSON.stringify([]));
         }
 
         var count = 0;
-        function addtocart(p, s){
-            
-            if(p.size.length == 4){
+        function addtocart(p, s) {
+
+            if (p.size.length == 4) {
                 s.style.color = "red";
             }
 
-            if(count > 1){
+            if (count > 1) {
                 alert("Product is already added to cart");
             }
 
-            else if(count <= 1 && p.size.length != 4){
+            else if (count <= 1 && p.size.length != 4) {
                 var arrProducts = JSON.parse(localStorage.getItem("adidasCart"));
                 arrProducts.push(p);
                 localStorage.setItem("adidasCart", JSON.stringify(arrProducts));
@@ -486,12 +510,12 @@
         }
 
 
-        
-                
 
 
-        
-        
+
+
+
+
 
 
 
@@ -503,6 +527,7 @@
 
 
     </script>
-    
+
 </body>
+
 </html>

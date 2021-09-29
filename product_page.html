@@ -6,15 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
+    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&display=swap" rel="stylesheet">
-
 
     <style>
         * {
-            font-family: sans-serif;
+            font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
         }
 
         body {
@@ -23,13 +20,16 @@
 
         #header {
             display: flex;
+            min-height: 50px;
         }
 
         .adidasLogo {
-            width: 100px;
-            margin-top: 3%;
-            margin-left: 2%;
+            width: 70px;
+            margin-top: 15px;
+            margin-left: 50px;
+            cursor: pointer;
         }
+
 
         #rightSideBox {
             height: 100%;
@@ -42,7 +42,7 @@
             margin-left: 1%;
             background-color: white;
             border: 0px solid white;
-            color: gray;
+            color: black;
         }
 
         #rightSideBox>p {
@@ -51,7 +51,6 @@
         }
 
         #parent {
-
             display: grid;
             gap: 3px;
             grid-template-columns: 24.8% 24.8% 24.8% 24.8%;
@@ -71,14 +70,15 @@
         }
 
         #productHeading {
-            font-family: 'Gemunu Libre', sans-serif;
+            letter-spacing: -4px;
             font-style: italic;
             font-weight: 300;
-            font-size: 45px;
+            font-size: 42px;
         }
 
         #totalProductsCount {
-            color: #918f8f;
+            letter-spacing: 4px;
+            color: #767677;
             font-size: 15px;
             font-style: normal;
             margin-left: 15px;
@@ -93,6 +93,51 @@
             padding: 1%;
             margin-top: 10px;
         }
+
+        .buttonsDiv {
+            border: 1px solid red;
+            position: -webkit-sticky;
+            position: sticky;
+            /* top: 20px; */
+        }
+
+        .buttonsDiv>button {
+            padding: 10px;
+            font-size: 15px;
+            background-color: white;
+            border: none;
+
+        }
+
+        .buttonsDiv>button:hover {
+            border: 1px solid black;
+        }
+
+        #parent>div:hover {
+            border: 1px solid black;
+        }
+
+        .priceDisplay {
+            margin: 1px auto 1px 10px;
+            font-size: 14px;
+        }
+
+        .nameSection {
+            margin: 1px auto 1px 10px;
+            font-size: 14px;
+        }
+
+        .categorySection {
+            margin: 1px auto 1px 10px;
+            font-size: 12px;
+            color: #767677;
+        }
+
+        .colorSection {
+            margin: 1px auto 1px 10px;
+            font-size: 14px;
+            color: #767677;
+        }
     </style>
 </head>
 
@@ -100,7 +145,7 @@
 
     <div id="header">
         <div>
-            <img class="adidasLogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDNRJXxCU1AnirWkNe7UHTAV2kCA2d1e8lfdbQpLeKz7GWCo-&s">
+            <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
         </div>
         <div id="rightSideBox">
             <button>sign up</button>
@@ -113,9 +158,9 @@
     <hr>
 
     <div class="adjustement">
-        <h1 id="productHeading">All Products <span id="totalProductsCount"></span></h1>
+        <h1 id="productHeading">ALL PRODUCTS<span id="totalProductsCount"></span></h1>
 
-        <div id>
+        <div class="buttonsDiv">
             <button onclick="sortLH()" value="lowPrice">Price (Low - High)</button>
             <button onclick="sortHL()" value="highPrice">Price (High - Low)</button>
         </div>
@@ -403,15 +448,20 @@
 
             let price = document.createElement("p");
             price.textContent = "₹ " + product.price;
+            price.setAttribute("class", "priceDisplay");
 
             let name = document.createElement("p");
             name.textContent = product.name;
+            name.setAttribute("class", "nameSection");
 
             let category = document.createElement("p");
             category.textContent = product.category;
+            category.setAttribute("class", "categorySection");
+
 
             let color = document.createElement("p");
             color.textContent = product.color.length + " colours";
+            color.setAttribute("class", "colorSection");
 
             box.append(img, price, name, category, color);
 
