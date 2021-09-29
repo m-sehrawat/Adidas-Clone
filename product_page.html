@@ -51,7 +51,6 @@
         }
 
         #parent {
-
             display: grid;
             gap: 3px;
             grid-template-columns: 24.8% 24.8% 24.8% 24.8%;
@@ -93,6 +92,28 @@
             padding: 1%;
             margin-top: 10px;
         }
+
+        .buttonsDiv {
+            border: 1px solid red;
+            position: -webkit-sticky;
+            position: sticky;
+            /* top: 20px; */
+        }
+
+        .buttonsDiv>button {
+            padding: 10px;
+            font-size: 15px;
+            background-color: white;
+            border: none;
+            
+        }
+
+        .buttonsDiv>button:hover {
+            border: 1px solid black;
+        }
+        #parent > div:hover {
+            border: 1px solid black;
+        }
     </style>
 </head>
 
@@ -115,7 +136,7 @@
     <div class="adjustement">
         <h1 id="productHeading">All Products <span id="totalProductsCount"></span></h1>
 
-        <div id>
+        <div class="buttonsDiv">
             <button onclick="sortLH()" value="lowPrice">Price (Low - High)</button>
             <button onclick="sortHL()" value="highPrice">Price (High - Low)</button>
         </div>
