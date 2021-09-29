@@ -215,9 +215,9 @@
 
         <div class="buttonsDiv">
 
-            <select name="gender" id="genderFilter"  onclick="showGender()">
+            <select name="gender" id="genderFilter" onclick="showGender()">
                 <option value="default"> GENDER</option>
-                <option value="men" onclick="genderFilterShow()">MEN</option>
+                <option value="men">MEN</option>
                 <option value="women">WOMEN</option>
             </select>
 
@@ -836,33 +836,33 @@
 
     function genderFilterShow() {
 
-        let genderArray = data.filter(function(element) {
+        let genderArray = data.filter(function (element) {
             return (element.gender == "men");
         });
         console.log(genderArray);
-        
+
     }
 
     // Gender Filter
-    function showGender(){
-        
+    function showGender() {
+
         var gender = document.getElementById("genderFilter").value;
 
-        for(let i = 0; i <gender.length; i++){
+        for (let i = 0; i < gender.length; i++) {
 
-            if(gender == "men"){
-                let genderArrayMen = data.filter(function(element) {
+            if (gender == "men") {
+                let genderArrayMen = data.filter(function (element) {
                     return (element.gender == "men");
                 });
                 showProducts(genderArrayMen);
             }
 
-            if(gender == "women"){
-                let genderArrayWomen = data.filter(function(element) {
+            if (gender == "women") {
+                let genderArrayWomen = data.filter(function (element) {
                     return (element.gender == "women");
                 });
                 showProducts(genderArrayWomen);
-            }   
+            }
         }
     }
 
