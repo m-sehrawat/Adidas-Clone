@@ -25,21 +25,22 @@
             color: white;
             height: 30px;
             flex-grow: 0px;
+            overflow: hidden;
         }
 
         #topHeader div {
-            margin: 8px 0px 0px 250px;
+            margin: 0.5% 0% 0% 15%;
             font-size: 11px;
             font-weight: bold;
             letter-spacing: 2px;
         }
 
-
         #header {
             display: flex;
-            min-height: 50px;
+            height: 80px;
             border-bottom: 1px solid #eaebec;
             margin-bottom: 40px;
+            overflow: hidden;
         }
 
         .adidasLogo {
@@ -48,7 +49,6 @@
             margin-left: 50px;
             cursor: pointer;
         }
-
 
         #rightSideBox {
             height: 100%;
@@ -78,9 +78,8 @@
         }
 
         .adjustement {
-            width: 1250px;
+            max-width: 1250px;
             margin: auto;
-            /* border: 1px solid red; */
         }
 
         img {
@@ -105,12 +104,26 @@
 
         #footer {
             background-color: #363738;
-            text-align: center;
             font-style: normal;
-            color: white;
-            font-family: monospace;
-            padding: 1%;
+            color: #C8CBCC;
+            height: 110px;
             margin-top: 10px;
+            font-size: 12px;
+            border: 1px solid #363738;
+        }
+
+        #footer>p:first-child {
+            display: inline-block;
+            margin: 0% 0% 2% 16%;
+        }
+
+        #footer>p:nth-child(2) {
+            display: inline-block;
+            margin: 1% 0% 2% 45%;
+        }
+
+        #footer>p:last-child {
+            margin: 0% 0% 2% 16%;
         }
 
         .buttonsDiv {
@@ -123,7 +136,7 @@
 
         }
 
-        .buttonsDiv>button {
+        .filterButtons {
             padding: 12px;
             margin: 5px;
             font-size: 15px;
@@ -132,7 +145,7 @@
 
         }
 
-        .buttonsDiv>button:hover {
+        .filterButtons:hover {
             border: 1px solid black;
         }
 
@@ -215,23 +228,30 @@
 
         <div class="buttonsDiv">
 
+            <select name="gender" id="genderFilter" onclick="showGender()" class="filterButtons">
+                <option value="default"> GENDER</option>
+                <option value="men">MEN</option>
+                <option value="women">WOMEN</option>
+            </select>
 
-            
-            <button onclick="sortLH()" value="lowPrice">Price (Low - High)</button>
-            <button onclick="sortHL()" value="highPrice">Price (High - Low)</button>
-            <button onclick="clearFilter()">Clear Filter</button>
+            <select name="price" id="priceFilter" onclick="priceSortFilter()" class="filterButtons">
+                <option value="default">PRICE</option>
+                <option value="low" class="filterButtons">(Low - High)</option>
+                <option value="high" class="filterButtons">(High - Low)</option>
+            </select>
+
+
+            <button onclick="clearFilter()" class="filterButtons">CLEAR FILTER</button>
         </div>
     </div>
 
     <div id="parent" class="adjustement"></div>
 
-    <footer id="footer">
-        <div>
-
-            | Privacy Statement | Terms and Conditions | Imprint |
-
-            <p>© 2021 adidas India Marketing Private Limited</p>
-
+    <footer>
+        <div id="footer">
+            <p>India</p>
+            <p>Privacy Policy &nbsp; &nbsp; | &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp; &nbsp; Cookies</p>
+            <p>© 2021 adidas India Marketing Pvt Ltd</p>
         </div>
     </footer>
 
@@ -516,7 +536,14 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "India"
-            ]
+            ],
+            gender: "men",
+            division: "clothing",
+            productType: "shoes",
+            brand: "originals",
+            collection: "adicolor",
+            sustainability: "sustainable",
+
         },
 
         {
@@ -547,7 +574,8 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "Indonesia"
-            ]
+            ],
+            gender: "men",
         },
         {
             img: [
@@ -573,7 +601,8 @@
                 "Net Quantity", "3 N",
                 "Gender", "Men",
                 "Country of Origin", "Vietnam"
-            ]
+            ],
+            gender: "men",
         },
 
         {
@@ -604,7 +633,8 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "Myanmar"
-            ]
+            ],
+            gender: "kids",
         },
 
         {
@@ -615,7 +645,7 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6746f16bbf384fd3b0e4aba20126cd92_9366/ASWEEMOVE_Shoes_Black_FW1676_04_standard.jpg"
             ],
             name: "ASWEEMOVE SHOES",
-            category: "Men Running",
+            category: "Women Running",
             price: 2800,
             size: [7, 8, 9, 10, 11, 12],
             color: [
@@ -635,7 +665,8 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "Vietnam"
-            ]
+            ],
+            gender: "women",
         },
 
         {
@@ -646,7 +677,7 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/3a96f31f570c4ea0ac5babdb00c4185e_9366/ASWEEMOVE_Shoes_Blue_FW1674_04_standard.jpg"
             ],
             name: "ASWEEMOVE SHOES",
-            category: "Men Running",
+            category: "Women Running",
             price: 2800,
             size: [6, 7, 8, 9, 10, 11, 12],
             color: [
@@ -666,7 +697,8 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "Vietnam"
-            ]
+            ],
+            gender: "women",
         },
 
         {
@@ -696,7 +728,8 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "India"
-            ]
+            ],
+            gender: "women",
         },
 
         {
@@ -727,7 +760,8 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "India"
-            ]
+            ],
+            gender: "kids",
         },
 
 
@@ -738,6 +772,7 @@
     let totalProductsCount = document.getElementById("totalProductsCount");
     totalProductsCount.textContent = "[" + data.length + "]";
 
+    //Product display Function
     function showProducts(d) {
 
         parent.innerHTML = null;
@@ -785,13 +820,13 @@
             parent.append(box);
         });
     }
-
     showProducts(data);
 
     if (localStorage.getItem("productDetails") == null) {
         localStorage.setItem("productDetails", JSON.stringify([]));
     }
 
+    //Local Storage data access Function
     function productDetails(p) {
 
         var productPage = JSON.parse(localStorage.getItem("productDetails"));
@@ -805,21 +840,65 @@
         window.location.href = "adidas_productDescription.html";
     }
 
-    function sortLH() {
-        let arr = data.sort((a, b) => a.price - b.price);
-        showProducts(arr);
-    }
 
-    function sortHL() {
-        let arr = data.sort((a, b) => b.price - a.price);
-        showProducts(arr);
-    }
 
+
+
+    //Clear Filter Function
     function clearFilter() {
         showProducts(resetFilter);
     }
 
+    // Gender Filter Function
+    function showGender() {
 
+        var gender = document.getElementById("genderFilter").value;
+
+        for (let i = 0; i < gender.length; i++) {
+
+            if (gender == "men") {
+                let genderArrayMen = data.filter(function (element) {
+                    return (element.gender == "men");
+                });
+                showProducts(genderArrayMen);
+            }
+
+            if (gender == "women") {
+                let genderArrayWomen = data.filter(function (element) {
+                    return (element.gender == "women");
+                });
+                showProducts(genderArrayWomen);
+            }
+        }
+    }
+
+    //Price sort Function
+    function priceSortFilter() {
+
+        let priceFilter = document.getElementById("priceFilter");
+
+        for (let i = 0; i < priceFilter.length; i++) {
+
+            if (priceFilter.value == "low") {
+
+                //Sort Low to High Function
+                function sortLH() {
+                    let arr = data.sort((a, b) => a.price - b.price);
+                    showProducts(arr);
+                }
+                sortLH();
+
+            } else if (priceFilter.value == "high") {
+
+                //Sort High to Low Function
+                function sortHL() {
+                    let arr = data.sort((a, b) => b.price - a.price);
+                    showProducts(arr);
+                }
+                sortHL();
+            }
+        }
+    }
 
 
 </script>
