@@ -49,7 +49,7 @@
 <body>
     <div class="up">
         <h1>SIGNUP </h1>
-        <form id="myform" onsubmit="signup()">
+        <form id="myform" onsubmit="signup(event)">
             <table>
 
                 <input type="text" id="n" placeholder="enter your name *">
@@ -75,48 +75,10 @@
         function signup(e) {
             e.preventDefault();
 
-            var valid = function validation() {
-                var name = document.getElementById("n").value;
-                var email = document.getElementById("e").value;
-                var mobile = document.getElementById("m").value;
-                var password = document.getElementById("p").value;
-
-                if (name == "") {
-                    document.getElementById('username').innerHTML = "** plz fill the username field**";
-                    return false;
-
-                }
-                if ((email == "") || (email.indexOf('@') <= 0)) {
-                    document.getElementById('email').innerHTML = "** plz fill correct emai id**";
-                    return false;
-
-                }
-                if ((mobile == "") || (mobile.length < 10)) {
-                    document.getElementById('mobile').innerHTML = "** plz fill the mobile field correctly**";
-                    return false;
-
-                }
-
-
-                if (password == "") {
-                    document.getElementById('password').innerHTML = "** plz fill the password field**";
-                    return false;
-
-                }
-
-
-
-
-            }
-            if (valid == true) {
-                console.log(name, email, password, mobile);
-            }
-
-
-
-            /*  let myform = document.getElementById("myform");
+            let myform = document.getElementById("myform");
             let name = myform.n.value;
             let email = myform.e.value;
+            let mobile = myform.m.value;
             let password = myform.p.value;
             //console.log("data:", name, email, password);
             if (localStorage.getItem('users') === null) {
@@ -126,12 +88,18 @@
             var user = {
                 name,
                 email,
+                mobile,
                 password
             };
             let arr = JSON.parse(localStorage.getItem("users"));
             arr.push(user);
             localStorage.setItem("users", JSON.stringify(arr));
-        }*/
+            window.location.href = "shippingpage.html";
+            document.getElementById("n").value = "";
+            document.getElementById("e").value = "";
+            document.getElementById("m").value = "";
+            document.getElementById("p").value = "";
+
         }
     </script>
 
