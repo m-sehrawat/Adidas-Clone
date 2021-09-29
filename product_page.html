@@ -13,10 +13,10 @@
 
 
     <style>
-
         * {
             font-family: sans-serif;
         }
+
         body {
             margin: 0px;
         }
@@ -51,20 +51,41 @@
         }
 
         #parent {
-            width: 1300px;
+
             display: grid;
-            gap: 5px;
-            grid-template-columns: 22% 22% 22% 22%;
+            gap: 3px;
+            grid-template-columns: 24.8% 24.8% 24.8% 24.8%;
             justify-content: center;
+
+        }
+
+        .adjustement {
+            width: 1250px;
             margin: auto;
+            border: 1px solid red;
         }
 
         img {
             width: 100%;
+            cursor: pointer;
         }
 
-        #footer{
-            background-color:  rgb(80, 80, 80);
+        #productHeading {
+            font-family: 'Gemunu Libre', sans-serif;
+            font-style: italic;
+            font-weight: 300;
+            font-size: 45px;
+        }
+
+        #totalProductsCount {
+            color: #918f8f;
+            font-size: 15px;
+            font-style: normal;
+            margin-left: 15px;
+        }
+
+        #footer {
+            background-color: rgb(80, 80, 80);
             text-align: center;
             font-style: normal;
             color: white;
@@ -91,28 +112,25 @@
     </div>
     <hr>
 
-    <h1>All Products <span id="totalProductsCount"></span></h1>
+    <div class="adjustement">
+        <h1 id="productHeading">All Products <span id="totalProductsCount"></span></h1>
 
-    <div>
-        <!-- <button>GENDER</button>
-        <button>DIVISION</button>
-        <button>PRODUCT TYPE</button> -->
-
-        <button onclick="sortLH()" value="lowPrice">Price (Low - High)</button>
-        <button onclick="sortHL()" value="highPrice">Price (High - Low)</button>
-
+        <div id>
+            <button onclick="sortLH()" value="lowPrice">Price (Low - High)</button>
+            <button onclick="sortHL()" value="highPrice">Price (High - Low)</button>
+        </div>
     </div>
 
-    <div id="parent"></div>
+    <div id="parent" class="adjustement"></div>
 
-    <footer  id="footer">
+    <footer id="footer">
         <div>
 
-            |  Privacy Statement  |  Terms and Conditions  |  Imprint  |
-    
+            | Privacy Statement | Terms and Conditions | Imprint |
+
             <p>© 2021 adidas India Marketing Private Limited</p>
 
-        </div> 
+        </div>
     </footer>
 
 </body>
@@ -146,10 +164,10 @@
                 "Color: Night Marine / Night Sky / Stone"
             ],
             details: [
-                ["Attribute", "Value"],
-                ["Net Quantity", "2 N"],
-                ["Gender", "Men"],
-                ["Country of Origin", "India"]
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "India"
             ]
         },
 
@@ -177,13 +195,12 @@
                 "Color: Cloud White / Cloud White / Green"
             ],
             details: [
-                ["Attribute", "Value"],
-                ["Net Quantity", "2 N"],
-                ["Gender", "Men"],
-                ["Country of Origin", "Indonesia"]
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "Indonesia"
             ]
         },
-
         {
             img: [
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0a76afaa91be462b800aabb2011f8888_9366/Face_Covers_3-Pack_M-L_Black_H08837_21_model.jpg",
@@ -204,10 +221,10 @@
                 "Tight fit for coverage"
             ],
             details: [
-                ["Attribute", "Value"],
-                ["Net Quantity", "3 N"],
-                ["Gender", "Men"],
-                ["Country of Origin", "Vietnam"]
+                "Attribute", "Value",
+                "Net Quantity", "3 N",
+                "Gender", "Men",
+                "Country of Origin", "Vietnam"
             ]
         },
 
@@ -235,10 +252,10 @@
                 "Color: Legend Earth / Core Black / Cloud White"
             ],
             details: [
-                ["Attribute", "Value"],
-                ["Net Quantity", "2 N"],
-                ["Gender", "Men"],
-                ["Country of Origin", "Myanmar"]
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "Myanmar"
             ]
         },
 
@@ -266,10 +283,10 @@
                 "Color: Core Black / Cloud White / Core Black"
             ],
             details: [
-                ["Attribute", "Value"],
-                ["Net Quantity", "2 N"],
-                ["Gender", "Men"],
-                ["Country of Origin", "Vietnam"]
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "Vietnam"
             ]
         },
 
@@ -297,10 +314,10 @@
                 "Color: Tech Indigo / Legend Ink / Scarlet"
             ],
             details: [
-                ["Attribute", "Value"],
-                ["Net Quantity", "2 N"],
-                ["Gender", "Men"],
-                ["Country of Origin", "Vietnam"]
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "Vietnam"
             ]
         },
 
@@ -327,10 +344,10 @@
                 "Color: Grey Six / Legacy Gold"
             ],
             details: [
-                ["Attribute", "Value"],
-                ["Net Quantity", "2 N"],
-                ["Gender", "Men"],
-                ["Country of Origin", "India"]
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "India"
             ]
         },
 
@@ -358,10 +375,10 @@
                 "Color: Grey Six / Core Black / Stone"
             ],
             details: [
-                ["Attribute", "Value"],
-                ["Net Quantity", "2 N"],
-                ["Gender", "Men"],
-                ["Country of Origin", "India"]
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "India"
             ]
         },
 
