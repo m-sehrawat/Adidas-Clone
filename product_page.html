@@ -6,9 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&display=swap" rel="stylesheet">
 
 
     <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        #header {
+            display: flex;
+        }
+
+        .adidasLogo {
+            width: 100px;
+            margin-top: 3%;
+            margin-left: 2%;
+        }
+
+        #rightSideBox {
+            height: 100%;
+            width: 10%;
+            margin-top: 0.5%;
+            margin-left: 80%;
+        }
+
+        #rightSideBox>button {
+            margin-left: 1%;
+            background-color: white;
+            border: 0px solid white;
+            color: gray;
+        }
+
+        #rightSideBox>p {
+            margin-top: 5%;
+            margin-left: 50%;
+        }
+
         #parent {
             width: 1300px;
             display: grid;
@@ -25,6 +62,21 @@
 </head>
 
 <body>
+
+    <div id="header">
+        <div>
+            <img class="adidasLogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDNRJXxCU1AnirWkNe7UHTAV2kCA2d1e8lfdbQpLeKz7GWCo-&s">
+        </div>
+        <div id="rightSideBox">
+            <button>sign up</button>
+            <button>log in</button>
+            <p>
+                <i class="material-icons">shopping_bag</i>
+            </p>
+        </div>
+    </div>
+    <hr>
+
     <h1>All Products <span id="totalProductsCount"></span></h1>
 
     <div>
@@ -344,12 +396,11 @@
 
         productPage.push(p);
 
-        //1. For show product details we need only one item in the array so I comment out the below syntax, If you want multiple items the you can use the below syntax
         localStorage.setItem("productDetails", JSON.stringify(productPage));
 
-        //window.location.href=""
+        window.location.href = "product_descriptionpage.html"
 
-        console.log('productPage:', productPage)
+        //console.log('productPage:', productPage)
 
     }
 
