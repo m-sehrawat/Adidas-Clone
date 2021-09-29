@@ -215,8 +215,12 @@
 
         <div class="buttonsDiv">
 
+            <select name="gender" id="genderFilter">
+                <option value="default" "> GENDER</option>
+                <option value="men" onclick="genderFilterShow()"">MEN</option>
+                <option value="women">WOMEN</option>
+            </select>
 
-            
             <button onclick="sortLH()" value="lowPrice">Price (Low - High)</button>
             <button onclick="sortHL()" value="highPrice">Price (High - Low)</button>
             <button onclick="clearFilter()">Clear Filter</button>
@@ -516,7 +520,8 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "India"
-            ]
+            ],
+            gender: "men",
         },
 
         {
@@ -547,7 +552,8 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "Indonesia"
-            ]
+            ],
+            gender: "men",
         },
         {
             img: [
@@ -573,7 +579,8 @@
                 "Net Quantity", "3 N",
                 "Gender", "Men",
                 "Country of Origin", "Vietnam"
-            ]
+            ],
+            gender: "men",
         },
 
         {
@@ -604,7 +611,8 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "Myanmar"
-            ]
+            ],
+            gender: "kids",
         },
 
         {
@@ -615,7 +623,7 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6746f16bbf384fd3b0e4aba20126cd92_9366/ASWEEMOVE_Shoes_Black_FW1676_04_standard.jpg"
             ],
             name: "ASWEEMOVE SHOES",
-            category: "Men Running",
+            category: "Women Running",
             price: 2800,
             size: [7, 8, 9, 10, 11, 12],
             color: [
@@ -635,7 +643,8 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "Vietnam"
-            ]
+            ],
+            gender: "women",
         },
 
         {
@@ -646,7 +655,7 @@
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/3a96f31f570c4ea0ac5babdb00c4185e_9366/ASWEEMOVE_Shoes_Blue_FW1674_04_standard.jpg"
             ],
             name: "ASWEEMOVE SHOES",
-            category: "Men Running",
+            category: "Women Running",
             price: 2800,
             size: [6, 7, 8, 9, 10, 11, 12],
             color: [
@@ -666,7 +675,8 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "Vietnam"
-            ]
+            ],
+            gender: "women",
         },
 
         {
@@ -696,7 +706,8 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "India"
-            ]
+            ],
+            gender: "women",
         },
 
         {
@@ -727,13 +738,17 @@
                 "Net Quantity", "2 N",
                 "Gender", "Men",
                 "Country of Origin", "India"
-            ]
+            ],
+            gender: "kids",
         },
 
 
     ]
 
     let parent = document.getElementById("parent");
+
+    let genderFilter = document.getElementById("genderFilter");
+    // genderFilter.addEventListener("click", genderFilterShow)
 
     let totalProductsCount = document.getElementById("totalProductsCount");
     totalProductsCount.textContent = "[" + data.length + "]";
@@ -819,7 +834,15 @@
         showProducts(resetFilter);
     }
 
+    function genderFilterShow() {
 
+        let genderArray = data.filter(function(element) {
+            return (element.gender == "men");
+        });
+        console.log(genderArray);
+        
+
+    }
 
 
 </script>
