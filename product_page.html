@@ -105,12 +105,26 @@
 
         #footer {
             background-color: #363738;
-            text-align: center;
             font-style: normal;
-            color: white;
-            font-family: monospace;
-            padding: 1%;
+            color: #C8CBCC;
+            height: 110px;
             margin-top: 10px;
+            font-size: 12px;
+            border: 1px solid #363738;
+        }
+
+        #footer>p:first-child {
+            display: inline-block;
+            margin: 20px 20px 40px 250px;
+        }
+
+        #footer>p:nth-child(2) {
+            display: inline-block;
+            margin: 20px 20px 40px 650px;
+        }
+
+        #footer>p:last-child {
+            margin: 0px 20px 20px 250px;
         }
 
         .buttonsDiv {
@@ -123,7 +137,7 @@
 
         }
 
-        .buttonsDiv>button {
+        .filterButtons {
             padding: 12px;
             margin: 5px;
             font-size: 15px;
@@ -132,7 +146,7 @@
 
         }
 
-        .buttonsDiv>button:hover {
+        .filterButtons:hover {
             border: 1px solid black;
         }
 
@@ -215,27 +229,30 @@
 
         <div class="buttonsDiv">
 
-            <select name="gender" id="genderFilter" onclick="showGender()">
+            <select name="gender" id="genderFilter" onclick="showGender()" class="filterButtons">
                 <option value="default"> GENDER</option>
                 <option value="men">MEN</option>
                 <option value="women">WOMEN</option>
             </select>
 
-            <button onclick="sortLH()" value="lowPrice">Price (Low - High)</button>
-            <button onclick="sortHL()" value="highPrice">Price (High - Low)</button>
-            <button onclick="clearFilter()">Clear Filter</button>
+            <select name="price" id="priceFilter" onclick="priceSortFilter()" class="filterButtons">
+                <option value="default">PRICE</option>
+                <option value="low" class="filterButtons">(Low - High)</option>
+                <option value="high" class="filterButtons">(High - Low)</option>
+            </select>
+
+
+            <button onclick="clearFilter()" class="filterButtons">CLEAR FILTER</button>
         </div>
     </div>
 
     <div id="parent" class="adjustement"></div>
 
-    <footer id="footer">
-        <div>
-
-            | Privacy Statement | Terms and Conditions | Imprint |
-
-            <p>© 2021 adidas India Marketing Private Limited</p>
-
+    <footer>
+        <div  id="footer">
+            <p>India</p>
+            <p>Privacy Policy &nbsp; &nbsp; | &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp; &nbsp; Cookies</p>
+            <p>© 2021 adidas India Marketing Pvt Ltd</p>
         </div>
     </footer>
 
@@ -522,6 +539,12 @@
                 "Country of Origin", "India"
             ],
             gender: "men",
+            division: "clothing",
+            productType: "shoes",
+            brand: "originals",
+            collection: "adicolor",
+            sustainability: "sustainable",
+
         },
 
         {
@@ -747,12 +770,10 @@
 
     let parent = document.getElementById("parent");
 
-    let genderFilter = document.getElementById("genderFilter");
-    // genderFilter.addEventListener("click", genderFilterShow)
-
     let totalProductsCount = document.getElementById("totalProductsCount");
     totalProductsCount.textContent = "[" + data.length + "]";
 
+    //Product display Function
     function showProducts(d) {
 
         parent.innerHTML = null;
@@ -800,13 +821,13 @@
             parent.append(box);
         });
     }
-
     showProducts(data);
 
     if (localStorage.getItem("productDetails") == null) {
         localStorage.setItem("productDetails", JSON.stringify([]));
     }
 
+    //Local Storage data access Function
     function productDetails(p) {
 
         var productPage = JSON.parse(localStorage.getItem("productDetails"));
@@ -820,30 +841,16 @@
         window.location.href = "adidas_productDescription.html";
     }
 
-    function sortLH() {
-        let arr = data.sort((a, b) => a.price - b.price);
-        showProducts(arr);
-    }
 
-    function sortHL() {
-        let arr = data.sort((a, b) => b.price - a.price);
-        showProducts(arr);
-    }
 
+
+
+    //Clear Filter Function
     function clearFilter() {
         showProducts(resetFilter);
     }
 
-    function genderFilterShow() {
-
-        let genderArray = data.filter(function (element) {
-            return (element.gender == "men");
-        });
-        console.log(genderArray);
-
-    }
-
-    // Gender Filter
+    // Gender Filter Function
     function showGender() {
 
         var gender = document.getElementById("genderFilter").value;
@@ -862,6 +869,34 @@
                     return (element.gender == "women");
                 });
                 showProducts(genderArrayWomen);
+            }
+        }
+    }
+
+    //Price sort Function
+    function priceSortFilter() {
+
+        let priceFilter = document.getElementById("priceFilter");
+
+        for (let i = 0; i < priceFilter.length; i++) {
+
+            if (priceFilter.value == "low") {
+
+                //Sort Low to High Function
+                function sortLH() {
+                    let arr = data.sort((a, b) => a.price - b.price);
+                    showProducts(arr);
+                }
+                sortLH();
+
+            } else if (priceFilter.value == "high") {
+
+                //Sort High to Low Function
+                function sortHL() {
+                    let arr = data.sort((a, b) => b.price - a.price);
+                    showProducts(arr);
+                }
+                sortHL();
             }
         }
     }
