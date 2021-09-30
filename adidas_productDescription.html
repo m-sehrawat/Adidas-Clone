@@ -254,6 +254,13 @@
         }
 
         @media(max-width: 600px){
+
+            #topHeader div{
+                /* margin: 0.5% 0% 0% 15%; */
+                color: black
+                /* letter-spacing: 2px; */
+            }
+
             #rightSideBox{
                 width: 30%;
                 margin-left: 50%;   
@@ -266,28 +273,45 @@
                 flex-direction: row;
             }
             #imageBox{
-                max-width: 600px;
+                width: 600px;
                 height: 600px;
             }
             #descriptionBox{
                 width: 400px;
                 height: 500px;
-                margin-left: -5px;
+                margin-left: -1px;
                 position:relative;
             }
             #specificationBox{
-                width: 600px;
-                height: 600px;
+                width: 500px;
+                height: 500px;
+                margin-left: -25px;
                 margin-top: 20px;
             }
-            #footer{
-                background-color:  rgb(80, 80, 80);
-                text-align: center;
+            #footer {
+                background-color: #363738;
                 font-style: normal;
-                color: white;
-                font-family:sans-serif;
-                padding: 1%;
+                color: #C8CBCC;
+                height: 110px;
                 margin-top: 1100px;
+                font-size: 12px;
+                border: 1px solid #363738;
+            }
+
+            #footer>p:first-child {
+                display: inline-block;
+                margin-left: 220px;
+                margin-top: 15px;
+            }
+
+            #footer>p:nth-child(2) {
+                display: inline-block;
+                margin-left: 80px;
+            }
+
+            #footer>p:last-child {
+                margin-top: 10px;
+                margin-left: 130px;
             }
         }
 
