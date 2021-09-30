@@ -9,6 +9,7 @@
     <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" type="image/x-icon">
 
     <style>
         * {
@@ -127,12 +128,12 @@
         }
 
         .buttonsDiv {
-            position: -webkit-sticky;
-            position: sticky;
+            /* position: fixed; */
             top: 10px;
             border-top: 1px solid #eaebec;
             border-bottom: 1px solid #eaebec;
             margin-bottom: 10px;
+            background-color: red;
 
         }
 
@@ -575,8 +576,14 @@
                 "Gender", "Men",
                 "Country of Origin", "Indonesia"
             ],
-            gender: "men",
+            gender: "women",
+            division: "shoes",
+            productType: "shoes",
+            brand: "originals",
+            collection: "adicolor",
+            sustainability: "sustainable",
         },
+
         {
             img: [
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0a76afaa91be462b800aabb2011f8888_9366/Face_Covers_3-Pack_M-L_Black_H08837_21_model.jpg",
@@ -763,6 +770,201 @@
             ],
             gender: "kids",
         },
+
+        //New data - women - shoes
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6161d010750f4a0b8e07ab4a00a10991_9366/Ultimashow_Shoes_Black_FX3636_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/70ce25e53e1840c7b668ab5e010d4867_9366/Ultimashow_Shoes_Black_FX3636_010_hover_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/25591871772945f1bb3dab4a00a11a05_9366/Ultimashow_Shoes_Black_FX3636_02_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c357f22ec79441149706ab4a00a12b19_9366/Ultimashow_Shoes_Black_FX3636_04_standard.jpg",
+            ],
+            name: "ULTIMASHOW SHOES",
+            category: "Women Running",
+            price: 2999,
+            size: [4, 5, 6, 7, 8],
+            color: [
+                "Core Black",
+                "Core Blue",
+                "Cloud White"
+            ],
+            rating: 4.8,
+            specifications: [
+                "Mesh and synthetic upper",
+                "Comfortable textile lining",
+                "Durable rubber outsole",
+                "Color: Core Black / Core Blue / Cloud White"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Women",
+                "Country of Origin", "Vietnam"
+            ],
+            gender: "women",
+            division: "shoes",
+            productType: "shoes",
+            brand: "originals",
+            collection: "adicolor",
+            sustainability: "sustainable",
+
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/25591871772945f1bb3dab4a00a11a05_9366/Ultimashow_Shoes_Black_FX3636_02_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c357f22ec79441149706ab4a00a12b19_9366/Ultimashow_Shoes_Black_FX3636_04_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6161d010750f4a0b8e07ab4a00a10991_9366/Ultimashow_Shoes_Black_FX3636_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/70ce25e53e1840c7b668ab5e010d4867_9366/Ultimashow_Shoes_Black_FX3636_010_hover_standard.jpg",
+            ],
+            name: "ULTIMASHOW SHOES",
+            category: "Women Running",
+            price: 2799,
+            size: [5, 6, 7],
+            color: [
+                "Core Black",
+                "Core Blue",
+                "Cloud White"
+            ],
+            rating: 4.6,
+            specifications: [
+                "Regular fit",
+                "Textile lining and EVA midsole",
+                "Durable rubber outsole",
+                "Color: Core Black / Core Blue / Cloud White"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Women",
+                "Country of Origin", "Malaysia"
+            ],
+            gender: "women",
+            division: "shoes",
+            productType: "sneakers",
+            brand: "performance",
+            collection: "superNova",
+            sustainability: "sustainable",
+
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0a49a99062064231ba8dad3300fc7f5d_9366/X_Speedflow.4_Indoor_Boots_Red_FY3346_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a3327348621645909a1aad3300fc89f2_9366/X_Speedflow.4_Indoor_Boots_Red_FY3346_02_standard_hover.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/d163ef7eac324f09a6caad3300fc956c_9366/X_Speedflow.4_Indoor_Boots_Red_FY3346_04_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/ddc511cd28b04950bb94ad3300fc9b96_9366/X_Speedflow.4_Indoor_Boots_Red_FY3346_05_standard.jpg",
+            ],
+            name: "X SPEEDFLOW.4 INDOOR BOOTS",
+            category: "Football",
+            price: 4999,
+            size: [6, 7, 8, 9, 10, 11, 12],
+            color: [
+                "Core Black",
+                "Red",
+                "Solar Red"
+            ],
+            rating: 5.0,
+            specifications: [
+                "Lace closure",
+                "Coated textile upper",
+                "Rubber outsole for indoor surfaces",
+                "Color: Red / Core Black / Solar Red"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Women",
+                "Country of Origin", "Cambodia"
+            ],
+            gender: "women",
+            division: "shoes",
+            productType: "football",
+            brand: "sportInspired",
+            collection: "ultraBoost",
+            sustainability: "vegan",
+
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/685f0c5417224bd3a7cfaba301261e83_9366/Superstar_Shoes_White_FW2502_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/54883ee42b6b46b69e89aba3002f5ddd_9366/Superstar_Shoes_White_FW2502_010_hover_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/9d9823cd4a2147a9a913aba301262c6f_9366/Superstar_Shoes_White_FW2502_02_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/3e1eda8b897f4d99ab49aba301263a66_9366/Superstar_Shoes_White_FW2502_04_standard.jpg",
+            ],
+            name: "SUPERSTAR SHOES",
+            category: "Women Originals",
+            price: 4500,
+            size: [6, 7, 8],
+            color: [
+                "Cloud White",
+                "Signal Pink",
+                "Shock Purple"
+            ],
+            rating: 5.0,
+            specifications: [
+                "Regular fit",
+                "Rubber outsole",
+                "Leather upper",
+                "Color: Cloud White / Signal Pink / Shock Purple"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Women",
+                "Country of Origin", "Indonesia"
+            ],
+            gender: "women",
+            division: "shoes",
+            productType: "football",
+            brand: "sportInspired",
+            collection: "ultraBoost",
+            sustainability: "vegan",
+
+        },
+
+        // Women cloths
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/420cc5514bed47f68e4cac43014baef3_9366/High-Support_Bra_Black_GL0589_21_model.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/30a25fdc2b8740bd9388acbd0099018f_9366/High-Support_Bra_Black_GL0589_HM1.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a62af36c06284eb08191acbd0098fc0b_9366/High-Support_Bra_Black_GL0589_HM3.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/2809ec6451614f0fb3adac43014be009_9366/High-Support_Bra_Black_GL0589_22_model.jpg",
+            ],
+            name: "SUPERSTAR SHOES",
+            category: "Women Originals",
+            price: 4500,
+            size: [6, 7, 8, 9],
+            color: [
+                "Cloud White",
+                "Signal Pink",
+                "Shock Purple"
+            ],
+            rating: 5.0,
+            specifications: [
+                "Regular fit",
+                "Rubber outsole",
+                "Leather upper",
+                "Color: Cloud White / Signal Pink / Shock Purple"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Women",
+                "Country of Origin", "Indonesia"
+            ],
+            gender: "women",
+            division: "shoes",
+            productType: "football",
+            brand: "sportInspired",
+            collection: "ultraBoost",
+            sustainability: "vegan",
+
+        },
+
 
 
     ]
