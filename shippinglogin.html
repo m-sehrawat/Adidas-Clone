@@ -193,7 +193,7 @@
         </div>
         <div id="rightSideBox">
             <button><a href="signup.html">sign up</a></button>
-            <button id="signin">log in</button>
+            <button id="signinbtn">log in</button>
             <p>
                 <i class="material-icons">shopping_bag</i>
             </p>
@@ -312,7 +312,9 @@
         <div class="right">
             <div class="r1">
                 <h1>LOGIN</h1>
-                <form>
+                <span id="checklogin" style="color: red;"></span>
+                <form id="myform" onsubmit="signinfun(event)">
+                    <span id="rename" style="color: red;"></span>
                     <input type="text" id="el" placeholder="email" />
                     <input type="password" id="pass" placeholder="password" />
                     <p style="font-size: 18px;"><a href="">forgotten your password</a></p>
@@ -323,7 +325,8 @@
 
                         <div style="font-size: 18;">keep me logged in</div>
                     </div>
-                    <div style="margin: 10px 20px;"><button id="btnone">Log IN </button></div>
+                    <div style="margin: 10px 20px;"><input type="submit" id="btnone" value="login" /></div>
+
                 </form>
             </div>
             <div style="margin: 20px;">
@@ -376,50 +379,96 @@
 
 </html>
 <script>
-    var signin = document.getElementById("signin");
-    signin.addEventListener("click", signin);
+    var signinbtn = document.getElementById("signinbtn");
+    signinbtn.addEventListener("click", signin);
 
     function signin() {
         alert("plz login below");
+        document.getElementById("rename").innerHTML = "** please login here **";
+        var el = document.getElementById("el").value;
+        if (el == "") {
+            document.getElementById("el").style.border = "1px solid red";
+
+        }
+
+
+
+    }
+
+
+    function signinfun(e) {
+        e.preventDefault();
+        let checklogin = document.getElementById("check");
+        let myform = document.getElementById("myform");
+        let email = myform.el.value;
+        let password = myform.pass.value;
+        //console.log("data:", name, email, password);
+        let all_users = JSON.parse(localStorage.getItem("users"));
+
+        all_users.forEach(function(user) {
+
+            if (email === user.email && password === user.password) {
+                alert("login successful");
+                document.getElementById("checklogin").innerHTML = "login successful";
+                document.getElementById("rename").innerHTML = "";
+                document.getElementById("el").value = "";
+                document.getElementById("el").value = "";
+                return true;
+
+            }
+        });
+
+
     }
 
 
 
+
     function review(e) {
-        e.preventDefault();
-        let myformone = document.getElementById("myformone");
-        let firstname = document.getElementById("fname").value;
-        let lastname = document.getElementById("lname").value;
-        let street = document.getElementById("street").value;
-        let landmark = document.getElementById("landmark").value;
-        let additional_info = document.getElementById("additional_info").value;
-        let city = document.getElementById("city").value;
-        let state = document.getElementById("state").value;
-        let pincode = document.getElementById("pincode").value;
-        let email = document.getElementById("email").value;
-        let mobile = document.getElementById("mobile").value;
-
-
-        if (localStorage.getItem("shipping") === null) {
-            localStorage.setItem("shipping", JSON.stringify([]));
+        if (document.getElementById("checklogin").innerHTML !== "login successful") {
+            alert("plz login first");
         }
-        var address = {
-            firstname,
-            lastname,
-            street,
-            landmark,
-            additional_info,
-            city,
-            state,
-            pincode,
-            email,
-            mobile
-        };
-        let cart = JSON.parse(localStorage.getItem("shipping"));
-        cart.push(address);
-        localStorage.setItem("shipping", JSON.stringify(cart));
 
-        console.log(cart);
+
+
+        if (document.getElementById("checklogin").innerHTML === "login successful")
+
+        {
+            e.preventDefault();
+            let myformone = document.getElementById("myformone");
+            let firstname = document.getElementById("fname").value;
+            let lastname = document.getElementById("lname").value;
+            let street = document.getElementById("street").value;
+            let landmark = document.getElementById("landmark").value;
+            let additional_info = document.getElementById("additional_info").value;
+            let city = document.getElementById("city").value;
+            let state = document.getElementById("state").value;
+            let pincode = document.getElementById("pincode").value;
+            let email = document.getElementById("email").value;
+            let mobile = document.getElementById("mobile").value;
+
+
+            if (localStorage.getItem("shipping") === null) {
+                localStorage.setItem("shipping", JSON.stringify([]));
+            }
+            var address = {
+                firstname,
+                lastname,
+                street,
+                landmark,
+                additional_info,
+                city,
+                state,
+                pincode,
+                email,
+                mobile
+            };
+            let cart = JSON.parse(localStorage.getItem("shipping"));
+            cart.push(address);
+            localStorage.setItem("shipping", JSON.stringify(cart));
+
+            console.log(cart);
+        }
 
     }
 </script>

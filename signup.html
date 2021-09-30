@@ -52,16 +52,16 @@
         <form id="myform" onsubmit="signup(event)">
             <table>
 
-                <input type="text" id="n" placeholder="enter your name *">
+                <input type="text" id="n" placeholder="enter your name" required>
                 <span id="username" class="red"></span>
 
-                <input type="text" id="e" placeholder="enter your email *">
+                <input type="text" id="e" placeholder="enter your email *" required>
                 <span id="email" class="red"></span>
 
                 <input type="number" id="m" placeholder="mobile *">
                 <span id="mobile" class="red"></span>
 
-                <input type="password" id="p" placeholder="enter your password *">
+                <input type="password" id="p" placeholder="enter your password *" required>
                 <span id="password" class="red"></span>
 
                 <input type="submit" value="SIGNUP" id="submit" name="submit" />
@@ -94,6 +94,8 @@
             let arr = JSON.parse(localStorage.getItem("users"));
             arr.push(user);
             localStorage.setItem("users", JSON.stringify(arr));
+            //window.location.href = "shippinglogin.html";
+            alert("registered successfully");
             window.location.href = "shippinglogin.html";
             document.getElementById("n").value = "";
             document.getElementById("e").value = "";
