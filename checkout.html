@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cart</title>
+    <title>Checkout</title>
 
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -14,18 +14,24 @@
     <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet"
         type="text/css" />
 
+        <link rel = "icon" href = " https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg"
+        type = "image/x-icon">
+
+        
+
     <style>
         /* ---------- Header-Part ----------- */
 
-        #header{
+        #header {
             /* border: 1px solid gray; */
             display: flex;
             min-height: 50px;
         }
-        .adidasLogo{
+
+        .adidasLogo {
             width: 70px;
             margin-top: 15px;
-            margin-left: 50px;    
+            margin-left: 50px;
             cursor: pointer;
         }
 
@@ -90,6 +96,9 @@
         #display {
             display: grid;
             gap: 3%;
+            margin-bottom: 3%;
+            border: 1px;
+
         }
 
         #checkOut {
@@ -103,8 +112,6 @@
             padding: 5% 0% 10% 10%;
             font-size: 18px;
             box-shadow: 10px 5px 5px grey;
-            ;
-            font-family: monospace;
             font-style: normal;
             display: grid;
             grid-template-columns: auto auto;
@@ -167,6 +174,7 @@
             font-family: sans-serif;
             padding: 1%;
             margin-top: 10px;
+            font-size: 10px;
         }
 
         #mouseOver:hover {
@@ -200,12 +208,20 @@
         #applyBtn {
             margin-left: 81%;
 
+
         }
 
         #applyBtn:hover {
             color: white;
             background-color: black;
             cursor: pointer;
+
+
+        }
+
+        #btnr:hover {
+            background-color: black;
+            color: white;
         }
     </style>
 
@@ -240,12 +256,13 @@
 
                 <strong id="yourBag"> YOUR BAG </strong>
                 <p id="totalPrice">
-
+                    No items
                 </p>
 
             </div>
 
-            <div id="display"></div>
+            <div id="display"> Your Bag is EMPTY! </div>
+
 
 
             <br>
@@ -347,40 +364,22 @@
 
 <script>
 
-    let data = [{
-        img: "https://assets.adidas.com/images/w_280,h_280,f_auto,q_auto:sensitive/e4570dbace014404bb25ac67011e3fbf_9366/FZ4505_620_FZ4505_01_standard.jpg.jpg?sh=364&strip=false&sw=364",
-        name: "Y-3 SLIDE",
-        color: "BLACK/BLACK/RED",
-        size: "8",
-        stock: "Low in Stock",
-        price: "17000"
-    }, {
-        img: "https://assets.adidas.com/images/w_280,h_280,f_auto,q_auto:sensitive/e4570dbace014404bb25ac67011e3fbf_9366/FZ4505_620_FZ4505_01_standard.jpg.jpg?sh=364&strip=false&sw=364",
-        name: "Y-3 SLIDE",
-        color: "BLACK/BLACK/RED",
-        size: "8",
-        stock: "Low in Stock",
-        price: "17000"
-    }]
+    let data = JSON.parse(localStorage.getItem("adidasCart"))
 
 
     let PromoCode = [{ pc: "masai30", discount: "30" }, { pc: "fw12", discount: "20" }]
 
     let parent = document.getElementById("display")
-    let tp = 0;
-    let ti = 0;
+    var tp = 0;
+    var ti = 0;
+    var dl = null;
 
     function showProducts(d) {
 
-
+        parent.innerHTML = null
 
         d.forEach(function (product) {
 
-
-
-
-
-            console.log("data := ", product)
             let div = document.createElement("div")
             div.style = "display : flex ; gap : 3%;border:1px solid rgb(133, 133, 133)"
 
@@ -389,24 +388,32 @@
             div1.style = "box-sizing: border-box;width:32%"
 
             let div2 = document.createElement("div")
+            div2.style = "box-sizing: border-box;width:100%; border:1px;display:grid"
             let div3 = document.createElement("div")
-            div3.style = "display : flex; gap :5px;box-sizing: border-box"
+            div3.style = "display : flex; gap :5px;box-sizing: border-box;width : 100%; border:1px "
             let div4 = document.createElement("div")
             let div5 = document.createElement("div")
+            div5.style = "box-sizing: border-box; border :1px "
             let div6 = document.createElement("div")
+            div6.style = " border :1px "
             let div7 = document.createElement("div")
             let div8 = document.createElement("div")
+            let btn = document.createElement("button")
+            btn.setAttribute("id", "btnr")
+            btn.style = "width: 100%;height:10% ;font-size:20px;padding-bottom: 30px ;"
+
+            btn.innerHTML = "×"
 
 
 
 
-            div6.style = "border:1px; margin-left: 80%;display:flex;gap:20%;"
-            div7.style = "box-sizing: border-box;border:1px"
-            div8.style = "font-size:20px;"
+            div6.style = " box-sizing: border-box; border:1px  ;display:flex;gap:3%;flex-grow: 1;"
+            div7.style = "box-sizing: border-box;border:1px  ;display:grid;gap:-10px;margin-right:2%"
+            div8.style = "font-size:20px;border:1px ;flex-grow: 3;text-align: right;margin-right:4%"
 
 
             let image = document.createElement("img")
-            image.src = product.img
+            image.src = product.img[3]
             image.style = "width:100% ;height:100%"
 
             div1.append(image)
@@ -416,29 +423,111 @@
             let size = document.createElement("p")
             let stock = document.createElement("p")
             let price = document.createElement("p")
+            let totalPrice1 = document.getElementById("totalPrice1")
             stock.style = "font-weight: bold;font-size:20px"
 
-            let icon1 = document.createElement("img")
-            let icon2 = document.createElement("img")
-            icon1.src = "outline_highlight_off_black_24dp.png"
-            icon2.src = "outline_favorite_border_black_24dp.png"
+            // let icon1 = document.createElement("i")
+            let icon2 = document.createElement("i")
+            // icon1.style = "border : 1px ;"
+            icon2.style = "border : 1px ; margin-top : -200%;"
+
+            // icon1.setAttribute("class", "fas fa-times")
+            icon2.setAttribute("class", "far fa-heart")
 
 
 
-            name.textContent = product.name;
+
+
+            name.textContent = product.name
             color.textContent = product.color
             size.textContent = "SIZE :" + product.size
             stock.textContent = product.stock
             price.textContent = "₹" + product.price
 
 
+
             tp += Number(product.price)
             ti++
+
+            totalPrice1.textContent = tp
+
+
+
+            if (tp <= 3000 && tp > 0) {
+
+                let delivery = document.getElementById("delivery")
+
+                delivery.textContent = "₹" + 50
+                dl = "50"
+                tp = tp + 50
+
+
+                let totalItem = document.getElementById("totalItem")
+                let totalPrice = document.getElementById("totalPrice")
+
+                let totalPrice2 = document.getElementById("totalPrice2")
+
+                totalPrice1.style = "font-weight: bold;"
+                totalPrice2.style = "font-weight: bold;"
+
+                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
+                totalItem.textContent = ti + " Items"
+
+                totalPrice2.textContent = tp
+
+
+
+            }
+
+            else {
+
+                let delivery = document.getElementById("delivery")
+
+                delivery.textContent = "Free"
+                dl = "Free"
+
+
+                let totalItem = document.getElementById("totalItem")
+                let totalPrice = document.getElementById("totalPrice")
+                let totalPrice1 = document.getElementById("totalPrice1")
+                let totalPrice2 = document.getElementById("totalPrice2")
+
+                totalPrice1.style = "font-weight: bold;"
+                totalPrice2.style = "font-weight: bold;"
+
+                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
+                totalItem.textContent = ti + " Items"
+                totalPrice1.textContent = tp
+                totalPrice2.textContent = tp
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+            btn.onclick = function () {
+                remove1(product)
+            }
+
+
 
 
 
             div8.append(price)
-            div7.append(icon1, icon2)
+            div7.append(btn, icon2)
+
+
+
 
             div5.append(name, color, size, stock)
             div6.append(div8, div7)
@@ -454,61 +543,16 @@
 
 
 
+
+
+
         })
     }
 
     showProducts(data)
 
-    console.log("totalprice :", tp)
 
-    if (tp <= 2000) {
-
-        let delivery = document.getElementById("delivery")
-
-        delivery.textContent = "₹" + 50
-        tp = tp + 50
-
-
-        let totalItem = document.getElementById("totalItem")
-        let totalPrice = document.getElementById("totalPrice")
-        let totalPrice1 = document.getElementById("totalPrice1")
-        let totalPrice2 = document.getElementById("totalPrice2")
-
-        totalPrice1.style = "font-weight: bold;"
-        totalPrice2.style = "font-weight: bold;"
-
-        totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
-        totalItem.textContent = ti + " Items"
-        totalPrice1.textContent = tp
-        totalPrice2.textContent = tp
-
-
-
-    }
-
-    else {
-
-        let delivery = document.getElementById("delivery")
-
-        delivery.textContent = "Free"
-
-
-        let totalItem = document.getElementById("totalItem")
-        let totalPrice = document.getElementById("totalPrice")
-        let totalPrice1 = document.getElementById("totalPrice1")
-        let totalPrice2 = document.getElementById("totalPrice2")
-
-        totalPrice1.style = "font-weight: bold;"
-        totalPrice2.style = "font-weight: bold;"
-
-        totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
-        totalItem.textContent = ti + " Items"
-        totalPrice1.textContent = tp
-        totalPrice2.textContent = tp
-
-
-
-    }
+    let promoflag = 0;
 
     function promo(e) {
         e.preventDefault()
@@ -520,52 +564,151 @@
 
             if (p.pc === promocode) {
 
+                if ( p.pc != "X") {
 
 
-                tp = tp - tp * Number(p.discount) / 100
 
-                let totalPrice = document.getElementById("totalPrice")
-                let totalPrice1 = document.getElementById("totalPrice1")
-                let totalPrice2 = document.getElementById("totalPrice2")
 
-                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
-                totalPrice1.textContent = tp
-                totalPrice2.textContent = tp
+                    tp = tp - tp * Number(p.discount) / 100
 
-                alert("Promo Code Applied Successfully!")
+                    let totalPrice = document.getElementById("totalPrice")
+                    let totalPrice1 = document.getElementById("totalPrice1")
+                    let totalPrice2 = document.getElementById("totalPrice2")
 
-                count++
+                    totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
+                    totalPrice1.textContent = tp
+                    totalPrice2.textContent = tp
 
+                    alert("Promo Code Applied Successfully!")
+
+                    count++
+                    promoflag++
+                    p.pc = "X"
+
+                    return
+
+
+                }
+
+               
 
             }
+
+            else if (p.pc=="X") {
+            alert("Promo Code Already Aplied")
+           return
+        } 
+
+        else{
+
+            count=0;
+        }
 
 
         })
 
         console.log(count)
-        if (count == 0) {
-            alert("Invalid Promo Code")
+        if(count==0){
+            alert("Invalid Promo code")
         }
+    
+       
 
     }
 
 
-    function checkOut(){
+    function checkOut() {
 
-        if(JSON.parse(localStorage.getItem("checkout")===null)){
+        if (JSON.parse(localStorage.getItem("checkout") === null)) {
 
-            localStorage.setItem("checkout",JSON.stringify([]))
+            localStorage.setItem("checkout", JSON.stringify([]))
         }
 
         let arr = JSON.parse(localStorage.getItem("checkout"))
 
-         let checkoutData = {totalPrice : tp,totalItem : ti} 
+        let checkoutData = { totalPrice: tp, totalItem: ti, delivery: dl }
 
-         arr.push(checkoutData)
+        if (data.length != 0) {
+            arr.push(checkoutData)
 
-         localStorage.setItem("checkout",JSON.stringify(arr))
+            localStorage.setItem("checkout", JSON.stringify(arr))
 
-         window.location.ref = "Shipping page.html"
+            window.location.ref = "Shipping page.html"
+
+        }
+
+        else{
+            alert("Add Something to Bag!")
+        }
+
+    }
+
+    function remove1(p) {
+
+        // let newdata = null
+        for (i = 0; i < data.length; i++) {
+            if (data[i].name === p.name) {
+                data.splice(i, 1)
+
+
+
+                // newdata = data
+                ti = 0;
+                tp = 0;
+                console.log("NewData after remove ", data)
+
+                if (data.length != 0) {
+
+                    showProducts(data)
+                }
+                else {
+                    showProducts(data)
+
+
+
+                    console.log("Bag is empty", data)
+                    let delivery = document.getElementById("delivery")
+
+                    delivery.textContent = "Your Bag is Empty!"
+                    tp = 0;
+                    ti = 0;
+
+                    let parent = document.getElementById("display")
+                    let totalItem = document.getElementById("totalItem")
+                    let totalPrice = document.getElementById("totalPrice")
+                    let totalPrice2 = document.getElementById("totalPrice2")
+                    let totalPrice1 = document.getElementById("totalPrice1")
+
+                    totalPrice1.style = "font-weight: bold;"
+                    totalPrice2.style = "font-weight: bold;"
+
+                    totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
+                    totalItem.textContent = ti + " Items"
+
+                    totalPrice2.textContent = tp
+                    totalPrice1.textContent = tp
+
+                    parent.style = "font-weight: bold;box-shadow: 10px 5px 5px grey;"
+
+                    parent.textContent = "YOUR BAG IS EMPTY!"
+
+
+
+
+
+                }
+
+
+                return
+            }
+        }
+
+        if (newdata.length === 0) {
+
+
+
+        }
+
 
     }
 
