@@ -70,7 +70,7 @@
         .right {
             width: 40%;
             margin: 1% 1%1% 6%;
-            padding: 1%;
+            padding: 10px;
             display: block;
         }
         
@@ -160,15 +160,14 @@
         }
         
         .r1 {
-            margin: 70px 30px;
+            margin-top: 20px;
         }
         
         #btnone {
-            width: 300px;
+            width: 70px;
             height: 40px;
             background-color: black;
             color: white;
-            margin: 10px 10px;
         }
         
         #promo {
@@ -182,6 +181,13 @@
         
         .need {
             padding: 40px;
+            border: 1px solid gray;
+            margin: 30px;
+        }
+        
+        #forg {
+            display: flex;
+            margin: 20px 60px;
         }
     </style>
 </head>
@@ -204,7 +210,7 @@
 
     <div style="display: flex;">
         <div class="left">
-            <h1 style="margin: 30px;">SHIPPING ADDRESS</h1>
+            <h1 style="margin: 10px 30px;">SHIPPING ADDRESS</h1>
             <form id="myformone" onsubmit="review(event)">
 
 
@@ -233,23 +239,16 @@
                 <input type="number" id="pincode" placeholder="Pin code" required>
 
                 <div class="country">country:<strong>INDIA</strong></div>
-                <div class="arrive">
-                    <div class="heading">ARRIVING</div>
-                    <div>
-                        <img src="https://tse1.mm.bing.net/th?id=OIP.UZpmbWSEka2e4g1IBx9FMgAAAA&pid=Api&P=0&w=300&h=300" style="width: 40px; height: 30px;">
-                    </div>
-                </div>
+
                 <div class="standard">
-                    <div>STANDARD DELIVERY</div>
+                    <div><b>STANDARD DELIVERY</b></div>
                     <div class="van">
-                        <div>
-                            <img src="https://www.graphicsprings.com/filestorage/stencils/b2d72bf45cfa33b3614ba97ffca6212f.png?width=150&height=150" style="width: 50px; height: 40px;" />
-                        </div>
+
                         <div style="font-size: 15px;"> within 3-9 bussiness days </div>
                     </div>
                 </div>
                 <div class="info">
-                    <h1><strong>CONTACT INFORMATION</strong></h1>
+                    <h1 style="font-size: 20px;"><strong><u>CONTACT INFORMATION</u></strong></h1>
                     <P>we will use these details to keep you inform on your delivery</P>
                 </div>
                 <div class="mob">
@@ -257,50 +256,11 @@
                     <input type="number" id="mobile" placeholder="Mobile Number" required>
                 </div>
 
-                <div class="c">
 
-                    <div class="c1">
-                        <div class="c11">
-                            <input type="checkbox" name="check" id="">
-                        </div>
-                        <div class="c12">
-                            <label> My billing and delivery informations are same</label>
-                        </div>
-                    </div>
-
-
-                    <div class="c2">
-                        <div>
-                            <input type="checkbox" name="check">
-                        </div>
-
-                        <div>
-                            <label> I'm 18+ years old. </label>
-                        </div>
-                    </div>
-                    <div class="c3">
-                        <div class="">
-                            <input type="checkbox" name="check" id="">
-                        </div>
-                        <div>
-                            <label> I consent to adidas India Marketing Pvt. Ltd. using my personal data for marketing and opinion research purposes. This includes analysing my overall interactions with adidas (such as my shopping history, use of apps, social media and personal data I share with adidas) in order to send me personalised commercial messages about adidas products. adidas may contact me through email, SMS, regular email, apps or though other communication channels provided by me. What does this mean?
-                        </label>
-                        </div>
-                    </div>
-
-                    <div class="c4">
-                        <div>
-                            <input type="checkbox" name="check">
-                        </div>
-                        <div>
-                            <label> I have read and accepted the Terms & Conditions and the adidas Privacy Policy.</label>
-                        </div>
-                    </div>
-                </div>
 
 
                 <div class="revbtn">
-                    <input type="submit" id="rev">
+                    <input type="submit" id="rev" value="REVIEW & PAY">
                 </div>
 
 
@@ -311,25 +271,23 @@
 
         <div class="right">
             <div class="r1">
-                <h1>LOGIN</h1>
+                <h1 style="text-align: center;">LOGIN</h1>
                 <span id="checklogin" style="color: red;"></span>
                 <form id="myform" onsubmit="signinfun(event)">
                     <span id="rename" style="color: red;"></span>
                     <input type="text" id="el" placeholder="email" />
                     <input type="password" id="pass" placeholder="password" />
-                    <p style="font-size: 18px;"><a href="forgetpassword.html">forgotten your password</a></p>
-                    <div class="log">
-                        <div>
-                            <input type="checkbox" name="keep" style="width: 40px; height: 20px;">
-                        </div>
+                    <div id="forg">
 
-                        <div style="font-size: 18;">keep me logged in</div>
+                        <div style=" text-align: left;"><input type="submit" id="btnone" value="login" /></div>
+
+                        <div style="width: 300px; padding: 20px; margin-top: 0px;">
+                            <a href="forgetpassword.html"><b>forgotten your password</b></a></div>
                     </div>
-                    <div style="margin: 10px 20px;"><input type="submit" id="btnone" value="login" /></div>
 
                 </form>
             </div>
-            <div style="margin: 20px;">
+            <div style="margin: 10px 30px; border: 1px solid gray; padding: 10px;">
                 <table>
                     <tr>
                         <td colspan="2" style="height: 50px;font-family: 'Times New Roman', Times, serif; font-size: 25px;"><strong>ORDER SUMMARY</strong></td>
@@ -351,14 +309,15 @@
                     </tr>
                 </table>
 
-                <div class="pro"><input type="promo" name="promo" id="promo" placeholder="enter your promo code"></div>
+
             </div>
 
 
 
 
-
-            <h1>ORDERS DETAILS</h1>
+            <div style="width: 90%; height: auto; border: 1px solid gray; margin: 10px 30px;">
+                <h1 style="font-size: 20px; font-family: 'Times New Roman', Times, serif; "><u>ORDERS DETAILS</u></h1>
+            </div>
             <div class="order_details">
 
             </div>
@@ -367,10 +326,9 @@
 
 
 
-            <div>
-                <p style="margin:10px 40px;">Need Help...</p>
-            </div>
+
             <div class="need">
+                <p style="margin:10px 5px; font-size: 20px; font-family: 'Times New Roman', Times, serif;"><u>Need Help...</u></p>
                 <div><a href="">Delivery</a></div>
                 <div><a href="">Return & Refund</a></div>
                 <div><a href="">ordering & payment</a></div>
