@@ -189,6 +189,30 @@
             display: flex;
             margin: 20px 60px;
         }
+        
+        #footer {
+            background-color: #363738;
+            font-style: normal;
+            color: #C8CBCC;
+            height: 110px;
+            margin-top: 10px;
+            font-size: 12px;
+            border: 1px solid #363738;
+        }
+        
+        #footer>p:first-child {
+            display: inline-block;
+            margin: 0% 0% 2% 16%;
+        }
+        
+        #footer>p:nth-child(2) {
+            display: inline-block;
+            margin: 1% 0% 2% 45%;
+        }
+        
+        #footer>p:last-child {
+            margin: 0% 0% 2% 16%;
+        }
     </style>
 </head>
 
@@ -287,30 +311,13 @@
 
                 </form>
             </div>
-            <div style="margin: 10px 30px; border: 1px solid gray; padding: 10px;">
-                <table>
-                    <tr>
-                        <td colspan="2" style="height: 50px;font-family: 'Times New Roman', Times, serif; font-size: 25px;"><strong>ORDER SUMMARY</strong></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 1000px; height: 25px; font-family: 'Times New Roman', Times, serif;" id="td1">TOTAL ITEMS</td>
-                        <td id="td2">price</td>
-
-                    </tr>
-                    <tr>
-                        <td style="width: 1000px; height: 25px;font-family: 'Times New Roman', Times, serif;">DELIVERY</td>
-                        <td id="td3">FREE</td>
-
-                    </tr>
-                    <tr>
-                        <td style="width: 1000px; height: 25px; font-family: 'Times New Roman', Times, serif; font-size: 18;"><strong>TOTAL</strong></td>
-                        <td id="td4">total_price</td>
-
-                    </tr>
-                </table>
-
+            <div>
+                <span style="height: 50px;font-family: 'Times New Roman', Times, serif; font-size: 25px;">
+                    <strong>ORDER SUMMARY</strong></span>
 
             </div>
+
+
 
 
 
@@ -341,54 +348,18 @@
     </div>
 
     </div>
-
+    <footer>
+        <div id="footer">
+            <p>India</p>
+            <p>Privacy Policy &nbsp; &nbsp; | &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp; &nbsp; Cookies</p>
+            <p>© 2021 adidas India Marketing Pvt Ltd</p>
+        </div>
+    </footer>
 
 </body>
 
 </html>
 <script>
-    let arrone = JSON.parse(localStorage.getItem("checkout"));
-    let parent = document.getElementById("order_details");
-
-    function showProducts() {
-        arrone.forEach(function(product) {
-            let div1 = document.createElement("div");
-            div1.style.display = "flex";
-            let div2 = document.createElement("div");
-            let div3 = document.createElement("div");
-            let img = createElement("img");
-            img.src = product.img;
-            div2.append(img);
-            let name = document.createElement("p")
-            let color = document.createElement("p")
-            let size = document.createElement("p")
-                //let stock = document.createElement("p")
-            let price = document.createElement("p")
-            let totalPrice = document.createElement("totalPrice")
-            let totalItem = document.createElement("totalItem")
-
-            name.textContent = product.name
-            color.textContent = product.color
-            size.textContent = "SIZE :" + product.size
-                //stock.textContent = product.stock
-            price.textContent = "₹" + product.price
-            div3.append(name, color, size, price);
-            div1.append(div2, div3);
-            totalPrice.textContent = product.totalPrice;
-            totalItem.textContent = product.totalItem;
-            document.getElementById("td1").textContent = totalItem;
-            document.getElementById("td2").textContent = totalPrice;
-            document.getElementById("td4").textContent = totalPrice;
-            parent.append(div1);
-
-
-
-
-        });
-    }
-    showProducts();
-
-
     var signinbtn = document.getElementById("signinbtn");
     signinbtn.addEventListener("click", signin);
 
