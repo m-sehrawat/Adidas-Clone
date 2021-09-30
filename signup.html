@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 8px 10px 6px 10px;
+        }
+        
+        #n,
+        #e,
+        #m,
+        #p {
+            width: 98%;
+            height: 40px;
+            margin: 4px;
+        }
+        
+        #submit {
+            text-align: center;
+            margin: 4px 40%;
+        }
+        
+        .up {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            padding: 4px;
+        }
+        
+        @media(max-width:700px) {
+            .up {
+                width: 100%;
+                background-color: white;
+            }
+        }
+        
+        .red {
+            color: red;
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="up">
+        <h1>SIGNUP </h1>
+        <form id="myform" onsubmit="signup(event)">
+            <table>
+
+                <input type="text" id="n" placeholder="enter your name" required>
+                <span id="username" class="red"></span>
+
+                <input type="text" id="e" placeholder="enter your email *" required>
+                <span id="email" class="red"></span>
+
+                <input type="number" id="m" placeholder="mobile *">
+                <span id="mobile" class="red"></span>
+
+                <input type="password" id="p" placeholder="enter your password *" required>
+                <span id="password" class="red"></span>
+
+                <input type="submit" value="SIGNUP" id="submit" name="submit" />
+            </table>
+        </form>
+    </div>
+
+
+
+    <script type="text/javascript">
+        function signup(e) {
+            e.preventDefault();
+
+            let myform = document.getElementById("myform");
+            let name = myform.n.value;
+            let email = myform.e.value;
+            let mobile = myform.m.value;
+            let password = myform.p.value;
+            //console.log("data:", name, email, password);
+            if (localStorage.getItem('users') === null) {
+
+                localStorage.setItem("users", JSON.stringify([]))
+            }
+            var user = {
+                name,
+                email,
+                mobile,
+                password
+            };
+            let arr = JSON.parse(localStorage.getItem("users"));
+            arr.push(user);
+            localStorage.setItem("users", JSON.stringify(arr));
+            //window.location.href = "shippinglogin.html";
+            alert("registered successfully");
+            window.location.href = "shippinglogin.html";
+            document.getElementById("n").value = "";
+            document.getElementById("e").value = "";
+            document.getElementById("m").value = "";
+            document.getElementById("p").value = "";
+
+        }
+    </script>
+
+
+</body>
+
+</html>

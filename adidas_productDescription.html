@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adidas Product Details</title>
+    <link rel = "icon" href = 
+"https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" 
+        type = "image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,17 +16,36 @@
     
     <style>
         *{
-            font-family: sans-serif;
+            font-family: "AdihausDIN",Helvetica, Arial, sans-serif;
+        }
+        body {
+            margin: 0px;    
         }
         /* header */
+        #topHeader {
+            display: flex;
+            background-color: black;
+            color: white;
+            height: 30px;
+            flex-grow: 0px;
+        }
+
+        #topHeader div {
+            margin: 8px 0px 0px 250px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
         #header{
             /* border: 1px solid gray; */
             display: flex;
+            min-height: 50px;
         }
         .adidasLogo{
-            width: 100px;
-            margin-top: 3%;
-            margin-left: 2%;
+            width: 70px;
+            margin-top: 15px;
+            margin-left: 50px;    
+            cursor: pointer;
         }
         #rightSideBox{
             /* border: 1px solid red; */
@@ -37,11 +59,13 @@
             background-color: white;
             border: 0px solid white;
             color: gray;
+            cursor: pointer;
         }
         #rightSideBox > p{
             /* border: 1px solid red; */
             margin-top: 5%;
             margin-left: 50%;
+            cursor: pointer;
         }
         
         /* product descrption box */
@@ -111,6 +135,7 @@
             color: black;
             background-color: white;
             border: 1px solid rgb(175, 170, 170);
+            cursor: pointer;
         }
         .sizeButtonClicked{
             width: 70px;
@@ -118,6 +143,12 @@
             margin-top: 20px;
             color: white;
             background-color: black;
+        }
+        .sizeerror{
+            margin-top: 2%;
+            margin-left: 5%;
+            font-size: 13px;
+            color: white;
         }
         .addtoCartBtn{
             width: 70%;
@@ -128,6 +159,7 @@
             color: white;
             text-align: left;
             font-weight: 600;
+            cursor: pointer;
         }
         .shippingDet{
             margin-left: 5%;
@@ -162,39 +194,115 @@
             color: #37474F;
         }
 
-        #footer{
-            height: 100px;
-            margin-top: 200px;
-            background-color: rgb(83, 78, 78);
+        #footer {
+            background-color: #363738;
+            font-style: normal;
+            color: #C8CBCC;
+            height: 110px;
+            margin-top: 10px;
+            font-size: 12px;
+            border: 1px solid #363738;
+        }
+
+        #footer>p:first-child {
+            display: inline-block;
+            margin: 0% 0% 2% 16%;
+        }
+
+        #footer>p:nth-child(2) {
+            display: inline-block;
+            margin: 1% 0% 2% 45%;
+        }
+
+        #footer>p:last-child {
+            margin: 0% 0% 2% 16%;
+        }
+
+        @media(max-width: 600px){
+            #rightSideBox{
+                width: 30%;
+                margin-left: 50%;   
+            }
+            #productDescription{
+                max-width: 600px;
+                height: 600px;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            #imageBox{
+                max-width: 600px;
+                height: 600px;
+            }
+            #descriptionBox{
+                width: 400px;
+                height: 500px;
+                margin-left: -5px;
+                position:relative;
+            }
+            #specificationBox{
+                width: 600px;
+                height: 600px;
+                margin-top: 20px;
+            }
+            #footer{
+                background-color:  rgb(80, 80, 80);
+                text-align: center;
+                font-style: normal;
+                color: white;
+                font-family:sans-serif;
+                padding: 1%;
+                margin-top: 1100px;
+            }
+        }
+
+        a{
+            color: black;
         }
 
     </style>
 </head>
 <body>
 
+    <div id="topHeader">
+        <div>FREE DELIVERY FOR ALL ORDERS NOW</div>
+        <div>FREE RETURNS</div>
+        <div>SIGN UP & GET 15% OFF</div>
+    </div>
+
     <div id="header">
-        <div>
-            <img class="adidasLogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDNRJXxCU1AnirWkNe7UHTAV2kCA2d1e8lfdbQpLeKz7GWCo-&s">
-        </div>
+        <a href="adidas_home_page.html"><div>
+            <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
+        </div></a>
+
         <div id="rightSideBox">
             <button>sign up</button>
             <button>log in</button>
             <p>
-                <i class="material-icons">shopping_bag</i>  
+                <a href="checkout.html"><i class="material-icons">shopping_bag</i></a>    
             </p>  
         </div>
     </div>
     <hr>
 
     <div id="productDescription">
-        <div id="imageBox"></div>
+        <div id="imageBox">
+            <div id="navigationBtns">
+                <a href="adidas_home_page.html"><span><i class="fa fa-long-arrow-left"></i>&nbsp; &nbsp;BACK</span></a>
+                <a href="adidas_home_page.html"><span>Home</span></a>
+            </div>
+        </div>
         <div id="descriptionBox"></div>
         <div id="specificationBox"></div>
     </div>
 
-    <div id="footer">
-
-    </div>
+    <footer>
+        <div id="footer">
+            <p>India</p>
+            <p>Privacy Policy &nbsp; &nbsp; | &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp; &nbsp; Cookies</p>
+            <p>© 2021 adidas India Marketing Pvt Ltd</p>
+        </div>
+    </footer>
 
 
     <script>
@@ -214,6 +322,7 @@
                 imageBoxContainer.innerHTML = null;
                 descriptionBoxContainer.innerHTML = null;
                 specificationBoxContainer.innerHTML = null;
+
                 //product image details
                 var imgOne = document.createElement("img");
                 imgOne.src = product.img[0];
@@ -271,35 +380,42 @@
                 productSizeBtnOne.style.marginLeft = "5%";
                 productSizeBtnOne.textContent = product.size[0];
                 productSizeBtnOne.onclick = function(){
-                    selectSize(productSizeBtnOne);
+                    selectSize(productSizeBtnOne, productSizeBtnTwo, 
+                    productSizeBtnThree, productSizeBtnFour);
                 }
                 //product description Box - size button
                 var productSizeBtnTwo = document.createElement("button");
                 productSizeBtnTwo.setAttribute("class", "sizeButton");
                 productSizeBtnTwo.textContent = product.size[1];
                 productSizeBtnTwo.onclick = function(){
-                    selectSize(productSizeBtnTwo);
+                    selectSize(productSizeBtnTwo, productSizeBtnOne, 
+                    productSizeBtnThree, productSizeBtnFour);
                 }
                 //product description Box - size button
                 var productSizeBtnThree = document.createElement("button");
                 productSizeBtnThree.setAttribute("class", "sizeButton");
                 productSizeBtnThree.textContent = product.size[2];
                 productSizeBtnThree.onclick = function(){
-                    selectSize(productSizeBtnThree);
+                    selectSize(productSizeBtnThree, productSizeBtnOne,
+                    productSizeBtnTwo, productSizeBtnFour);
                 }
                 //product description Box - size button
                 var productSizeBtnFour = document.createElement("button");
                 productSizeBtnFour.setAttribute("class", "sizeButton");
                 productSizeBtnFour.textContent = product.size[3];
                 productSizeBtnFour.onclick = function(){
-                    selectSize(productSizeBtnFour);
+                    selectSize(productSizeBtnFour, productSizeBtnOne,
+                    productSizeBtnTwo, productSizeBtnThree);
                 }
+                var sizeError = document.createElement("div");
+                sizeError.textContent = "Please select your size";
+                sizeError.setAttribute("class", "sizeerror");
                 //product description Box - Add to cart
                 var productAddtoCartBtn = document.createElement("button");
                 productAddtoCartBtn.textContent = "ADD TO BAG";
                 productAddtoCartBtn.setAttribute("class", "addtoCartBtn");
                 productAddtoCartBtn.onclick = function(){
-                    addtocart(product);
+                    addtocart(product, sizeError);
                 }
                 //product description Box - Add to cart details
                 var shippingDetail = document.createElement("div");
@@ -313,7 +429,7 @@
 
                 descriptionBoxContainer.append(productHeading, productColor, 
                 productPrice, priceLabel, productSizeBtnLabel, productSizeBtnOne, productSizeBtnTwo, productSizeBtnThree,
-                productSizeBtnFour, productAddtoCartBtn, shippingDetail, returnDetail);
+                productSizeBtnFour, sizeError, productAddtoCartBtn, shippingDetail, returnDetail);
                 //specification box - specification heading
                 var specificationHeading = document.createElement("ul");
                 specificationHeading.textContent = "SPECIFICATIONS";
@@ -401,49 +517,48 @@
 
         showProducts(productDescriptionArr);
         //select size function
-        function selectSize(p){
+
+        var btnCount = 0;
+        function selectSize(p, a, b, c){
+
             p.setAttribute("class", "sizeButtonClicked");
+            a.setAttribute("class", "sizeButton");
+            b.setAttribute("class", "sizeButton");
+            c.setAttribute("class", "sizeButton");
 
             var sizeArr = productDescriptionArr.filter(function(el){
-                if(el.size == p.textContent);
-                el.size = p.textContent;
-                console.log(el.size);
+                // if(el.size == p.textContent){
+                    el.size = p.textContent;
+                    // console.log(el.size);
+                    btnCount++;
+                // }
             });
 
             showProducts(sizeArr);
         }
+
         //add to cart function
         if(localStorage.getItem("adidasCart") === null){
             localStorage.setItem("adidasCart", JSON.stringify([]));
         }
 
-        function addtocart(p){
-            if(p.size.length == 4){
-                alert("Please select your size");
-                // var sizeError = document.createElement("div");
-                // sizeError.textContent = "Please select your size";
+        // var count = 0;
+        function addtocart(p, s){
+
+            if(btnCount == 0){
+                s.style.color = "red";
             }
-            var arrProducts = JSON.parse(localStorage.getItem("adidasCart"));
-            arrProducts.push(p);
-            localStorage.setItem("adidasCart", JSON.stringify(arrProducts));
+
+            if(btnCount > 0){
+                var arrProducts = JSON.parse(localStorage.getItem("adidasCart"));
+                arrProducts.push(p);
+                localStorage.setItem("adidasCart", JSON.stringify(arrProducts));
+            }
+            // count++;
+
+            
+
         }
-
-
-        
-                
-
-
-        
-        
-
-
-
-
-
-
-
-
-
 
     </script>
     

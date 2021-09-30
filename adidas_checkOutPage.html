@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adidas Checkout</title>
+    <link rel = "icon" href = 
+    "https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" 
+        type = "image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&display=swap" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css"/>
+    <style>
+        *{
+            font-family: "AdihausDIN",Helvetica, Arial, sans-serif;
+        }
+        body {
+            margin: 0px;    
+        }
+        /* header */
+        #header{
+            /* border: 1px solid gray; */
+            display: flex;
+            min-height: 50px;
+        }
+        .adidasLogo{
+            width: 70px;
+            margin-top: 15px;
+            margin-left: 50px;    
+            cursor: pointer;
+        }
+        #rightSideBox{
+            /* border: 1px solid red; */
+            height: 100%;
+            width: 10%;
+            margin-top: 0.5%;
+            margin-left: 80%;
+        }
+        #rightSideBox > button{
+            margin-left: 1%;
+            background-color: white;
+            border: 0px solid white;
+            color: gray;
+            cursor: pointer;
+        }
+        #rightSideBox > p{
+            /* border: 1px solid red; */
+            margin-top: 5%;
+            margin-left: 50%;
+            cursor: pointer;
+        }
+
+
+        .bottom {
+            display: flex;
+        }
+        .left {
+            width: 60%;
+            margin: 1% 1% 5% 8%;
+            padding: 1%;
+            /* border: 1px solid red; */
+        }
+        #el,
+        #pass {
+            width: 40%;
+            height: 50px;
+            margin: 10px;
+        }
+        .right {
+            width: 40%;
+            margin: 1% 1%1% 6%;
+            padding: 1%;
+            display: block;
+        }
+        #fname,
+        #lname {
+            width: 42%;
+            height: 44px;
+            margin-left: 20px;
+        }
+        #additional_info,
+        #city,
+        #pincode,
+        #email,
+        #mobile {
+            width: 42%;
+            height: 44px;
+            margin-top: 40px;
+            margin-left: 20px;
+        }
+        #street,
+        #landmark {
+            width: 88.5%;
+            height: 44px;
+            margin-top: 40px;
+            margin-left: 20px;
+        }
+        #state{
+            width: 43%;
+            height: 50px;
+            margin-top: 40px;
+            margin-left: 20px;
+        }
+        .country {
+            margin: 20px;
+        }
+        
+        .standard {
+            border: 1px solid rgb(196, 186, 186);
+            height: 80px;
+            width: 89%;
+            margin: 20px;
+        }
+        .standard > div:nth-child(1){
+            margin-left: 20px;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        .van{
+            margin-left: 20px;
+            margin-top: 10px;
+            font-size: 14px;
+            color: rgb(56, 54, 54);
+        }
+        
+        .info {
+            margin: 20px;
+            margin-top: 50px;
+            /* border: 1px solid red; */
+        }
+        #contactEmail{
+            margin-left: 1px;
+            width: 46%;
+            height: 44px;
+        }
+        #mobile{
+            margin-left: 1px;
+            width: 46%;
+        }
+
+        #rev {
+            width: 170px;
+            height: 50px;
+            background-color: black;
+            color: white;
+        }
+        .revbtn {
+            margin-top: 50px;
+            margin-left: 22px;
+        }
+
+        #right{
+            width: 40%;
+            height: 1000px;
+            margin-top: 20px;
+            /* border: 1px solid blue; */
+        }
+        #login{
+            width: 65%;
+            height: 400px;
+            margin-top: 70px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgb(216, 209, 209);
+        }
+        .heading{
+            font-size: 30px;
+            font-weight: 700;
+            margin-left: 5%;
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+        #email{
+            width: 88%;
+            height: 44px;
+            margin-left: 5%;
+        }
+        #password{
+            margin-top: 30px;
+            width: 88%;
+            height: 44px;
+            margin-left: 5%;
+        }
+        #submit{
+            background-color: black;
+            color: white;
+            width: 88%;
+            margin-left: 5%;
+            margin-top: 40px;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .orderDetails{
+            width: 65%;
+            height: 200px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgb(216, 209, 209);
+        }
+        .orderHeading{
+            font-size: 20px;
+            font-weight: 700;
+            margin-left: 5%;
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+
+        #footer {
+            background-color: #363738;
+            font-style: normal;
+            color: #C8CBCC;
+            height: 110px;
+            margin-top: 10px;
+            font-size: 12px;
+            border: 1px solid #363738;
+        }
+
+        #footer>p:first-child {
+            display: inline-block;
+            margin: 0% 0% 2% 16%;
+        }
+
+        #footer>p:nth-child(2) {
+            display: inline-block;
+            margin: 1% 0% 2% 45%;
+        }
+
+        #footer>p:last-child {
+            margin: 0% 0% 2% 16%;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header">
+        <div>
+            <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
+        </div>
+        <div id="rightSideBox">
+            <button>sign up</button>
+            <button>log in</button>
+            <p>
+                <i class="material-icons">shopping_bag</i>  
+            </p>  
+        </div>
+    </div>
+    <hr>
+
+    <div class="bottom">
+        <div class="left">
+            <h1 style="margin: 20px;">SHIPPING ADDRESS</h1>
+            <form>
+                <input type="text" id="fname" placeholder="First Name" required>
+                <input type="text" id="lname" placeholder="Last Name" required>
+                <input type="text" id="street" placeholder="Street Address" required>
+                <input type="text" id="landmark" placeholder="Landmark" required>
+                <input type="text" id="additional_info" placeholder="Additional Info" required>
+                <input type="text" id="city" placeholder="City" required>
+                <select id="state" required>
+                    <option>STATE</option>
+                    <option>Andhra Pradesh</option>
+                    <option>Arunachal Pradesh</option>
+                    <option>Bihar</option>
+                    <option>Chhattisgarh</option>
+                    <option>Goa</option>
+                    <option>Haryana</option>
+                    <option>Jammu and Kashmir</option>
+                    <option>Karnataka</option>
+                    <option>Madhya Pradesh</option>
+                    <option>Nagaland</option>
+                </select>
+                <input type="number" id="pincode" placeholder="Pin code" required>
+            </form>
+            <div class="country"><strong>Country: </strong>India</div>
+            
+            <div class="standard">
+                <div><strong>STANDARD DELIVERY</strong></div>  
+                <div class="van">
+                    <div> within 3-9 bussiness days </div>
+                </div>
+            </div>
+            <div class="info">
+                <h1><strong>CONTACT INFORMATION</strong></h1>
+                <div>We'll use these details to keep you inform on your delivery</div>
+                
+                <input type="text" id="contactEmail" placeholder="Email" required>
+                <input type="number" id="mobile" placeholder="Mobile Number" required> 
+            </div>
+
+            <div class="revbtn"><a href=""><button id="rev">REVIEW & PAY</button></a></div>
+    
+        </div>
+
+        <div id="right">
+
+        <!-- Login Details -->
+
+        <div id="login">
+            <div class="heading">LOG IN</div>
+            <form onsubmit="loginform()" id="myform" action="">
+                <input type="email" id="email" placeholder="Email">
+                <input type="password" id="password" placeholder="Password">
+                <input type="submit" id="submit" value="LOG IN">
+            </form>
+        </div>
+        
+        <div class="orderDetails">
+            <div class="orderHeading">ORDERS SUMMARY</div>
+        </div>
+
+        <div class="orderDetails">
+            <div class="orderHeading">ORDERS DETAILS</div>
+        </div>
+            
+        </div>
+    </div>
+
+    <footer>
+        <div id="footer">
+            <p>India</p>
+            <p>Privacy Policy &nbsp; &nbsp; | &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp; &nbsp; Cookies</p>
+            <p>© 2021 adidas India Marketing Pvt Ltd</p>
+        </div>
+    </footer>
+
+    <script>
+
+        function loginform(){
+
+        }
+
+    </script>
+</body>
+</html>
+

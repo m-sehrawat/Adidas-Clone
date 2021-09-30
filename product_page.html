@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        #topHeader {
+            display: flex;
+            background-color: black;
+            color: white;
+            height: 30px;
+            flex-grow: 0px;
+            overflow: hidden;
+        }
+
+        #topHeader div {
+            margin: 0.5% 0% 0% 15%;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        #header {
+            display: flex;
+            height: 80px;
+            border-bottom: 1px solid #eaebec;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .adidasLogo {
+            width: 70px;
+            margin-top: 15px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+
+        #rightSideBox {
+            height: 100%;
+            width: 10%;
+            margin-top: 0.5%;
+            margin-left: 80%;
+        }
+
+        #rightSideBox>button {
+            margin-left: 1%;
+            background-color: white;
+            border: 0px solid white;
+            color: black;
+        }
+
+        #rightSideBox>p {
+            margin-top: 5%;
+            margin-left: 50%;
+        }
+
+        #parent {
+            display: grid;
+            gap: 3px;
+            grid-template-columns: 24.8% 24.8% 24.8% 24.8%;
+            justify-content: center;
+
+        }
+
+        .adjustement {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        img {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        #productHeading {
+            letter-spacing: -4px;
+            font-style: italic;
+            font-weight: 300;
+            font-size: 42px;
+        }
+
+        #totalProductsCount {
+            letter-spacing: 4px;
+            color: #767677;
+            font-size: 15px;
+            font-style: normal;
+            margin-left: 15px;
+        }
+
+        #footer {
+            background-color: #363738;
+            font-style: normal;
+            color: #C8CBCC;
+            height: 110px;
+            margin-top: 10px;
+            font-size: 12px;
+            border: 1px solid #363738;
+        }
+
+        #footer>p:first-child {
+            display: inline-block;
+            margin: 0% 0% 2% 16%;
+        }
+
+        #footer>p:nth-child(2) {
+            display: inline-block;
+            margin: 1% 0% 2% 45%;
+        }
+
+        #footer>p:last-child {
+            margin: 0% 0% 2% 16%;
+        }
+
+        .buttonsDiv {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 10px;
+            border-top: 1px solid #eaebec;
+            border-bottom: 1px solid #eaebec;
+            margin-bottom: 10px;
+
+        }
+
+        .filterButtons {
+            padding: 12px;
+            margin: 5px;
+            font-size: 15px;
+            background-color: white;
+            border: none;
+
+        }
+
+        .filterButtons:hover {
+            border: 1px solid black;
+        }
+
+        #parent>div:hover {
+            border: 1px solid black;
+        }
+
+        .priceDisplay {
+            margin: 1px auto 1px 10px;
+            font-size: 14px;
+        }
+
+        .nameSection {
+            margin: 1px auto 1px 10px;
+            font-size: 14px;
+        }
+
+        .categorySection {
+            margin: 1px auto 1px 10px;
+            font-size: 12px;
+            color: #767677;
+        }
+
+        .colorSection {
+            margin: 1px auto 1px 10px;
+            font-size: 14px;
+            color: #767677;
+        }
+
+        a {
+            color: black;
+        }
+
+        .adjustement>a>span {
+            font-size: 15px;
+            padding: 8px 5px;
+            margin-left: 10px;
+
+        }
+
+        .adjustement>a:first-child>span {
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .adjustement>a>span:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="topHeader">
+        <div>FREE DELIVERY FOR ALL ORDERS NOW</div>
+        <div>FREE RETURNS</div>
+        <div>SIGN UP & GET 15% OFF</div>
+    </div>
+
+    <div id="header">
+        <div>
+            <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
+        </div>
+        <div id="rightSideBox">
+            <button>sign up</button>
+            <button>log in</button>
+            <p>
+                <i class="material-icons">shopping_bag</i>
+            </p>
+        </div>
+    </div>
+
+    <div class="adjustement">
+
+        <a href="adidas_home_page.html"><span><i class="fa fa-long-arrow-left"></i>&nbsp; &nbsp;BACK</span></a>
+        <a href="adidas_home_page.html"><span>Home</span></a>
+
+
+        <h1 id="productHeading">ALL PRODUCTS<span id="totalProductsCount"></span></h1>
+
+        <div class="buttonsDiv">
+
+            <select name="gender" id="genderFilter" onclick="showGender()" class="filterButtons">
+                <option value="default"> GENDER</option>
+                <option value="men">MEN</option>
+                <option value="women">WOMEN</option>
+            </select>
+
+            <select name="price" id="priceFilter" onclick="priceSortFilter()" class="filterButtons">
+                <option value="default">PRICE</option>
+                <option value="low" class="filterButtons">(Low - High)</option>
+                <option value="high" class="filterButtons">(High - Low)</option>
+            </select>
+
+
+            <button onclick="clearFilter()" class="filterButtons">CLEAR FILTER</button>
+        </div>
+    </div>
+
+    <div id="parent" class="adjustement"></div>
+
+    <footer>
+        <div id="footer">
+            <p>India</p>
+            <p>Privacy Policy &nbsp; &nbsp; | &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp; &nbsp; Cookies</p>
+            <p>© 2021 adidas India Marketing Pvt Ltd</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+
+    let resetFilter = [
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/bda214cecece4abf848cad9b00c0d4f2_9366/Unifactor_Shoes_Blue_EW2427_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b60b9971699248c8b9bbad9b00c0d9b5_9366/Unifactor_Shoes_Blue_EW2427_02_standard_hover.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/43692cb26610436b92e2ad9b00c0dda5_9366/Unifactor_Shoes_Blue_EW2427_04_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c6d1f481a48b4b069971ad9b00c0db61_9366/Unifactor_Shoes_Blue_EW2427_41_detail.jpg"
+            ],
+            name: "UNIFACTOR SHOES",
+            category: "Men Running",
+            price: 1650,
+            size: [7, 8, 9, 10],
+            color: [
+                "Night Marine",
+                "Night Sky",
+                "Stone"
+            ],
+            rating: 3.8,
+            specifications: [
+                "Mesh and synthetic upper",
+                "Comfortable textile lining",
+                "Durable rubber outsole",
+                "Color: Night Marine / Night Sky / Stone"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "India"
+            ]
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/f9615e3982384bd284fda98101347bb0_9366/Advantage_Shoes_White_F36424_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6c4794e061374a66b957a98101349323_9366/Advantage_Shoes_White_F36424_02_standard_hover.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/3bd21597f3ef430bb871a9810134ab13_9366/Advantage_Shoes_White_F36424_04_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/81dc8e64d8d049fa9569a9810134b763_9366/Advantage_Shoes_White_F36424_05_standard.jpg"
+            ],
+            name: "ADVANTAGE SHOES",
+            category: "Men Sport Inspired",
+            price: 3000,
+            size: [7, 8, 9, 10],
+            color: [
+                "Cloud White",
+                "Cloud White",
+                "Green"
+            ],
+            rating: 4,
+            specifications: [
+                "Regular fit",
+                "Cloudfoam Comfort sockliner",
+                "Lace closure",
+                "Color: Cloud White / Cloud White / Green"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "Indonesia"
+            ]
+        },
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0a76afaa91be462b800aabb2011f8888_9366/Face_Covers_3-Pack_M-L_Black_H08837_21_model.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/e166e7b71c4e47b088ddabb2011f97b5_9366/Face_Covers_3-Pack_M-L_Black_H08837_22_model.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/fdea24f2470d4c77872babb2011fb8be_9366/Face_Covers_3-Pack_M-L_Black_H08837_25_model.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/987210f10e464b399209abb201200390_9366/Face_Covers_3-Pack_M-L_Black_H08837_01_laydown.jpg"
+            ],
+            name: "FACE COVERS 3-PACK M/L",
+            category: "Men Sport Inspired",
+            price: 999,
+            size: [7, 8, 9, 10],
+            color: ["Black"],
+            rating: 4.5,
+            specifications: [
+                "Dimensions: 15.25 cm x 17 cm",
+                "Washable for daily use",
+                "Color: Black",
+                "Tight fit for coverage"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "3 N",
+                "Gender", "Men",
+                "Country of Origin", "Vietnam"
+            ]
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/9c2b493978f14d20bb17ab9700a383db_9366/Lite_Racer_CLN_Shoes_Green_FW1335_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/dc729bde449b4eaca833ab9f004f32ee_9366/Lite_Racer_CLN_Shoes_Green_FW1335_010_hover_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a68642a062934d1c835aab9700a39171_9366/Lite_Racer_CLN_Shoes_Green_FW1335_02_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0ecd6478d4454de1bdabab9700a39e94_9366/Lite_Racer_CLN_Shoes_Green_FW1335_04_standard.jpg"
+            ],
+            name: "LITE RACER CLN SHOES",
+            category: "Men Sport Inspired",
+            price: 2500,
+            size: [7, 8, 9, 10],
+            color: [
+                "Legend Earth",
+                "Core Black",
+                "Cloud White"
+            ],
+            rating: 4.6,
+            specifications: [
+                "Regular fit",
+                "Lace closure",
+                "Durable rubber outsole",
+                "Color: Legend Earth / Core Black / Cloud White"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "Myanmar"
+            ]
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/dc04507ce9404c889a3eaba20126b242_9366/ASWEEMOVE_Shoes_Black_FW1676_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/9ede8a9a7c0b4647a05cabac0099a1b3_9366/ASWEEMOVE_Shoes_Black_FW1676_010_hover_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/fa900ab3b9fa45b1a0fbaba20126bf3d_9366/ASWEEMOVE_Shoes_Black_FW1676_02_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6746f16bbf384fd3b0e4aba20126cd92_9366/ASWEEMOVE_Shoes_Black_FW1676_04_standard.jpg"
+            ],
+            name: "ASWEEMOVE SHOES",
+            category: "Men Running",
+            price: 2800,
+            size: [7, 8, 9, 10, 11, 12],
+            color: [
+                "Core Black",
+                "Cloud White",
+                "Core Black"
+            ],
+            rating: 4.6,
+            specifications: [
+                "Regular fit",
+                "Lace closure",
+                "Synthetic outsole",
+                "Color: Core Black / Cloud White / Core Black"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "Vietnam"
+            ]
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/60e1dbd34a5044c5ac4cabdb00c3fc43_9366/ASWEEMOVE_Shoes_Blue_FW1674_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/5a56c5287a1b48aeb13eabec00f5d405_9366/ASWEEMOVE_Shoes_Blue_FW1674_010_hover_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/d579f76dcda6428f8699abdb00c40a6d_9366/ASWEEMOVE_Shoes_Blue_FW1674_02_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/3a96f31f570c4ea0ac5babdb00c4185e_9366/ASWEEMOVE_Shoes_Blue_FW1674_04_standard.jpg"
+            ],
+            name: "ASWEEMOVE SHOES",
+            category: "Men Running",
+            price: 2800,
+            size: [6, 7, 8, 9, 10, 11, 12],
+            color: [
+                "Tech Indigo",
+                "Legend Ink",
+                "Scarlet"
+            ],
+            rating: 4.6,
+            specifications: [
+                "Regular fit",
+                "Lace closure",
+                "Synthetic outsole",
+                "Color: Tech Indigo / Legend Ink / Scarlet"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "Vietnam"
+            ]
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/d798865c9b104fc4893cad9c00631ae3_9366/Unifactor_Shoes_Grey_EW2424_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/86baf08880134b6cb77dad9c0063367b_9366/Unifactor_Shoes_Grey_EW2424_02_standard_hover.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/393a3dbf4a9a4385824cad9c00632a36_9366/Unifactor_Shoes_Grey_EW2424_04_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b9da2ad0542d40d798f6ad9c00631e9a_9366/Unifactor_Shoes_Grey_EW2424_05_standard.jpg"
+            ],
+            name: "UNIFACTOR SHOES",
+            category: "Men Running",
+            price: 1650,
+            size: [7, 8, 9, 10, 11],
+            color: [
+                "Grey Six",
+                "Legacy Gold",
+            ],
+            rating: 3.8,
+            specifications: [
+                "Mesh and synthetic upper",
+                "Durable rubber outsole",
+                "Comfortable textile lining",
+                "Color: Grey Six / Legacy Gold"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "India"
+            ]
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/63ef8d5fbbd44d1494a1ad8500e54a97_9366/Kollide_Shoes_Grey_EW2516_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b51a39a025ef460db377ad8500e5458c_9366/Kollide_Shoes_Grey_EW2516_02_standard_hover.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/4247b2c786224e40ad98ad8500e52056_9366/Kollide_Shoes_Grey_EW2516_04_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/34a38edcbf284a7c9c52ad8500e52aa1_9366/Kollide_Shoes_Grey_EW2516_05_standard.jpg"
+            ],
+            name: "KOLLIDE SHOES",
+            category: "Men Running",
+            price: 2400,
+            size: [6, 7, 8, 9, 10, 11, 12],
+            color: [
+                "Grey Six",
+                "Core Black",
+                "Stone"
+            ],
+            rating: 5.0,
+            specifications: [
+                "Mesh upper",
+                "Cushioned Cloudfoam midsole",
+                "Rubber in key areas for enhanced traction",
+                "Color: Grey Six / Core Black / Stone"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "India"
+            ]
+        },
+
+
+    ]
+
+    let data = [
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/bda214cecece4abf848cad9b00c0d4f2_9366/Unifactor_Shoes_Blue_EW2427_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b60b9971699248c8b9bbad9b00c0d9b5_9366/Unifactor_Shoes_Blue_EW2427_02_standard_hover.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/43692cb26610436b92e2ad9b00c0dda5_9366/Unifactor_Shoes_Blue_EW2427_04_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c6d1f481a48b4b069971ad9b00c0db61_9366/Unifactor_Shoes_Blue_EW2427_41_detail.jpg"
+            ],
+            name: "UNIFACTOR SHOES",
+            category: "Men Running",
+            price: 1650,
+            size: [7, 8, 9, 10],
+            color: [
+                "Night Marine",
+                "Night Sky",
+                "Stone"
+            ],
+            rating: 3.8,
+            specifications: [
+                "Mesh and synthetic upper",
+                "Comfortable textile lining",
+                "Durable rubber outsole",
+                "Color: Night Marine / Night Sky / Stone"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "India"
+            ],
+            gender: "men",
+            division: "clothing",
+            productType: "shoes",
+            brand: "originals",
+            collection: "adicolor",
+            sustainability: "sustainable",
+
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/f9615e3982384bd284fda98101347bb0_9366/Advantage_Shoes_White_F36424_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6c4794e061374a66b957a98101349323_9366/Advantage_Shoes_White_F36424_02_standard_hover.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/3bd21597f3ef430bb871a9810134ab13_9366/Advantage_Shoes_White_F36424_04_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/81dc8e64d8d049fa9569a9810134b763_9366/Advantage_Shoes_White_F36424_05_standard.jpg"
+            ],
+            name: "ADVANTAGE SHOES",
+            category: "Men Sport Inspired",
+            price: 3000,
+            size: [7, 8, 9, 10],
+            color: [
+                "Cloud White",
+                "Cloud White",
+                "Green"
+            ],
+            rating: 4,
+            specifications: [
+                "Regular fit",
+                "Cloudfoam Comfort sockliner",
+                "Lace closure",
+                "Color: Cloud White / Cloud White / Green"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "Indonesia"
+            ],
+            gender: "men",
+        },
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0a76afaa91be462b800aabb2011f8888_9366/Face_Covers_3-Pack_M-L_Black_H08837_21_model.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/e166e7b71c4e47b088ddabb2011f97b5_9366/Face_Covers_3-Pack_M-L_Black_H08837_22_model.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/fdea24f2470d4c77872babb2011fb8be_9366/Face_Covers_3-Pack_M-L_Black_H08837_25_model.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/987210f10e464b399209abb201200390_9366/Face_Covers_3-Pack_M-L_Black_H08837_01_laydown.jpg"
+            ],
+            name: "FACE COVERS 3-PACK M/L",
+            category: "Men Sport Inspired",
+            price: 999,
+            size: [7, 8, 9, 10],
+            color: ["Black"],
+            rating: 4.5,
+            specifications: [
+                "Dimensions: 15.25 cm x 17 cm",
+                "Washable for daily use",
+                "Color: Black",
+                "Tight fit for coverage"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "3 N",
+                "Gender", "Men",
+                "Country of Origin", "Vietnam"
+            ],
+            gender: "men",
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/9c2b493978f14d20bb17ab9700a383db_9366/Lite_Racer_CLN_Shoes_Green_FW1335_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/dc729bde449b4eaca833ab9f004f32ee_9366/Lite_Racer_CLN_Shoes_Green_FW1335_010_hover_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a68642a062934d1c835aab9700a39171_9366/Lite_Racer_CLN_Shoes_Green_FW1335_02_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/0ecd6478d4454de1bdabab9700a39e94_9366/Lite_Racer_CLN_Shoes_Green_FW1335_04_standard.jpg"
+            ],
+            name: "LITE RACER CLN SHOES",
+            category: "Men Sport Inspired",
+            price: 2500,
+            size: [7, 8, 9, 10],
+            color: [
+                "Legend Earth",
+                "Core Black",
+                "Cloud White"
+            ],
+            rating: 4.6,
+            specifications: [
+                "Regular fit",
+                "Lace closure",
+                "Durable rubber outsole",
+                "Color: Legend Earth / Core Black / Cloud White"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "Myanmar"
+            ],
+            gender: "kids",
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/dc04507ce9404c889a3eaba20126b242_9366/ASWEEMOVE_Shoes_Black_FW1676_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/9ede8a9a7c0b4647a05cabac0099a1b3_9366/ASWEEMOVE_Shoes_Black_FW1676_010_hover_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/fa900ab3b9fa45b1a0fbaba20126bf3d_9366/ASWEEMOVE_Shoes_Black_FW1676_02_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6746f16bbf384fd3b0e4aba20126cd92_9366/ASWEEMOVE_Shoes_Black_FW1676_04_standard.jpg"
+            ],
+            name: "ASWEEMOVE SHOES",
+            category: "Women Running",
+            price: 2800,
+            size: [7, 8, 9, 10, 11, 12],
+            color: [
+                "Core Black",
+                "Cloud White",
+                "Core Black"
+            ],
+            rating: 4.6,
+            specifications: [
+                "Regular fit",
+                "Lace closure",
+                "Synthetic outsole",
+                "Color: Core Black / Cloud White / Core Black"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "Vietnam"
+            ],
+            gender: "women",
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/60e1dbd34a5044c5ac4cabdb00c3fc43_9366/ASWEEMOVE_Shoes_Blue_FW1674_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/5a56c5287a1b48aeb13eabec00f5d405_9366/ASWEEMOVE_Shoes_Blue_FW1674_010_hover_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/d579f76dcda6428f8699abdb00c40a6d_9366/ASWEEMOVE_Shoes_Blue_FW1674_02_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/3a96f31f570c4ea0ac5babdb00c4185e_9366/ASWEEMOVE_Shoes_Blue_FW1674_04_standard.jpg"
+            ],
+            name: "ASWEEMOVE SHOES",
+            category: "Women Running",
+            price: 2800,
+            size: [6, 7, 8, 9, 10, 11, 12],
+            color: [
+                "Tech Indigo",
+                "Legend Ink",
+                "Scarlet"
+            ],
+            rating: 4.6,
+            specifications: [
+                "Regular fit",
+                "Lace closure",
+                "Synthetic outsole",
+                "Color: Tech Indigo / Legend Ink / Scarlet"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "Vietnam"
+            ],
+            gender: "women",
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/d798865c9b104fc4893cad9c00631ae3_9366/Unifactor_Shoes_Grey_EW2424_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/86baf08880134b6cb77dad9c0063367b_9366/Unifactor_Shoes_Grey_EW2424_02_standard_hover.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/393a3dbf4a9a4385824cad9c00632a36_9366/Unifactor_Shoes_Grey_EW2424_04_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b9da2ad0542d40d798f6ad9c00631e9a_9366/Unifactor_Shoes_Grey_EW2424_05_standard.jpg"
+            ],
+            name: "UNIFACTOR SHOES",
+            category: "Men Running",
+            price: 1650,
+            size: [7, 8, 9, 10, 11],
+            color: [
+                "Grey Six",
+                "Legacy Gold",
+            ],
+            rating: 3.8,
+            specifications: [
+                "Mesh and synthetic upper",
+                "Durable rubber outsole",
+                "Comfortable textile lining",
+                "Color: Grey Six / Legacy Gold"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "India"
+            ],
+            gender: "women",
+        },
+
+        {
+            img: [
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/63ef8d5fbbd44d1494a1ad8500e54a97_9366/Kollide_Shoes_Grey_EW2516_01_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b51a39a025ef460db377ad8500e5458c_9366/Kollide_Shoes_Grey_EW2516_02_standard_hover.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/4247b2c786224e40ad98ad8500e52056_9366/Kollide_Shoes_Grey_EW2516_04_standard.jpg",
+                "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/34a38edcbf284a7c9c52ad8500e52aa1_9366/Kollide_Shoes_Grey_EW2516_05_standard.jpg"
+            ],
+            name: "KOLLIDE SHOES",
+            category: "Men Running",
+            price: 2400,
+            size: [6, 7, 8, 9, 10, 11, 12],
+            color: [
+                "Grey Six",
+                "Core Black",
+                "Stone"
+            ],
+            rating: 5.0,
+            specifications: [
+                "Mesh upper",
+                "Cushioned Cloudfoam midsole",
+                "Rubber in key areas for enhanced traction",
+                "Color: Grey Six / Core Black / Stone"
+            ],
+            details: [
+                "Attribute", "Value",
+                "Net Quantity", "2 N",
+                "Gender", "Men",
+                "Country of Origin", "India"
+            ],
+            gender: "kids",
+        },
+
+
+    ]
+
+    let parent = document.getElementById("parent");
+
+    let totalProductsCount = document.getElementById("totalProductsCount");
+    totalProductsCount.textContent = "[" + data.length + "]";
+
+    //Product display Function
+    function showProducts(d) {
+
+        parent.innerHTML = null;
+
+        d.forEach(function (product) {
+
+            let box = document.createElement("div");
+
+            let img = document.createElement("img");
+            img.src = product.img[0];
+
+            img.addEventListener("mouseenter", imageswitch);
+            function imageswitch() {
+                img.src = product.img[1];
+            }
+
+            img.addEventListener("mouseleave", imageback);
+            function imageback() {
+                img.src = product.img[0];
+            }
+
+            let price = document.createElement("p");
+            price.textContent = "₹ " + product.price + ".00";
+            price.setAttribute("class", "priceDisplay");
+
+            let name = document.createElement("p");
+            name.textContent = product.name;
+            name.setAttribute("class", "nameSection");
+
+            let category = document.createElement("p");
+            category.textContent = product.category;
+            category.setAttribute("class", "categorySection");
+
+
+            let color = document.createElement("p");
+            color.textContent = product.color.length + " colours";
+            color.setAttribute("class", "colorSection");
+
+            box.append(img, price, name, category, color);
+
+            box.onclick = function () {
+                productDetails(product)
+            }
+
+            parent.append(box);
+        });
+    }
+    showProducts(data);
+
+    if (localStorage.getItem("productDetails") == null) {
+        localStorage.setItem("productDetails", JSON.stringify([]));
+    }
+
+    //Local Storage data access Function
+    function productDetails(p) {
+
+        var productPage = JSON.parse(localStorage.getItem("productDetails"));
+
+        productPage = [];
+
+        productPage.push(p);
+
+        localStorage.setItem("productDetails", JSON.stringify(productPage));
+
+        window.location.href = "adidas_productDescription.html";
+    }
+
+
+
+
+
+    //Clear Filter Function
+    function clearFilter() {
+        showProducts(resetFilter);
+    }
+
+    // Gender Filter Function
+    function showGender() {
+
+        var gender = document.getElementById("genderFilter").value;
+
+        for (let i = 0; i < gender.length; i++) {
+
+            if (gender == "men") {
+                let genderArrayMen = data.filter(function (element) {
+                    return (element.gender == "men");
+                });
+                showProducts(genderArrayMen);
+            }
+
+            if (gender == "women") {
+                let genderArrayWomen = data.filter(function (element) {
+                    return (element.gender == "women");
+                });
+                showProducts(genderArrayWomen);
+            }
+        }
+    }
+
+    //Price sort Function
+    function priceSortFilter() {
+
+        let priceFilter = document.getElementById("priceFilter");
+
+        for (let i = 0; i < priceFilter.length; i++) {
+
+            if (priceFilter.value == "low") {
+
+                //Sort Low to High Function
+                function sortLH() {
+                    let arr = data.sort((a, b) => a.price - b.price);
+                    showProducts(arr);
+                }
+                sortLH();
+
+            } else if (priceFilter.value == "high") {
+
+                //Sort High to Low Function
+                function sortHL() {
+                    let arr = data.sort((a, b) => b.price - a.price);
+                    showProducts(arr);
+                }
+                sortHL();
+            }
+        }
+    }
+
+
+</script>
