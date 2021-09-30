@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adidas Checkout</title>
+    <link rel = "icon" href = 
+    "https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" 
+        type = "image/x-icon">
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -208,17 +212,29 @@
             margin-bottom: 0;
         }
 
-        #footer{
-            background-color:  rgb(80, 80, 80);
-            text-align: center;
+        #footer {
+            background-color: #363738;
             font-style: normal;
-            color: white;
-            font-family:sans-serif;
-            font-size: 12px;
-            padding: 1%;
+            color: #C8CBCC;
+            height: 110px;
             margin-top: 10px;
+            font-size: 12px;
+            border: 1px solid #363738;
         }
 
+        #footer>p:first-child {
+            display: inline-block;
+            margin: 0% 0% 2% 16%;
+        }
+
+        #footer>p:nth-child(2) {
+            display: inline-block;
+            margin: 1% 0% 2% 45%;
+        }
+
+        #footer>p:last-child {
+            margin: 0% 0% 2% 16%;
+        }
         
     </style>
 </head>
@@ -307,12 +323,13 @@
         </div>
     </div>
 
-    <footer  id="footer">
-        <div>
-            |  Privacy Statement  |  Terms and Conditions  |  Imprint  |
-            <p>© 2021 adidas India Marketing Private Limited</p>
+    <footer>
+        <div id="footer">
+            <p>India</p>
+            <p>Privacy Policy &nbsp; &nbsp; | &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp; &nbsp; Cookies</p>
+            <p>© 2021 adidas India Marketing Pvt Ltd</p>
         </div>
-   </footer>
+    </footer>
 
     <script>
 

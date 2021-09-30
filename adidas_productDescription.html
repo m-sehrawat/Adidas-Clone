@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adidas Product Details</title>
+    <link rel = "icon" href = 
+"https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" 
+        type = "image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&display=swap" rel="stylesheet">
-    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css"/>
     
     <style>
         *{
@@ -192,15 +194,28 @@
             color: #37474F;
         }
 
-        #footer{
-                background-color:  rgb(80, 80, 80);
-                text-align: center;
-                font-style: normal;
-                font-size: 10px;
-                color: white;
-                font-family:sans-serif;
-                padding: 1%;
-                margin-top: 10px;
+        #footer {
+            background-color: #363738;
+            font-style: normal;
+            color: #C8CBCC;
+            height: 110px;
+            margin-top: 10px;
+            font-size: 12px;
+            border: 1px solid #363738;
+        }
+
+        #footer>p:first-child {
+            display: inline-block;
+            margin: 0% 0% 2% 16%;
+        }
+
+        #footer>p:nth-child(2) {
+            display: inline-block;
+            margin: 1% 0% 2% 45%;
+        }
+
+        #footer>p:last-child {
+            margin: 0% 0% 2% 16%;
         }
 
         @media(max-width: 600px){
@@ -271,17 +286,23 @@
     <hr>
 
     <div id="productDescription">
-        <div id="imageBox"></div>
+        <div id="imageBox">
+            <div id="navigationBtns">
+                <a href="adidas_home_page.html"><span><i class="fa fa-long-arrow-left"></i>&nbsp; &nbsp;BACK</span></a>
+                <a href="adidas_home_page.html"><span>Home</span></a>
+            </div>
+        </div>
         <div id="descriptionBox"></div>
         <div id="specificationBox"></div>
     </div>
 
-    <footer  id="footer">
-        <div>
-            |  Privacy Statement  |  Terms and Conditions  |  Imprint  |
-            <p>© 2021 adidas India Marketing Private Limited</p>
+    <footer>
+        <div id="footer">
+            <p>India</p>
+            <p>Privacy Policy &nbsp; &nbsp; | &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp; &nbsp; Cookies</p>
+            <p>© 2021 adidas India Marketing Pvt Ltd</p>
         </div>
-   </footer>
+    </footer>
 
 
     <script>
@@ -301,6 +322,7 @@
                 imageBoxContainer.innerHTML = null;
                 descriptionBoxContainer.innerHTML = null;
                 specificationBoxContainer.innerHTML = null;
+
                 //product image details
                 var imgOne = document.createElement("img");
                 imgOne.src = product.img[0];
@@ -495,6 +517,8 @@
 
         showProducts(productDescriptionArr);
         //select size function
+
+        var btnCount = 0;
         function selectSize(p, a, b, c){
 
             p.setAttribute("class", "sizeButtonClicked");
@@ -503,10 +527,11 @@
             c.setAttribute("class", "sizeButton");
 
             var sizeArr = productDescriptionArr.filter(function(el){
-                if(el.size == p.textContent){
+                // if(el.size == p.textContent){
                     el.size = p.textContent;
                     // console.log(el.size);
-                }
+                    btnCount++;
+                // }
             });
 
             showProducts(sizeArr);
@@ -517,23 +542,22 @@
             localStorage.setItem("adidasCart", JSON.stringify([]));
         }
 
-        var count = 0;
+        // var count = 0;
         function addtocart(p, s){
-            
-            if(p.size.length == 4){
+
+            if(btnCount == 0){
                 s.style.color = "red";
             }
 
-            if(count > 1){
-                alert("Product is already added to cart");
-            }
-
-            else if(count <= 1 && p.size.length != 4){
+            if(btnCount > 0){
                 var arrProducts = JSON.parse(localStorage.getItem("adidasCart"));
                 arrProducts.push(p);
                 localStorage.setItem("adidasCart", JSON.stringify(arrProducts));
             }
-            count++;
+            // count++;
+
+            
+
         }
 
     </script>
