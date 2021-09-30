@@ -8,19 +8,17 @@
     <title>cart</title>
 
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet"
-        type="text/css" />
+    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css" />
 
-    <link rel = "icon" href = " https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg"
-        type="image/x-icon">
+    <link rel =  "icon" href =  " https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" type="image/x-icon">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 
+<<<<<<< HEAD
     <style>
         /* ---------- Header-Part ----------- */
 
@@ -246,6 +244,211 @@
             color: white;
         }
     </style>
+=======
+        <style>
+            /* ---------- Header-Part ----------- */
+            
+            #topHeader {
+                display: flex;
+                background-color: black;
+                color: white;
+                height: 30px;
+                flex-grow: 0px;
+                overflow: hidden;
+            }
+            
+            #topHeader div {
+                margin: 0.5% 0% 0% 15%;
+                font-size: 11px;
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+            
+            #header {
+                display: flex;
+                height: 80px;
+                border-bottom: 1px solid #eaebec;
+                margin-bottom: 40px;
+                overflow: hidden;
+            }
+            
+            .adidasLogo {
+                width: 70px;
+                margin-top: 15px;
+                margin-left: 50px;
+                cursor: pointer;
+            }
+            
+            #rightSideBox {
+                height: 100%;
+                width: 10%;
+                margin-top: 0.5%;
+                margin-left: 80%;
+            }
+            
+            #rightSideBox>button {
+                margin-left: 1%;
+                background-color: white;
+                border: 0px solid white;
+                color: black;
+            }
+            
+            #rightSideBox>p {
+                margin-top: 5%;
+                margin-left: 50%;
+            }
+            /* ---------- Cart-part ----------- */
+            
+            * {
+                font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
+            }
+            
+            body {
+                margin: 0px;
+            }
+            
+            button {
+                width: 20%;
+                height: 25px;
+                background-color: white;
+            }
+            
+            #mainBody {
+                margin: auto;
+                width: 70%;
+                display: grid;
+                grid-template-columns: 59% 39%;
+                gap: 2%;
+            }
+            
+            #yourBag {
+                font-size: 40px;
+                line-height: 18px;
+                font-family: sans-serif;
+                font-style: normal;
+            }
+            
+            #bagDetails {
+                margin-top: 3%;
+            }
+            
+            #display {
+                display: grid;
+                gap: 3%;
+                margin-bottom: 3%;
+                border: 1px;
+            }
+            
+            #checkOut {
+                box-sizing: border-box;
+                height: 10px;
+                width: 51%;
+                border: 1px;
+                border-radius: 4px;
+                background-color: rgb(0, 0, 0);
+                color: white;
+                padding: 5% 0% 10% 10%;
+                font-size: 18px;
+                box-shadow: 10px 5px 5px grey;
+                font-style: normal;
+                display: grid;
+                grid-template-columns: auto auto;
+            }
+            
+            #checkOut:hover {
+                cursor: pointer;
+            }
+            
+            #checkOut>div:nth-child(2) {
+                text-align: right;
+                margin-right: 10%;
+            }
+            
+            #checkOut>div:nth-child(2):hover {
+                color: rgb(199, 199, 199);
+                cursor: pointer;
+            }
+            
+            #checkOut>div {
+                height: 100%;
+            }
+            
+            #features {
+                margin-top: 5%;
+                color: rgb(88, 88, 88);
+            }
+            
+            #orderSummery {
+                font-size: 20px;
+            }
+            
+            .orderSummery {
+                margin-top: 10%;
+                margin-bottom: 5%;
+                border: 1px solid rgb(233, 233, 233);
+                background-color: rgb(255, 255, 255);
+            }
+            
+            #table {
+                width: 100%;
+                border-color: 1px solid rgb(133, 133, 133);
+                margin-top: 5%;
+            }
+            
+            #table>tr>td:nth-child(2) {
+                text-align: right;
+            }
+            
+            #footer {
+                background-color: rgb(80, 80, 80);
+                text-align: center;
+                font-style: normal;
+                color: white;
+                font-family: sans-serif;
+                padding: 1%;
+                margin-top: 10px;
+                font-size: 10px;
+            }
+            
+            #mouseOver:hover {
+                background-color: black;
+                color: white;
+                cursor: pointer;
+            }
+            
+            #mouseOver_chekout:hover {
+                color: rgb(199, 199, 199);
+                cursor: pointer;
+            }
+            
+            #promoCodebtn {
+                width: 95%;
+                height: 35px;
+                font-size: 20px;
+                margin-bottom: 2%;
+                padding-left: 5%;
+            }
+            
+            #promocodeForm {
+                margin-bottom: 5%;
+            }
+            
+            #applyBtn {
+                margin-left: 81%;
+            }
+            
+            #applyBtn:hover {
+                color: white;
+                background-color: black;
+                cursor: pointer;
+            }
+            
+            #btnr:hover {
+                background-color: black;
+                color: white;
+            }
+        </style>
+>>>>>>> a9712e37b21601d7d410b1f59dc87bd5f39fe472
 
 </head>
 
@@ -261,8 +464,7 @@
 
         <div id="header">
             <div>
-                <img class="adidasLogo"
-                    src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
+                <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
             </div>
             <div id="rightSideBox">
                 <button>sign up</button>
@@ -396,11 +598,16 @@
 </html>
 
 <script>
-
     let data = JSON.parse(localStorage.getItem("adidasCart"))
 
 
-    let PromoCode = [{ pc: "masai30", discount: "30" }, { pc: "fw12", discount: "20" }]
+    let PromoCode = [{
+        pc: "masai30",
+        discount: "30"
+    }, {
+        pc: "fw12",
+        discount: "20"
+    }]
 
     let parent = document.getElementById("display")
     var tp = 0;
@@ -411,7 +618,7 @@
 
         parent.innerHTML = null
 
-        d.forEach(function (product) {
+        d.forEach(function(product) {
 
             let div = document.createElement("div")
             div.style = "display : flex ; gap : 3%;border:1px solid rgb(133, 133, 133)"
@@ -461,7 +668,7 @@
 
             // let icon1 = document.createElement("i")
             let icon2 = document.createElement("i")
-            // icon1.style = "border : 1px ;"
+                // icon1.style = "border : 1px ;"
             icon2.style = "border : 1px ; margin-top : -200%;"
 
             // icon1.setAttribute("class", "fas fa-times")
@@ -510,9 +717,7 @@
 
 
 
-            }
-
-            else {
+            } else {
 
                 let delivery = document.getElementById("delivery")
 
@@ -548,7 +753,7 @@
 
 
 
-            btn.onclick = function () {
+            btn.onclick = function() {
                 remove1(product)
             }
 
@@ -589,7 +794,7 @@
         let promocode = promocodeForm.promoCodebtn.value
         let count = 0;
 
-        PromoCode.forEach(function (p) {
+        PromoCode.forEach(function(p) {
 
             if (p.pc === promocode) {
 
@@ -621,14 +826,10 @@
 
 
 
-            }
-
-            else if (p.pc == "X") {
+            } else if (p.pc == "X") {
                 alert("Promo Code Already Aplied")
                 return
-            }
-
-            else {
+            } else {
 
                 count = 0;
             }
@@ -655,18 +856,26 @@
 
         let arr = JSON.parse(localStorage.getItem("checkout"))
 
-        let checkoutData = { totalPrice: tp, totalItem: ti, delivery: dl }
+        let checkoutData = {
+            totalPrice: tp,
+            totalItem: ti,
+            delivery: dl
+        }
 
         if (data.length != 0) {
             arr.push(checkoutData)
 
             localStorage.setItem("checkout", JSON.stringify(arr))
 
+<<<<<<< HEAD
             window.location.href = "shippinglogin.html"
 
         }
+=======
+            // window.location.href = "adidas_payment_page1.html"
+>>>>>>> a9712e37b21601d7d410b1f59dc87bd5f39fe472
 
-        else {
+        } else {
             alert("Add Something to Bag!")
         }
 
@@ -715,6 +924,49 @@
                 tp = 0;
                 console.log("NewData after remove ", data)
 
+<<<<<<< HEAD
+=======
+                if (data.length != 0) {
+
+                    showProducts(data)
+                } else {
+                    showProducts(data)
+
+
+
+                    console.log("Bag is empty", data)
+                    let delivery = document.getElementById("delivery")
+
+                    delivery.textContent = "Your Bag is Empty!"
+                    tp = 0;
+                    ti = 0;
+
+                    let parent = document.getElementById("display")
+                    let totalItem = document.getElementById("totalItem")
+                    let totalPrice = document.getElementById("totalPrice")
+                    let totalPrice2 = document.getElementById("totalPrice2")
+                    let totalPrice1 = document.getElementById("totalPrice1")
+
+                    totalPrice1.style = "font-weight: bold;"
+                    totalPrice2.style = "font-weight: bold;"
+
+                    totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
+                    totalItem.textContent = ti + " Items"
+
+                    totalPrice2.textContent = tp
+                    totalPrice1.textContent = tp
+
+                    parent.style = "font-weight: bold;box-shadow: 10px 5px 5px grey;"
+
+                    parent.textContent = "YOUR BAG IS EMPTY!"
+
+
+
+
+
+                }
+
+>>>>>>> a9712e37b21601d7d410b1f59dc87bd5f39fe472
 
                 return
             }
@@ -724,6 +976,7 @@
 
 
     }
+<<<<<<< HEAD
 
     if (data.length == 0) {
 
@@ -734,4 +987,6 @@
 
     console.log("Data length :-", data.length)
 
+=======
+>>>>>>> a9712e37b21601d7d410b1f59dc87bd5f39fe472
 </script>
