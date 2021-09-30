@@ -182,7 +182,7 @@
             margin-top: 5%;
         }
 
-        #table>tr>td:nth-child(2) {
+        #table>tr:nth-child(2) {
             text-align: right;
 
         }
@@ -215,7 +215,7 @@
 
 
         #promoCodebtn {
-            width: 95%;
+            width: 94%;
             height: 35px;
             font-size: 20px;
             margin-bottom: 2%;
@@ -287,17 +287,19 @@
 
                 <strong id="yourBag"> YOUR BAG </strong>
                 <p id="totalPrice">
-                    Your Bag is EMPTY!
+
                 </p>
 
             </div>
 
-            <div id="display"> Your Bag is EMPTY! </div>
+            <div id="display">
+
+            </div>
 
 
 
             <br>
-            <div id="features">
+            <div id=" features">
                 <span id="mouseOver"> <i class="fas fa-truck"></i> &nbsp; <u>Free delivery</u></span> <br><br>
                 <span id="mouseOver"> <i class="fas fa-exchange-alt"></i> &nbsp;<u>30* day free returns</u></span>
                 <br><br>
@@ -338,7 +340,7 @@
                     </tr> -->
 
                     <tr>
-                        <td id="totalItem"></td>
+                        <td id="totalItem">Total item</td>
                         <td id="totalPrice1">₹0</td>
                     </tr>
                     <tr>
@@ -444,7 +446,7 @@
 
 
             let image = document.createElement("img")
-            image.src = product.img[3]
+            image.src = product.img[0]
             image.style = "width:100% ;height:100%"
 
             div1.append(image)
@@ -468,12 +470,12 @@
 
 
 
-
             name.textContent = product.name
             color.textContent = product.color
             size.textContent = "SIZE :" + product.size
             stock.textContent = product.stock
             price.textContent = "₹" + product.price
+
 
 
 
@@ -573,17 +575,13 @@
 
 
 
-
-
-
-
         })
     }
 
     showProducts(data)
 
 
-    let promoflag = 0;
+
 
     function promo(e) {
         e.preventDefault()
@@ -664,7 +662,7 @@
 
             localStorage.setItem("checkout", JSON.stringify(arr))
 
-             window.location.href = "shippinglogin.html"
+            window.location.href = "shippinglogin.html"
 
         }
 
@@ -685,7 +683,7 @@
 
         localStorage.setItem("DAR", JSON.stringify(DataAfterRemove))
 
-        
+
 
 
 
@@ -693,11 +691,12 @@
 
     function remove1(p) {
 
-        // let newdata = null
+
         for (i = 0; i < data.length; i++) {
             if (data[i].name === p.name) {
                 data.splice(i, 1)
-
+                localStorage.setItem("adidasCart", JSON.stringify(data))
+                window.location.reload()
 
                 let DataAfterRemove = []
 
@@ -716,47 +715,6 @@
                 tp = 0;
                 console.log("NewData after remove ", data)
 
-                if (data.length != 0) {
-
-                    showProducts(data)
-                }
-                else {
-                    showProducts(data)
-
-
-
-                    console.log("Bag is empty", data)
-                    let delivery = document.getElementById("delivery")
-
-                    delivery.textContent = "Your Bag is Empty!"
-                    tp = 0;
-                    ti = 0;
-
-                    let parent = document.getElementById("display")
-                    let totalItem = document.getElementById("totalItem")
-                    let totalPrice = document.getElementById("totalPrice")
-                    let totalPrice2 = document.getElementById("totalPrice2")
-                    let totalPrice1 = document.getElementById("totalPrice1")
-
-                    totalPrice1.style = "font-weight: bold;"
-                    totalPrice2.style = "font-weight: bold;"
-
-                    totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
-                    totalItem.textContent = ti + " Items"
-
-                    totalPrice2.textContent = tp
-                    totalPrice1.textContent = tp
-
-                    parent.style = "font-weight: bold;box-shadow: 10px 5px 5px grey;"
-
-                    parent.textContent = "YOUR BAG IS EMPTY!"
-
-
-
-
-
-                }
-
 
                 return
             }
@@ -766,5 +724,14 @@
 
 
     }
+
+    if (data.length == 0) {
+
+        parent.style = "font-weight: bold;box-shadow: 10px 5px 5px grey;"
+
+        parent.textContent = "YOUR BAG IS EMPTY!"
+    }
+
+    console.log("Data length :-", data.length)
 
 </script>
