@@ -317,7 +317,7 @@
                     <span id="rename" style="color: red;"></span>
                     <input type="text" id="el" placeholder="email" />
                     <input type="password" id="pass" placeholder="password" />
-                    <p style="font-size: 18px;"><a href="">forgotten your password</a></p>
+                    <p style="font-size: 18px;"><a href="forgetpassword.html">forgotten your password</a></p>
                     <div class="log">
                         <div>
                             <input type="checkbox" name="keep" style="width: 40px; height: 20px;">
@@ -335,28 +335,38 @@
                         <td colspan="2" style="height: 50px;font-family: 'Times New Roman', Times, serif; font-size: 25px;"><strong>ORDER SUMMARY</strong></td>
                     </tr>
                     <tr>
-                        <td style="width: 1000px; height: 25px; font-family: 'Times New Roman', Times, serif;">TOTAL ITEMS</td>
-                        <td>price</td>
+                        <td style="width: 1000px; height: 25px; font-family: 'Times New Roman', Times, serif;" id="td1">TOTAL ITEMS</td>
+                        <td id="td2">price</td>
 
                     </tr>
                     <tr>
                         <td style="width: 1000px; height: 25px;font-family: 'Times New Roman', Times, serif;">DELIVERY</td>
-                        <td>FREE</td>
+                        <td id="td3">FREE</td>
 
                     </tr>
                     <tr>
                         <td style="width: 1000px; height: 25px; font-family: 'Times New Roman', Times, serif; font-size: 18;"><strong>TOTAL</strong></td>
-                        <td>total_price</td>
+                        <td id="td4">total_price</td>
 
                     </tr>
                 </table>
 
                 <div class="pro"><input type="promo" name="promo" id="promo" placeholder="enter your promo code"></div>
             </div>
+
+
+
+
+
             <h1>ORDERS DETAILS</h1>
             <div class="order_details">
 
             </div>
+
+
+
+
+
             <div>
                 <p style="margin:10px 40px;">Need Help...</p>
             </div>
@@ -379,6 +389,47 @@
 
 </html>
 <script>
+    let arrone = JSON.parse(localStorage.getItem("checkout"));
+    let parent = document.getElementById("order_details");
+
+    function showProducts() {
+        arrone.forEach(function(product) {
+            let div1 = document.createElement("div");
+            div1.style.display = "flex";
+            let div2 = document.createElement("div");
+            let div3 = document.createElement("div");
+            let img = createElement("img");
+            img.src = product.img;
+            div2.append(img);
+            let name = document.createElement("p")
+            let color = document.createElement("p")
+            let size = document.createElement("p")
+                //let stock = document.createElement("p")
+            let price = document.createElement("p")
+            let totalPrice = document.createElement("totalPrice")
+            let totalItem = document.createElement("totalItem")
+
+            name.textContent = product.name
+            color.textContent = product.color
+            size.textContent = "SIZE :" + product.size
+                //stock.textContent = product.stock
+            price.textContent = "₹" + product.price
+            div3.append(name, color, size, price);
+            div1.append(div2, div3);
+            totalPrice.textContent = product.totalPrice;
+            totalItem.textContent = product.totalItem;
+            document.getElementById("td1").textContent = totalItem;
+            document.getElementById("td2").textContent = totalPrice;
+            document.getElementById("td4").textContent = totalPrice;
+
+
+
+
+        });
+    }
+    showProducts();
+
+
     var signinbtn = document.getElementById("signinbtn");
     signinbtn.addEventListener("click", signin);
 

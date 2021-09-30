@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adidas Product Details</title>
     <link rel = "icon" href = 
-"https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" 
-        type = "image/x-icon">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&display=swap" rel="stylesheet">
-    
+    "https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" 
+        type = "image/x-icon">  
+    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         *{
             font-family: "AdihausDIN",Helvetica, Arial, sans-serif;
@@ -36,36 +34,38 @@
             font-weight: bold;
             letter-spacing: 2px;
         }
-        #header{
-            /* border: 1px solid gray; */
+        #header {
             display: flex;
-            min-height: 50px;
+            height: 80px;
+            border-bottom: 1px solid #eaebec;
+            /* margin-bottom: 40px; */
+            overflow: hidden;
         }
-        .adidasLogo{
+
+        .adidasLogo {
             width: 70px;
             margin-top: 15px;
-            margin-left: 50px;    
+            margin-left: 50px;
             cursor: pointer;
         }
-        #rightSideBox{
-            /* border: 1px solid red; */
+
+        #rightSideBox {
             height: 100%;
             width: 10%;
             margin-top: 0.5%;
             margin-left: 80%;
         }
-        #rightSideBox > button{
+
+        #rightSideBox>button {
             margin-left: 1%;
             background-color: white;
             border: 0px solid white;
-            color: gray;
-            cursor: pointer;
+            color: black;
         }
-        #rightSideBox > p{
-            /* border: 1px solid red; */
+
+        #rightSideBox>p {
             margin-top: 5%;
             margin-left: 50%;
-            cursor: pointer;
         }
         
         /* product descrption box */
@@ -79,22 +79,53 @@
         #imageBox{
             width: 68%;
             height: 600px;
+            border: 1px solid rgb(233, 228, 228);
             /* border: 1px solid blue; */
         }
+        a {
+            color: black;
+        }
+        .adjustement{
+            position: absolute;
+            top: 150px;
+            left: 20px;
+        }
+        .adjustement>a>span{
+            font-size: 15px;
+            padding: 8px 5px;
+            margin-left: 10px;
+        }
+        #backBtn{
+            font-size: 15px;
+            padding: 8px 5px;
+            margin-left: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+        .adjustement>a>span:hover, #backBtn:hover{
+            background-color: black;
+            color: white;
+        }
+
         #descriptionBox{
             width: 30%;
             height: 600px;
             margin-left: 68%;
             position:fixed;
-            /* border: 1px solid orange; */
         }
         #specificationBox{
             width: 68%;
-            height: 500px;
-            /* border: 1px solid green; */
+            height: 505px;
+            border: 1px solid rgb(233, 228, 228);
         }
 
         /* product styling */
+        .productImg{
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
         .productHeading{
             font-family: 'Gemunu Libre', sans-serif;
             font-style: italic;
@@ -271,27 +302,25 @@
     </div>
 
     <div id="header">
-        <a href="adidas_home_page.html"><div>
+        <div>
             <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
-        </div></a>
-
+        </div>
         <div id="rightSideBox">
             <button>sign up</button>
             <button>log in</button>
             <p>
-                <a href="checkout.html"><i class="material-icons">shopping_bag</i></a>    
-            </p>  
+                <i class="material-icons">shopping_bag</i>
+            </p>
         </div>
     </div>
-    <hr>
+
+    <div class="adjustement">
+        <a href="adidas_home_page.html"></a><span id="backBtn"><i class="fa fa-long-arrow-left"></i>&nbsp; &nbsp;BACK</span></a>
+        <a href="adidas_home_page.html"><span>Home</span></a>
+    </div>
 
     <div id="productDescription">
-        <div id="imageBox">
-            <div id="navigationBtns">
-                <a href="adidas_home_page.html"><span><i class="fa fa-long-arrow-left"></i>&nbsp; &nbsp;BACK</span></a>
-                <a href="adidas_home_page.html"><span>Home</span></a>
-            </div>
-        </div>
+        <div id="imageBox"></div>
         <div id="descriptionBox"></div>
         <div id="specificationBox"></div>
     </div>
@@ -326,9 +355,7 @@
                 //product image details
                 var imgOne = document.createElement("img");
                 imgOne.src = product.img[0];
-                imgOne.style.minWidth = "100%";
-                imgOne.style.height = "600px";
-                imgOne.style.objectFit = "cover";
+                imgOne.setAttribute("class", "productImg");
                 imageBoxContainer.append(imgOne);
 
                 function slideShow(p){
@@ -343,9 +370,7 @@
 
                         var img = document.createElement("img");
                         img.src = p.img[count];
-                        img.style.minWidth = "100%";
-                        img.style.height = "600px";  
-                        img.style.objectFit = "cover";
+                        img.setAttribute("class", "productImg");
                         imageBoxContainer.append(img);
                         count++;
 
