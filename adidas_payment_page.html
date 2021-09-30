@@ -85,8 +85,47 @@
             height: 300px;
             /* border: 1px solid blue; */
         }
-        .creditcardBtn{
+        #creditcardBtn{
             margin-left: 10px;
+        
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+
+            border: 2px solid #999;
+            transition: 0.2s all linear;
+            margin-right: 5px;
+
+            position: relative;
+            top: 4px;
+        }
+        #creditcardBtn:checked {
+            border: 6px solid black;
+        }
+        #codBtn{
+            margin-left: 10px;
+        
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+
+            border: 2px solid #999;
+            transition: 0.2s all linear;
+            margin-right: 5px;
+
+            position: relative;
+            top: 4px;
+        }
+        #codBtn:checked{
+            border: 6px solid black;
         }
         .creditCardOption{
             font-size: 16px;
@@ -207,7 +246,7 @@
 
                 <form onsubmit="payment(event)" id="myForm" action="">
                     <div>
-                        <input type="radio" class="creditcardBtn" name="creditCard">
+                        <input type="radio" id="creditcardBtn" name="payment" value="creditCard">
                         <label for="creditCard" class="creditCardOption">Credit/Debit Card</label>
                     </div>
                     
@@ -221,7 +260,7 @@
                     <hr>
 
                     <div>
-                        <input type="radio" class="creditcardBtn" name="cod">
+                        <input type="radio" id="codBtn" name="payment" value="cod">
                         <label for="cod" class="creditCardOption">Cash on Delivery</label>
                     </div>
 
