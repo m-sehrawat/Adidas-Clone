@@ -368,30 +368,32 @@
 
 
 <script>
-    let parent = document.getElementById("order_details");
+    let detailspart = document.getElementById("order_details");
 
-    // let data = JSON.parse(localStorage.getItem("DAR"));
+    let data = JSON.parse(localStorage.getItem("DAR"));
 
-    function showProducts() {
+    function showProducts(p) {
 
-        // parent.innerHTML = null
-        let data = JSON.parse(localStorage.getItem("DAR"));
+        parent.innerHTML = null;
 
-        data.forEach(function(product) {
+
+        p.forEach(function(product) {
 
             let div = document.createElement("div")
-            div.style = "display : flex ; gap : 3%;border:1px solid rgb(133, 133, 133)"
+            div.style = "display : block; width:350px;height:300px";
 
 
             let div1 = document.createElement("div")
+            div1.style = "width:150px;height:150px; margin:2px";
 
 
-            let div2 = document.createElement("div")
+            let div2 = document.createElement("div");
+            div2.style = "width:150px;height:150px";
 
 
             let image = document.createElement("img")
             image.src = product.img
-            image.style = "width:150px ;height:150px"
+            image.style = "width:100% ;height:100%";
 
             div1.append(image);
 
@@ -409,10 +411,11 @@
             price.textContent = product.price;
             div2.append(name, color, size, price);
             div.append(div1, div2);
+            detailspart.append(div);
 
         });
     }
-    showProducts();
+    showProducts(data);
 
 
 

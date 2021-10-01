@@ -6,49 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
 </head>
 <style>
-    .main {
+    #products {
         margin: 5% 5% 5% 5%;
-        background-color: gray;
         height: 600px;
-        display: block;
+        display: grid;
+        grid-template-columns: 22% 22% 22% 22%;
+        grid-gap: 5%;
         justify-content: center;
+    }
+    
+    img {
+        width: 20%;
     }
 </style>
 
-<body>
-    <div class="main">
 
-    </div>
+<body>
+    <h1>welcome to cart page</h1>
+    <div id="products"></div>
 </body>
 
 </html>
 <script>
-    let parent = document.getElementById("main");
-    let data = JSON.parse(localStorage.getItem("DAR"));
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    console.log("cart:", cart);
+    let parent = document.getElementById("products");
 
 
+    function showproducts() {
 
-
-
-
-    function showProducts(d) {
-
-        parent.innerHTML = null
-
-        d.forEach(function(product) {
-
-            let div = document.createElement("div")
-            div.style = "width:300px;height:300px";
+        cart.forEach(function(product) {
+            let div = document.createElement("div");
             let img = document.createElement("img");
-            image.src = product.img[0]
-            image.style = "width:100% ;height:100%"
+            img.src = product.img;
+            let product_price = document.createElement("p");
+            product_price.textContent = product.price;
 
-            div.append(image);
+            let product_name = document.createElement("p");
+            product_name.textContent = product.name;
+            let btn = document.createElement("button");
+            btn.innerText = "Add To Card";
+            btn.onclick = function() {
+                addcart(product);
+
+            }
+            div.append(img, product_name, product_price, btn);
             parent.append(div);
-        })
+
+
+        });
     }
-    showProducts(data);
+    showproducts();
 </script>
