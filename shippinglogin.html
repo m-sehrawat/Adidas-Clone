@@ -386,13 +386,13 @@
         p.forEach(function(pro) {
             var div = document.createElement("div");
             var price = document.createElement("p");
-            var size = document.createElement("s");
-            price.textContent = pro.price;
+            var size = document.createElement("p");
+            price.textContent = "Rs." + pro.price;
             size.textContent = pro.size;
             var tabprice = document.getElementById("td1");
             var tabsize = document.getElementById("td2");
-            tabprice.textContent = Number(price);
-            tabsize.textContent = Number(size);
+            tabprice.textContent = price;
+            tabsize.textContent = size;
             div.append(tabprice, tabsize);
             parent.append(div);
 
