@@ -23,10 +23,26 @@
             margin: 0px;    
         }
         /* header */
+        #topHeader {
+            display: flex;
+            background-color: black;
+            color: white;
+            height: 30px;
+            flex-grow: 0px;
+            overflow: hidden;
+        }
+
+        #topHeader div {
+            margin: 0.5% 0% 0% 15%;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
         #header{
             /* border: 1px solid gray; */
             display: flex;
             min-height: 50px;
+            border-bottom: 1px solid #eaebec;
         }
         .adidasLogo{
             width: 70px;
@@ -40,12 +56,13 @@
             width: 10%;
             margin-top: 0.5%;
             margin-left: 80%;
+            cursor: pointer;
         }
         #rightSideBox > button{
             margin-left: 1%;
             background-color: white;
             border: 0px solid white;
-            color: gray;
+            color: black;
             cursor: pointer;
         }
         #rightSideBox > p{
@@ -196,20 +213,31 @@
             text-align: left;
         }
 
-        .orderDetails{
+        #orderSummary, #orderDetails{
             width: 65%;
-            height: 200px;
+            min-height: 200px;
             margin-top: 20px;
             display: flex;
             flex-direction: column;
             border: 1px solid rgb(216, 209, 209);
+        }
+        #orderDetails{
+            border: 0px solid rgb(255, 255, 255);
+            border-top: 1px solid rgb(216, 209, 209);
         }
         .orderHeading{
             font-size: 20px;
             font-weight: 700;
             margin-left: 5%;
             margin-top: 20px;
-            margin-bottom: 0;
+            margin-bottom: 5px;
+        }
+        .orderHeadingDetails{
+            font-size: 20px;
+            font-weight: 700;
+            margin-left: 5%;
+            margin-top: 20px;
+            margin-bottom: 0px;
         }
 
         #footer {
@@ -217,7 +245,7 @@
             font-style: normal;
             color: #C8CBCC;
             height: 110px;
-            margin-top: 10px;
+            margin-top: 500px;
             font-size: 12px;
             border: 1px solid #363738;
         }
@@ -235,11 +263,52 @@
         #footer>p:last-child {
             margin: 0% 0% 2% 16%;
         }
+
+        .orderSumStyle{
+            padding: 5px;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        .orderSumTotalPrice{
+            padding: 5px;
+            padding-left: 20px;
+            padding-bottom: 10px;
+            font-size: 15px;
+            font-weight: bold;
+        }
         
+        .productDetails{
+            height: 130px;
+            display: flex;
+            margin: 1%;
+            border-bottom: 1px solid rgb(216, 209, 209);
+        }
+        .productImgDiv{
+            width: 30%;
+        }
+        .productDetailsDiv{
+            width: 60%;
+        }
+        .productDetailsDesc{
+           font-size: 12px;
+           color: black;
+           margin: 2%;
+        }
+
+        a{
+            color: black;
+        }
+
     </style>
 </head>
 <body>
-    <!-- Header -->
+
+    <div id="topHeader">
+        <div>FREE DELIVERY FOR ALL ORDERS NOW</div>
+        <div>FREE RETURNS</div>
+        <div>SIGN UP & GET 15% OFF</div>
+    </div>
+
     <div id="header">
         <div>
             <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
@@ -248,11 +317,10 @@
             <button>sign up</button>
             <button>log in</button>
             <p>
-                <i class="material-icons">shopping_bag</i>  
-            </p>  
+                <a href="Newcart.html"><i class="material-icons">shopping_bag</i></a>    
+            </p> 
         </div>
     </div>
-    <hr>
 
     <div class="bottom">
         <div class="left">
@@ -312,12 +380,28 @@
             </form>
         </div>
         
-        <div class="orderDetails">
-            <div class="orderHeading">ORDERS SUMMARY</div>
+        <div id="orderSummary">
+            <div class="orderHeading">ORDER SUMMARY</div>
+
+            <table id="orderSummeryTable">
+                <tr>
+                    <td id="item" class ="orderSumStyle"></td>
+                    <td id="totalPrice1" class ="orderSumStyle"></td>
+                </tr>
+                <tr>
+                    <td class ="orderSumStyle">DELIVERY</td>
+                    <td id="delivery" class ="orderSumStyle"></td>
+                </tr>
+                <tr>
+                    <td class ="orderSumStyle"> <strong>TOTAL</strong><br>(Inclusive of all taxes)</td>
+                    <td id="totalPrice2"></td>
+                </tr>
+            </table>
         </div>
 
-        <div class="orderDetails">
-            <div class="orderHeading">ORDERS DETAILS</div>
+        <div id="orderDetails">
+            <div class="orderHeading, orderHeadingDetails">ORDER DETAILS</div>
+            <div id="display"></div>
         </div>
             
         </div>
@@ -336,6 +420,81 @@
         function loginform(){
 
         }
+
+
+        // -------- For Order summary ------
+        let checkoutData = JSON.parse(localStorage.getItem("checkout"));
+        let key = checkoutData.length -1;
+        let ti= checkoutData[key].totalItem;
+        let tp = checkoutData[key].totalPrice;
+
+        // console.log("checkoutData--", checkoutData)
+
+        document.getElementById("item").textContent = ti +" "+"ITEM";
+        document.getElementById("delivery").textContent = checkoutData[key].delivery
+        document.getElementById("totalPrice1").textContent = "₹" + tp + ".00";
+
+        document.getElementById("totalPrice2").setAttribute("class", "orderSumTotalPrice");
+
+        if(checkoutData[key].delivery!="Free"){
+
+            tp = tp+ 50
+            document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
+        }
+       
+        else{
+            document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
+        }
+
+        // -----For order Details Part -----
+        let DAR1 = JSON.parse(localStorage.getItem("DAR"))
+
+        let parent =document.getElementById("display")
+        parent.style = "margin-top :10% ; display :grid;gap :0px"
+
+        DAR1.forEach(function(product){
+
+            let div = document.createElement("div");
+            div.setAttribute("class", "productDetails");
+
+            let div1 = document.createElement("div");
+            div1.setAttribute("class", "productImgDiv");
+
+            let image= document.createElement("img");
+            image.src = product.img[3];
+            image.style.width = "100%";
+
+            div1.append(image);
+
+            let div2 = document.createElement("div");
+            div2.setAttribute("class", "productDetailsDiv");
+            // div2.style = "border:1px ;padding-bottom:18%;height : 50%"
+
+            let name = document.createElement("div");
+            name.setAttribute("class", "productDetailsDesc");
+            name.textContent = product.name;
+            name.style.width = "100%";
+
+            let color = document.createElement("div");
+            color.setAttribute("class", "productDetailsDesc");
+            color.textContent = "COLOR :" +product.color[0];
+
+            let size = document.createElement("div");
+            size.setAttribute("class", "productDetailsDesc");
+            size.textContent = "SIZE : " + product.size;
+
+            let price = document.createElement("div");
+            price.setAttribute("class", "productDetailsDesc");
+            price.textContent = "₹" + product.price;
+
+            div2.append(name,color,size,price)
+
+            div.append(div1,div2)
+
+            parent.append(div)
+
+        });
+
 
     </script>
 </body>
