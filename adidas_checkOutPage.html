@@ -371,7 +371,7 @@
     <div class="bottom">
         <div class="left">
             <h1 style="margin: 20px;">SHIPPING ADDRESS</h1>
-            <form id="myformone">
+            <form id="myformone" onsubmit="reviewfun()">
                 <input type="text" id="fname" placeholder="First Name" required>
                 <input type="text" id="lname" placeholder="Last Name" required>
                 <input type="text" id="street" placeholder="Street Address" required>
@@ -409,7 +409,8 @@
                 <input type="number" id="mobile" placeholder="Mobile Number" required>
             </div>
 
-            <div class="revbtn"><button id="rev">REVIEW & PAY</button></div>
+            <div class="revbtn"><input type="submit" id="rev">REVIEW & PAY</button>
+            </div>
 
         </div>
 
@@ -522,8 +523,8 @@
 
         }
 
-        var review = document.getElementById("rev");
-        review.addEventListener("click", reviewfun);
+        //var review = document.getElementById("rev");
+        //review.addEventListener("click", reviewfun);
 
 
 
