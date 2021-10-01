@@ -88,13 +88,14 @@
 
 
             }
-            var indexwithat = email.indexOf("@");
-            var indexwithdott = email.lastIndexOf(".");
+            //  var indexwithat = email.indexOf("@");
+            // var indexwithdott = email.lastIndexOf(".");
 
-            if (indexwithat < 1 || indexwithdott < indexwithat + 2 || indexwithdott + 2 >= email.length) {
-                alert("plz check @ and dott in your email");
+            // if (indexwithat < 1 || indexwithdott < indexwithat + 2 || indexwithdott + 2 >= email.length) {
+            //    alert("plz check @ and dott in your email");
 
-            } else {
+            //  } 
+            else {
                 if (localStorage.getItem('users') === null) {
 
                     localStorage.setItem("users", JSON.stringify([]))
@@ -108,9 +109,9 @@
                 let arr = JSON.parse(localStorage.getItem("users"));
                 arr.push(user);
                 localStorage.setItem("users", JSON.stringify(arr));
-                //window.location.href = "shippinglogin.html";
+                // window.location.href = "adidas_checkOutPage.html";
                 alert("registered successfully");
-                window.location.href = "shippinglogin.html";
+                window.location.href = "adidas_checkOutPage.html";
                 document.getElementById("n").value = "";
                 document.getElementById("e").value = "";
                 document.getElementById("m").value = "";
