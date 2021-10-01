@@ -318,6 +318,14 @@
             <div class="summary">
                 <span style="height: 50px;font-family: 'Times New Roman', Times, serif; font-size: 20px;">
                     <strong><u>ORDER SUMMARY</u></strong></span>
+                <div id="tab">
+                    <table id="table">
+                        <tr>
+                            <td id="td1">price</td>
+                            <td id="td2">size</td>
+                        </tr>
+                    </table>
+                </div>
 
             </div>
 
@@ -368,62 +376,34 @@
 
 
 <script>
-    let parent = document.getElementById("order_details");
+    let parent = document.getElementById("tab");
 
-    // let data = JSON.parse(localStorage.getItem("DAR"));
+    let data = JSON.parse(localStorage.getItem("DAR"));
 
-    function showProducts() {
+    console.log(data.length);
 
-        // parent.innerHTML = null
-        let data = JSON.parse(localStorage.getItem("DAR"));
+    function showdata(p) {
+        p.forEach(function(pro) {
+            var div = document.createElement("div");
+            var price = document.createElement("p");
+            var size = document.createElement("p");
+            price.textContent = "Rs." + pro.price;
+            size.textContent = "size:" + pro.size;
+            var tabprice = document.getElementById("td1");
+            var tabsize = document.getElementById("td2");
+            tabprice.textContent = price;
+            tabsize.textContent = size;
+            div.append(tabprice, tabsize);
+            parent.append(div);
 
-        data.forEach(function(product) {
-
-            let div = document.createElement("div")
-            div.style = "display : flex ; gap : 3%;border:1px solid rgb(133, 133, 133)"
 
 
-            let div1 = document.createElement("div")
 
-
-            let div2 = document.createElement("div")
-
-
-            let image = document.createElement("img")
-            image.src = product.img
-            image.style = "width:150px ;height:150px"
-
-            div1.append(image);
-
-            let name = document.createElement("p")
-            let color = document.createElement("p")
-            let size = document.createElement("p")
-
-            let price = document.createElement("p")
-
-            name.textContent = product.name;
-            color.textContent = product.color;
-
-            size.textContent = product.size;
-
-            price.textContent = product.price;
-            div2.append(name, color, size, price);
-            div.append(div1, div2);
 
         });
     }
-    showProducts();
 
-
-
-
-
-
-
-
-
-
-
+    showdata(data);
 
 
 
