@@ -479,7 +479,7 @@
             color.textContent = product.color
             size.textContent = "SIZE :" + product.size
             stock.textContent = product.stock
-            price.textContent = "₹" + product.price
+            price.textContent = "₹" + product.price +".00"
 
 
 
@@ -487,7 +487,7 @@
             tp += Number(product.price)
             ti++
 
-            totalPrice1.textContent = tp
+            totalPrice1.textContent = tp +".00"
 
 
 
@@ -495,7 +495,7 @@
 
                 let delivery = document.getElementById("delivery")
 
-                delivery.textContent = "₹" + 50
+                delivery.textContent = "₹" + 50 +".00"
                 dl = "50"
                 tp = tp + 50
 
@@ -508,10 +508,10 @@
                 totalPrice1.style = "font-weight: bold;"
                 totalPrice2.style = "font-weight: bold;"
 
-                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
+                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp +".00"
                 totalItem.textContent = ti + " Items"
 
-                totalPrice2.textContent = tp
+                totalPrice2.textContent = tp + ".00"
 
 
 
@@ -533,10 +533,10 @@
                 totalPrice1.style = "font-weight: bold;"
                 totalPrice2.style = "font-weight: bold;"
 
-                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
+                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp +".00"
                 totalItem.textContent = ti + " Items"
-                totalPrice1.textContent = tp
-                totalPrice2.textContent = tp
+                totalPrice1.textContent = tp +".00"
+                totalPrice2.textContent = tp + ".00"
 
 
 
