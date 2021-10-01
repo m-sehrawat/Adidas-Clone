@@ -389,10 +389,10 @@
             var size = document.createElement("p");
             price.textContent = "Rs." + pro.price;
             size.textContent = pro.size;
-            var tabprice = document.getElementById("td1");
-            var tabsize = document.getElementById("td2");
-            tabprice.textContent = price;
-            tabsize.textContent = size;
+            var tabprice = document.getElementById("td1").innerHTML = price;
+            var tabsize = document.getElementById("td2").innerHTML = size;
+            //tabprice.textContent = price;
+            //tabsize.textContent = size;
             div.append(tabprice, tabsize);
             parent.append(div);
 
