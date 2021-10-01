@@ -80,6 +80,7 @@
         #imageBox{
             width: 68%;
             height: 600px;
+            background-color: #eceff1;
             border: 1px solid rgb(233, 228, 228);
             /* border: 1px solid blue; */
         }
@@ -111,7 +112,7 @@
 
         #descriptionBox{
             width: 30%;
-            height: 600px;
+            max-height: 500px;
             margin-left: 68%;
             position:fixed;
         }
@@ -125,7 +126,7 @@
         .productImg{
             width: 100%;
             height: 600px;
-            object-fit: cover;
+            object-fit:contain;
         }
         .productHeading{
             font-family: 'Gemunu Libre', sans-serif;
@@ -228,12 +229,12 @@
             text-align: center;
             color: #37474F;
         }
-
+        
         #footer {
             background-color: #363738;
             font-style: normal;
             color: #C8CBCC;
-            height: 110px;
+            height: 80px;
             margin-top: 10px;
             font-size: 12px;
             border: 1px solid #363738;
@@ -352,6 +353,8 @@
         <div id="descriptionBox"></div>
         <div id="specificationBox"></div>
     </div>
+
+    <div id="dummyBox"></div>
 
     <footer>
         <div id="footer">

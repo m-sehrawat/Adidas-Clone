@@ -315,6 +315,7 @@
 
                 </form>
             </div>
+            <!--summmaryy page here you have to create...................................................-->
             <div class="summary">
                 <span style="height: 50px;font-family: 'Times New Roman', Times, serif; font-size: 20px;">
                     <strong><u>ORDER SUMMARY</u></strong></span>
@@ -335,7 +336,7 @@
 
 
 
-
+            <!--.......................orders details code here.............................-->
             <div class="order_details">
                 <span style="font-size: 20px; font-family: 'Times New Roman', Times, serif; "><u>ORDERS DETAILS</u></span>
 
@@ -376,27 +377,15 @@
 
 
 <script>
+    //code for fetching data from localstorage   of checkout page.............
     let parent = document.getElementById("tab");
 
     let data = JSON.parse(localStorage.getItem("DAR"));
 
-    console.log(data.length);
+    // console.log(data.length);
 
     function showdata(p) {
         p.forEach(function(pro) {
-            var div = document.createElement("div");
-            var price = document.createElement("p");
-            var size = document.createElement("p");
-            price.textContent = "Rs." + pro.price;
-            size.textContent = "size:" + pro.size;
-            var tabprice = document.getElementById("td1");
-            var tabsize = document.getElementById("td2");
-            tabprice.textContent = price;
-            tabsize.textContent = size;
-            div.append(tabprice, tabsize);
-            parent.append(div);
-
-
 
 
 
