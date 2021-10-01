@@ -110,6 +110,36 @@
             color: white;
         }
 
+        .imgNavigationBtns{
+            position: absolute;
+            top: 380px;
+            left: 0px;
+            /* border: 1px solid red; */
+            width: 1030px;
+            height: 50px;
+            display: flex;
+        }
+        .prev, .next{
+            width: 50px;
+            height: 50px;
+            margin-left: 30px;
+            border: 1px solid black;
+            background-color: white;
+            cursor: pointer;
+        }
+        .next{
+            margin-left: 83%;
+        }
+        .prevNxtBtns{
+            position: absolute;
+            top: 200px;
+            left: 0px;
+            border: 1px solid red;
+            width: 1030px;
+            height: 50px;
+            display: flex;
+        }
+
         #descriptionBox{
             width: 30%;
             max-height: 500px;
@@ -348,13 +378,17 @@
         <a href="adidas_home_page.html"><span>Home</span></a>
     </div>
 
+    <div class="prevNxtBtns">
+        <i class="material-icons-outlined">
+            arrow_back
+        </i>
+    </div>
+
     <div id="productDescription">
         <div id="imageBox"></div>
         <div id="descriptionBox"></div>
         <div id="specificationBox"></div>
     </div>
-
-    <div id="dummyBox"></div>
 
     <footer>
         <div id="footer">
@@ -383,33 +417,61 @@
                 descriptionBoxContainer.innerHTML = null;
                 specificationBoxContainer.innerHTML = null;
 
-                //product image details
+                // product image details
                 var imgOne = document.createElement("img");
                 imgOne.src = product.img[0];
                 imgOne.setAttribute("class", "productImg");
                 imageBoxContainer.append(imgOne);
 
-                function slideShow(p){
+                var imgNavBtnDiv = document.createElement("div");
+                imgNavBtnDiv.setAttribute("class", "imgNavigationBtns");
 
-                    let count = 0;
-
-                    let interval = setInterval(function(){
-                        imageBoxContainer.innerHTML = null;
-                        if(count == p.img.length){
-                            count = 0;
-                        }
-
-                        var img = document.createElement("img");
-                        img.src = p.img[count];
-                        img.setAttribute("class", "productImg");
-                        imageBoxContainer.append(img);
-                        count++;
-
-                    }, 3000);
-
+                var prevBtn = document.createElement("div");
+                // prevBtn.textContent = "Prev";
+                prevBtn.setAttribute("class", "prev");
+                prevBtn.onclick = function(){
+                    showPrevImg(product, imgOne);
                 }
 
-                slideShow(product);
+                // var prevBtnIcon = document.createElement("i");
+                // prevBtnIcon.setAttribute("class", "fas fa-arrow-left");
+                // prevBtnIcon.style.width = "100%";
+                // prevBtnIcon.style.height = "100%";
+
+
+                // prevBtn.append(prevBtnIcon);
+
+                var nextBtn = document.createElement("div");
+                nextBtn.textContent = "Next";
+                nextBtn.setAttribute("class", "next");
+                nextBtn.onclick = function(){
+                    showNextImg(product, imgOne);
+                }
+
+                imgNavBtnDiv.append(prevBtn, nextBtn);
+
+
+                // function slideShow(p){
+
+                //     let count = 0;
+
+                //     let interval = setInterval(function(){
+                //         imageBoxContainer.innerHTML = null;
+                //         if(count == p.img.length){
+                //             count = 0;
+                //         }
+
+                //         var img = document.createElement("img");
+                //         img.src = p.img[count];
+                //         img.setAttribute("class", "productImg");
+                //         imageBoxContainer.append(img);
+                //         count++;
+
+                //     }, 3000);
+
+                // }
+
+                // slideShow(product);
                 //product description Box - heading
                 var productHeading = document.createElement("div");
                 productHeading.textContent = product.name;
@@ -574,7 +636,7 @@
 
                 specificationBoxContainer.append(specificationHeading, specificationOne, specificationTwo, specificationThree, specificationFour, specificationTable);
 
-                productDescriptionContainer.append(imageBoxContainer, descriptionBoxContainer, specificationBoxContainer);
+                productDescriptionContainer.append(imgNavBtnDiv, imageBoxContainer, descriptionBoxContainer, specificationBoxContainer);
                 
             });
         }
@@ -633,6 +695,33 @@
             }
 
         }
+
+        var imgIndCount = 1;
+
+        function showNextImg(product, img){
+            // console.log("Next button Working");
+            // console.log(product.img.length);
+
+            if(imgIndCount == product.img.length){
+                imgIndCount = 1;
+            }
+
+            img.src = product.img[imgIndCount];
+            imgIndCount++;
+        }
+
+        function showPrevImg(product, img){
+            // console.log("Prev button Working");
+
+            if(imgIndCount < 1){
+                imgIndCount = 1;
+            }
+
+            imgIndCount--;
+            img.src = product.img[imgIndCount];
+
+        }
+
 
     </script>
     

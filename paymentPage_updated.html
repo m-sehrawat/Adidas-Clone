@@ -318,31 +318,6 @@
         var monYear = document.getElementById("cardDate");
         var cvvDet = document.getElementById("cvv");
 
-        function payment(e) {
-
-            e.preventDefault();
-
-            if (cardNum.value == "" || cardNam.value == ""
-                || monYear.value == "" || cvvDet.value == "") {
-                alert("Please fill in all the details");
-            }
-
-            else {
-
-                let interval = setTimeout(function () {
-
-                    alert("Your order has been placed succesfully. Happy Shopping!");
-                    window.location.href = "adidas_homepage.html";
-
-                }, 2000);
-
-            }
-
-        }
-
-
-
-
         // -------- For Order summery ------
 
 
@@ -415,7 +390,34 @@
 
             parent.append(div)
 
-        })
+        });
+
+        function payment(e) {
+
+            e.preventDefault();
+
+            console.log("Working");
+
+            window.location.href = "adidas_home_page.html";
+
+            // if (cardNum.value == "" || cardNam.value == ""
+            //     || monYear.value == "" || cvvDet.value == "") {
+            //     alert("Please fill in all the details");
+            // }
+
+            // else {
+
+            //     let interval = setTimeout(function () {
+
+            //         alert("Your order has been placed succesfully. Happy Shopping!");
+            //         window.location.href = "adidas_home_page.html";
+
+            //     }, 2000);
+
+            // }
+
+        }
+
 
     </script>
 
