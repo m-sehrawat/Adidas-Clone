@@ -64,7 +64,7 @@
             width: 10%;
             margin-top: 0.5%;
             margin-left: 80%;
-            border: 1px ;
+            border: 1px;
         }
 
         #rightSideBox>button {
@@ -73,7 +73,7 @@
             background-color: white;
             border: 0px;
             color: black;
-        
+
 
         }
 
@@ -104,7 +104,7 @@
             width: 70%;
             display: grid;
             grid-template-columns: 59% 39%;
-            gap: 2%;
+            gap: 5%;
         }
 
         #yourBag {
@@ -129,13 +129,13 @@
 
         #checkOut {
             box-sizing: border-box;
-            height: 10px;
-            width: 51%;
-            border: 1px;
+            height: 60px;
+            width: 100%;
+            border: 0px;
             border-radius: 4px;
             background-color: rgb(0, 0, 0);
             color: white;
-            padding: 5% 0% 10% 10%;
+            padding: 20px 0px 10px 15px;
             font-size: 18px;
             box-shadow: 10px 5px 5px grey;
             font-style: normal;
@@ -147,23 +147,29 @@
             cursor: pointer;
         }
 
+        #checkOut>div {
+            height: auto;
+        }
+
         #checkOut>div:nth-child(2) {
             text-align: right;
             margin-right: 10%;
+            font-size: large;
         }
 
         #checkOut>div:nth-child(2):hover {
             color: rgb(199, 199, 199);
             cursor: pointer;
+
         }
 
         #checkOut>div {
-            height: 100%;
+            height: auto;
         }
 
         #features {
             margin-top: 5%;
-            color: rgb(88, 88, 88);
+            color: grey;
         }
 
         #orderSummery {
@@ -184,11 +190,14 @@
             width: 100%;
             border-color: 1px solid rgb(133, 133, 133);
             margin-top: 5%;
+            border: 1px;
         }
 
-        #table>tr:nth-child(2) {
+        #totalPrice2,
+        #delivery,
+        #totalPrice1 {
             text-align: right;
-
+            padding-right: 10px;
         }
 
 
@@ -203,6 +212,10 @@
             font-size: 10px;
         }
 
+        #mouseOver {
+            color: grey;
+        }
+
         #mouseOver:hover {
             background-color: black;
             color: white;
@@ -213,6 +226,7 @@
 
             color: rgb(199, 199, 199);
             cursor: pointer;
+            
 
 
         }
@@ -220,10 +234,11 @@
 
         #promoCodebtn {
             width: 94%;
-            height: 35px;
+            height: 50px;
             font-size: 20px;
             margin-bottom: 2%;
             padding-left: 5%;
+            border: 1px solid grey;
 
         }
 
@@ -232,7 +247,15 @@
         }
 
         #applyBtn {
-            margin-left: 81%;
+
+            width: 100%;
+            text-align: left;
+            font-size: 20px;
+            padding-left: 5%;
+            height: 48px;
+            border-radius: 5px;
+            box-shadow: 10px 5px 5px grey;
+            border: 1px solid grey;
 
 
         }
@@ -328,21 +351,14 @@
         <div id="chekoutSide">
             <div id="checkOut" style="width: 90%" onclick="checkOut()">
                 <div id="mouseOver_chekout">CHECKOUT</div>
-                <div>></div>
+                <div>→</div>
             </div>
 
             <div class="orderSummery">
                 <strong id="orderSummery"> ORDER SUMMERY </strong>
 
                 <table id="table">
-                    <!-- <tr>
-                        <td>ORIGINAL PRICE</td>
-                        <td id="originalPrice"> $$$</td>
-                    </tr>
-                    <tr>
-                        <td>ON SALE</td>
-                        <td id="sale"> -$$$</td>
-                    </tr> -->
+
 
                     <tr>
                         <td id="totalItem">Total item</td>
@@ -419,11 +435,11 @@
         d.forEach(function (product) {
 
             let div = document.createElement("div")
-            div.style = "display : flex ; gap : 3%;border:1px solid rgb(214, 214, 214)"
+            div.style = "display : flex ; gap : 3%;border:1px solid rgb(214, 214, 214) ;height :250px"
 
 
             let div1 = document.createElement("div")
-            div1.style = "box-sizing: border-box;width:32%"
+            div1.style = "box-sizing: border-box;width:45%"
 
             let div2 = document.createElement("div")
             div2.style = "box-sizing: border-box;width:100%; border:1px;display:grid"
@@ -444,6 +460,28 @@
 
 
 
+            div4.style = "width:30%;border:1px;margin-bottom :30px"
+            let quan = document.createElement("input")
+            let quantityText = document.createElement("p")
+            quantityText.textContent = "QUANTITY"
+
+            quan.type = "number"
+           
+            quan.min = "1" 
+            quan.max = "5" 
+            quan.value="1"
+            quan.placeholder = "Quantity"
+            quan.style = "width : 50%; height : 50%;font-size: 20px;text-align: center;"
+
+            let quantityInput = quan.value
+
+            console.log("quantity : " ,quantityInput)
+
+            div4.append(quantityText,quan)
+
+
+
+          
 
             div6.style = " box-sizing: border-box; border:1px  ;display:flex;gap:3%;flex-grow: 1;"
             div7.style = "box-sizing: border-box;border:1px  ;display:grid;gap:-10px;margin-right:2%"
@@ -479,7 +517,7 @@
             color.textContent = product.color
             size.textContent = "SIZE :" + product.size
             stock.textContent = product.stock
-            price.textContent = "₹" + product.price +".00"
+            price.textContent = "₹" + product.price + ".00"
 
 
 
@@ -487,7 +525,7 @@
             tp += Number(product.price)
             ti++
 
-            totalPrice1.textContent = tp +".00"
+            totalPrice1.textContent = tp + ".00"
 
 
 
@@ -495,7 +533,7 @@
 
                 let delivery = document.getElementById("delivery")
 
-                delivery.textContent = "₹" + 50 +".00"
+                delivery.textContent = "₹" + 50 + ".00"
                 dl = "50"
                 tp = tp + 50
 
@@ -508,7 +546,7 @@
                 totalPrice1.style = "font-weight: bold;"
                 totalPrice2.style = "font-weight: bold;"
 
-                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp +".00"
+                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp + ".00"
                 totalItem.textContent = ti + " Items"
 
                 totalPrice2.textContent = tp + ".00"
@@ -533,9 +571,9 @@
                 totalPrice1.style = "font-weight: bold;"
                 totalPrice2.style = "font-weight: bold;"
 
-                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp +".00"
+                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp + ".00"
                 totalItem.textContent = ti + " Items"
-                totalPrice1.textContent = tp +".00"
+                totalPrice1.textContent = tp + ".00"
                 totalPrice2.textContent = tp + ".00"
 
 
