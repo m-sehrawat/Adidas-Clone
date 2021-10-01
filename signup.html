@@ -5,74 +5,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign mainBox page</title>
+    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css" />
     <style>
-        body {
-            padding: 8px 10px 6px 10px;
+        * {
+            font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
         }
-        
+
         #n,
         #e,
         #m,
         #p {
-            width: 98%;
+            width: 94%;
             height: 40px;
-            margin: 4px;
+            margin: 7px;
         }
-        
+
         #submit {
             text-align: center;
-            margin: 4px 40%;
+            margin: 20px 2px;
+            height: 60px;
+            width: 30%;
+            border: none;
+            border-radius: 4px;
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            box-shadow: 10px 5px 5px grey;
         }
-        
-        .up {
-            width: 100%;
+
+        #submit:hover {
+            cursor: pointer;
+        }
+
+        .inputBoxDesign {
+            border: 1px solid black;
+            font-size: 16px;
+            padding: 3px 10px;
+        }
+
+        .mainBox {
+            max-width: 50%;
+            margin: auto;
             height: 100%;
             background-color: white;
             padding: 4px;
         }
-        
-        @media(max-width:700px) {
-            .up {
-                width: 100%;
+
+        @media(max-width:960px) {
+            .mainBox {
+                max-width: 80%;
                 background-color: white;
             }
         }
-        
+
+        @media(max-width:600px) {
+            .mainBox {
+                max-width: 100%;
+                background-color: white;
+            }
+        }
+
         .red {
             color: red;
-            ;
         }
     </style>
 </head>
 
 <body>
-    <div class="up">
-        <h1>SIGNUP </h1>
-        <form id="myform" onsubmit="signup(event)">
+    <div class="mainBox">
+        <h1>CREATE YOUR ACCOUNT</h1>
+        <p>Sign up now and get 15% off your first order.</p>
+        <form id="myform" onsubmit="signmainBox(event)">
             <table>
 
-                <input type="text" id="n" placeholder="enter your name" required>
+                <input type="text" id="n" class="inputBoxDesign" placeholder="enter your name" required>
                 <span id="username" class="red"></span>
 
-                <input type="text" id="e" placeholder="enter your email *" required>
+                <input type="text" id="e" class="inputBoxDesign" placeholder="enter your email *" required>
                 <span id="email" class="red"></span>
 
-                <input type="number" id="m" placeholder="mobile *">
+                <input type="number" id="m" class="inputBoxDesign" placeholder="mobile *">
                 <span id="mobile" class="red"></span>
 
-                <input type="password" id="p" placeholder="enter your password *" required>
+                <input type="password" id="p" class="inputBoxDesign" placeholder="enter your password *" required>
                 <span id="password" class="red"></span>
 
-                <input type="submit" value="SIGNUP" id="submit" name="submit" />
+                <input type="submit" value="REGISTER &emsp; &#8594;" id="submit" name="submit" />
             </table>
         </form>
     </div>
 
 
-
     <script type="text/javascript">
-        function signup(e) {
+        function signmainBox(e) {
             e.preventDefault();
 
             let myform = document.getElementById("myform");
@@ -116,11 +142,9 @@
                 document.getElementById("e").value = "";
                 document.getElementById("m").value = "";
                 document.getElementById("p").value = "";
-
             }
         }
     </script>
-
 
 </body>
 
