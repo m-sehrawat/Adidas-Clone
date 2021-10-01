@@ -55,7 +55,7 @@
         }
         
         .left {
-            width: 60%;
+            width: 50%;
             margin: 1% 1%1% 6%;
             padding: 1%;
         }
@@ -70,7 +70,7 @@
         .right {
             width: 40%;
             margin: 1% 1%1% 6%;
-            padding: 10px;
+            padding: 20px;
             display: block;
         }
         
@@ -84,18 +84,18 @@
         #mobile {
             width: 40%;
             height: 50px;
-            margin: 30px;
+            margin: 30px 20px;
         }
         
         #street,
         #landmark {
-            width: 90%;
+            width: 87%;
             height: 50px;
-            margin: 30px;
+            margin: 30px 20px;
         }
         
         .country {
-            margin: 30px;
+            margin: 30px 20px;
         }
         
         .arrive {
@@ -105,13 +105,13 @@
         }
         
         .heading {
-            margin-right: 20px;
+            margin: 30px 20px;
         }
         
         .standard {
             border: 1px solid black;
-            height: 60px;
-            width: 90%;
+            height: 50px;
+            width: 80%;
             margin: 30px;
             padding: 20px;
         }
@@ -124,22 +124,6 @@
             margin: 30px;
         }
         
-        .c {
-            margin: 30px;
-        }
-        
-        .c1,
-        .c2,
-        .c3,
-        .c4 {
-            display: flex;
-        }
-        
-        .c11 {
-            width: 40px;
-            height: 50px;
-        }
-        
         #rev {
             width: 170px;
             height: 50px;
@@ -148,7 +132,7 @@
         }
         
         .revbtn {
-            margin-left: 50px;
+            margin: 50px 100px;
         }
         
         .bottom {
@@ -160,7 +144,10 @@
         }
         
         .r1 {
-            margin-top: 20px;
+            margin: 60px 10px 10px 0px;
+            width: 80%;
+            border: 1px solid gray;
+            padding: 10px;
         }
         
         #btnone {
@@ -182,7 +169,8 @@
         .need {
             padding: 40px;
             border: 1px solid gray;
-            margin: 30px;
+            margin: 30px 5px;
+            width: 70%;
         }
         
         #forg {
@@ -212,6 +200,22 @@
         
         #footer>p:last-child {
             margin: 0% 0% 2% 16%;
+        }
+        
+        .order_details {
+            width: 80%;
+            padding: 5px;
+            border: 1px solid gray;
+            height: 300px;
+            margin-top: 20px;
+        }
+        
+        .summary {
+            width: 80%;
+            padding: 5px;
+            border: 1px solid gray;
+            height: 300px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -311,9 +315,9 @@
 
                 </form>
             </div>
-            <div>
-                <span style="height: 50px;font-family: 'Times New Roman', Times, serif; font-size: 25px;">
-                    <strong>ORDER SUMMARY</strong></span>
+            <div class="summary">
+                <span style="height: 50px;font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                    <strong><u>ORDER SUMMARY</u></strong></span>
 
             </div>
 
@@ -322,10 +326,12 @@
 
 
 
-            <div style="width: 90%; height: auto; border: 1px solid gray; margin: 10px 30px;">
-                <h1 style="font-size: 20px; font-family: 'Times New Roman', Times, serif; "><u>ORDERS DETAILS</u></h1>
-            </div>
+
+
             <div class="order_details">
+                <span style="font-size: 20px; font-family: 'Times New Roman', Times, serif; "><u>ORDERS DETAILS</u></span>
+
+
 
             </div>
 
@@ -359,7 +365,74 @@
 </body>
 
 </html>
+
+
 <script>
+    let parent = document.getElementById("order_details");
+
+    // let data = JSON.parse(localStorage.getItem("DAR"));
+
+    function showProducts() {
+
+        // parent.innerHTML = null
+        let data = JSON.parse(localStorage.getItem("DAR"));
+
+        data.forEach(function(product) {
+
+            let div = document.createElement("div")
+            div.style = "display : flex ; gap : 3%;border:1px solid rgb(133, 133, 133)"
+
+
+            let div1 = document.createElement("div")
+
+
+            let div2 = document.createElement("div")
+
+
+            let image = document.createElement("img")
+            image.src = product.img
+            image.style = "width:150px ;height:150px"
+
+            div1.append(image);
+
+            let name = document.createElement("p")
+            let color = document.createElement("p")
+            let size = document.createElement("p")
+
+            let price = document.createElement("p")
+
+            name.textContent = product.name;
+            color.textContent = product.color;
+
+            size.textContent = product.size;
+
+            price.textContent = product.price;
+            div2.append(name, color, size, price);
+            div.append(div1, div2);
+
+        });
+    }
+    showProducts();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     var signinbtn = document.getElementById("signinbtn");
     signinbtn.addEventListener("click", signin);
 
