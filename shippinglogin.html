@@ -391,8 +391,8 @@
             size.textContent = pro.size;
             var tabprice = document.getElementById("td1");
             var tabsize = document.getElementById("td2");
-            tabprice.textContent = price;
-            tabsize.textContent = size;
+            tabprice.textContent = Number(price);
+            tabsize.textContent = Number(size);
             div.append(tabprice, tabsize);
             parent.append(div);
 
