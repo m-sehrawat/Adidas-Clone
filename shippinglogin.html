@@ -368,65 +368,11 @@
 
 
 <script>
-    let detailspart = document.getElementById("order_details");
+    let parent = document.getElementById("order_details");
 
     let data = JSON.parse(localStorage.getItem("DAR"));
 
-    function showProducts(p) {
-
-        parent.innerHTML = null;
-
-
-        p.forEach(function(product) {
-
-            let div = document.createElement("div")
-            div.style = "display : block; width:350px;height:300px";
-
-
-            let div1 = document.createElement("div")
-            div1.style = "width:150px;height:150px; margin:2px";
-
-
-            let div2 = document.createElement("div");
-            div2.style = "width:150px;height:150px";
-
-
-            let image = document.createElement("img")
-            image.src = product.img
-            image.style = "width:100% ;height:100%";
-
-            div1.append(image);
-
-            let name = document.createElement("p")
-            let color = document.createElement("p")
-            let size = document.createElement("p")
-
-            let price = document.createElement("p")
-
-            name.textContent = product.name;
-            color.textContent = product.color;
-
-            size.textContent = product.size;
-
-            price.textContent = product.price;
-            div2.append(name, color, size, price);
-            div.append(div1, div2);
-            detailspart.append(div);
-
-        });
-    }
-    showProducts(data);
-
-
-
-
-
-
-
-
-
-
-
+    console.log(data.length);
 
 
 
