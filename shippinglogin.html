@@ -375,16 +375,10 @@
     console.log(data.length);
 
     function showdata(p) {
-        for (var i = 0; i < p.length; i++) {
-            var div = document.createElement("div");
-            div.style = "width:200px; height:200px";
-            var img = document.createElement("img");
-            img.style = "width:100%;height:100%";
-            img.src = p[i].img;
-            div.append(img);
-            parent.append(div);
+        p.forEach(function(pro) {
+            console.log(pro.price);
 
-        }
+        });
     }
 
     showdata(data);
