@@ -459,18 +459,27 @@
         //console.log("data:", name, email, password);
         let all_users = JSON.parse(localStorage.getItem("users"));
 
-        all_users.forEach(function(user) {
 
-            if (email === user.email && password === user.password) {
+
+        var count = 0;
+        for (i = 0; i < all_users.length; i++) {
+            if (email !== all_users[i].email && password !== all_users[i].password) {
+                count++;
+            } else {
                 alert("login successful");
                 document.getElementById("checklogin").innerHTML = "login successful";
                 document.getElementById("rename").innerHTML = "";
                 document.getElementById("el").value = "";
                 document.getElementById("el").value = "";
-                return true;
+                //return true;
+                break;
 
             }
-        });
+
+        }
+        if (count == all_users.length) {
+            alert("invalid users");
+        }
 
 
     }

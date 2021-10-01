@@ -81,27 +81,42 @@
             let mobile = myform.m.value;
             let password = myform.p.value;
             //console.log("data:", name, email, password);
-            if (localStorage.getItem('users') === null) {
 
-                localStorage.setItem("users", JSON.stringify([]))
+
+            if (mobile.length != 10) {
+                alert("enter 10 digit mobile numbers");
+
+
             }
-            var user = {
-                name,
-                email,
-                mobile,
-                password
-            };
-            let arr = JSON.parse(localStorage.getItem("users"));
-            arr.push(user);
-            localStorage.setItem("users", JSON.stringify(arr));
-            //window.location.href = "shippinglogin.html";
-            alert("registered successfully");
-            window.location.href = "shippinglogin.html";
-            document.getElementById("n").value = "";
-            document.getElementById("e").value = "";
-            document.getElementById("m").value = "";
-            document.getElementById("p").value = "";
+            var indexwithat = email.indexOf("@");
+            var indexwithdott = email.lastIndexOf(".");
 
+            if (indexwithat < 1 || indexwithdott < indexwithat + 2 || indexwithdott + 2 >= email.length) {
+                alert("plz check @ and dott in your email");
+
+            } else {
+                if (localStorage.getItem('users') === null) {
+
+                    localStorage.setItem("users", JSON.stringify([]))
+                }
+                var user = {
+                    name,
+                    email,
+                    mobile,
+                    password
+                };
+                let arr = JSON.parse(localStorage.getItem("users"));
+                arr.push(user);
+                localStorage.setItem("users", JSON.stringify(arr));
+                //window.location.href = "shippinglogin.html";
+                alert("registered successfully");
+                window.location.href = "shippinglogin.html";
+                document.getElementById("n").value = "";
+                document.getElementById("e").value = "";
+                document.getElementById("m").value = "";
+                document.getElementById("p").value = "";
+
+            }
         }
     </script>
 
