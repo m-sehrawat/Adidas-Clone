@@ -64,13 +64,17 @@
             width: 10%;
             margin-top: 0.5%;
             margin-left: 80%;
+            border: 1px ;
         }
 
         #rightSideBox>button {
             margin-left: 1%;
+            width: auto;
             background-color: white;
-            border: 0px solid white;
+            border: 0px;
             color: black;
+        
+
         }
 
         #rightSideBox>p {
@@ -117,7 +121,7 @@
 
         #display {
             display: grid;
-            gap: 3%;
+            gap: 10px;
             margin-bottom: 3%;
             border: 1px;
 
@@ -244,6 +248,7 @@
         #btnr:hover {
             background-color: black;
             color: white;
+            color: rgb(214, 214, 214);
         }
     </style>
 
@@ -414,7 +419,7 @@
         d.forEach(function (product) {
 
             let div = document.createElement("div")
-            div.style = "display : flex ; gap : 3%;border:1px solid rgb(133, 133, 133)"
+            div.style = "display : flex ; gap : 3%;border:1px solid rgb(214, 214, 214)"
 
 
             let div1 = document.createElement("div")
