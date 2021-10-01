@@ -226,7 +226,7 @@
 
             color: rgb(199, 199, 199);
             cursor: pointer;
-            
+
 
 
         }
@@ -460,28 +460,14 @@
 
 
 
-            div4.style = "width:30%;border:1px;margin-bottom :30px"
-            let quan = document.createElement("input")
-            let quantityText = document.createElement("p")
-            quantityText.textContent = "QUANTITY"
-
-            quan.type = "number"
-           
-            quan.min = "1" 
-            quan.max = "5" 
-            quan.value="1"
-            quan.placeholder = "Quantity"
-            quan.style = "width : 50%; height : 50%;font-size: 20px;text-align: center;"
-
-            let quantityInput = quan.value
-
-            console.log("quantity : " ,quantityInput)
-
-            div4.append(quantityText,quan)
 
 
 
-          
+
+
+
+
+
 
             div6.style = " box-sizing: border-box; border:1px  ;display:flex;gap:3%;flex-grow: 1;"
             div7.style = "box-sizing: border-box;border:1px  ;display:grid;gap:-10px;margin-right:2%"
@@ -499,6 +485,8 @@
             let size = document.createElement("p")
             let stock = document.createElement("p")
             let price = document.createElement("p")
+            price.setAttribute("id", "div8pp")
+
             let totalPrice1 = document.getElementById("totalPrice1")
             stock.style = "font-weight: bold;font-size:20px"
 
@@ -522,10 +510,33 @@
 
 
 
-            tp += Number(product.price)
-            ti++
+            tp = tp + Number(product.price)
+            ti = data.length
 
             totalPrice1.textContent = tp + ".00"
+
+
+
+
+            div4.style = "width:30%;border:1px;margin-bottom :30px"
+            let quan = document.createElement("input")
+            let quantityText = document.createElement("p")
+            quantityText.textContent = "QUANTITY"
+
+            quan.type = "number"
+
+            quan.min = "1"
+            quan.max = "5"
+            quan.value = "1"
+            quan.id = "Quantity"
+            quan.style = "width : 50%; height : 50%;font-size: 20px;text-align: center;"
+
+            div4.append(quantityText, quan)
+
+            quan.onclick = function () {
+
+                show12(quan.value, product, tp, ti)
+            }
 
 
 
@@ -582,15 +593,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
             btn.onclick = function () {
                 remove1(product)
             }
@@ -623,21 +625,25 @@
 
     showProducts(data)
 
-
+    let count = 0;
 
 
     function promo(e) {
         e.preventDefault()
-        let promocodeForm = document.getElementById("promocodeForm")
+
+
+        if(data.length>0){
+
+
+            let promocodeForm = document.getElementById("promocodeForm")
         let promocode = promocodeForm.promoCodebtn.value
-        let count = 0;
+
 
         PromoCode.forEach(function (p) {
 
-            if (p.pc === promocode) {
+            if (count == 0) {
 
-                if (p.pc != "X") {
-
+                if (p.pc === promocode) {
 
 
 
@@ -659,30 +665,42 @@
 
                     return
 
-
                 }
 
-
-
             }
 
-            else if (p.pc == "X") {
-                alert("Promo Code Already Aplied")
-                return
-            }
 
-            else {
 
-                count = 0;
-            }
+
 
 
         })
 
-        console.log(count)
+
+
+
         if (count == 0) {
             alert("Invalid Promo code")
         }
+
+        else {
+            alert("Promocode Already applied Or In valid promocode")
+       
+        }
+
+
+            
+        }
+
+
+
+        
+            else{
+                alert("No item In Bag")
+            }
+
+        
+        
 
 
 
@@ -776,5 +794,90 @@
     }
 
     console.log("Data length :-", data.length)
+
+    let ti1 = [];
+
+
+    function show12(q1, pr, tp, ti) {
+
+        ti1.push(q1)
+
+
+        let price = Number(pr.price) * q1
+
+
+
+
+        ti = Number(data.length + q1)
+
+
+
+
+        console.log("Price in producty ", price, "tp : ", tp, "ti = ", ti)
+
+
+        if (tp <= 3000 && tp > 0) {
+
+            tp = tp + price - Number(pr.price) - 50
+
+            let delivery = document.getElementById("delivery")
+
+            delivery.textContent = "₹" + 50 + ".00"
+            dl = "50"
+            tp = tp + 50
+
+
+            let totalItem = document.getElementById("totalItem")
+            let totalPrice = document.getElementById("totalPrice")
+            let totalPrice1 = document.getElementById("totalPrice1")
+            let totalPrice2 = document.getElementById("totalPrice2")
+
+            totalPrice1.style = "font-weight: bold;"
+            totalPrice2.style = "font-weight: bold;"
+
+            totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp + ".00"
+            totalItem.textContent = ti + " Items "
+
+            totalPrice2.textContent = tp + ".00"
+            totalPrice1.textContent = tp - 50 + ".00"
+
+
+
+        }
+
+        else if (tp > 3000) {
+
+            tp = tp + price - Number(pr.price)
+
+            let delivery = document.getElementById("delivery")
+
+            delivery.textContent = "Free"
+            dl = "Free"
+
+
+            let totalItem = document.getElementById("totalItem")
+            let totalPrice = document.getElementById("totalPrice")
+            let totalPrice1 = document.getElementById("totalPrice1")
+            let totalPrice2 = document.getElementById("totalPrice2")
+
+            totalPrice1.style = "font-weight: bold;"
+            totalPrice2.style = "font-weight: bold;"
+
+            totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp + ".00"
+            totalItem.textContent = ti + " Items"
+            totalPrice1.textContent = tp + ".00"
+            totalPrice2.textContent = tp + ".00"
+
+
+
+        }
+
+
+
+
+
+
+
+    }
 
 </script>
