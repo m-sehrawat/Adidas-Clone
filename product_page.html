@@ -196,6 +196,96 @@
             background-color: black;
             color: white;
         }
+
+        .hearderSlideContent {
+            margin: 10px auto;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        @media(max-width: 960px) {
+            #parent {
+                grid-template-columns: 32% 32% 32%;
+            }
+
+            .buttonsDiv {
+                display: grid;
+                grid-template-columns: 24% 24% 24% 24%;
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+            }
+
+            .filterButtons {
+                padding: 5px;
+                margin: 2px;
+                font-size: 13px;
+            }
+
+            .nameSection {
+                font-size: 12px;
+            }
+
+            .categorySection {
+                font-size: 11px;
+            }
+
+            .colorSection {
+                font-size: 12px;
+            }
+
+            #productHeading {
+                font-size: 32px;
+                margin-left: 2%;
+            }
+
+            #rightSideBox {
+                margin-left: 70%;
+            }
+
+            #rightSideBox>button {
+                visibility: hidden;
+            }
+
+            #footer>p:first-child {
+                visibility: hidden;
+            }
+
+            #footer>p:nth-child(2) {
+                display: block;
+                text-align: center;
+                margin: 0px auto 25px;
+            }
+
+            #footer>p:last-child {
+                text-align: center;
+                display: block;
+                margin: auto;
+            }
+
+            #topHeader>div {
+                display: none;
+            }
+
+        }
+
+        @media(max-width: 600px) {
+            #parent {
+                grid-template-columns: 48% 48%;
+            }
+
+            .buttonsDiv {
+                display: grid;
+                grid-template-columns: 32% 32% 32%;
+            }
+
+            #rightSideBox {
+                margin-left: 50%;
+            }
+
+
+        }
     </style>
 </head>
 
@@ -2956,5 +3046,42 @@
         }
     }
 
+    //Top Header slide show function
+    function topHeaderSlideShow() {
+
+        let topHeader = document.getElementById("topHeader");
+
+        let arrayLines = [
+            "FREE DELIVERY FOR ALL ORDERS NOW",
+            "FREE RETURNS",
+            "SIGN UP & GET 15% OFF"
+        ];
+
+        let x = window.matchMedia("(max-width: 960px)")
+
+        function showTextInHeader(x) {
+
+            if (x.matches) {
+
+                let p = document.createElement("p");
+                p.textContent = arrayLines[0];
+                p.setAttribute("class", "hearderSlideContent");
+                topHeader.append(p);
+                let c = 0;
+
+                setInterval(function () {
+                    if (c == arrayLines.length) {
+                        c = 0;
+                    }
+                    p.textContent = arrayLines[c];
+                    c++;
+
+                }, 3000);
+            }
+        }
+        showTextInHeader(x)
+        x.addListener(showTextInHeader)
+    }
+    topHeaderSlideShow();
 
 </script>
