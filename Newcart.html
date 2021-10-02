@@ -140,11 +140,12 @@
 
         }
 
-        #productSide{
+        #productSide {
             margin-bottom: 30px;
             border: 1px;
         }
-        #checkoutSide{
+
+        #checkoutSide {
             margin-top: 100px;
         }
 
@@ -213,12 +214,12 @@
             margin-top: 5%;
             border: 1px;
             margin-bottom: 5%;
-            border-collapse:separate;
-            border-spacing:0 15px;
-            
+            border-collapse: separate;
+            border-spacing: 0 15px;
+
         }
 
-        #totalPrice{
+        #totalPrice {
             margin-bottom: 40px;
             margin-top: 10px;
         }
@@ -238,8 +239,8 @@
 
             margin-bottom: 80px;
             border: 1px;
-           
-            
+
+
         }
 
 
@@ -378,10 +379,9 @@
             }
         }
 
-        #mainHeader{
-            border : 1px ;
+        #mainHeader {
+            border: 1px;
             height: 110px
-            
         }
     </style>
 
@@ -389,7 +389,7 @@
 
 <body>
 
-    <header id = "mainHeader">
+    <header id="mainHeader">
 
         <div id="topHeader">
             <div>FREE DELIVERY FOR ALL ORDERS NOW</div>
@@ -438,10 +438,13 @@
 
             <br>
             <div id=" features">
-                <span id="mouseOver"> <i class="fas fa-truck"></i> &nbsp; <u>Free delivery</u></span> <br><br>
-                <span id="mouseOver"> <i class="fas fa-exchange-alt"></i> &nbsp;<u>30* day free returns</u></span>
+                <span id="mouseOver"> <i class="fas fa-truck"></i> &nbsp; <u onclick="freeDelivery()">Free
+                        delivery</u></span> <br><br>
+                <span id="mouseOver"> <i class="fas fa-exchange-alt"></i> &nbsp;<u onclick="returns()">30* day free
+                        returns</u></span>
                 <br><br>
-                <span id="mouseOver"> <i class="fas fa-lock"></i> &nbsp;<u>Safe & Secure payment options</u></span>
+                <span id="mouseOver"> <i class="fas fa-lock"></i> &nbsp;<u onclick="safeSecure()">Safe & Secure payment
+                        options</u></span>
 
 
             </div>
@@ -496,10 +499,10 @@
             <div id="needHelp">
                 <p> <strong> Need Help?</strong></p>
 
-                <span id="mouseOver"><u>Delivery</u></span> <br><br>
-                <span id="mouseOver"><u>Return & Refund</u></span> <br><br>
-                <span id="mouseOver"><u>Ordering & Payment</u></span><br><br>
-                <span id="mouseOver"><u>Promotion & Voucher</u></span>
+                <span id="mouseOver"><u onclick="deliveryonRight()">Delivery</u></span> <br><br>
+                <span id="mouseOver"><u onclick="returnonRight()">Return & Refund</u></span> <br><br>
+                <span id="mouseOver"><u onclick="orderonRight()">Ordering & Payment</u></span><br><br>
+                <span id="mouseOver"><u onclick="promotiononRight()">Promotion & Voucher</u></span>
 
                 <p id="paymentCardImg"> <img
                         src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/visa-master-rupay-cd_tcm209-732258.png"
@@ -596,6 +599,7 @@
     var tp = 0;
     var ti = 0;
     var dl = null;
+    //   ------ Appending items From Bag -----
 
     function showProducts(d) {
 
@@ -619,7 +623,7 @@
             let div5 = document.createElement("div")
             div5.style = "box-sizing: border-box; border :1px "
             let div6 = document.createElement("div")
-           
+
             let div7 = document.createElement("div")
             let div8 = document.createElement("div")
             let btn = document.createElement("button")
@@ -716,7 +720,7 @@
                 delivery.textContent = "₹" + 50 + ".00"
                 dl = "50"
                 tp = tp + 50
-            
+
 
                 let totalItem = document.getElementById("totalItem")
                 let totalPrice = document.getElementById("totalPrice")
@@ -726,7 +730,7 @@
                 totalPrice1.style = "font-weight: bold;"
                 totalPrice2.style = "font-weight: bold;"
 
-                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" +  tp + ".00"
+                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp + ".00"
                 totalItem.textContent = ti + " Items"
 
                 totalPrice2.textContent = " ₹" + tp + ".00"
@@ -796,6 +800,7 @@
 
     let count = 0;
 
+    //  ------ Promocode Function ----
 
     function promo(e) {
         e.preventDefault()
@@ -887,7 +892,7 @@
 
     }
 
-
+    // ---- On checkout click ----
     function checkOut() {
 
         if (JSON.parse(localStorage.getItem("checkout") === null)) {
@@ -930,6 +935,9 @@
 
 
     }
+
+    // ---- On Removing item -----
+
 
     function remove1(p) {
 
@@ -974,87 +982,36 @@
         parent.textContent = "YOUR BAG IS EMPTY!"
     }
 
-    console.log("Data length :-", data.length)
-
-    let ti1 = [];
-
-
-    function show12(q1, pr, tp, ti) {
-
-        ti1.push(q1)
-
-
-        let price = Number(pr.price) * q1
 
 
 
+    function freeDelivery() {
+        alert("FREE DELIVERYEnjoy free delivery with no minimum spend.")
+    }
+
+    function returns() {
+        alert("30 DAY FREE RETURNSNot the right size or colour? No problem! Returns are free & easy within 30 days of receiving your order.Check out our Return Policy for more details.")
+    }
+
+    function safeSecure() {
+        alert("SAFE & SECURE PAYMENT OPTIONSPay with confidence - we use an advanced payment security method to ensure maximum safety. We accept the following payment methods in the online shop: Visa, Mastercard, RuPay, Cash on delivery. ")
+    }
 
 
-        console.log("Price in producty ", price, "tp : ", tp, "ti = ", ti)
+    function deliveryonRight() {
+        alert("DELIVERYadidas.co.in can only ship to India.Standard deliveryCost = For all orders, shipping is offered for free.Delivery time = 3 - 4 business daysPublic holidaysOrders placed on or 1 day before a public holiday may take longer to be delivered.So, please expect additional delivery time.")
+    }
 
+    function returnonRight(){
+        alert("RETURN INFORMATIONJust in case you change your mind once your order arrives, we’ve got your back.It’s easy to return all standard items for a full refund within 30 days of delivery. Please note – Personalised products are unique to you, and therefore cannot be returned.")
+    }
 
-        if (tp <= 3000 && tp > 0) {
+    function orderonRight(){
+        alert("ORDERING & PAYMENT INFORMATIONWe accept the following payment methods:You don't need to have an account to place an order. Having an account can save you time during checkout as it saves your address details, but it’s not necessary if you want to place an order.You can cancel online orders, entirely or partially, within 15 minutes of placing it.")
+    }
 
-            tp = tp + price - Number(pr.price) - 50
-
-            let delivery = document.getElementById("delivery")
-
-            delivery.textContent = "₹" + 50 + ".00"
-            dl = "50"
-            tp = tp + 50
-
-
-            let totalItem = document.getElementById("totalItem")
-            let totalPrice = document.getElementById("totalPrice")
-            let totalPrice1 = document.getElementById("totalPrice1")
-            let totalPrice2 = document.getElementById("totalPrice2")
-
-            totalPrice1.style = "font-weight: bold;"
-            totalPrice2.style = "font-weight: bold;"
-
-            totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp + ".00"
-            totalItem.textContent = ti + " Items "
-
-            totalPrice2.textContent = tp + ".00"
-            totalPrice1.textContent = tp - 50 + ".00"
-
-
-
-        }
-
-        else if (tp > 3000) {
-
-            tp = tp + price - Number(pr.price)
-
-            let delivery = document.getElementById("delivery")
-
-            delivery.textContent = "Free"
-            dl = "Free"
-
-
-            let totalItem = document.getElementById("totalItem")
-            let totalPrice = document.getElementById("totalPrice")
-            let totalPrice1 = document.getElementById("totalPrice1")
-            let totalPrice2 = document.getElementById("totalPrice2")
-
-            totalPrice1.style = "font-weight: bold;"
-            totalPrice2.style = "font-weight: bold;"
-
-            totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp + ".00"
-            totalItem.textContent = ti + " Items"
-            totalPrice1.textContent = tp + ".00"
-            totalPrice2.textContent = tp + ".00"
-
-
-
-        }
-
-
-
-
-
-
-
+    function promotiononRight(){
+        alert(" PROMOTION & VOUCHER INFORMATION  HOW DO I USE MY VOUCHER?Here's how to claim your discount: Pick a product (one that's applicable for a voucher discount) from our online store.   Go to your shopping bag by clicking the ‘shopping bag’ button at the top of the screen.   Click ‘Enter promo code’ under your order summary.   A voucher field will appear. Type your voucher code into the field and hit ‘Apply'.  Keep in mind the voucher: Is only valid for a limited time.   Might contain product exclusions and exceptions.  Cannot be applied after you've placed an order.  Cannot be combined with other promotions, offers or discounts. If more than one promotion or discount offer applies to your order, we'll use the one with the greatest discount.          WHAT SHOULD I DO IF MY VOUCHER CODE ISN'T WORKING?  It’s easy to make mistakes if you enter the code manually. Some common mistakes are:Check spacing, character errors and/or spelling mistakes.  The voucher code field is case-sensitive. Check that ‘Caps Lock’ button is not on and use upper case where necessary.  Check you’re not mixing up the numbers 0/1 and the letters O/I.  Please read the specific Terms and Conditions in the source of your voucher to make sure that your voucher applies to your order. If you are sure your voucher is valid for your order but it still doesn’t work, pleasecontact us.")
     }
 
 </script>
