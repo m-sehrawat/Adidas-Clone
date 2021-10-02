@@ -273,6 +273,17 @@
             color: white;
             color: rgb(214, 214, 214);
         }
+
+        @media(max-width : 960px){
+            #mainBody {
+            margin: auto;
+            width: 90%;
+            display: grid;
+            grid-template-columns: auto;
+            gap: 5%;
+        }
+        }
+        
     </style>
 
 </head>
@@ -439,7 +450,7 @@
 
 
             let div1 = document.createElement("div")
-            div1.style = "box-sizing: border-box;width:45%"
+            div1.style = "box-sizing: border-box;width:50%"
 
             let div2 = document.createElement("div")
             div2.style = "box-sizing: border-box;width:100%; border:1px;display:grid"
