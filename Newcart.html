@@ -631,6 +631,7 @@
             size.textContent = "SIZE :" + product.size
             stock.textContent = product.stock
             price.textContent = "₹" + product.price + ".00"
+            price.style = "font-weight : bold"
 
 
 
@@ -638,7 +639,7 @@
             tp = tp + Number(product.price)
             ti = data.length
 
-            totalPrice1.textContent = tp + ".00"
+            totalPrice1.textContent = " ₹"+ tp + ".00"
 
 
 
@@ -685,7 +686,7 @@
                 totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp + ".00"
                 totalItem.textContent = ti + " Items"
 
-                totalPrice2.textContent = tp + ".00"
+                totalPrice2.textContent = " ₹"+ tp + ".00"
 
 
 
@@ -772,15 +773,15 @@
 
 
 
-                        tp = tp - tp * Number(p.discount) / 100
+                        let tp1 = tp - tp * Number(p.discount) / 100
 
                         let totalPrice = document.getElementById("totalPrice")
                         let totalPrice1 = document.getElementById("totalPrice1")
                         let totalPrice2 = document.getElementById("totalPrice2")
 
-                        totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
-                        totalPrice1.textContent = tp
-                        totalPrice2.textContent = tp
+                        totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp1
+                        totalPrice1.textContent = " ₹"+ tp
+                        totalPrice2.textContent = "(Promo Code Applied)" + " ₹" + tp1 
 
                         alert("Promo Code Applied Successfully!")
 
@@ -930,10 +931,6 @@
 
         let price = Number(pr.price) * q1
 
-
-
-
-        ti = Number(data.length + q1)
 
 
 
