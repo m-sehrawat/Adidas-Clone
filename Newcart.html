@@ -370,6 +370,12 @@
                 border: 1px;
             }
 
+            #quantityBox{
+
+                /* margin-bottom: 120px; */
+                border: 1px solid red
+            }
+
         }
 
 
@@ -620,6 +626,8 @@
             let div3 = document.createElement("div")
             div3.style = "display : flex; gap :5px;box-sizing: border-box;width : 100%; border:1px "
             let div4 = document.createElement("div")
+
+            div4.setAttribute("id","quantityBox")
             let div5 = document.createElement("div")
             div5.style = "box-sizing: border-box; border :1px "
             let div6 = document.createElement("div")
@@ -694,7 +702,7 @@
             div4.style = "width:30%;border:1px;margin-bottom :30px"
             let quan = document.createElement("input")
             let quantityText = document.createElement("p")
-            quantityText.textContent = "QUANTITY"
+            quantityText.textContent = "QUANTITY : 1"
 
             quan.type = "number"
 
@@ -704,7 +712,7 @@
             quan.id = "Quantity"
             quan.style = "width : 50%; height : 50%;font-size: 20px;text-align: center;"
 
-            div4.append(quantityText, quan)
+            div4.append(quantityText)
 
             // quan.onclick = function () {
 
