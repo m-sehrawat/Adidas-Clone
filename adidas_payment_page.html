@@ -308,6 +308,12 @@
             color: black;
         }
 
+        /* Shippibg Details CSS */
+        .deliveryConstants>p {
+            margin: 1px auto;
+            color: #898c91;
+        }
+
     </style>
 </head>
 <body>
@@ -385,6 +391,15 @@
             <div id="orderDetails">
                 <div class="orderHeading, orderHeadingDetails">ORDER DETAILS</div>
                 <div id="display"></div>
+                <div id="displayShipplingDetails"></div>
+                <div>
+                    <h3>DELIVERY OPTION</h3>
+                    <div class="deliveryConstants">
+                        <p>Standard Delivery</p>
+                        <p>within 3-9 Business Days</p>
+                        <p>FREE</p>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -499,6 +514,11 @@
             parent.append(div)
 
         });
+
+
+        let shippingDetails = JSON.parse(localStorage.getItem("shipping"))
+
+
 
 
     </script>
