@@ -556,48 +556,47 @@
         // }
 
 
-        if (document.getElementById("checklogin").innerHTML === "login successful") {
-            e.preventDefault();
-            let myformone = document.getElementById("myformone");
-            let firstname = document.getElementById("fname").value;
-            let lastname = document.getElementById("lname").value;
-            let street = document.getElementById("street").value;
-            let landmark = document.getElementById("landmark").value;
-            let additional_info = document.getElementById("additional_info").value;
-            let city = document.getElementById("city").value;
-            let state = document.getElementById("state").value;
-            let pincode = document.getElementById("pincode").value;
-            let email = document.getElementById("contactEmail").value;
-            let mobile = document.getElementById("mobile").value;
+
+        e.preventDefault();
+        let formone = document.getElementById("myformone");
+        let firstname = document.getElementById("fname").value;
+        let lastname = document.getElementById("lname").value;
+        let streetone = document.getElementById("street").value;
+        let landmarkone = document.getElementById("landmark").value;
+        let additional = document.getElementById("additional_info").value;
+        let cityone = document.getElementById("city").value;
+        let stateone = document.getElementById("state").value;
+        let pincodeone = document.getElementById("pincode").value;
+        let email = document.getElementById("contactEmail").value;
+        let mobile = document.getElementById("mobile").value;
 
 
 
 
-            if (localStorage.getItem("shipping") === null) {
-                localStorage.setItem("shipping", JSON.stringify([]));
-            }
-            var address = {
-                firstname,
-                lastname,
-                street,
-                landmark,
-                additional_info,
-                city,
-                state,
-                pincode,
-                email,
-                mobile
-            };
-            let cart = JSON.parse(localStorage.getItem("shipping"));
-            cart.push(address);
-            localStorage.setItem("shipping", JSON.stringify(cart));
-            // alert(" data taken successfully");
-
-
+        if (localStorage.getItem("shipping") === null) {
+            localStorage.setItem("shipping", JSON.stringify([]));
         }
+        var address = {
+            firstname,
+            lastname,
+            streetone,
+            landmarkone,
+            additional,
+            cityone,
+            stateone,
+            pincodeone,
+            email,
+            mobile
+        };
+        let cart = JSON.parse(localStorage.getItem("shipping"));
+        cart.push(address);
+        localStorage.setItem("shipping", JSON.stringify(cart));
+        // alert(" data taken successfully");
 
 
     }
+
+
 
 
 
