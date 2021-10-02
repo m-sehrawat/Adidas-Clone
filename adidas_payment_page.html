@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <title>Payment Page</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&display=swap" rel="stylesheet">
 
     <style>
-        *{
-            font-family: "AdihausDIN",Helvetica, Arial, sans-serif;
+        * {
+            font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
         }
+
         body {
-            margin: 0px;    
+            margin: 0px;
         }
+
         /* header */
         #topHeader {
             display: flex;
@@ -34,19 +36,22 @@
             font-weight: bold;
             letter-spacing: 2px;
         }
-        #header{
+
+        #header {
             /* border: 1px solid gray; */
             display: flex;
             min-height: 50px;
             border-bottom: 1px solid #eaebec;
         }
-        .adidasLogo{
+
+        .adidasLogo {
             width: 70px;
             margin-top: 15px;
-            margin-left: 50px;    
+            margin-left: 50px;
             cursor: pointer;
         }
-        #rightSideBox{
+
+        #rightSideBox {
             /* border: 1px solid red; */
             height: 100%;
             width: 10%;
@@ -54,21 +59,23 @@
             margin-left: 80%;
             cursor: pointer;
         }
-        #rightSideBox > button{
+
+        #rightSideBox>button {
             margin-left: 1%;
             background-color: white;
             border: 0px solid white;
             color: black;
             cursor: pointer;
         }
-        #rightSideBox > p{
+
+        #rightSideBox>p {
             /* border: 1px solid red; */
             margin-top: 5%;
             margin-left: 50%;
             cursor: pointer;
         }
 
-        #container{
+        #container {
             width: 1200px;
             height: 800px;
             margin: auto;
@@ -76,38 +83,42 @@
             /* border: 1px solid black; */
         }
 
-        #leftBox{
+        #leftBox {
             width: 60%;
             height: 500px;
             /* border: 1px solid red; */
         }
-        #paymentHeading{
+
+        #paymentHeading {
             font-size: 28px;
             font-weight: 700;
             margin: 2% 0% 0% 2%;
         }
-        .subHead{
+
+        .subHead {
             margin: 2% 0% 4% 2%;
             font-size: 16px;
-            color: rgb(53, 50, 50); 
+            color: rgb(53, 50, 50);
         }
 
-        #cardDetails{
-            width: 100%;    
+        #cardDetails {
+            width: 100%;
             height: 400px;
             display: flex;
             flex-wrap: wrap;
             /* border: 1px solid blue; */
         }
-        .creditOptionBox{
+
+        .creditOptionBox {
             width: 100%;
             height: 75%;
             /* border: 1px solid red; */
             border-bottom: 1px solid rgb(124, 121, 121);
         }
-        .creditcardBtn{
+
+        .creditcardBtn {
             margin-left: 10px;
-        
+
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
@@ -123,13 +134,15 @@
             position: relative;
             top: 4px;
         }
+
         .creditcardBtn:checked {
             border: 6px solid black;
         }
-        #codBtn{
+
+        #codBtn {
             margin-left: 10px;
             margin-top: 30px;
-        
+
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
@@ -145,36 +158,42 @@
             position: relative;
             top: 4px;
         }
-        #codBtn:checked{
+
+        #codBtn:checked {
             border: 6px solid black;
         }
 
-        .creditCardOption{
+        .creditCardOption {
             width: 100%;
             font-size: 16px;
             font-weight: 600;
         }
-        #cardNumber{
+
+        #cardNumber {
             width: 80%;
             height: 40px;
             margin: 3%;
         }
-        #cardName{
+
+        #cardName {
             width: 80%;
             height: 40px;
             margin: 3%;
         }
-        #cardDate{
+
+        #cardDate {
             width: 36%;
             height: 40px;
             margin: 3%;
         }
-        #cvv{
+
+        #cvv {
             width: 36%;
             height: 40px;
             margin: 3%;
         }
-        #submitBtn{ 
+
+        #submitBtn {
             width: 100%;
             margin-top: 50px;
             padding: 15px;
@@ -189,13 +208,14 @@
         }
 
 
-        #rightBox{
+        #rightBox {
             width: 40%;
             height: 500px;
             margin-left: 40px;
             /* border: 1px solid red; */
         }
-        .orderSummary{
+
+        .orderSummary {
             width: 80%;
             height: 200px;
             margin-top: 20px;
@@ -204,14 +224,16 @@
             flex-direction: column;
             border: 1px solid rgb(216, 209, 209);
         }
-        .orderHeading{
+
+        .orderHeading {
             font-size: 20px;
             font-weight: 700;
             margin-left: 5%;
             margin-top: 20px;
             margin-bottom: 0;
         }
-        .orderDetails{
+
+        .orderDetails {
             width: 80%;
             height: 500px;
             margin-top: 20px;
@@ -221,7 +243,8 @@
             border: 1px solid rgb(216, 209, 209);
         }
 
-        #orderSummary, #orderDetails{
+        #orderSummary,
+        #orderDetails {
             width: 75%;
             min-height: 200px;
             margin-top: 20px;
@@ -230,18 +253,21 @@
             flex-direction: column;
             border: 1px solid rgb(231, 226, 226);
         }
-        #orderDetails{
+
+        #orderDetails {
             border: 0px solid rgb(255, 255, 255);
             border-top: 1px solid rgb(216, 209, 209);
         }
-        .orderHeading{
+
+        .orderHeading {
             font-size: 20px;
             font-weight: 700;
             margin-left: 5%;
             margin-top: 20px;
             margin-bottom: 5px;
         }
-        .orderHeadingDetails{
+
+        .orderHeadingDetails {
             font-size: 20px;
             font-weight: 700;
             margin-left: 5%;
@@ -249,35 +275,39 @@
             margin-bottom: 0px;
         }
 
-        .orderSumStyle{
+        .orderSumStyle {
             padding: 5px;
             padding-left: 20px;
             font-size: 14px;
         }
-        .orderSumTotalPrice{
+
+        .orderSumTotalPrice {
             padding: 5px;
             padding-left: 20px;
             padding-bottom: 10px;
             font-size: 15px;
             font-weight: bold;
         }
-        
-        .productDetails{
+
+        .productDetails {
             height: 130px;
             display: flex;
             margin: 1%;
             border-bottom: 1px solid rgb(216, 209, 209);
         }
-        .productImgDiv{
+
+        .productImgDiv {
             width: 30%;
         }
-        .productDetailsDiv{
+
+        .productDetailsDiv {
             width: 60%;
         }
-        .productDetailsDesc{
-           font-size: 12px;
-           color: black;
-           margin: 2%;
+
+        .productDetailsDesc {
+            font-size: 12px;
+            color: black;
+            margin: 2%;
         }
 
         #footer {
@@ -285,7 +315,7 @@
             font-style: normal;
             color: #C8CBCC;
             height: 80px;
-            margin-top: 10px;
+            margin-top: 400px;
             font-size: 12px;
             border: 1px solid #363738;
         }
@@ -304,7 +334,7 @@
             margin: 0% 0% 2% 16%;
         }
 
-        a{
+        a {
             color: black;
         }
 
@@ -312,10 +342,16 @@
         .deliveryConstants>p {
             margin: 1px auto;
             color: #898c91;
+            font-size: 14px;
         }
 
+        .extraDetails {
+            border: 1px solid #BDBDBD;
+            padding: 10px;
+        }
     </style>
 </head>
+
 <body>
 
     <div id="topHeader">
@@ -332,8 +368,8 @@
             <button>sign up</button>
             <button>log in</button>
             <p>
-                <a href="Newcart.html"><i class="material-icons">shopping_bag</i></a>    
-            </p> 
+                <a href="Newcart.html"><i class="material-icons">shopping_bag</i></a>
+            </p>
         </div>
     </div>
 
@@ -346,53 +382,53 @@
 
             <div id="cardDetails">
 
-                    <div class="creditOptionBox">
-                        <input type="radio" class="creditcardBtn" name="payment" value="creditCard">
-                        <label for="creditCard" class="creditCardOption">Credit/Debit Card</label>
-                        <div>
-                            <input type="number" id="cardNumber" placeholder="Card Number">
-                            <input type="text" id="cardName" placeholder="Name On Card">
-                            <input type="number" id="cardDate" placeholder="MM / YY">
-                            <input type="number" id="cvv" placeholder="CVV">
-                        </div>
+                <div class="creditOptionBox">
+                    <input type="radio" class="creditcardBtn" name="payment" value="creditCard">
+                    <label for="creditCard" class="creditCardOption">Credit/Debit Card</label>
+                    <div>
+                        <input type="number" id="cardNumber" placeholder="Card Number">
+                        <input type="text" id="cardName" placeholder="Name On Card">
+                        <input type="number" id="cardDate" placeholder="MM / YY">
+                        <input type="number" id="cvv" placeholder="CVV">
                     </div>
+                </div>
 
-                    <div class="codOptionBox">
-                        <input type="radio" id="codBtn" name="payment" value="cod">
-                        <label for="cod" class="creditCardOption">Cash on Delivery</label>
-                        <button id="submitBtn" onclick="payment()">PLACE ORDER</button>
-                    </div>
+                <div class="codOptionBox">
+                    <input type="radio" id="codBtn" name="payment" value="cod">
+                    <label for="cod" class="creditCardOption">Cash on Delivery</label>
+                    <button id="submitBtn" onclick="payment()">PLACE ORDER</button>
+                </div>
 
             </div>
-            
+
         </div>
-        
+
         <div id="rightBox">
 
             <div id="orderSummary">
                 <div class="orderHeading">ORDER SUMMARY</div>
-    
+
                 <table id="orderSummeryTable">
                     <tr>
-                        <td id="item" class ="orderSumStyle"></td>
-                        <td id="totalPrice1" class ="orderSumStyle"></td>
+                        <td id="item" class="orderSumStyle"></td>
+                        <td id="totalPrice1" class="orderSumStyle"></td>
                     </tr>
                     <tr>
-                        <td class ="orderSumStyle">DELIVERY</td>
-                        <td id="delivery" class ="orderSumStyle"></td>
+                        <td class="orderSumStyle">DELIVERY</td>
+                        <td id="delivery" class="orderSumStyle"></td>
                     </tr>
                     <tr>
-                        <td class ="orderSumStyle"> <strong>TOTAL</strong><br>(Inclusive of all taxes)</td>
+                        <td class="orderSumStyle"> <strong>TOTAL</strong><br>(Inclusive of all taxes)</td>
                         <td id="totalPrice2"></td>
                     </tr>
                 </table>
             </div>
-    
+
             <div id="orderDetails">
                 <div class="orderHeading, orderHeadingDetails">ORDER DETAILS</div>
                 <div id="display"></div>
                 <div id="displayShipplingDetails"></div>
-                <div>
+                <div class="extraDetails">
                     <h3>DELIVERY OPTION</h3>
                     <div class="deliveryConstants">
                         <p>Standard Delivery</p>
@@ -421,58 +457,58 @@
         var monYear = document.getElementById("cardDate");
         var cvvDet = document.getElementById("cvv");
 
-        function payment(){
+        function payment() {
 
-            if(cardNum.value == "" || cardNam.value == "" 
-            || monYear.value == "" || cvvDet.value == ""){
+            if (cardNum.value == "" || cardNam.value == ""
+                || monYear.value == "" || cvvDet.value == "") {
                 alert("Please fill in all the details");
             }
 
-            else{
+            else {
 
-                let interval = setTimeout(function(){
+                let interval = setTimeout(function () {
 
-                alert("Your order has been placed succesfully. Happy Shopping!");   
-                window.location.href = "adidas_home_page.html";            
+                    alert("Your order has been placed succesfully. Happy Shopping!");
+                    window.location.href = "adidas_home_page.html";
 
                 }, 2000);
 
             }
-            
+
         }
 
 
         // -------- For Order summary ------
         let checkoutData = JSON.parse(localStorage.getItem("checkout"));
-        let key = checkoutData.length -1;
-        let ti= checkoutData[key].totalItem;
+        let key = checkoutData.length - 1;
+        let ti = checkoutData[key].totalItem;
         let tp = checkoutData[key].totalPrice;
 
         // console.log("checkoutData--", checkoutData)
 
-        document.getElementById("item").textContent = ti +" "+"ITEM";
+        document.getElementById("item").textContent = ti + " " + "ITEM";
         document.getElementById("delivery").textContent = checkoutData[key].delivery
         document.getElementById("totalPrice1").textContent = "₹" + tp + ".00";
 
         document.getElementById("totalPrice2").setAttribute("class", "orderSumTotalPrice");
 
-        if(checkoutData[key].delivery!="Free"){
+        if (checkoutData[key].delivery != "Free") {
 
-            tp = tp+ 50
+            tp = tp + 50
             document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
         }
-       
-        else{
+
+        else {
             document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
         }
 
         // -----For order Details Part -----
         let DAR1 = JSON.parse(localStorage.getItem("DAR"))
 
-        let parent =document.getElementById("display")
+        let parent = document.getElementById("display")
         parent.style = "margin-top :10% ; display :grid;gap :0px"
 
-        DAR1.forEach(function(product){
+        DAR1.forEach(function (product) {
 
             let div = document.createElement("div");
             div.setAttribute("class", "productDetails");
@@ -480,7 +516,7 @@
             let div1 = document.createElement("div");
             div1.setAttribute("class", "productImgDiv");
 
-            let image= document.createElement("img");
+            let image = document.createElement("img");
             image.src = product.img[3];
             image.style.width = "100%";
 
@@ -497,7 +533,7 @@
 
             let color = document.createElement("div");
             color.setAttribute("class", "productDetailsDesc");
-            color.textContent = "COLOR :" +product.color[0];
+            color.textContent = "COLOR :" + product.color[0];
 
             let size = document.createElement("div");
             size.setAttribute("class", "productDetailsDesc");
@@ -507,21 +543,50 @@
             price.setAttribute("class", "productDetailsDesc");
             price.textContent = "₹" + product.price;
 
-            div2.append(name,color,size,price)
+            div2.append(name, color, size, price)
 
-            div.append(div1,div2)
+            div.append(div1, div2)
 
             parent.append(div)
 
         });
 
 
-        let shippingDetails = JSON.parse(localStorage.getItem("shipping"))
+        let shippingDetails = JSON.parse(localStorage.getItem("shipping"));
+
+        console.log(shippingDetails);
+
+        function displayShippling() {
+
+            let displayShipplingDetails = document.getElementById("displayShipplingDetails");
+
+            let h3 = document.createElement("h3");
+            h3.textContent = "DELIVERY ADDRESS";
+
+            let name = document.createElement("p");
+            name.textContent = shippingDetails[0].firstname + " " + shippingDetails[0].lastname;
+            name.style = "font-size: 14px; color: #424242"
+
+            let streetAddress = document.createElement("p");
+            streetAddress.textContent = shippingDetails[0].street;
+            streetAddress.style = "font-size: 14px; color: #424242"
+
+            let cityAddress = document.createElement("p");
+            cityAddress.textContent = shippingDetails[0].city + ", " + shippingDetails[0].state + ", " + shippingDetails[0].pincode;
+            cityAddress.style = "font-size: 14px; color: #424242"
+
+            displayShipplingDetails.append(h3, name, streetAddress, cityAddress);
+
+            displayShipplingDetails.style = "border:1px solid #BDBDBD; margin: 10px 0px; padding: 10px"
+
+        }
+        displayShippling();
 
 
 
 
     </script>
-    
+
 </body>
+
 </html>
