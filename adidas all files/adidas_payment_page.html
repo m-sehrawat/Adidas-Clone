@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdidasPayment</title>
+    <link rel="icon" href="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg"
+        type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&display=swap" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet"
+        type="text/css" />
+
+    <style>
+        * {
+            font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        /* header */
+        #header {
+            /* border: 1px solid gray; */
+            display: flex;
+            min-height: 50px;
+        }
+
+        .adidasLogo {
+            width: 70px;
+            margin-top: 15px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+
+        #rightSideBox {
+            /* border: 1px solid red; */
+            height: 100%;
+            width: 10%;
+            margin-top: 0.5%;
+            margin-left: 80%;
+        }
+
+        #rightSideBox>button {
+            margin-left: 1%;
+            background-color: white;
+            border: 0px solid white;
+            color: gray;
+            cursor: pointer;
+        }
+
+        #rightSideBox>p {
+            /* border: 1px solid red; */
+            margin-top: 5%;
+            margin-left: 50%;
+            cursor: pointer;
+        }
+
+        #container {
+            width: 1200px;
+            height: 800px;
+            margin: auto;
+            display: flex;
+            /* border: 1px solid black; */
+        }
+
+        #leftBox {
+            width: 60%;
+            height: 500px;
+            /* border: 1px solid red; */
+        }
+
+        #paymentHeading {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 2% 0% 0% 2%;
+        }
+
+        .subHead {
+            margin: 2% 0% 0% 2%;
+            font-size: 16px;
+            color: rgb(53, 50, 50);
+        }
+
+        #cardDetails {
+            display: flex;
+            width: 100%;
+            height: 300px;
+            /* border: 1px solid blue; */
+        }
+
+        #creditcardBtn{
+            margin-left: 10px;
+        
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+
+            border: 2px solid #999;
+            transition: 0.2s all linear;
+            margin-right: 5px;
+
+            position: relative;
+            top: 4px;
+        }
+        #creditcardBtn:checked {
+            border: 6px solid black;
+        }
+        #codBtn{
+            margin-left: 10px;
+        
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+
+            border: 2px solid #999;
+            transition: 0.2s all linear;
+            margin-right: 5px;
+
+            position: relative;
+            top: 4px;
+        }
+        #codBtn:checked{
+            border: 6px solid black;
+        }
+
+        .creditCardOption {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        #cardNumber {
+            width: 80%;
+            height: 40px;
+            margin: 3%;
+        }
+
+        #cardName {
+            width: 80%;
+            height: 40px;
+            margin: 3%;
+        }
+
+        #cardDate {
+            width: 36%;
+            height: 40px;
+            margin: 3%;
+        }
+
+        #cvv {
+            width: 36%;
+            height: 40px;
+            margin: 3%;
+        }
+
+        #submitBtn {
+            margin-left: 1%;
+            margin-top: 50px;
+            width: 60%;
+            height: 50px;
+            text-align: left;
+            background-color: black;
+            color: white;
+        }
+
+
+        #rightBox {
+            width: 40%;
+            height: 500px;
+            border: 1px ;
+        }
+
+        .orderSummary {
+            width: 80%;
+            height: 200px;
+            margin-top: 20px;
+            margin-left: 50px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgb(158, 158, 158);
+        }
+
+        .orderHeading {
+            font-size: 20px;
+            font-weight: 700;
+            margin-left: 5%;
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+
+        .orderDetails {
+            width: 80%;
+            height: auto;
+            margin-top: 20px;
+            margin-left: 50px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgb(136, 136, 136);
+        }
+
+        #footer {
+            background-color: #363738;
+            font-style: normal;
+            color: #C8CBCC;
+            height: 110px;
+            margin-top: 10px;
+            font-size: 12px;
+            border: 1px solid #363738;
+        }
+
+        #footer>p:first-child {
+            display: inline-block;
+            margin: 0% 0% 2% 16%;
+        }
+
+        #footer>p:nth-child(2) {
+            display: inline-block;
+            margin: 1% 0% 2% 45%;
+        }
+
+        #footer>p:last-child {
+            margin: 0% 0% 2% 16%;
+        }
+
+
+        /* ----order Summery ----- */
+
+        #orderSummeryTable{
+
+            width: 100%;
+            margin-top: 8%;
+            border: 1px ;
+            padding-left: 5%;
+           
+           
+            
+          
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div id="header">
+        <div>
+            <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
+        </div>
+        <div id="rightSideBox">
+            <button>sign up</button>
+            <button>log in</button>
+            <p>
+                <i class="material-icons">shopping_bag</i>
+            </p>
+        </div>
+    </div>
+    <hr>
+
+    <div id="container">
+
+        <div id="leftBox">
+            <div id="paymentHeading">PAYMENT METHOD</div>
+            <div class="subHead">All transactions are safe and secure</div>
+            <hr>
+
+            <div id="cardDetails">
+
+                <form onsubmit="payment(event)" id="myForm" action="">
+                    <div>
+                        <input type="radio" id="creditcardBtn" name="payment" value="creditCard">
+                        <label for="creditCard" class="creditCardOption">Credit/Debit Card</label>
+                    </div>
+                    
+                    <div>
+                        <input type="number" id="cardNumber" placeholder="Card Number">
+                        <input type="text" id="cardName" placeholder="Name On Card">
+                        <input type="number" id="cardDate" placeholder="MM / YY">
+                        <input type="number" id="cvv" placeholder="CVV">
+                    </div>
+
+                    <hr>
+
+                    <div>
+                        <input type="radio" id="codBtn" name="payment" value="cod">
+                        <label for="cod" class="creditCardOption">Cash on Delivery</label>
+                    </div>
+
+                    <input type="submit" id="submitBtn" value="PLACE ORDER">
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="rightBox">
+
+            <div class="orderSummary">
+                <div class="orderHeading">ORDERS SUMMARY</div>
+                <table id="orderSummeryTable">
+                    <tr>
+                        <td id="item"></td>
+                        <td id="totalPrice1"></td>
+                    </tr>
+                    <tr>
+                        <td>Delivery</td>
+                        <td id="delivery"></td>
+                    </tr>
+                    <tr>
+                        <td> <strong>Total</strong><br>(Inclusive of all taxes)</td>
+                        <td id="totalPrice2"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="orderDetails">
+                <div class="orderHeading">ORDERS DETAILS</div>
+                <div id="display">
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <div id="footer">
+            <p>India</p>
+            <p>Privacy Policy &nbsp; &nbsp; | &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp; &nbsp; Cookies
+            </p>
+            <p>© 2021 adidas India Marketing Pvt Ltd</p>
+        </div>
+    </footer>
+
+    <script>
+
+        // -------- For Order summery ------
+
+
+
+        let checkoutData = JSON.parse(localStorage.getItem("checkout"))
+        let key = checkoutData.length -1;
+        let ti= checkoutData[key].totalItem
+        let tp = checkoutData[key].totalPrice
+
+        console.log("checkoutData--", checkoutData)
+
+        document.getElementById("item").textContent = ti +" "+"Item"
+        document.getElementById("delivery").textContent = checkoutData[key].delivery
+        document.getElementById("totalPrice1").textContent = "₹" + tp
+
+        document.getElementById("totalPrice1").style = "font-weight : bold"
+        document.getElementById("totalPrice2").style = "font-weight : bold;font-size:18px"
+
+        if(checkoutData[key].delivery!="Free"){
+
+            tp = tp+ 50
+            document.getElementById("totalPrice2").textContent = "₹" + tp
+        }
+       
+        else{
+            document.getElementById("totalPrice2").textContent = "₹" + tp
+        }
+        
+
+        // -----For order Details Part -----
+
+
+        let DAR1 = JSON.parse(localStorage.getItem("DAR"))
+
+        let parent =document.getElementById("display")
+        parent.style = "margin-top :10% ;border : 1px ;display :grid;gap :0px"
+
+        DAR1.forEach(function(product){
+
+            let div = document.createElement("div")
+            div.style = " display: flex; gap: 5%;margin-bottom: -10%; margin-left: 5%; border:1px"
+
+            let div1 = document.createElement("div")
+            div1.style ="width : 40%;;border:1px "
+
+            let image= document.createElement("img")
+            image.src = product.img[3]
+            image.style = "width:100% ;"
+
+            div1.append(image)
+
+            let div2 = document.createElement("div")
+            div2.style = "border:1px ;padding-bottom:18%;height : 50%"
+
+            let name = document.createElement("p")
+            let color = document.createElement("p")
+            let size = document.createElement("span")
+            let price = document.createElement("p")
+            price.style = "font-weight : bold"
+
+
+            name.textContent = product.name
+            color.textContent = "COLOR :" +product.color[0]
+            size.textContent = "SIZE : " + product.size
+            price.textContent = "₹" + product.price
+
+            div2.append(name,color,size,price)
+
+            div.append(div1,div2)
+
+            parent.append(div)
+
+        });
+
+
+        var cardNum = document.getElementById("cardNumber");
+        var cardNam = document.getElementById("cardName");
+        var monYear = document.getElementById("cardDate");
+        var cvvDet = document.getElementById("cvv");
+
+        function payment(e) {
+
+            e.preventDefault();
+
+            // if (cardNum.value == "" || cardNam.value == ""
+            //     || monYear.value == "" || cvvDet.value == "") {
+            //     alert("Please fill in all the details");
+            // }
+
+            // else {
+
+                let interval = setTimeout(function () {
+
+                    alert("Your order has been placed succesfully. Happy Shopping!");
+                    window.location.href = "adidas_home_page.html";
+
+                }, 2000);
+
+            // }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
