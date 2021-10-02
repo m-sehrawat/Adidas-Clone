@@ -46,27 +46,30 @@
             margin-left: 50px;    
             cursor: pointer;
         }
-        #rightSideBox{
-            /* border: 1px solid red; */
+        #rightSideBox {
             height: 100%;
             width: 10%;
             margin-top: 0.5%;
             margin-left: 80%;
-            cursor: pointer;
         }
-        #rightSideBox > button{
+
+        #rightSideBox>a>button {
             margin-left: 1%;
             background-color: white;
             border: 0px solid white;
             color: black;
             cursor: pointer;
         }
-        #rightSideBox > p{
-            /* border: 1px solid red; */
-            margin-top: 5%;
-            margin-left: 50%;
+
+        #rightSideBox>a>button:hover {
             cursor: pointer;
         }
+
+        #rightSideBox>p {
+            margin-top: 5%;
+            margin-left: 50%;
+        }
+
         
         /* product descrption box */
         #productDescription{
@@ -314,6 +317,21 @@
                 width: 600px;
                 height: 600px;
             }
+            .imgNavigationBtns{
+                width: 450px;
+                /* border: 1px solid red; */
+            }
+            .prev, .next{
+                width: 50px;
+                height: 50px;
+                margin-left: 30px;
+                border: 1px solid black;
+                background-color: white;
+                cursor: pointer;
+            }
+            .next{
+                margin-left: 300px;
+            }
             #descriptionBox{
                 width: 400px;
                 height: 500px;
@@ -372,11 +390,11 @@
             <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
         </div>
         <div id="rightSideBox">
-            <button>sign up</button>
-            <button>log in</button>
+            <a href="signup.html"><button>sign up</button></a>
+            <a href="adidas_checkOutPage.html"><button>log in</button></a>
             <p>
-                <a href="Newcart.html"><i class="material-icons">shopping_bag</i></a>    
-            </p> 
+                <a href="Newcart.html"><i class="material-icons">shopping_bag</i></a>
+            </p>
         </div>
     </div>
 
