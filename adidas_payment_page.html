@@ -387,12 +387,12 @@
         let DAR1 = JSON.parse(localStorage.getItem("DAR"))
 
         let parent =document.getElementById("display")
-        parent.style = "margin-top :10% ;border : 1px solid red;display :grid;gap :0px"
+        parent.style = "margin-top :10% ;border : 1px ;display :grid;gap :0px"
 
         DAR1.forEach(function(product){
 
             let div = document.createElement("div")
-            div.style = " display: flex; gap: 5%;margin-bottom: -10%; margin-left: 5%; border:1px solid blue"
+            div.style = " display: flex; gap: 5%;margin-bottom: -10%; margin-left: 5%; border:1px"
 
             let div1 = document.createElement("div")
             div1.style ="width : 40%;;border:1px "
