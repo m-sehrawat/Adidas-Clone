@@ -556,7 +556,27 @@
         let pincode = formone.pincode.value;
         let email = formone.email.value;
         let mobile = formone.mobile.value;
-        console.log("review data", firstname, lastname, street, landmark, additional_info, city, state, pincode, email, mobile);
+        // console.log("review data", firstname, lastname, street, landmark, additional_info, city, state, pincode, email, mobile);
+        if (localStorage.getItem("shipping") === null) {
+            localStorage.setItem("shipping", JSON.stringify([]));
+        }
+        var address = {
+            firstname,
+            lastname,
+            street,
+            landmark,
+            additional_info,
+            city,
+            state,
+            pincode,
+            email,
+            mobile
+        };
+        let cart = JSON.parse(localStorage.getItem("shipping"));
+        cart.push(address);
+        localStorage.setItem("shipping", JSON.stringify(cart));
+
+        console.log(cart);
 
 
 
