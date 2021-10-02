@@ -345,11 +345,28 @@
             color: black;
         }
         
-        #log,
         #reset,
-        #rev {
+        #rev,
+        #log {
             background-color: black;
             color: white;
+        }
+        
+        .mob {
+            display: flex;
+        }
+        
+        #reset {
+            width: 140px;
+            height: 50px;
+            margin-left: 10px;
+            border-radius: 7px;
+        }
+        
+        #log {
+            width: 100px;
+            height: 50px;
+            border-radius: 7px;
         }
     </style>
 </head>
@@ -420,15 +437,15 @@
                     <P>we will use these details to keep you inform on your delivery</P>
                 </div>
                 <div class="mob">
-                    <input type="text" id="email" placeholder="email" required>
-                    <input type="number" id="mobile" placeholder="Mobile Number" required>
+                    <div style="width:400px;margin-right: 10px;"> <input type="text" id="email" placeholder="email" required></div>
+                    <div style="width: 600px;"> <input type="number" id="mobile" placeholder="Mobile Number" required></div>
                 </div>
 
 
 
 
                 <div class="revbtn">
-                    <input type="submit" value="REVIEW & PAY" ,id="rev" />
+                    <input type="submit" value="REVIEW & PAY" id="rev" />
                 </div>
 
 
@@ -446,8 +463,8 @@
                     <span id="rename" style="color: red;"></span>
                     <input type="email" id="el" placeholder="Email">
                     <input type="password" id="pass" placeholder="Password">
-                    <div style="display: flex;">
-                        <div style="margin:5px 40px; background-color: black;"> <input type="submit" value="LOG IN" id="log" /></div>
+                    <div style="display: flex; padding: 30px 10px;">
+                        <div> <input type="submit" value="LOG IN" id="log" /></div>
                         <div> <button id="reset">RESET PASSWORD</button></div>
                     </div>
                 </form>
