@@ -175,7 +175,7 @@
             var indexwithdott = email.lastIndexOf(".");
 
             if (indexwithat < 1 || indexwithdott < indexwithat + 2 || indexwithdott + 2 >= email.length) {
-                alert("Please check '@' and '.' in your email");
+                alert("plz check @ and dott in your email");
 
             } else {
                 if (localStorage.getItem('users') === null) {
@@ -192,7 +192,7 @@
                 arr.push(user);
                 localStorage.setItem("users", JSON.stringify(arr));
                 // window.location.href = "adidas_checkOutPage.html";
-                alert("Registered successfully");
+                alert("registered successfully");
                 window.location.href = "adidas_checkOutPage.html";
                 // window.location.href = "shippinglogin.html";
                 document.getElementById("n").value = "";
