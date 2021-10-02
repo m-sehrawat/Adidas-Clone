@@ -304,8 +304,8 @@
 <script>
 
     let resetFilter = [
-         //Men's cloths T-shirts
-         {
+        //Men's cloths T-shirts
+        {
             img: [
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/066cb1d4e2fd4281aceaac8300b7f4c9_9366/AEROREADY_Designed_To_Move_Sport_Tee_Red_GM2108_21_model.jpg",
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a51495b9f92f465ca774ac8300b80557_9366/AEROREADY_Designed_To_Move_Sport_Tee_Red_GM2108_23_hover_model.jpg",
@@ -2799,6 +2799,51 @@
             }
         }
     }
+
+    // Product Type Filter Function
+    function showProductType() {
+
+        var productType = document.getElementById("productType").value;
+
+        for (let i = 0; i < productType.length; i++) {
+
+            if (productType == "sneakers") {
+                let productTypeSneakers = data.filter(function (element) {
+                    return (element.productType == "sneakers");
+                });
+                showProducts(productTypeSneakers);
+            }
+
+            if (productType == "football") {
+                let productTypeFootball = data.filter(function (element) {
+                    return (element.productType == "football");
+                });
+                showProducts(productTypeFootball);
+            }
+
+            if (productType == "sportsShoes") {
+                let productTypeSportsShoes = data.filter(function (element) {
+                    return (element.productType == "sportsShoes");
+                });
+                showProducts(productTypeSportsShoes);
+            }
+
+            if (productType == "Tshirts") {
+                let productTypeTshirts = data.filter(function (element) {
+                    return (element.productType == "Tshirts");
+                });
+                showProducts(productTypeTshirts);
+            }
+
+            if (productType == "sportsWear") {
+                let productTypeSportsWear = data.filter(function (element) {
+                    return (element.productType == "sportsWear");
+                });
+                showProducts(productTypeSportsWear);
+            }
+        }
+    }
+
 
     // Brand Filter Function
     function showBrand() {
