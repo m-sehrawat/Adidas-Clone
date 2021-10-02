@@ -76,7 +76,8 @@
             margin-left: 50%;
             cursor: pointer;
         }
-        #signUpBtn{
+        
+        #signUpBtn {
             text-decoration: none;
         }
         
@@ -345,23 +346,25 @@
             font-size: 14px;
             margin-left: 20px;
         }
-        #reset:hover{
+        
+        #reset:hover {
             background-color: black;
             color: white;
+            cursor: pointer;
         }
-    
-
+        
         .mob {
             display: flex;
             width: 1000px;
             margin-top: 5px;
             /* border: 1px solid red; */
         }
-        #emailBox{
+        
+        #emailBox {
             width: 50%;
         }
-
-        #mobBox{
+        
+        #mobBox {
             width: 100%;
         }
     </style>
@@ -443,10 +446,10 @@
                     <P>We'll use these details to keep you inform on your delivery.</P>
                 </div>
                 <div class="mob">
-                    <div id="emailBox"> 
+                    <div id="emailBox">
                         <input type="text" id="email" placeholder="email" required>
                     </div>
-                    <div id="mobBox"> 
+                    <div id="mobBox">
                         <input type="number" id="mobile" placeholder="Mobile Number" required>
                     </div>
                 </div>
@@ -474,9 +477,9 @@
                     <input type="email" id="el" placeholder="Email">
                     <input type="password" id="pass" placeholder="Password">
                     <div id="reset"><u>Forgotten Your Password?</u></div>
-                   
-                    <div> <input type="submit" value="LOG IN" id="log" /></div> 
-                    
+
+                    <div> <input type="submit" value="LOG IN" id="log" /></div>
+
                 </form>
             </div>
 
@@ -561,7 +564,7 @@
         for (i = 0; i < all_users.length; i++) {
             if (email === all_users[i].email && password === all_users[i].password) {
                 alert("Login successful");
-                // document.getElementById("checklogin").innerHTML = "Login successful";
+                document.getElementById("checklogin").textContent = "Login successful";
                 document.getElementById("rename").innerHTML = "";
                 document.getElementById("el").value = "";
                 document.getElementById("pass").value = "";
@@ -623,6 +626,16 @@
             cart.push(address);
             localStorage.setItem("shipping", JSON.stringify(cart));
             alert("Shipping Address added Succesfully");
+            document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+            document.getElementById("street").value = "";
+            document.getElementById("landmark").value = "";
+            document.getElementById("additional_info").value = "";
+            document.getElementById("city").value = "";
+            document.getElementById("state").value = "";
+            document.getElementById("pincode").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("mobile").value = "";
             window.location.href = "adidas_payment_page.html";
         }
 
