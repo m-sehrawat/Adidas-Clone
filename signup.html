@@ -14,11 +14,11 @@
         * {
             font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
         }
-
+        
         body {
             margin: 0%;
         }
-
+        
         #topHeader {
             display: flex;
             background-color: black;
@@ -27,28 +27,28 @@
             flex-grow: 0px;
             overflow: hidden;
         }
-
+        
         #topHeader div {
             margin: 0.5% 0% 0% 15%;
             font-size: 11px;
             font-weight: bold;
             letter-spacing: 2px;
         }
-
+        
         #header {
             display: flex;
             height: 80px;
             border-bottom: 1px solid #eaebec;
             overflow: hidden;
         }
-
+        
         .adidasLogo {
             width: 70px;
             margin-top: 15px;
             margin-left: 50px;
             cursor: pointer;
         }
-
+        
         .hearderSlideContent {
             margin: 10px auto;
             font-size: 11px;
@@ -56,7 +56,7 @@
             letter-spacing: 2px;
             color: white;
         }
-
+        
         #n,
         #e,
         #m,
@@ -65,7 +65,7 @@
             height: 40px;
             margin: 7px;
         }
-
+        
         #submit {
             text-align: center;
             margin: 20px 2px;
@@ -78,38 +78,37 @@
             font-size: 18px;
             box-shadow: 10px 5px 5px grey;
         }
-
+        
         #submit:hover {
             cursor: pointer;
         }
-
+        
         .inputBoxDesign {
             border: 1px solid black;
             font-size: 16px;
             padding: 3px 10px;
         }
-
+        
         .mainBox {
             max-width: 50%;
             margin: auto;
             height: 100%;
             padding: 4px;
         }
-
+        
         .red {
             color: red;
         }
-
+        
         @media(max-width:960px) {
             .mainBox {
                 max-width: 80%;
             }
-
             #topHeader>div {
                 display: none;
             }
         }
-
+        
         @media(max-width:600px) {
             .mainBox {
                 max-width: 100%;
@@ -172,14 +171,13 @@
 
 
             }
-            //  var indexwithat = email.indexOf("@");
-            // var indexwithdott = email.lastIndexOf(".");
+            var indexwithat = email.indexOf("@");
+            var indexwithdott = email.lastIndexOf(".");
 
-            // if (indexwithat < 1 || indexwithdott < indexwithat + 2 || indexwithdott + 2 >= email.length) {
-            //    alert("plz check @ and dott in your email");
+            if (indexwithat < 1 || indexwithdott < indexwithat + 2 || indexwithdott + 2 >= email.length) {
+                alert("plz check @ and dott in your email");
 
-            //  } 
-            else {
+            } else {
                 if (localStorage.getItem('users') === null) {
 
                     localStorage.setItem("users", JSON.stringify([]))
@@ -195,7 +193,7 @@
                 localStorage.setItem("users", JSON.stringify(arr));
                 // window.location.href = "adidas_checkOutPage.html";
                 alert("registered successfully");
-                window.location.href = "adidas_checkOutPage.html";
+                window.location.href = "shippinglogin.html";
                 document.getElementById("n").value = "";
                 document.getElementById("e").value = "";
                 document.getElementById("m").value = "";
@@ -227,7 +225,7 @@
                     topHeader.append(p);
                     let c = 0;
 
-                    setInterval(function () {
+                    setInterval(function() {
                         if (c == arrayLines.length) {
                             c = 0;
                         }
@@ -241,8 +239,6 @@
             x.addListener(showTextInHeader)
         }
         topHeaderSlideShow();
-
-
     </script>
 
 </body>
