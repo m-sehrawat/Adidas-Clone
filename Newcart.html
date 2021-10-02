@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cart</title>
 
+    <link rel="icon" href="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
+
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
@@ -24,6 +26,14 @@
     <style>
         /* ---------- Header-Part ----------- */
 
+
+        .hearderSlideContent {
+            margin: 10px auto;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: white;
+        }
 
 
         #topHeader {
@@ -209,7 +219,9 @@
             font-family: sans-serif;
             padding: 1%;
             margin-top: 10px;
-            font-size: 10px;
+            font-size: 13px;
+         
+          
         }
 
         #mouseOver {
@@ -220,6 +232,7 @@
             background-color: black;
             color: white;
             cursor: pointer;
+      
         }
 
         #mouseOver_chekout:hover {
@@ -274,16 +287,63 @@
             color: rgb(214, 214, 214);
         }
 
-        @media(max-width : 960px){
+
+
+
+        @media(max-width : 960px) {
             #mainBody {
-            margin: auto;
-            width: 90%;
-            display: grid;
-            grid-template-columns: auto;
-            gap: 5%;
+                margin: auto;
+                width: 90%;
+                display: grid;
+                grid-template-columns: auto;
+                gap: 5%;
+            }
+
+            #div1 {
+                width: auto;
+                height: auto;
+            }
+
+
+            #needHelp {
+
+                margin-bottom: 80px;
+                border: 1px ;
+            }
+
         }
-        }
+
+
         
+        @media(max-width : 360px) {
+            #mainBody {
+                margin: auto;
+                width: 90%;
+                display: grid;
+                grid-template-columns: auto;
+                gap: 5%;
+            }
+
+            #div1 {
+                width: auto;
+                height: auto;
+            }
+
+
+            #needHelp {
+
+                margin-bottom: 80px;
+                border: 1px solid red;
+            }
+
+        }
+
+
+        @media(max-width: 960px) {
+            #topHeader>div {
+                display: none;
+            }
+        }
     </style>
 
 </head>
@@ -304,8 +364,8 @@
                     src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
             </div>
             <div id="rightSideBox">
-                <button>sign up</button>
-                <button>log in</button>
+                <button onclick="signup()">sign up</button>
+                <button onclick="login()">log in</button>
                 <p>
                     <i class="material-icons">shopping_bag</i>
                 </p>
@@ -394,7 +454,7 @@
             </form>
 
 
-            <div>
+            <div id="needHelp">
                 <p> <strong> Need Help?</strong></p>
 
                 <span id="mouseOver"><u>Delivery</u></span> <br><br>
@@ -429,6 +489,61 @@
 
 <script>
 
+    // ----- signup  and login ----
+
+
+    function signup(){
+        window.location.href =  "signup.html"
+    }
+
+    function login(){
+        window.location.href =  "adidas_checkOutPage.html"
+    }
+    // ----- top header Script ----
+
+    //Top Header slide show function
+    function topHeaderSlideShow() {
+
+        let topHeader = document.getElementById("topHeader");
+
+        let arrayLines = [
+            "FREE DELIVERY FOR ALL ORDERS NOW",
+            "FREE RETURNS",
+            "SIGN UP & GET 15% OFF"
+        ];
+
+        let x = window.matchMedia("(max-width: 960px)")
+
+        function showTextInHeader(x) {
+
+            if (x.matches) {
+
+                let p = document.createElement("p");
+                p.textContent = arrayLines[0];
+                p.setAttribute("class", "hearderSlideContent");
+                topHeader.append(p);
+                let c = 0;
+
+                setInterval(function () {
+                    if (c == arrayLines.length) {
+                        c = 0;
+                    }
+                    p.textContent = arrayLines[c];
+                    c++;
+
+                }, 3000);
+            }
+        }
+        showTextInHeader(x)
+        x.addListener(showTextInHeader)
+    }
+    topHeaderSlideShow();
+
+
+
+
+    // -------- Main Body part -----
+
     let data = JSON.parse(localStorage.getItem("adidasCart"))
 
 
@@ -450,6 +565,7 @@
 
 
             let div1 = document.createElement("div")
+            div1.setAttribute("id", "div1")
             div1.style = "box-sizing: border-box;width:50%"
 
             let div2 = document.createElement("div")
@@ -465,7 +581,7 @@
             let div8 = document.createElement("div")
             let btn = document.createElement("button")
             btn.setAttribute("id", "btnr")
-            btn.style = "width: 100%;height:10% ;font-size:20px;padding-bottom: 30px ;"
+            btn.style = "width: 100%;height:10% ;font-size:20px;padding-bottom: 30px; margin-bottom: -20px;"
 
             btn.innerHTML = "×"
 
@@ -501,13 +617,11 @@
             let totalPrice1 = document.getElementById("totalPrice1")
             stock.style = "font-weight: bold;font-size:20px"
 
-            // let icon1 = document.createElement("i")
-            let icon2 = document.createElement("i")
-            // icon1.style = "border : 1px ;"
-            icon2.style = "border : 1px ; margin-top : -200%;"
-
-            // icon1.setAttribute("class", "fas fa-times")
-            icon2.setAttribute("class", "far fa-heart")
+            
+            let icon2 = document.createElement("div")
+        
+            icon2.style = "border : 1px ;text-align:center;font-size : 35px ;   padding-top: 10px;   margin-top: -60px;"
+            icon2.textContent = "♡"
 
 
 
@@ -517,6 +631,7 @@
             size.textContent = "SIZE :" + product.size
             stock.textContent = product.stock
             price.textContent = "₹" + product.price + ".00"
+            price.style = "font-weight : bold"
 
 
 
@@ -524,7 +639,7 @@
             tp = tp + Number(product.price)
             ti = data.length
 
-            totalPrice1.textContent = tp + ".00"
+            totalPrice1.textContent = " ₹"+ tp + ".00"
 
 
 
@@ -537,17 +652,17 @@
             quan.type = "number"
 
             quan.min = "1"
-            quan.max = "5"
+            quan.max = "1"
             quan.value = "1"
             quan.id = "Quantity"
             quan.style = "width : 50%; height : 50%;font-size: 20px;text-align: center;"
 
             div4.append(quantityText, quan)
 
-            quan.onclick = function () {
+            // quan.onclick = function () {
 
-                show12(quan.value, product, tp, ti)
-            }
+            //     show12(quan.value, product, tp, ti)
+            // }
 
 
 
@@ -571,7 +686,7 @@
                 totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp + ".00"
                 totalItem.textContent = ti + " Items"
 
-                totalPrice2.textContent = tp + ".00"
+                totalPrice2.textContent = " ₹"+ tp + ".00"
 
 
 
@@ -643,75 +758,75 @@
         e.preventDefault()
 
 
-        if(data.length>0){
+        if (data.length > 0) {
 
 
             let promocodeForm = document.getElementById("promocodeForm")
-        let promocode = promocodeForm.promoCodebtn.value
+            let promocode = promocodeForm.promoCodebtn.value
 
 
-        PromoCode.forEach(function (p) {
+            PromoCode.forEach(function (p) {
 
-            if (count == 0) {
+                if (count == 0) {
 
-                if (p.pc === promocode) {
+                    if (p.pc === promocode) {
 
 
 
-                    tp = tp - tp * Number(p.discount) / 100
+                        let tp1 = tp - tp * Number(p.discount) / 100
 
-                    let totalPrice = document.getElementById("totalPrice")
-                    let totalPrice1 = document.getElementById("totalPrice1")
-                    let totalPrice2 = document.getElementById("totalPrice2")
+                        let totalPrice = document.getElementById("totalPrice")
+                        let totalPrice1 = document.getElementById("totalPrice1")
+                        let totalPrice2 = document.getElementById("totalPrice2")
 
-                    totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
-                    totalPrice1.textContent = tp
-                    totalPrice2.textContent = tp
+                        totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp1
+                        totalPrice1.textContent = " ₹"+ tp
+                        totalPrice2.textContent = "(Promo Code Applied)" + " ₹" + tp1 
 
-                    alert("Promo Code Applied Successfully!")
+                        alert("Promo Code Applied Successfully!")
 
-                    count++
-                    promoflag++
-                    p.pc = "X"
+                        count++
+                        promoflag++
+                        p.pc = "X"
 
-                    return
+                        return
+
+                    }
 
                 }
 
+
+
+
+
+
+            })
+
+
+
+
+            if (count == 0) {
+                alert("Invalid Promo code")
+            }
+
+            else {
+                alert("Promocode Already applied Or In valid promocode")
+
             }
 
 
 
-
-
-
-        })
-
-
-
-
-        if (count == 0) {
-            alert("Invalid Promo code")
         }
+
+
+
 
         else {
-            alert("Promocode Already applied Or In valid promocode")
-       
-        }
-
-
-            
+            alert("No item In Bag")
         }
 
 
 
-        
-            else{
-                alert("No item In Bag")
-            }
-
-        
-        
 
 
 
@@ -816,10 +931,6 @@
 
         let price = Number(pr.price) * q1
 
-
-
-
-        ti = Number(data.length + q1)
 
 
 
