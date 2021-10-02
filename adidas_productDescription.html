@@ -8,7 +8,6 @@
     <link rel = "icon" href = 
     "https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" 
         type = "image/x-icon">  
-    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -132,12 +131,20 @@
         }
         .prevNxtBtns{
             position: absolute;
-            top: 200px;
+            top: 400px;
             left: 0px;
             border: 1px solid red;
             width: 1030px;
             height: 50px;
             display: flex;
+        }
+        
+        .BtnIcon{
+            text-align: center;
+            font-weight: 700;
+            font-style: bold;
+            font-size: 20px;
+            margin-top: 20%;
         }
 
         #descriptionBox{
@@ -378,11 +385,9 @@
         <a href="adidas_home_page.html"><span>Home</span></a>
     </div>
 
-    <div class="prevNxtBtns">
-        <i class="material-icons-outlined">
-            arrow_back
-        </i>
-    </div>
+    <!-- <div class="prevNxtBtns">
+        <span class="ImgbackBtn"><i class="fa fa-long-arrow-left"></i>
+    </div> -->
 
     <div id="productDescription">
         <div id="imageBox"></div>
@@ -433,16 +438,8 @@
                     showPrevImg(product, imgOne);
                 }
 
-                // var prevBtnIcon = document.createElement("i");
-                // prevBtnIcon.setAttribute("class", "fas fa-arrow-left");
-                // prevBtnIcon.style.width = "100%";
-                // prevBtnIcon.style.height = "100%";
-
-
-                // prevBtn.append(prevBtnIcon);
-
                 var nextBtn = document.createElement("div");
-                nextBtn.textContent = "Next";
+                // nextBtn.textContent = "Next";
                 nextBtn.setAttribute("class", "next");
                 nextBtn.onclick = function(){
                     showNextImg(product, imgOne);
@@ -450,28 +447,19 @@
 
                 imgNavBtnDiv.append(prevBtn, nextBtn);
 
+                //previous and next button icons
+                var prevBtnIcon = document.createElement("div");
+                prevBtnIcon.textContent = "←";
+                prevBtnIcon.setAttribute("class", "BtnIcon");
 
-                // function slideShow(p){
+                prevBtn.append(prevBtnIcon);
 
-                //     let count = 0;
+                var nextBtnIcon = document.createElement("div");
+                nextBtnIcon.textContent = "→";
+                nextBtnIcon.setAttribute("class", "BtnIcon");
 
-                //     let interval = setInterval(function(){
-                //         imageBoxContainer.innerHTML = null;
-                //         if(count == p.img.length){
-                //             count = 0;
-                //         }
+                nextBtn.append(nextBtnIcon);
 
-                //         var img = document.createElement("img");
-                //         img.src = p.img[count];
-                //         img.setAttribute("class", "productImg");
-                //         imageBoxContainer.append(img);
-                //         count++;
-
-                //     }, 3000);
-
-                // }
-
-                // slideShow(product);
                 //product description Box - heading
                 var productHeading = document.createElement("div");
                 productHeading.textContent = product.name;
@@ -642,8 +630,8 @@
         }
 
         showProducts(productDescriptionArr);
-        //select size function
 
+        //select size function
         var btnCount = 0;
         function selectSize(p, a, b, c){
 
