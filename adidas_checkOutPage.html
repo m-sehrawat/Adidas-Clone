@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adidas Checkout</title>
-    <link rel = "icon" href = 
-    "https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" 
-        type = "image/x-icon">
-    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link rel="icon" href="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&display=swap" rel="stylesheet">
-    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css"/>
+    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css" />
     <style>
-        *{
-            font-family: "AdihausDIN",Helvetica, Arial, sans-serif;
+        * {
+            font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
         }
+        
         body {
-            margin: 0px;    
+            margin: 0px;
         }
         /* header */
+        
         #topHeader {
             display: flex;
             background-color: black;
@@ -31,26 +31,29 @@
             flex-grow: 0px;
             overflow: hidden;
         }
-
+        
         #topHeader div {
             margin: 0.5% 0% 0% 15%;
             font-size: 11px;
             font-weight: bold;
             letter-spacing: 2px;
         }
-        #header{
+        
+        #header {
             /* border: 1px solid gray; */
             display: flex;
             min-height: 50px;
             border-bottom: 1px solid #eaebec;
         }
-        .adidasLogo{
+        
+        .adidasLogo {
             width: 70px;
             margin-top: 15px;
-            margin-left: 50px;    
+            margin-left: 50px;
             cursor: pointer;
         }
-        #rightSideBox{
+        
+        #rightSideBox {
             /* border: 1px solid red; */
             height: 100%;
             width: 10%;
@@ -58,48 +61,54 @@
             margin-left: 80%;
             cursor: pointer;
         }
-        #rightSideBox > button{
+        
+        #rightSideBox>button {
             margin-left: 1%;
             background-color: white;
             border: 0px solid white;
             color: black;
             cursor: pointer;
         }
-        #rightSideBox > p{
+        
+        #rightSideBox>p {
             /* border: 1px solid red; */
             margin-top: 5%;
             margin-left: 50%;
             cursor: pointer;
         }
-
-
+        
         .bottom {
             display: flex;
         }
+        
         .left {
             width: 60%;
             margin: 1% 1% 5% 8%;
             padding: 1%;
             /* border: 1px solid red; */
         }
+        
         #el,
         #pass {
-            width: 40%;
-            height: 50px;
-            margin: 10px;
+            width: 86%;
+            height: 40px;
+            margin: 20px;
         }
+        
         .right {
             width: 40%;
             margin: 1% 1%1% 6%;
             padding: 1%;
             display: block;
         }
+        
         #fname,
         #lname {
             width: 42%;
             height: 44px;
             margin-left: 20px;
         }
+        
         #additional_info,
         #city,
         #pincode,
@@ -110,6 +119,7 @@
             margin-top: 40px;
             margin-left: 20px;
         }
+        
         #street,
         #landmark {
             width: 88.5%;
@@ -117,12 +127,14 @@
             margin-top: 40px;
             margin-left: 20px;
         }
-        #state{
+        
+        #state {
             width: 43%;
             height: 50px;
             margin-top: 40px;
             margin-left: 20px;
         }
+        
         .country {
             margin: 20px;
         }
@@ -133,12 +145,14 @@
             width: 89%;
             margin: 20px;
         }
-        .standard > div:nth-child(1){
+        
+        .standard>div:nth-child(1) {
             margin-left: 20px;
             margin-top: 15px;
             font-size: 16px;
         }
-        .van{
+        
+        .van {
             margin-left: 20px;
             margin-top: 10px;
             font-size: 14px;
@@ -150,34 +164,47 @@
             margin-top: 50px;
             /* border: 1px solid red; */
         }
-        #contactEmail{
+        
+        #contactEmail {
             margin-left: 1px;
             width: 46%;
             height: 44px;
         }
-        #mobile{
+        
+        #mobile {
             margin-left: 1px;
             width: 46%;
         }
-
+        
         #rev {
-            width: 170px;
-            height: 50px;
+            text-align: center;
+            height: 60px;
+            width: 30%;
+            border: none;
+            border-radius: 4px;
             background-color: black;
             color: white;
+            font-size: 18px;
+            box-shadow: 10px 5px 5px grey;
         }
+        
+        #rev:hover {
+            cursor: pointer;
+        }
+        
         .revbtn {
             margin-top: 50px;
             margin-left: 22px;
         }
-
-        #right{
+        
+        #right {
             width: 40%;
             height: 1000px;
             margin-top: 20px;
             /* border: 1px solid blue; */
         }
-        #login{
+        
+        #login {
             width: 65%;
             height: 400px;
             margin-top: 70px;
@@ -185,35 +212,47 @@
             flex-direction: column;
             border: 1px solid rgb(216, 209, 209);
         }
-        .heading{
+        
+        .heading {
             font-size: 30px;
             font-weight: 700;
             margin-left: 5%;
             margin-top: 30px;
             margin-bottom: 0;
         }
-        #email{
+        
+        #email {
             width: 88%;
             height: 44px;
             margin-left: 5%;
         }
-        #password{
+        
+        #password {
             margin-top: 30px;
             width: 88%;
             height: 44px;
             margin-left: 5%;
         }
-        #submit{
+        
+        #submit {
+            text-align: center;
+            margin: 20px 20px;
+            height: 60px;
+            width: 88%;
+            border: none;
+            border-radius: 4px;
             background-color: black;
             color: white;
-            width: 88%;
-            margin-left: 5%;
-            margin-top: 40px;
-            padding: 15px;
-            text-align: left;
+            font-size: 18px;
+            box-shadow: 10px 5px 5px grey;
         }
-
-        #orderSummary, #orderDetails{
+        
+        #submit:hover {
+            cursor: pointer;
+        }
+        
+        #orderSummary,
+        #orderDetails {
             width: 65%;
             min-height: 200px;
             margin-top: 20px;
@@ -221,25 +260,28 @@
             flex-direction: column;
             border: 1px solid rgb(216, 209, 209);
         }
-        #orderDetails{
+        
+        #orderDetails {
             border: 0px solid rgb(255, 255, 255);
             border-top: 1px solid rgb(216, 209, 209);
         }
-        .orderHeading{
+        
+        .orderHeading {
             font-size: 20px;
             font-weight: 700;
             margin-left: 5%;
             margin-top: 20px;
             margin-bottom: 5px;
         }
-        .orderHeadingDetails{
+        
+        .orderHeadingDetails {
             font-size: 20px;
             font-weight: 700;
             margin-left: 5%;
             margin-top: 20px;
             margin-bottom: 0px;
         }
-
+        
         #footer {
             background-color: #363738;
             font-style: normal;
@@ -249,27 +291,28 @@
             font-size: 12px;
             border: 1px solid #363738;
         }
-
+        
         #footer>p:first-child {
             display: inline-block;
             margin: 0% 0% 2% 16%;
         }
-
+        
         #footer>p:nth-child(2) {
             display: inline-block;
             margin: 1% 0% 2% 45%;
         }
-
+        
         #footer>p:last-child {
             margin: 0% 0% 2% 16%;
         }
-
-        .orderSumStyle{
+        
+        .orderSumStyle {
             padding: 5px;
             padding-left: 20px;
             font-size: 14px;
         }
-        .orderSumTotalPrice{
+        
+        .orderSumTotalPrice {
             padding: 5px;
             padding-left: 20px;
             padding-bottom: 10px;
@@ -277,30 +320,57 @@
             font-weight: bold;
         }
         
-        .productDetails{
+        .productDetails {
             height: 130px;
             display: flex;
             margin: 1%;
             border-bottom: 1px solid rgb(216, 209, 209);
         }
-        .productImgDiv{
+        
+        .productImgDiv {
             width: 30%;
         }
-        .productDetailsDiv{
+        
+        .productDetailsDiv {
             width: 60%;
         }
-        .productDetailsDesc{
-           font-size: 12px;
-           color: black;
-           margin: 2%;
+        
+        .productDetailsDesc {
+            font-size: 12px;
+            color: black;
+            margin: 2%;
         }
-
-        a{
+        
+        a {
             color: black;
         }
-
+        
+        #reset,
+        #rev,
+        #log {
+            background-color: black;
+            color: white;
+        }
+        
+        .mob {
+            display: flex;
+        }
+        
+        #reset {
+            width: 140px;
+            height: 50px;
+            margin-left: 10px;
+            border-radius: 7px;
+        }
+        
+        #log {
+            width: 100px;
+            height: 50px;
+            border-radius: 7px;
+        }
     </style>
 </head>
+
 <body>
 
     <div id="topHeader">
@@ -314,96 +384,116 @@
             <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
         </div>
         <div id="rightSideBox">
-            <button>sign up</button>
-            <button>log in</button>
+            <button><a href="signup.html">sign up</a></button>
+            <button id="signinbtn">log in</button>
             <p>
-                <a href="Newcart.html"><i class="material-icons">shopping_bag</i></a>    
-            </p> 
+                <a href="Newcart.html"><i class="material-icons">shopping_bag</i></a>
+            </p>
         </div>
     </div>
 
     <div class="bottom">
         <div class="left">
             <h1 style="margin: 20px;">SHIPPING ADDRESS</h1>
-            <form>
+
+            <form id="myformone" onsubmit="review(event)">
+
+
                 <input type="text" id="fname" placeholder="First Name" required>
+
+
                 <input type="text" id="lname" placeholder="Last Name" required>
+
+
                 <input type="text" id="street" placeholder="Street Address" required>
+
+
                 <input type="text" id="landmark" placeholder="Landmark" required>
+
+
                 <input type="text" id="additional_info" placeholder="Additional Info" required>
+
+
                 <input type="text" id="city" placeholder="City" required>
+
+
                 <select id="state" required>
-                    <option>STATE</option>
-                    <option>Andhra Pradesh</option>
-                    <option>Arunachal Pradesh</option>
-                    <option>Bihar</option>
-                    <option>Chhattisgarh</option>
-                    <option>Goa</option>
-                    <option>Haryana</option>
-                    <option>Jammu and Kashmir</option>
-                    <option>Karnataka</option>
-                    <option>Madhya Pradesh</option>
-                    <option>Nagaland</option>
+                    <option value="jharkhand">Jharkhand</option>
+                    <option value="bihar">Bihar</option>
                 </select>
                 <input type="number" id="pincode" placeholder="Pin code" required>
-            </form>
-            <div class="country"><strong>Country: </strong>India</div>
-            
-            <div class="standard">
-                <div><strong>STANDARD DELIVERY</strong></div>  
-                <div class="van">
-                    <div> within 3-9 bussiness days </div>
-                </div>
-            </div>
-            <div class="info">
-                <h1><strong>CONTACT INFORMATION</strong></h1>
-                <div>We'll use these details to keep you inform on your delivery</div>
-                
-                <input type="text" id="contactEmail" placeholder="Email" required>
-                <input type="number" id="mobile" placeholder="Mobile Number" required> 
-            </div>
 
-            <div class="revbtn"><a href="adidas_payment_page.html"><button id="rev" onclick="reviewPay()">REVIEW & PAY</button></a></div>
-    
+                <div class="country">country:<strong>INDIA</strong></div>
+
+                <div class="standard">
+                    <div><b>STANDARD DELIVERY</b></div>
+                    <div class="van">
+
+                        <div style="font-size: 15px;"> within 3-9 bussiness days </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <h1 style="font-size: 20px;"><strong><u>CONTACT INFORMATION</u></strong></h1>
+                    <P>we will use these details to keep you inform on your delivery</P>
+                </div>
+                <div class="mob">
+                    <div style="width:400px;margin-right: 10px;"> <input type="text" id="email" placeholder="email" required></div>
+                    <div style="width: 600px;"> <input type="number" id="mobile" placeholder="Mobile Number" required></div>
+                </div>
+
+
+
+
+                <div class="revbtn">
+                    <input type="submit" value="REVIEW & PAY" id="rev" />
+                </div>
+
+
+            </form>
         </div>
 
         <div id="right">
 
-        <!-- Login Details -->
+            <!-- Login Details -->
 
-        <div id="login">
-            <div class="heading">LOG IN</div>
-            <form onsubmit="loginform()" id="myform" action="">
-                <input type="email" id="email" placeholder="Email">
-                <input type="password" id="password" placeholder="Password">
-                <input type="submit" id="submit" value="LOG IN">
-            </form>
-        </div>
-        
-        <div id="orderSummary">
-            <div class="orderHeading">ORDER SUMMARY</div>
+            <div id="login">
+                <span id="checklogin" style="color: red;"></span>
+                <div class="heading">LOG IN</div>
+                <form onsubmit="signinfun(event)" id="myform" action="">
+                    <span id="rename" style="color: red;"></span>
+                    <input type="email" id="el" placeholder="Email">
+                    <input type="password" id="pass" placeholder="Password">
+                    <div style="display: flex; padding: 30px 10px;">
+                        <div> <input type="submit" value="LOG IN" id="log" /></div>
+                        <div> <button id="reset">RESET PASSWORD</button></div>
+                    </div>
+                </form>
+            </div>
 
-            <table id="orderSummeryTable">
-                <tr>
-                    <td id="item" class ="orderSumStyle"></td>
-                    <td id="totalPrice1" class ="orderSumStyle"></td>
-                </tr>
-                <tr>
-                    <td class ="orderSumStyle">DELIVERY</td>
-                    <td id="delivery" class ="orderSumStyle"></td>
-                </tr>
-                <tr>
-                    <td class ="orderSumStyle"> <strong>TOTAL</strong><br>(Inclusive of all taxes)</td>
-                    <td id="totalPrice2"></td>
-                </tr>
-            </table>
-        </div>
+            <div id="orderSummary">
+                <div class="orderHeading">ORDER SUMMARY</div>
 
-        <div id="orderDetails">
-            <div class="orderHeading, orderHeadingDetails">ORDER DETAILS</div>
-            <div id="display"></div>
-        </div>
-            
+                <table id="orderSummeryTable">
+                    <tr>
+                        <td id="item" class="orderSumStyle"></td>
+                        <td id="totalPrice1" class="orderSumStyle"></td>
+                    </tr>
+                    <tr>
+                        <td class="orderSumStyle">DELIVERY</td>
+                        <td id="delivery" class="orderSumStyle"></td>
+                    </tr>
+                    <tr>
+                        <td class="orderSumStyle"> <strong>TOTAL</strong><br>(Inclusive of all taxes)</td>
+                        <td id="totalPrice2"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="orderDetails">
+                <div class="orderHeading, orderHeadingDetails">ORDER DETAILS</div>
+                <div id="display"></div>
+            </div>
+
         </div>
     </div>
 
@@ -414,105 +504,205 @@
             <p>© 2021 adidas India Marketing Pvt Ltd</p>
         </div>
     </footer>
-
-    <script>
-
-        function loginform(){
-
-        }
-
-
-        // -------- For Order summary ------
-        let checkoutData = JSON.parse(localStorage.getItem("checkout"));
-        let key = checkoutData.length -1;
-        let ti= checkoutData[key].totalItem;
-        let tp = checkoutData[key].totalPrice;
-
-        // console.log("checkoutData--", checkoutData)
-
-        document.getElementById("item").textContent = ti +" "+"ITEM";
-        document.getElementById("delivery").textContent = checkoutData[key].delivery
-        document.getElementById("totalPrice1").textContent = "₹" + tp + ".00";
-
-        document.getElementById("totalPrice2").setAttribute("class", "orderSumTotalPrice");
-
-        if(checkoutData[key].delivery!="Free"){
-
-            tp = tp+ 50
-            document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
-        }
-       
-        else{
-            document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
-        }
-
-        // -----For order Details Part -----
-        let DAR1 = JSON.parse(localStorage.getItem("DAR"))
-
-        let parent =document.getElementById("display")
-        parent.style = "margin-top :10% ; display :grid;gap :0px"
-
-        DAR1.forEach(function(product){
-
-            let div = document.createElement("div");
-            div.setAttribute("class", "productDetails");
-
-            let div1 = document.createElement("div");
-            div1.setAttribute("class", "productImgDiv");
-
-            let image= document.createElement("img");
-            image.src = product.img[3];
-            image.style.width = "100%";
-
-            div1.append(image);
-
-            let div2 = document.createElement("div");
-            div2.setAttribute("class", "productDetailsDiv");
-            // div2.style = "border:1px ;padding-bottom:18%;height : 50%"
-
-            let name = document.createElement("div");
-            name.setAttribute("class", "productDetailsDesc");
-            name.textContent = product.name;
-            name.style.width = "100%";
-
-            let color = document.createElement("div");
-            color.setAttribute("class", "productDetailsDesc");
-            color.textContent = "COLOR :" +product.color[0];
-
-            let size = document.createElement("div");
-            size.setAttribute("class", "productDetailsDesc");
-            size.textContent = "SIZE : " + product.size;
-
-            let price = document.createElement("div");
-            price.setAttribute("class", "productDetailsDesc");
-            price.textContent = "₹" + product.price;
-
-            div2.append(name,color,size,price)
-
-            div.append(div1,div2)
-
-            parent.append(div)
-
-        });
-
-        var name = document.getElementById("fname");
-        var street = document.getElementById("street");
-        var pincode = document.getElementById("pincode");
-        var mobile = document.getElementById("mobile");
-
-        divName = document.createElement("div");
-        divName.textContent = name.value;
-
-        
-
-        function reviewPay(){
-
-        }
-
-
-
-
-    </script>
 </body>
+
 </html>
 
+<script>
+    var reset = document.getElementById("reset");
+    reset.addEventListener("click", forget);
+
+    function forget() {
+        window.location.href = "forgetpassword.html";
+    }
+
+
+
+
+
+    var signinbtn = document.getElementById("signinbtn");
+    signinbtn.addEventListener("click", signin);
+
+    function signin() {
+        alert("plz login below");
+        document.getElementById("rename").innerHTML = "** please login here **";
+        var el = document.getElementById("el").value;
+        if (el == "") {
+            document.getElementById("el").style.border = "1px solid red";
+
+        }
+
+
+
+    }
+
+    function signinfun(e) {
+        e.preventDefault();
+        // let checklogin = document.getElementById("check");
+        let myform = document.getElementById("myform");
+        let email = myform.el.value;
+        let password = myform.pass.value;
+        //console.log("data:", name, email, password);
+        let all_users = JSON.parse(localStorage.getItem("users"));
+
+
+
+        var count = 0;
+        for (i = 0; i < all_users.length; i++) {
+            if (email === all_users[i].email && password === all_users[i].password) {
+                alert("login successful");
+                document.getElementById("checklogin").innerHTML = "login successful";
+                document.getElementById("rename").innerHTML = "";
+                document.getElementById("el").value = "";
+                document.getElementById("pass").value = "";
+                break;
+
+
+            } else {
+                count++;
+
+            }
+
+        }
+        if (count == all_users.length) {
+            alert("invalid users");
+        }
+
+
+    }
+
+
+    function review(e1) {
+        if (document.getElementById("checklogin").innerHTML !== "login successful") {
+            alert("plz login first");
+        }
+
+        if (document.getElementById("checklogin").innerHTML === "login successful")
+
+        {
+            e1.preventDefault();
+            let formone = document.getElementById("myformone");
+            //let myformone = document.getElementById("myformone");
+            let firstname = formone.fname.value;
+            let lastname = formone.lname.value;
+            let street = formone.street.value;
+            let landmark = formone.landmark.value;
+            let additional_info = formone.additional_info.value;
+            let city = formone.city.value;
+            let state = formone.state.value;
+            let pincode = formone.pincode.value;
+            let email = formone.email.value;
+            let mobile = formone.mobile.value;
+            // console.log("review data", firstname, lastname, street, landmark, additional_info, city, state, pincode, email, mobile);
+            if (localStorage.getItem("shipping") === null) {
+                localStorage.setItem("shipping", JSON.stringify([]));
+            }
+            var address = {
+                firstname,
+                lastname,
+                street,
+                landmark,
+                additional_info,
+                city,
+                state,
+                pincode,
+                email,
+                mobile
+            };
+            let cart = JSON.parse(localStorage.getItem("shipping"));
+            cart.push(address);
+            localStorage.setItem("shipping", JSON.stringify(cart));
+            alert("data taken successfully");
+            window.location.href = "adidas_payment_page.html";
+        }
+
+        //console.log(cart);
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // -------- For Order summary ------
+    let checkoutData = JSON.parse(localStorage.getItem("checkout"));
+    let key = checkoutData.length - 1;
+    let ti = checkoutData[key].totalItem;
+    let tp = checkoutData[key].totalPrice;
+
+    // console.log("checkoutData--", checkoutData)
+
+    document.getElementById("item").textContent = ti + " " + "ITEM";
+    document.getElementById("delivery").textContent = checkoutData[key].delivery
+    document.getElementById("totalPrice1").textContent = "₹" + tp + ".00";
+
+    document.getElementById("totalPrice2").setAttribute("class", "orderSumTotalPrice");
+
+    if (checkoutData[key].delivery != "Free") {
+
+        tp = tp + 50
+        document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
+    } else {
+        document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
+    }
+
+    // -----For order Details Part -----
+    let DAR1 = JSON.parse(localStorage.getItem("DAR"))
+
+    let parent = document.getElementById("display")
+    parent.style = "margin-top :10% ; display :grid;gap :0px"
+
+    DAR1.forEach(function(product) {
+
+        let div = document.createElement("div");
+        div.setAttribute("class", "productDetails");
+
+        let div1 = document.createElement("div");
+        div1.setAttribute("class", "productImgDiv");
+
+        let image = document.createElement("img");
+        image.src = product.img[3];
+        image.style.width = "100%";
+
+        div1.append(image);
+
+        let div2 = document.createElement("div");
+        div2.setAttribute("class", "productDetailsDiv");
+        // div2.style = "border:1px ;padding-bottom:18%;height : 50%"
+
+        let name = document.createElement("div");
+        name.setAttribute("class", "productDetailsDesc");
+        name.textContent = product.name;
+        name.style.width = "100%";
+
+        let color = document.createElement("div");
+        color.setAttribute("class", "productDetailsDesc");
+        color.textContent = "COLOR :" + product.color[0];
+
+        let size = document.createElement("div");
+        size.setAttribute("class", "productDetailsDesc");
+        size.textContent = "SIZE : " + product.size;
+
+        let price = document.createElement("div");
+        price.setAttribute("class", "productDetailsDesc");
+        price.textContent = "₹" + product.price;
+
+        div2.append(name, color, size, price)
+
+        div.append(div1, div2)
+
+        parent.append(div)
+
+    });
+</script>
