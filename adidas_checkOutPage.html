@@ -371,46 +371,60 @@
     <div class="bottom">
         <div class="left">
             <h1 style="margin: 20px;">SHIPPING ADDRESS</h1>
-            <form id="myformone" onsubmit="reviewfun()">
+
+            <form id="myformone" onsubmit="review(event)">
+
+
                 <input type="text" id="fname" placeholder="First Name" required>
+
+
                 <input type="text" id="lname" placeholder="Last Name" required>
+
+
                 <input type="text" id="street" placeholder="Street Address" required>
+
+
                 <input type="text" id="landmark" placeholder="Landmark" required>
+
+
                 <input type="text" id="additional_info" placeholder="Additional Info" required>
+
+
                 <input type="text" id="city" placeholder="City" required>
+
+
                 <select id="state" required>
-                    <option>STATE</option>
-                    <option>Andhra Pradesh</option>
-                    <option>Arunachal Pradesh</option>
-                    <option>Bihar</option>
-                    <option>Chhattisgarh</option>
-                    <option>Goa</option>
-                    <option>Haryana</option>
-                    <option>Jammu and Kashmir</option>
-                    <option>Karnataka</option>
-                    <option>Madhya Pradesh</option>
-                    <option>Nagaland</option>
+                    <option value="jharkhand">Jharkhand</option>
+                    <option value="bihar">Bihar</option>
                 </select>
                 <input type="number" id="pincode" placeholder="Pin code" required>
 
-                <div class="country"><strong>Country: </strong>India</div>
+                <div class="country">country:<strong>INDIA</strong></div>
 
                 <div class="standard">
-                    <div><strong>STANDARD DELIVERY</strong></div>
+                    <div><b>STANDARD DELIVERY</b></div>
                     <div class="van">
-                        <div> within 3-9 bussiness days </div>
+
+                        <div style="font-size: 15px;"> within 3-9 bussiness days </div>
                     </div>
                 </div>
                 <div class="info">
-                    <h1><strong>CONTACT INFORMATION</strong></h1>
-                    <div>We'll use these details to keep you inform on your delivery</div>
-
-                    <input type="text" id="contactEmail" placeholder="Email" required>
+                    <h1 style="font-size: 20px;"><strong><u>CONTACT INFORMATION</u></strong></h1>
+                    <P>we will use these details to keep you inform on your delivery</P>
+                </div>
+                <div class="mob">
+                    <input type="text" id="email" placeholder="email" required>
                     <input type="number" id="mobile" placeholder="Mobile Number" required>
                 </div>
 
-                <div class="revbtn"><input type="submit" value="Review & pay" />
+
+
+
+                <div class="revbtn">
+                    <input type="submit" id="rev" value="REVIEW & PAY">
                 </div>
+
+
             </form>
         </div>
 
