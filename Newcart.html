@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cart</title>
+    <title>adidas Online Shop | adidas IN </title>
 
     <link rel="icon" href="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
 
@@ -56,7 +56,7 @@
         #header {
             display: flex;
             height: 80px;
-            border-bottom: 1px solid #eaebec;
+            border-bottom: 1px solid rgb(226, 226, 226);
             margin-bottom: 40px;
             overflow: hidden;
         }
@@ -118,10 +118,13 @@
         }
 
         #yourBag {
-            font-size: 40px;
+            font-size: 45px;
             line-height: 18px;
             font-family: sans-serif;
-            font-style: normal;
+            /* font-style: normal; */
+            font-weight: bold;
+            margin-top: 0px;
+            border: 1px;
 
         }
 
@@ -135,6 +138,14 @@
             margin-bottom: 3%;
             border: 1px;
 
+        }
+
+        #productSide{
+            margin-bottom: 30px;
+            border: 1px;
+        }
+        #checkoutSide{
+            margin-top: 100px;
         }
 
         #checkOut {
@@ -201,6 +212,15 @@
             border-color: 1px solid rgb(133, 133, 133);
             margin-top: 5%;
             border: 1px;
+            margin-bottom: 5%;
+            border-collapse:separate;
+            border-spacing:0 15px;
+            
+        }
+
+        #totalPrice{
+            margin-bottom: 40px;
+            margin-top: 10px;
         }
 
         #totalPrice2,
@@ -209,6 +229,19 @@
             text-align: right;
             padding-right: 10px;
         }
+
+        #paymentCardImg {
+            margin-top: 30px;
+        }
+
+        #needHelp {
+
+            margin-bottom: 80px;
+            border: 1px;
+           
+            
+        }
+
 
 
         #footer {
@@ -220,19 +253,19 @@
             padding: 1%;
             margin-top: 10px;
             font-size: 13px;
-         
-          
+
+
         }
 
         #mouseOver {
-            color: grey;
+            color: rgb(75, 75, 75);
         }
 
         #mouseOver:hover {
             background-color: black;
             color: white;
             cursor: pointer;
-      
+
         }
 
         #mouseOver_chekout:hover {
@@ -308,13 +341,13 @@
             #needHelp {
 
                 margin-bottom: 80px;
-                border: 1px ;
+                border: 1px;
             }
 
         }
 
 
-        
+
         @media(max-width : 360px) {
             #mainBody {
                 margin: auto;
@@ -333,7 +366,7 @@
             #needHelp {
 
                 margin-bottom: 80px;
-                border: 1px solid red;
+                border: 1px;
             }
 
         }
@@ -344,13 +377,19 @@
                 display: none;
             }
         }
+
+        #mainHeader{
+            border : 1px ;
+            height: 110px
+            
+        }
     </style>
 
 </head>
 
 <body>
 
-    <header>
+    <header id = "mainHeader">
 
         <div id="topHeader">
             <div>FREE DELIVERY FOR ALL ORDERS NOW</div>
@@ -419,7 +458,7 @@
 
 
 
-        <div id="chekoutSide">
+        <div id="checkoutSide">
             <div id="checkOut" style="width: 90%" onclick="checkOut()">
                 <div id="mouseOver_chekout">CHECKOUT</div>
                 <div>→</div>
@@ -431,15 +470,15 @@
                 <table id="table">
 
 
-                    <tr>
+                    <tr id="tableRow">
                         <td id="totalItem">Total item</td>
                         <td id="totalPrice1">₹0.00</td>
                     </tr>
-                    <tr>
+                    <tr id="tableRow">
                         <td>Delevery</td>
                         <td id="delivery"> Your Bag is EMPTY! </td>
                     </tr>
-                    <tr>
+                    <tr id="tableRow">
                         <td> <strong>Total</strong> <br>(Inclusive of all taxes) </td>
                         <td id="totalPrice2">₹0.00</td>
                     </tr>
@@ -461,6 +500,10 @@
                 <span id="mouseOver"><u>Return & Refund</u></span> <br><br>
                 <span id="mouseOver"><u>Ordering & Payment</u></span><br><br>
                 <span id="mouseOver"><u>Promotion & Voucher</u></span>
+
+                <p id="paymentCardImg"> <img
+                        src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/visa-master-rupay-cd_tcm209-732258.png"
+                        alt=""></p>
             </div>
         </div>
 
@@ -492,12 +535,12 @@
     // ----- signup  and login ----
 
 
-    function signup(){
-        window.location.href =  "signup.html"
+    function signup() {
+        window.location.href = "signup.html"
     }
 
-    function login(){
-        window.location.href =  "adidas_checkOutPage.html"
+    function login() {
+        window.location.href = "adidas_checkOutPage.html"
     }
     // ----- top header Script ----
 
@@ -561,7 +604,7 @@
         d.forEach(function (product) {
 
             let div = document.createElement("div")
-            div.style = "display : flex ; gap : 3%;border:1px solid rgb(214, 214, 214) ;height :250px"
+            div.style = "display : flex ; gap : 3%;border:1px solid rgb(80, 80, 80) ;height :250px; border-radius: 2px;"
 
 
             let div1 = document.createElement("div")
@@ -576,7 +619,7 @@
             let div5 = document.createElement("div")
             div5.style = "box-sizing: border-box; border :1px "
             let div6 = document.createElement("div")
-            div6.style = " border :1px "
+           
             let div7 = document.createElement("div")
             let div8 = document.createElement("div")
             let btn = document.createElement("button")
@@ -596,7 +639,7 @@
 
 
 
-            div6.style = " box-sizing: border-box; border:1px  ;display:flex;gap:3%;flex-grow: 1;"
+            div6.style = " box-sizing: border-box; border:1px ;display:flex;gap:3%;flex-grow: 1;margin-right:10px ;margin-top :10px"
             div7.style = "box-sizing: border-box;border:1px  ;display:grid;gap:-10px;margin-right:2%"
             div8.style = "font-size:20px;border:1px ;flex-grow: 3;text-align: right;margin-right:4%"
 
@@ -617,10 +660,10 @@
             let totalPrice1 = document.getElementById("totalPrice1")
             stock.style = "font-weight: bold;font-size:20px"
 
-            
+
             let icon2 = document.createElement("div")
-        
-            icon2.style = "border : 1px ;text-align:center;font-size : 35px ;   padding-top: 10px;   margin-top: -60px;"
+
+            icon2.style = "border : 1px ;text-align:center;font-size : 35px ;   padding-top: 10px;   margin-top: -40px;"
             icon2.textContent = "♡"
 
 
@@ -631,7 +674,7 @@
             size.textContent = "SIZE :" + product.size
             stock.textContent = product.stock
             price.textContent = "₹" + product.price + ".00"
-            price.style = "font-weight : bold"
+            // price.style = ""
 
 
 
@@ -639,7 +682,7 @@
             tp = tp + Number(product.price)
             ti = data.length
 
-            totalPrice1.textContent = " ₹"+ tp + ".00"
+            totalPrice1.textContent = " ₹" + tp + ".00"
 
 
 
@@ -673,7 +716,7 @@
                 delivery.textContent = "₹" + 50 + ".00"
                 dl = "50"
                 tp = tp + 50
-
+            
 
                 let totalItem = document.getElementById("totalItem")
                 let totalPrice = document.getElementById("totalPrice")
@@ -683,10 +726,10 @@
                 totalPrice1.style = "font-weight: bold;"
                 totalPrice2.style = "font-weight: bold;"
 
-                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp + ".00"
+                totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" +  tp + ".00"
                 totalItem.textContent = ti + " Items"
 
-                totalPrice2.textContent = " ₹"+ tp + ".00"
+                totalPrice2.textContent = " ₹" + tp + ".00"
 
 
 
@@ -780,8 +823,20 @@
                         let totalPrice2 = document.getElementById("totalPrice2")
 
                         totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp1
-                        totalPrice1.textContent = " ₹"+ tp
-                        totalPrice2.textContent = "(Promo Code Applied)" + " ₹" + tp1 
+
+
+                        if (tp >= 3050) {
+
+                            totalPrice1.textContent = " ₹" + tp
+                        }
+
+                        else {
+
+                            tp = tp - 50
+                            totalPrice1.textContent = " ₹" + tp
+                        }
+                        totalPrice1.textContent = " ₹" + tp
+                        totalPrice2.textContent = "(Promo Code Applied)" + " ₹" + tp1
 
                         alert("Promo Code Applied Successfully!")
 
