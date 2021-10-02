@@ -52,14 +52,14 @@
         }
 
         #rightSideBox {
-            height: 60px;
-            width: 120px;
+            height: 100%;
+            width: 10%;
             margin-top: 0.5%;
             margin-left: 80%;
         }
 
         #rightSideBox>button {
-            margin-left: 2px;
+            margin-left: 1%;
             background-color: white;
             border: 0px solid white;
             color: black;
@@ -73,8 +73,9 @@
         #parent {
             display: grid;
             gap: 3px;
-            grid-template-columns: 24% 24% 24% 24%;
+            grid-template-columns: 24.8% 24.8% 24.8% 24.8%;
             justify-content: center;
+
         }
 
         .adjustement {
@@ -127,9 +128,12 @@
         }
 
         .buttonsDiv {
+            /* position: fixed; */
+            top: 10px;
             border-top: 1px solid #eaebec;
             border-bottom: 1px solid #eaebec;
             margin-bottom: 10px;
+            /* background-color: red; */
 
         }
 
@@ -139,7 +143,7 @@
             font-size: 15px;
             background-color: white;
             border: none;
-            text-align: center;
+
         }
 
         .filterButtons:hover {
@@ -191,96 +195,6 @@
         .adjustement>a>span:hover {
             background-color: black;
             color: white;
-        }
-
-        .hearderSlideContent {
-            margin: 10px auto;
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: white;
-        }
-
-        @media(max-width: 960px) {
-            #parent {
-                grid-template-columns: 32% 32% 32%;
-            }
-
-            .buttonsDiv {
-                display: grid;
-                grid-template-columns: 24% 24% 24% 24%;
-                border-top: 1px solid black;
-                border-bottom: 1px solid black;
-            }
-
-            .filterButtons {
-                padding: 5px;
-                margin: 2px;
-                font-size: 13px;
-            }
-
-            .nameSection {
-                font-size: 12px;
-            }
-
-            .categorySection {
-                font-size: 11px;
-            }
-
-            .colorSection {
-                font-size: 12px;
-            }
-
-            #productHeading {
-                font-size: 32px;
-                margin-left: 2%;
-            }
-
-            #rightSideBox {
-                margin-left: 70%;
-            }
-
-            #rightSideBox>button {
-                visibility: hidden;
-            }
-
-            #footer>p:first-child {
-                visibility: hidden;
-            }
-
-            #footer>p:nth-child(2) {
-                display: block;
-                text-align: center;
-                margin: 0px auto 25px;
-            }
-
-            #footer>p:last-child {
-                text-align: center;
-                display: block;
-                margin: auto;
-            }
-
-            #topHeader>div {
-                display: none;
-            }
-
-        }
-
-        @media(max-width: 600px) {
-            #parent {
-                grid-template-columns: 48% 48%;
-            }
-
-            .buttonsDiv {
-                display: grid;
-                grid-template-columns: 32% 32% 32%;
-            }
-
-            #rightSideBox {
-                margin-left: 50%;
-            }
-
-
         }
     </style>
 </head>
@@ -390,8 +304,8 @@
 <script>
 
     let resetFilter = [
-        //Men's cloths T-shirts
-        {
+         //Men's cloths T-shirts
+         {
             img: [
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/066cb1d4e2fd4281aceaac8300b7f4c9_9366/AEROREADY_Designed_To_Move_Sport_Tee_Red_GM2108_21_model.jpg",
                 "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/a51495b9f92f465ca774ac8300b80557_9366/AEROREADY_Designed_To_Move_Sport_Tee_Red_GM2108_23_hover_model.jpg",
@@ -2792,6 +2706,7 @@
         window.location.href = "adidas_productDescription.html";
     }
 
+
     //Clear Filter Function
     function clearFilter() {
         showProducts(resetFilter);
@@ -2995,44 +2910,6 @@
             }
         }
     }
-
-    //Top Header slide show function
-    function topHeaderSlideShow() {
-
-        let topHeader = document.getElementById("topHeader");
-
-        let arrayLines = [
-            "FREE DELIVERY FOR ALL ORDERS NOW",
-            "FREE RETURNS",
-            "SIGN UP & GET 15% OFF"
-        ];
-
-        let x = window.matchMedia("(max-width: 960px)")
-
-        function showTextInHeader(x) {
-
-            if (x.matches) {
-
-                let p = document.createElement("p");
-                p.textContent = arrayLines[0];
-                p.setAttribute("class", "hearderSlideContent");
-                topHeader.append(p);
-                let c = 0;
-
-                setInterval(function () {
-                    if (c == arrayLines.length) {
-                        c = 0;
-                    }
-                    p.textContent = arrayLines[c];
-                    c++;
-
-                }, 3000);
-            }
-        }
-        showTextInHeader(x)
-        x.addListener(showTextInHeader)
-    }
-    topHeaderSlideShow();
 
 
 </script>

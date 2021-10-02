@@ -6,13 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cart</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css" />
-    <link rel = "icon" href = " https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" type="image/x-icon">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet"
+        type="text/css" />
+
+    <link rel = "icon" href = " https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg"
+        type="image/x-icon">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
 
     <style>
         /* ---------- Header-Part ----------- */
+
+
+
         #topHeader {
             display: flex;
             background-color: black;
@@ -29,6 +42,7 @@
             letter-spacing: 2px;
         }
 
+
         #header {
             display: flex;
             height: 80px;
@@ -44,6 +58,7 @@
             cursor: pointer;
         }
 
+
         #rightSideBox {
             height: 100%;
             width: 10%;
@@ -58,6 +73,8 @@
             background-color: white;
             border: 0px;
             color: black;
+
+
         }
 
         #rightSideBox>p {
@@ -65,7 +82,9 @@
             margin-left: 50%;
         }
 
+
         /* ---------- Cart-part ----------- */
+
         * {
             font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
         }
@@ -82,9 +101,9 @@
 
         #mainBody {
             margin: auto;
-            width: 75%;
+            width: 70%;
             display: grid;
-            grid-template-columns: 63% 30%;
+            grid-template-columns: 59% 39%;
             gap: 5%;
         }
 
@@ -93,6 +112,7 @@
             line-height: 18px;
             font-family: sans-serif;
             font-style: normal;
+
         }
 
         #bagDetails {
@@ -104,6 +124,7 @@
             gap: 10px;
             margin-bottom: 3%;
             border: 1px;
+
         }
 
         #checkOut {
@@ -139,6 +160,7 @@
         #checkOut>div:nth-child(2):hover {
             color: rgb(199, 199, 199);
             cursor: pointer;
+
         }
 
         #checkOut>div {
@@ -152,9 +174,11 @@
 
         #orderSummery {
             font-size: 20px;
+
         }
 
         .orderSummery {
+
             margin-top: 10%;
             margin-bottom: 5%;
             border: 1px solid rgb(233, 233, 233);
@@ -162,6 +186,7 @@
         }
 
         #table {
+
             width: 100%;
             border-color: 1px solid rgb(133, 133, 133);
             margin-top: 5%;
@@ -177,14 +202,14 @@
 
 
         #footer {
-            background-color: #363738;
+            background-color: rgb(80, 80, 80);
             text-align: center;
             font-style: normal;
             color: white;
             font-family: sans-serif;
             padding: 1%;
             margin-top: 10px;
-            font-size: 12px;
+            font-size: 10px;
         }
 
         #mouseOver {
@@ -198,8 +223,12 @@
         }
 
         #mouseOver_chekout:hover {
+
             color: rgb(199, 199, 199);
             cursor: pointer;
+
+
+
         }
 
 
@@ -210,6 +239,7 @@
             margin-bottom: 2%;
             padding-left: 5%;
             border: 1px solid grey;
+
         }
 
         #promocodeForm {
@@ -226,12 +256,16 @@
             border-radius: 5px;
             box-shadow: 10px 5px 5px grey;
             border: 1px solid grey;
+
+
         }
 
         #applyBtn:hover {
             color: white;
             background-color: black;
             cursor: pointer;
+
+
         }
 
         #btnr:hover {
@@ -255,7 +289,8 @@
 
         <div id="header">
             <div>
-                <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
+                <img class="adidasLogo"
+                    src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
             </div>
             <div id="rightSideBox">
                 <button>sign up</button>
@@ -265,28 +300,55 @@
                 </p>
             </div>
         </div>
+
+
+
     </header>
 
+
     <div id="mainBody">
+
         <div id="productSide">
+
             <!-- <div id="userName"></div> -->
             <div id="bagDetails">
+
                 <strong id="yourBag"> YOUR BAG </strong>
-                <p id="totalPrice"></p>
+                <p id="totalPrice">
+
+                </p>
+
             </div>
 
-            <div id="display"></div>
+            <div id="display">
+
+            </div>
+
+
+
             <br>
             <div id=" features">
                 <span id="mouseOver"> <i class="fas fa-truck"></i> &nbsp; <u>Free delivery</u></span> <br><br>
                 <span id="mouseOver"> <i class="fas fa-exchange-alt"></i> &nbsp;<u>30* day free returns</u></span>
                 <br><br>
                 <span id="mouseOver"> <i class="fas fa-lock"></i> &nbsp;<u>Safe & Secure payment options</u></span>
+
+
             </div>
+
+
+
+
+
+
         </div>
 
-        <div id="chekoutSide">
 
+
+
+
+
+        <div id="chekoutSide">
             <div id="checkOut" style="width: 90%" onclick="checkOut()">
                 <div id="mouseOver_chekout">CHECKOUT</div>
                 <div>→</div>
@@ -294,7 +356,10 @@
 
             <div class="orderSummery">
                 <strong id="orderSummery"> ORDER SUMMARY </strong>
+
                 <table id="table">
+
+
                     <tr>
                         <td id="totalItem">Total item</td>
                         <td id="totalPrice1">₹0.00</td>
@@ -311,32 +376,50 @@
             </div>
 
             <form onsubmit="promo(event)" id="promocodeForm">
+
                 <input type="text" id="promoCodebtn" placeholder="Enter Your Promocode Here" required />
                 <button type="submit" id="applyBtn">Apply</button>
+
             </form>
+
 
             <div>
                 <p> <strong> Need Help?</strong></p>
+
                 <span id="mouseOver"><u>Delivery</u></span> <br><br>
                 <span id="mouseOver"><u>Return & Refund</u></span> <br><br>
                 <span id="mouseOver"><u>Ordering & Payment</u></span><br><br>
                 <span id="mouseOver"><u>Promotion & Voucher</u></span>
             </div>
         </div>
+
     </div>
+
 
     <footer id="footer">
         <div>
-            | Privacy Statement &nbsp; | &nbsp; Terms and Conditions &nbsp; | &nbsp; Imprint
+
+            | Privacy Statement | Terms and Conditions | Imprint |
+
             <p>© 2021 adidas India Marketing Private Limited</p>
+
         </div>
+
+
+
     </footer>
+
 </body>
+
+
+
+
 </html>
 
 <script>
 
     let data = JSON.parse(localStorage.getItem("adidasCart"))
+
 
     let PromoCode = [{ pc: "masai30", discount: "30" }, { pc: "fw12", discount: "20" }]
 
@@ -354,6 +437,7 @@
             let div = document.createElement("div")
             div.style = "display : flex ; gap : 3%;border:1px solid rgb(214, 214, 214) ;height :250px"
 
+
             let div1 = document.createElement("div")
             div1.style = "box-sizing: border-box;width:45%"
 
@@ -370,16 +454,29 @@
             let div8 = document.createElement("div")
             let btn = document.createElement("button")
             btn.setAttribute("id", "btnr")
-            btn.style = "width: 100%;height:35% ;font-size:40px;padding-bottom: 50px; border: none;"
+            btn.style = "width: 100%;height:10% ;font-size:20px;padding-bottom: 30px ;"
+
             btn.innerHTML = "×"
+
+
+
+
+
+
+
+
+
+
+
 
             div6.style = " box-sizing: border-box; border:1px  ;display:flex;gap:3%;flex-grow: 1;"
             div7.style = "box-sizing: border-box;border:1px  ;display:grid;gap:-10px;margin-right:2%"
             div8.style = "font-size:20px;border:1px ;flex-grow: 3;text-align: right;margin-right:4%"
 
+
             let image = document.createElement("img")
             image.src = product.img[0]
-            image.style = "height:100%"
+            image.style = "width:100% ;height:100%"
 
             div1.append(image)
 
@@ -396,10 +493,13 @@
             // let icon1 = document.createElement("i")
             let icon2 = document.createElement("i")
             // icon1.style = "border : 1px ;"
-            icon2.style = "border : 1px ; margin-top : -150%;"
+            icon2.style = "border : 1px ; margin-top : -200%;"
 
             // icon1.setAttribute("class", "fas fa-times")
             icon2.setAttribute("class", "far fa-heart")
+
+
+
 
             name.textContent = product.name
             color.textContent = product.color
@@ -407,10 +507,16 @@
             stock.textContent = product.stock
             price.textContent = "₹" + product.price + ".00"
 
+
+
+
             tp = tp + Number(product.price)
             ti = data.length
 
             totalPrice1.textContent = tp + ".00"
+
+
+
 
             div4.style = "width:30%;border:1px;margin-bottom :30px"
             let quan = document.createElement("input")
@@ -433,6 +539,7 @@
             }
 
 
+
             if (tp <= 3000 && tp > 0) {
 
                 let delivery = document.getElementById("delivery")
@@ -440,6 +547,7 @@
                 delivery.textContent = "₹" + 50 + ".00"
                 dl = "50"
                 tp = tp + 50
+
 
                 let totalItem = document.getElementById("totalItem")
                 let totalPrice = document.getElementById("totalPrice")
@@ -453,6 +561,9 @@
                 totalItem.textContent = ti + " Items"
 
                 totalPrice2.textContent = tp + ".00"
+
+
+
             }
 
             else {
@@ -461,6 +572,7 @@
 
                 delivery.textContent = "Free"
                 dl = "Free"
+
 
                 let totalItem = document.getElementById("totalItem")
                 let totalPrice = document.getElementById("totalPrice")
@@ -474,14 +586,26 @@
                 totalItem.textContent = ti + " Items"
                 totalPrice1.textContent = tp + ".00"
                 totalPrice2.textContent = tp + ".00"
+
+
+
             }
+
+
 
             btn.onclick = function () {
                 remove1(product)
             }
 
+
+
+
+
             div8.append(price)
             div7.append(btn, icon2)
+
+
+
 
             div5.append(name, color, size, stock)
             div6.append(div8, div7)
@@ -492,6 +616,10 @@
             div.append(div1, div2)
 
             parent.append(div)
+
+
+
+
         })
     }
 
@@ -499,54 +627,85 @@
 
     let count = 0;
 
+
     function promo(e) {
         e.preventDefault()
 
-        if (data.length > 0) {
+
+        if(data.length>0){
+
 
             let promocodeForm = document.getElementById("promocodeForm")
-            let promocode = promocodeForm.promoCodebtn.value
+        let promocode = promocodeForm.promoCodebtn.value
 
-            PromoCode.forEach(function (p) {
 
-                if (count == 0) {
-
-                    if (p.pc === promocode) {
-
-                        tp = tp - tp * Number(p.discount) / 100
-
-                        let totalPrice = document.getElementById("totalPrice")
-                        let totalPrice1 = document.getElementById("totalPrice1")
-                        let totalPrice2 = document.getElementById("totalPrice2")
-
-                        totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
-                        totalPrice1.textContent = tp
-                        totalPrice2.textContent = tp
-
-                        alert("Promo Code Applied Successfully!")
-
-                        count++
-                        promoflag++
-                        p.pc = "X"
-
-                        return
-                    }
-                }
-            })
+        PromoCode.forEach(function (p) {
 
             if (count == 0) {
-                alert("Invalid Promo code")
+
+                if (p.pc === promocode) {
+
+
+
+                    tp = tp - tp * Number(p.discount) / 100
+
+                    let totalPrice = document.getElementById("totalPrice")
+                    let totalPrice1 = document.getElementById("totalPrice1")
+                    let totalPrice2 = document.getElementById("totalPrice2")
+
+                    totalPrice.textContent = "TOTAL (" + ti + "item) " + "₹" + tp
+                    totalPrice1.textContent = tp
+                    totalPrice2.textContent = tp
+
+                    alert("Promo Code Applied Successfully!")
+
+                    count++
+                    promoflag++
+                    p.pc = "X"
+
+                    return
+
+                }
+
             }
 
-            else {
-                alert("Promocode Already applied Or In valid promocode")
-            }
+
+
+
+
+
+        })
+
+
+
+
+        if (count == 0) {
+            alert("Invalid Promo code")
         }
 
         else {
-            alert("No item In Bag")
+            alert("Promocode Already applied Or In valid promocode")
+       
         }
+
+
+            
+        }
+
+
+
+        
+            else{
+                alert("No item In Bag")
+            }
+
+        
+        
+
+
+
     }
+
 
     function checkOut() {
 
@@ -565,23 +724,34 @@
             localStorage.setItem("checkout", JSON.stringify(arr))
 
             window.location.href = "adidas_checkOutPage.html"
+
         }
 
         else {
             alert("Add Something to Bag!")
         }
 
+
+
         let DataAfterRemove = []
 
         for (j = 0; j < data.length; j++) {
 
+
             DataAfterRemove.push(data[j])
+
         }
 
         localStorage.setItem("DAR", JSON.stringify(DataAfterRemove))
+
+
+
+
+
     }
 
     function remove1(p) {
+
 
         for (i = 0; i < data.length; i++) {
             if (data[i].name === p.name) {
@@ -593,19 +763,27 @@
 
                 for (j = 0; j < data.length; j++) {
 
+
                     DataAfterRemove.push(data[j])
+
                 }
 
                 localStorage.setItem("DAR", JSON.stringify(DataAfterRemove))
+
 
                 // newdata = data
                 ti = 0;
                 tp = 0;
                 console.log("NewData after remove ", data)
 
+
                 return
             }
         }
+
+
+
+
     }
 
     if (data.length == 0) {
@@ -619,15 +797,24 @@
 
     let ti1 = [];
 
+
     function show12(q1, pr, tp, ti) {
 
         ti1.push(q1)
 
+
         let price = Number(pr.price) * q1
+
+
+
 
         ti = Number(data.length + q1)
 
+
+
+
         console.log("Price in producty ", price, "tp : ", tp, "ti = ", ti)
+
 
         if (tp <= 3000 && tp > 0) {
 
@@ -638,6 +825,7 @@
             delivery.textContent = "₹" + 50 + ".00"
             dl = "50"
             tp = tp + 50
+
 
             let totalItem = document.getElementById("totalItem")
             let totalPrice = document.getElementById("totalPrice")
@@ -652,6 +840,9 @@
 
             totalPrice2.textContent = tp + ".00"
             totalPrice1.textContent = tp - 50 + ".00"
+
+
+
         }
 
         else if (tp > 3000) {
@@ -662,6 +853,7 @@
 
             delivery.textContent = "Free"
             dl = "Free"
+
 
             let totalItem = document.getElementById("totalItem")
             let totalPrice = document.getElementById("totalPrice")
@@ -675,7 +867,17 @@
             totalItem.textContent = ti + " Items"
             totalPrice1.textContent = tp + ".00"
             totalPrice2.textContent = tp + ".00"
+
+
+
         }
+
+
+
+
+
+
+
     }
 
 </script>
