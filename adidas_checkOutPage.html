@@ -409,7 +409,7 @@
                 <input type="number" id="mobile" placeholder="Mobile Number" required>
             </div>
 
-            <div class="revbtn"><input type="submit" id="rev">REVIEW & PAY</button>
+            <div class="revbtn"><input type="submit" id="rev" value="Review & pay" />
             </div>
 
         </div>
@@ -533,7 +533,7 @@
 
 
 
-        function reviewfun() {
+        function reviewfun(e) {
             if (document.getElementById("checklogin").innerHTML !== "login successful") {
                 alert("login first then proceed");
             } else {
