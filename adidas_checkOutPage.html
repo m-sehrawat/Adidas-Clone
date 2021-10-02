@@ -556,40 +556,48 @@
 
 
     function review(e1) {
-        e1.preventDefault();
-        let formone = document.getElementById("myformone");
-        //let myformone = document.getElementById("myformone");
-        let firstname = formone.fname.value;
-        let lastname = formone.lname.value;
-        let street = formone.street.value;
-        let landmark = formone.landmark.value;
-        let additional_info = formone.additional_info.value;
-        let city = formone.city.value;
-        let state = formone.state.value;
-        let pincode = formone.pincode.value;
-        let email = formone.email.value;
-        let mobile = formone.mobile.value;
-        // console.log("review data", firstname, lastname, street, landmark, additional_info, city, state, pincode, email, mobile);
-        if (localStorage.getItem("shipping") === null) {
-            localStorage.setItem("shipping", JSON.stringify([]));
+        if (document.getElementById("checklogin").innerHTML !== "login successful") {
+            alert("plz login first");
         }
-        var address = {
-            firstname,
-            lastname,
-            street,
-            landmark,
-            additional_info,
-            city,
-            state,
-            pincode,
-            email,
-            mobile
-        };
-        let cart = JSON.parse(localStorage.getItem("shipping"));
-        cart.push(address);
-        localStorage.setItem("shipping", JSON.stringify(cart));
-        alert("data taken successfully");
-        window.location.href = "adidas_payment_page.html";
+
+        if (document.getElementById("checklogin").innerHTML === "login successful")
+
+        {
+            e1.preventDefault();
+            let formone = document.getElementById("myformone");
+            //let myformone = document.getElementById("myformone");
+            let firstname = formone.fname.value;
+            let lastname = formone.lname.value;
+            let street = formone.street.value;
+            let landmark = formone.landmark.value;
+            let additional_info = formone.additional_info.value;
+            let city = formone.city.value;
+            let state = formone.state.value;
+            let pincode = formone.pincode.value;
+            let email = formone.email.value;
+            let mobile = formone.mobile.value;
+            // console.log("review data", firstname, lastname, street, landmark, additional_info, city, state, pincode, email, mobile);
+            if (localStorage.getItem("shipping") === null) {
+                localStorage.setItem("shipping", JSON.stringify([]));
+            }
+            var address = {
+                firstname,
+                lastname,
+                street,
+                landmark,
+                additional_info,
+                city,
+                state,
+                pincode,
+                email,
+                mobile
+            };
+            let cart = JSON.parse(localStorage.getItem("shipping"));
+            cart.push(address);
+            localStorage.setItem("shipping", JSON.stringify(cart));
+            alert("data taken successfully");
+            window.location.href = "adidas_payment_page.html";
+        }
 
         //console.log(cart);
 
