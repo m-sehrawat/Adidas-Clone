@@ -421,7 +421,7 @@
 
 
                 <div class="revbtn">
-                    <input type="submit" id="rev" value="REVIEW & PAY">
+                    <input type="submit" value="REVIEW & PAY" />
                 </div>
 
 
@@ -439,7 +439,7 @@
                     <span id="rename" style="color: red;"></span>
                     <input type="email" id="el" placeholder="Email">
                     <input type="password" id="pass" placeholder="Password">
-                    <input type="submit" id="submit" value="LOG IN">
+                    <input type="submit" value="LOG IN">
                 </form>
             </div>
 
@@ -542,59 +542,31 @@
 
     //var review = document.getElementById("rev");
     //review.addEventListener("click", reviewfun);
-
-
-
-
-
-
-
-
-    function reviewfun(e) {
-        // if (document.getElementById("checklogin").innerHTML !== "login successful") {
-        // alert("login first then proceed");
-        // }
-
-
-
-        e.preventDefault();
+    function reviewfun(e1) {
+        e1.preventDefault();
         let formone = document.getElementById("myformone");
-        let firstname = document.getElementById("fname").value;
-        let lastname = document.getElementById("lname").value;
-        let streetone = document.getElementById("street").value;
-        let landmarkone = document.getElementById("landmark").value;
-        let additional = document.getElementById("additional_info").value;
-        let cityone = document.getElementById("city").value;
-        let stateone = document.getElementById("state").value;
-        let pincodeone = document.getElementById("pincode").value;
-        let email = document.getElementById("contactEmail").value;
-        let mobile = document.getElementById("mobile").value;
+        //let myformone = document.getElementById("myformone");
+        let firstname = formone.fname.value;
+        let lastname = formone.lname.value;
+        let street = formone.street.value;
+        let landmark = formone.landmark.value;
+        let additional_info = formone.additional_info.value;
+        let city = formone.city.value;
+        let state = formone.state.value;
+        let pincode = formone.pincode.value;
+        let email = formone.email.value;
+        let mobile = formone.mobile.value;
+        console.log("review data", firstname, lastname, street, landmark, additional_info, city, state, pincode, email, mobile);
 
 
-
-
-        if (localStorage.getItem("shipping") === null) {
-            localStorage.setItem("shipping", JSON.stringify([]));
-        }
-        var address = {
-            firstname,
-            lastname,
-            streetone,
-            landmarkone,
-            additional,
-            cityone,
-            stateone,
-            pincodeone,
-            email,
-            mobile
-        };
-        let cart = JSON.parse(localStorage.getItem("shipping"));
-        cart.push(address);
-        localStorage.setItem("shipping", JSON.stringify(cart));
-        // alert(" data taken successfully");
 
 
     }
+
+
+
+
+
 
 
 
@@ -604,73 +576,73 @@
 
 
     // -------- For Order summary ------
-    let checkoutData = JSON.parse(localStorage.getItem("checkout"));
-    let key = checkoutData.length - 1;
-    let ti = checkoutData[key].totalItem;
-    let tp = checkoutData[key].totalPrice;
+    /*  let checkoutData = JSON.parse(localStorage.getItem("checkout"));
+      let key = checkoutData.length - 1;
+      let ti = checkoutData[key].totalItem;
+      let tp = checkoutData[key].totalPrice;
 
-    // console.log("checkoutData--", checkoutData)
+      // console.log("checkoutData--", checkoutData)
 
-    document.getElementById("item").textContent = ti + " " + "ITEM";
-    document.getElementById("delivery").textContent = checkoutData[key].delivery
-    document.getElementById("totalPrice1").textContent = "₹" + tp + ".00";
+      document.getElementById("item").textContent = ti + " " + "ITEM";
+      document.getElementById("delivery").textContent = checkoutData[key].delivery
+      document.getElementById("totalPrice1").textContent = "₹" + tp + ".00";
 
-    document.getElementById("totalPrice2").setAttribute("class", "orderSumTotalPrice");
+      document.getElementById("totalPrice2").setAttribute("class", "orderSumTotalPrice");
 
-    if (checkoutData[key].delivery != "Free") {
+      if (checkoutData[key].delivery != "Free") {
 
-        tp = tp + 50
-        document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
-    } else {
-        document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
-    }
+          tp = tp + 50
+          document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
+      } else {
+          document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
+      }
 
-    // -----For order Details Part -----
-    let DAR1 = JSON.parse(localStorage.getItem("DAR"))
+      // -----For order Details Part -----
+      let DAR1 = JSON.parse(localStorage.getItem("DAR"))
 
-    let parent = document.getElementById("display")
-    parent.style = "margin-top :10% ; display :grid;gap :0px"
+      let parent = document.getElementById("display")
+      parent.style = "margin-top :10% ; display :grid;gap :0px"
 
-    DAR1.forEach(function(product) {
+      DAR1.forEach(function(product) {
 
-        let div = document.createElement("div");
-        div.setAttribute("class", "productDetails");
+          let div = document.createElement("div");
+          div.setAttribute("class", "productDetails");
 
-        let div1 = document.createElement("div");
-        div1.setAttribute("class", "productImgDiv");
+          let div1 = document.createElement("div");
+          div1.setAttribute("class", "productImgDiv");
 
-        let image = document.createElement("img");
-        image.src = product.img[3];
-        image.style.width = "100%";
+          let image = document.createElement("img");
+          image.src = product.img[3];
+          image.style.width = "100%";
 
-        div1.append(image);
+          div1.append(image);
 
-        let div2 = document.createElement("div");
-        div2.setAttribute("class", "productDetailsDiv");
-        // div2.style = "border:1px ;padding-bottom:18%;height : 50%"
+          let div2 = document.createElement("div");
+          div2.setAttribute("class", "productDetailsDiv");
+          // div2.style = "border:1px ;padding-bottom:18%;height : 50%"
 
-        let name = document.createElement("div");
-        name.setAttribute("class", "productDetailsDesc");
-        name.textContent = product.name;
-        name.style.width = "100%";
+          let name = document.createElement("div");
+          name.setAttribute("class", "productDetailsDesc");
+          name.textContent = product.name;
+          name.style.width = "100%";
 
-        let color = document.createElement("div");
-        color.setAttribute("class", "productDetailsDesc");
-        color.textContent = "COLOR :" + product.color[0];
+          let color = document.createElement("div");
+          color.setAttribute("class", "productDetailsDesc");
+          color.textContent = "COLOR :" + product.color[0];
 
-        let size = document.createElement("div");
-        size.setAttribute("class", "productDetailsDesc");
-        size.textContent = "SIZE : " + product.size;
+          let size = document.createElement("div");
+          size.setAttribute("class", "productDetailsDesc");
+          size.textContent = "SIZE : " + product.size;
 
-        let price = document.createElement("div");
-        price.setAttribute("class", "productDetailsDesc");
-        price.textContent = "₹" + product.price;
+          let price = document.createElement("div");
+          price.setAttribute("class", "productDetailsDesc");
+          price.textContent = "₹" + product.price;
 
-        div2.append(name, color, size, price)
+          div2.append(name, color, size, price)
 
-        div.append(div1, div2)
+          div.append(div1, div2)
 
-        parent.append(div)
+          parent.append(div)
 
-    });
+      });*/
 </script>
