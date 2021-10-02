@@ -536,7 +536,10 @@
         function reviewfun(e) {
             if (document.getElementById("checklogin").innerHTML !== "login successful") {
                 alert("login first then proceed");
-            } else {
+            }
+
+
+            if (document.getElementById("checklogin").innerHTML === "login successful") {
                 e.preventDefault();
                 let myformone = document.getElementById("myformone");
                 let firstname = document.getElementById("fname").value;
@@ -571,7 +574,7 @@
                 let cart = JSON.parse(localStorage.getItem("shipping"));
                 cart.push(address);
                 localStorage.setItem("shipping", JSON.stringify(cart));
-                alert(" data taken successfully");
+                // alert(" data taken successfully");
 
 
             }
