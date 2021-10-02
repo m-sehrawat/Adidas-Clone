@@ -357,6 +357,10 @@
             #checkoutSide {
                 margin-top: 0px;
                 margin-bottom: 20px;
+            } 
+
+            #imageProduct{
+                width: 100%;
             }
 
         }
@@ -387,7 +391,9 @@
                 width: 100%;
                 height: 200px;
             }
-
+            #imageProduct{
+                height: 100%;
+            }
 
             #needHelp {
 
@@ -699,7 +705,8 @@
 
             let image = document.createElement("img")
             image.src = product.img[0]
-            image.style = "width:100% "
+            image.setAttribute("id","imageProduct")
+            image.style = "height:100% "
 
             div1.append(image)
 
