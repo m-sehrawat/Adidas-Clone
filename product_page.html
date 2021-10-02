@@ -58,11 +58,15 @@
             margin-left: 80%;
         }
 
-        #rightSideBox>button {
+        #rightSideBox>a>button {
             margin-left: 1%;
             background-color: white;
             border: 0px solid white;
             color: black;
+        }
+
+        #rightSideBox>a>button:hover {
+            cursor: pointer;
         }
 
         #rightSideBox>p {
@@ -244,7 +248,7 @@
                 margin-left: 70%;
             }
 
-            #rightSideBox>button {
+            #rightSideBox>a>button {
                 visibility: hidden;
             }
 
@@ -301,8 +305,8 @@
             <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
         </div>
         <div id="rightSideBox">
-            <button>sign up</button>
-            <button>log in</button>
+            <a href="signup.html"><button>sign up</button></a>
+            <a href="adidas_checkOutPage.html"><button>log in</button></a>
             <p>
                 <i class="material-icons">shopping_bag</i>
             </p>
