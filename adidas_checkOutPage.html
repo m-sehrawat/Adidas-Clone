@@ -76,15 +76,17 @@
             margin-left: 50%;
             cursor: pointer;
         }
+        #signUpBtn{
+            text-decoration: none;
+        }
         
         .bottom {
             display: flex;
         }
         
         .left {
-            width: 60%;
-            margin: 1% 1% 5% 8%;
-            padding: 1%;
+            width: 55%;
+            margin: 1% 0% 0% 8%;
             /* border: 1px solid red; */
         }
         
@@ -93,13 +95,6 @@
             width: 86%;
             height: 40px;
             margin: 20px;
-        }
-        
-        .right {
-            width: 40%;
-            margin: 1% 1%1% 6%;
-            padding: 1%;
-            display: block;
         }
         
         #fname,
@@ -122,7 +117,7 @@
         
         #street,
         #landmark {
-            width: 88.5%;
+            width: 88%;
             height: 44px;
             margin-top: 40px;
             margin-left: 20px;
@@ -177,24 +172,18 @@
         }
         
         #rev {
-            text-align: center;
-            height: 60px;
             width: 30%;
-            border: none;
+            margin-left: 2%;
+            margin-top: 40px;
+            padding: 15px;
             border-radius: 4px;
             background-color: black;
             color: white;
-            font-size: 18px;
-            box-shadow: 10px 5px 5px grey;
-        }
-        
-        #rev:hover {
+            text-align: left;
+            font-weight: 600;
             cursor: pointer;
-        }
-        
-        .revbtn {
-            margin-top: 50px;
-            margin-left: 22px;
+            box-shadow: 10px 5px 5px grey;
+            font-style: normal;
         }
         
         #right {
@@ -271,15 +260,6 @@
             font-weight: 700;
             margin-left: 5%;
             margin-top: 20px;
-            margin-bottom: 5px;
-        }
-        
-        .orderHeadingDetails {
-            font-size: 20px;
-            font-weight: 700;
-            margin-left: 5%;
-            margin-top: 20px;
-            margin-bottom: 0px;
         }
         
         #footer {
@@ -345,28 +325,44 @@
             color: black;
         }
         
-        #reset,
-        #rev,
         #log {
+            width: 80%;
+            margin-left: 6%;
+            margin-top: 40px;
+            padding: 15px;
+            border-radius: 4px;
             background-color: black;
             color: white;
-        }
-        
-        .mob {
-            display: flex;
+            text-align: left;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 10px 5px 5px grey;
+            font-style: normal;
         }
         
         #reset {
-            width: 140px;
-            height: 50px;
-            margin-left: 10px;
-            border-radius: 7px;
+            width: 60%;
+            font-size: 14px;
+            margin-left: 20px;
         }
-        
-        #log {
-            width: 100px;
-            height: 50px;
-            border-radius: 7px;
+        #reset:hover{
+            background-color: black;
+            color: white;
+        }
+    
+
+        .mob {
+            display: flex;
+            width: 1000px;
+            margin-top: 5px;
+            /* border: 1px solid red; */
+        }
+        #emailBox{
+            width: 50%;
+        }
+
+        #mobBox{
+            width: 100%;
         }
     </style>
 </head>
@@ -384,7 +380,7 @@
             <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
         </div>
         <div id="rightSideBox">
-            <button><a href="signup.html">sign up</a></button>
+            <button><a href="signup.html" id="signUpBtn">sign up</a></button>
             <button id="signinbtn">log in</button>
             <p>
                 <a href="Newcart.html"><i class="material-icons">shopping_bag</i></a>
@@ -399,31 +395,41 @@
             <form id="myformone" onsubmit="review(event)">
 
 
-                <input type="text" id="fname" placeholder="First Name" required>
+                <input type="text" id="fname" placeholder="First Name *" required>
 
 
-                <input type="text" id="lname" placeholder="Last Name" required>
+                <input type="text" id="lname" placeholder="Last Name *" required>
 
 
-                <input type="text" id="street" placeholder="Street Address" required>
+                <input type="text" id="street" placeholder="Street Address *" required>
 
 
-                <input type="text" id="landmark" placeholder="Landmark" required>
+                <input type="text" id="landmark" placeholder="Landmark *" required>
 
 
                 <input type="text" id="additional_info" placeholder="Additional Info" required>
 
 
-                <input type="text" id="city" placeholder="City" required>
+                <input type="text" id="city" placeholder="City *" required>
 
 
                 <select id="state" required>
-                    <option value="jharkhand">Jharkhand</option>
-                    <option value="bihar">Bihar</option>
+                    <option>STATE *</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Nagaland">Nagaland</option>
                 </select>
-                <input type="number" id="pincode" placeholder="Pin code" required>
 
-                <div class="country">country:<strong>INDIA</strong></div>
+                <input type="number" id="pincode" placeholder="Pin code *" required>
+
+                <div class="country"><strong>Country:</strong> India</div>
 
                 <div class="standard">
                     <div><b>STANDARD DELIVERY</b></div>
@@ -433,12 +439,16 @@
                     </div>
                 </div>
                 <div class="info">
-                    <h1 style="font-size: 20px;"><strong><u>CONTACT INFORMATION</u></strong></h1>
-                    <P>we will use these details to keep you inform on your delivery</P>
+                    <h1 style="margin: 1px;">CONTACT INFORMATION</h1>
+                    <P>We'll use these details to keep you inform on your delivery.</P>
                 </div>
                 <div class="mob">
-                    <div style="width:400px;margin-right: 10px;"> <input type="text" id="email" placeholder="email" required></div>
-                    <div style="width: 600px;"> <input type="number" id="mobile" placeholder="Mobile Number" required></div>
+                    <div id="emailBox"> 
+                        <input type="text" id="email" placeholder="email" required>
+                    </div>
+                    <div id="mobBox"> 
+                        <input type="number" id="mobile" placeholder="Mobile Number" required>
+                    </div>
                 </div>
 
 
@@ -463,10 +473,10 @@
                     <span id="rename" style="color: red;"></span>
                     <input type="email" id="el" placeholder="Email">
                     <input type="password" id="pass" placeholder="Password">
-                    <div style="display: flex; padding: 30px 10px;">
-                        <div> <input type="submit" value="LOG IN" id="log" /></div>
-                        <div> <button id="reset">RESET PASSWORD</button></div>
-                    </div>
+                    <div id="reset"><u>Forgotten Your Password?</u></div>
+                   
+                    <div> <input type="submit" value="LOG IN" id="log" /></div> 
+                    
                 </form>
             </div>
 
@@ -490,7 +500,7 @@
             </div>
 
             <div id="orderDetails">
-                <div class="orderHeading, orderHeadingDetails">ORDER DETAILS</div>
+                <div class="orderHeading">ORDER DETAILS</div>
                 <div id="display"></div>
             </div>
 
@@ -524,8 +534,8 @@
     signinbtn.addEventListener("click", signin);
 
     function signin() {
-        alert("plz login below");
-        document.getElementById("rename").innerHTML = "** please login here **";
+        alert("Please login below");
+        // document.getElementById("rename").innerHTML = "** please login here **";
         var el = document.getElementById("el").value;
         if (el == "") {
             document.getElementById("el").style.border = "1px solid red";
@@ -550,8 +560,8 @@
         var count = 0;
         for (i = 0; i < all_users.length; i++) {
             if (email === all_users[i].email && password === all_users[i].password) {
-                alert("login successful");
-                document.getElementById("checklogin").innerHTML = "login successful";
+                alert("Login successful");
+                // document.getElementById("checklogin").innerHTML = "Login successful";
                 document.getElementById("rename").innerHTML = "";
                 document.getElementById("el").value = "";
                 document.getElementById("pass").value = "";
@@ -565,7 +575,7 @@
 
         }
         if (count == all_users.length) {
-            alert("invalid users");
+            alert("Invalid users");
         }
 
 
@@ -573,11 +583,11 @@
 
 
     function review(e1) {
-        if (document.getElementById("checklogin").innerHTML !== "login successful") {
-            alert("plz login first");
+        if (document.getElementById("checklogin").innerHTML !== "Login successful") {
+            alert("Please login first");
         }
 
-        if (document.getElementById("checklogin").innerHTML === "login successful")
+        if (document.getElementById("checklogin").innerHTML === "Login successful")
 
         {
             e1.preventDefault();
@@ -612,7 +622,7 @@
             let cart = JSON.parse(localStorage.getItem("shipping"));
             cart.push(address);
             localStorage.setItem("shipping", JSON.stringify(cart));
-            alert("data taken successfully");
+            alert("Shipping Address added Succesfully");
             window.location.href = "adidas_payment_page.html";
         }
 
