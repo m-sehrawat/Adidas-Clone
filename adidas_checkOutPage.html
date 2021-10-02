@@ -344,6 +344,13 @@
         a {
             color: black;
         }
+        
+        #log,
+        #reset,
+        #rev {
+            background-color: black;
+            color: white;
+        }
     </style>
 </head>
 
@@ -421,7 +428,7 @@
 
 
                 <div class="revbtn">
-                    <input type="submit" value="REVIEW & PAY" />
+                    <input type="submit" value="REVIEW & PAY" ,id="rev" />
                 </div>
 
 
@@ -439,7 +446,10 @@
                     <span id="rename" style="color: red;"></span>
                     <input type="email" id="el" placeholder="Email">
                     <input type="password" id="pass" placeholder="Password">
-                    <input type="submit" value="LOG IN">
+                    <div style="display: flex;">
+                        <div style="margin:5px 40px; background-color: black;"> <input type="submit" value="LOG IN" id="log" /></div>
+                        <div> <button id="reset">RESET PASSWORD</button></div>
+                    </div>
                 </form>
             </div>
 
@@ -482,6 +492,17 @@
 </html>
 
 <script>
+    var reset = document.getElementById("reset");
+    reset.addEventListener("click", forget);
+
+    function forget() {
+        window.location.href = "forgetpassword.html";
+    }
+
+
+
+
+
     var signinbtn = document.getElementById("signinbtn");
     signinbtn.addEventListener("click", signin);
 
@@ -542,7 +563,7 @@
 
     //var review = document.getElementById("rev");
     //review.addEventListener("click", reviewfun);
-    function reviewfun(e1) {
+    function review(e1) {
         e1.preventDefault();
         let formone = document.getElementById("myformone");
         //let myformone = document.getElementById("myformone");
@@ -575,8 +596,10 @@
         let cart = JSON.parse(localStorage.getItem("shipping"));
         cart.push(address);
         localStorage.setItem("shipping", JSON.stringify(cart));
+        alert("data taken successfully");
+        window.location.href = "adidas_payment_page.html";
 
-        console.log(cart);
+        //console.log(cart);
 
 
 
