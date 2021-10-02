@@ -282,7 +282,7 @@
 
 
         #promoCodebtn {
-            width: 94%;
+            width: 84%;
             height: 50px;
             font-size: 20px;
             margin-bottom: 2%;
@@ -297,7 +297,7 @@
 
         #applyBtn {
 
-            width: 100%;
+            width: 90%;
             text-align: left;
             font-size: 20px;
             padding-left: 5%;
@@ -345,12 +345,12 @@
 
                 margin-bottom: 80px;
                 border: 1px;
-            } 
+            }
 
             #checkoutSide {
-            margin-top: 0px;
-            margin-bottom: 20px;
-        }
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
 
         }
 
@@ -377,12 +377,12 @@
                 border: 1px;
             }
 
-         
+
 
             #checkoutSide {
-            margin-top: 0px;
-            margin-bottom: 20px;
-           }
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
 
         }
 
@@ -390,6 +390,19 @@
         @media(max-width: 960px) {
             #topHeader>div {
                 display: none;
+            }
+
+            #rightSideBox {
+                width: 30%;
+                margin-left: 50%;
+            }
+
+            #productDescription {
+                max-width: 600px;
+                height: 600px;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
             }
         }
 
@@ -492,7 +505,7 @@
                         <td id="totalPrice1">₹0.00</td>
                     </tr>
                     <tr id="tableRow">
-                        <td>Delevery</td>
+                        <td>Delivery</td>
                         <td id="delivery"> Your Bag is EMPTY! </td>
                     </tr>
                     <tr id="tableRow">
@@ -530,7 +543,8 @@
     <footer id="footer">
         <div>
 
-            | &nbsp; &nbsp;  Privacy Statement  &nbsp; &nbsp;| &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; |  &nbsp; &nbsp;Imprint &nbsp; &nbsp; |
+            | &nbsp; &nbsp; Privacy Statement &nbsp; &nbsp;| &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp;
+            &nbsp;Imprint &nbsp; &nbsp; |
 
             <p>© 2021 adidas India Marketing Private Limited</p>
 
@@ -635,7 +649,7 @@
             div3.style = "display : flex; gap :5px;box-sizing: border-box;width : 100%; border:1px "
             let div4 = document.createElement("div")
 
-            div4.setAttribute("id","quantityBox")
+            div4.setAttribute("id", "quantityBox")
             let div5 = document.createElement("div")
             div5.style = "box-sizing: border-box; border :1px "
             let div6 = document.createElement("div")
@@ -644,7 +658,7 @@
             let div8 = document.createElement("div")
             let btn = document.createElement("button")
             btn.setAttribute("id", "btnr")
-            btn.style = "width: 100%;height:10% ;font-size:20px;padding-bottom: 30px; margin-bottom: -20px;"
+            btn.style = "width: 100%;height:10% ;font-size:40px;padding-bottom: 50px; margin-bottom: -20px;border:2px solid white;"
 
             btn.innerHTML = "×"
 
@@ -683,7 +697,7 @@
 
             let icon2 = document.createElement("div")
 
-            icon2.style = "border : 1px ;text-align:center;font-size : 35px ;   padding-top: 10px;   margin-top: -40px;"
+            icon2.style = "border : 1px ;text-align:center;font-size : 35px ;   padding-bottom: 10px;   margin-top: -40px;"
             icon2.textContent = "♡"
 
 
@@ -714,11 +728,11 @@
 
             quan.type = "number"
 
-            quan.min = "1"
-            quan.max = "1"
-            quan.value = "1"
-            quan.id = "Quantity"
-            quan.style = "width : 50%; height : 50%;font-size: 20px;text-align: center;"
+            // quan.min = "1"
+            // quan.max = "1"
+            // quan.value = "1"
+            // quan.id = "Quantity"
+            // quan.style = "width : 50%; height : 50%;font-size: 20px;text-align: center;"
 
             div4.append(quantityText)
 
@@ -814,10 +828,11 @@
 
     showProducts(data)
 
-    let count = 0;
+  
 
     //  ------ Promocode Function ----
-
+    let count = 0;
+    let tp2 = tp;
     function promo(e) {
         e.preventDefault()
 
@@ -835,7 +850,7 @@
 
                     if (p.pc === promocode) {
 
-
+                        count++
 
                         let tp1 = tp - tp * Number(p.discount) / 100
 
@@ -859,15 +874,22 @@
                         totalPrice1.textContent = " ₹" + tp
                         totalPrice2.textContent = "(Promo Code Applied)" + " ₹" + tp1
 
-                        alert("Promo Code Applied Successfully!")
+                        if (count == 1) {
+                            alert("Promo Code Applied Successfully!")
+                        }
 
-                        count++
-                        promoflag++
-                        p.pc = "X"
+                        else{
+                            
+                        }
 
+
+                        tp2 = tp1
                         return
 
                     }
+
+
+
 
                 }
 
@@ -882,13 +904,16 @@
 
 
             if (count == 0) {
-                alert("Invalid Promo code")
-            }
-
-            else {
-                alert("Promocode Already applied Or In valid promocode")
+                alert("Invalid promocode or Already applied")
 
             }
+
+
+            else if (count > 1) {
+                alert("Promo Code Already Applied ")
+            }
+
+
 
 
 
@@ -903,6 +928,9 @@
 
 
 
+        // console.log("tp2 pc " ,tp2)
+
+
 
 
 
@@ -911,6 +939,7 @@
     // ---- On checkout click ----
     function checkOut() {
 
+
         if (JSON.parse(localStorage.getItem("checkout") === null)) {
 
             localStorage.setItem("checkout", JSON.stringify([]))
@@ -918,7 +947,9 @@
 
         let arr = JSON.parse(localStorage.getItem("checkout"))
 
-        let checkoutData = { totalPrice: tp, totalItem: ti, delivery: dl }
+
+
+        let checkoutData = { totalPrice: tp2, totalItem: ti, delivery: dl }
 
         if (data.length != 0) {
             arr.push(checkoutData)
@@ -1018,15 +1049,15 @@
         alert("DELIVERYadidas.co.in can only ship to India.Standard deliveryCost = For all orders, shipping is offered for free.Delivery time = 3 - 4 business daysPublic holidaysOrders placed on or 1 day before a public holiday may take longer to be delivered.So, please expect additional delivery time.")
     }
 
-    function returnonRight(){
+    function returnonRight() {
         alert("RETURN INFORMATIONJust in case you change your mind once your order arrives, we’ve got your back.It’s easy to return all standard items for a full refund within 30 days of delivery. Please note – Personalised products are unique to you, and therefore cannot be returned.")
     }
 
-    function orderonRight(){
+    function orderonRight() {
         alert("ORDERING & PAYMENT INFORMATIONWe accept the following payment methods:You don't need to have an account to place an order. Having an account can save you time during checkout as it saves your address details, but it’s not necessary if you want to place an order.You can cancel online orders, entirely or partially, within 15 minutes of placing it.")
     }
 
-    function promotiononRight(){
+    function promotiononRight() {
         alert(" PROMOTION & VOUCHER INFORMATION  HOW DO I USE MY VOUCHER?Here's how to claim your discount: Pick a product (one that's applicable for a voucher discount) from our online store.   Go to your shopping bag by clicking the ‘shopping bag’ button at the top of the screen.   Click ‘Enter promo code’ under your order summary.   A voucher field will appear. Type your voucher code into the field and hit ‘Apply'.  Keep in mind the voucher: Is only valid for a limited time.   Might contain product exclusions and exceptions.  Cannot be applied after you've placed an order.  Cannot be combined with other promotions, offers or discounts. If more than one promotion or discount offer applies to your order, we'll use the one with the greatest discount.          WHAT SHOULD I DO IF MY VOUCHER CODE ISN'T WORKING?  It’s easy to make mistakes if you enter the code manually. Some common mistakes are:Check spacing, character errors and/or spelling mistakes.  The voucher code field is case-sensitive. Check that ‘Caps Lock’ button is not on and use upper case where necessary.  Check you’re not mixing up the numbers 0/1 and the letters O/I.  Please read the specific Terms and Conditions in the source of your voucher to make sure that your voucher applies to your order. If you are sure your voucher is valid for your order but it still doesn’t work, pleasecontact us.")
     }
 
