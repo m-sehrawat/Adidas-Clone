@@ -45,9 +45,9 @@ Want to run in your local Machine? Great!
 To run, follow these steps:
 
 - Clone my repository `https://github.com/m-sehrawat/Adidas-Website-Clone`
-- Install packages `npm install`
-- Run the app `npm start / yarn start'
-
+- Open that code in your VS code
+- Open the Home page on Live server
+- Then you can Navigate through other pages from Home page
 
 ## Built with 
 
