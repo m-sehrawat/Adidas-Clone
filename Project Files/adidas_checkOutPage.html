@@ -367,20 +367,17 @@
         #mobBox {
             width: 100%;
         }
-
-        @media (max-width: 600px){
-
-            #topHeader div{
+        
+        @media (max-width: 600px) {
+            #topHeader div {
                 /* margin: 0.5% 0% 0% 15%; */
                 color: black
                 /* letter-spacing: 2px; */
             }
-
-            #rightSideBox{
+            #rightSideBox {
                 width: 30%;
-                margin-left: 50%;   
+                margin-left: 50%;
             }
-
             .bottom {
                 display: flex;
                 flex-wrap: wrap;
@@ -401,7 +398,6 @@
                 margin-top: 5px;
                 /* border: 1px solid red; */
             }
-            
             #emailBox {
                 width: 90%;
             }
@@ -414,7 +410,6 @@
                 margin-top: 40px;
                 margin-left: 20px;
             }
-
             #right {
                 width: 500px;
                 margin-top: 20px;
@@ -428,7 +423,6 @@
             #orderDetails {
                 width: 80%;
             }
-
             #footer {
                 background-color: #363738;
                 font-style: normal;
@@ -438,24 +432,21 @@
                 font-size: 12px;
                 border: 1px solid #363738;
             }
-
             #footer>p:first-child {
                 display: inline-block;
                 margin-left: 220px;
                 margin-top: 15px;
             }
-
             #footer>p:nth-child(2) {
                 display: inline-block;
                 margin-left: 80px;
             }
-
             #footer>p:last-child {
                 margin-top: 10px;
                 margin-left: 130px;
             }
         }
-
+        
         .hearderSlideContent {
             margin: 10px auto;
             font-size: 11px;
@@ -463,13 +454,12 @@
             letter-spacing: 2px;
             color: white;
         }
-
+        
         @media(max-width: 960px) {
             #topHeader>div {
-                            display: none;
-                        }
+                display: none;
             }
-
+        }
     </style>
 </head>
 
@@ -485,7 +475,7 @@
         <div>
             <a href="adidas_home_page.html">
                 <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
-            </a>    
+            </a>
         </div>
         <div id="rightSideBox">
             <button><a href="signup.html" id="signUpBtn">sign up</a></button>
@@ -575,7 +565,7 @@
             <!-- Login Details -->
 
             <div id="login">
-                <span id="checklogin" style="color: red;"></span>
+                <span id="checklogin" style="color: black;"></span>
                 <div class="heading">LOG IN</div>
                 <form onsubmit="signinfun(event)" id="myform" action="">
                     <span id="rename" style="color: rgb(255, 255, 255);"></span>
@@ -627,41 +617,40 @@
 </html>
 
 <script>
-
     function topHeaderSlideShow() {
 
-    let topHeader = document.getElementById("topHeader");
+        let topHeader = document.getElementById("topHeader");
 
-    let arrayLines = [
-        "FREE DELIVERY FOR ALL ORDERS NOW",
-        "FREE RETURNS",
-        "SIGN UP & GET 15% OFF"
-    ];
+        let arrayLines = [
+            "FREE DELIVERY FOR ALL ORDERS NOW",
+            "FREE RETURNS",
+            "SIGN UP & GET 15% OFF"
+        ];
 
-    let x = window.matchMedia("(max-width: 960px)")
+        let x = window.matchMedia("(max-width: 960px)")
 
-    function showTextInHeader(x) {
+        function showTextInHeader(x) {
 
-        if (x.matches) {
+            if (x.matches) {
 
-            let p = document.createElement("p");
-            p.textContent = arrayLines[0];
-            p.setAttribute("class", "hearderSlideContent");
-            topHeader.append(p);
-            let c = 0;
+                let p = document.createElement("p");
+                p.textContent = arrayLines[0];
+                p.setAttribute("class", "hearderSlideContent");
+                topHeader.append(p);
+                let c = 0;
 
-            setInterval(function () {
-                if (c == arrayLines.length) {
-                    c = 0;
-                }
-                p.textContent = arrayLines[c];
-                c++;
+                setInterval(function() {
+                    if (c == arrayLines.length) {
+                        c = 0;
+                    }
+                    p.textContent = arrayLines[c];
+                    c++;
 
-            }, 3000);
+                }, 3000);
+            }
         }
-    }
-    showTextInHeader(x)
-    x.addListener(showTextInHeader)
+        showTextInHeader(x)
+        x.addListener(showTextInHeader)
     }
     topHeaderSlideShow();
 
@@ -702,10 +691,12 @@
         for (i = 0; i < all_users.length; i++) {
             if (email === all_users[i].email && password === all_users[i].password) {
                 alert("Login successful");
-                document.getElementById("checklogin").textContent = "Login successful";
+                document.getElementById("checklogin").textContent = "YOU ARE LOGGED IN";
                 document.getElementById("rename").innerHTML = "";
-                document.getElementById("el").value = "";
-                document.getElementById("pass").value = "";
+                var newname = document.getElementById("el");
+                newname.setAttribute("disabled", true);
+                var newpass = document.getElementById("pass");
+                newpass.setAttribute("disabled", true);
                 break;
 
 
@@ -724,11 +715,11 @@
 
 
     function review(e1) {
-        if (document.getElementById("checklogin").innerHTML !== "Login successful") {
+        if (document.getElementById("checklogin").innerHTML !== "YOU ARE LOGGED IN") {
             alert("Please login first");
         }
 
-        if (document.getElementById("checklogin").innerHTML === "Login successful")
+        if (document.getElementById("checklogin").innerHTML === "YOU ARE LOGGED IN")
 
         {
             e1.preventDefault();
@@ -745,7 +736,19 @@
             let email = formone.email.value;
             let mobile = formone.mobile.value;
             // console.log("review data", firstname, lastname, street, landmark, additional_info, city, state, pincode, email, mobile);
-            if (localStorage.getItem("shipping") === null) {
+            var correctchar = /^[A-Za-z]+$/;
+
+            var indexwithat = email.indexOf("@");
+            var indexwithdott = email.lastIndexOf(".");
+            if (firstname.length < 3) {
+                alert("plz enter correct name");
+            } else if (!firstname.match(correctchar)) {
+                alert("plz enter correct name");
+            } else if (pincode.length < 6) {
+                alert("enter 6 digit pincode");
+            } else if (mobile.length != 10) {
+                alert("enter 10 digit mobile numbers");
+            } else if (localStorage.getItem("shipping") === null) {
                 localStorage.setItem("shipping", JSON.stringify([]));
             }
             var address = {
@@ -798,9 +801,8 @@
         document.getElementById("delivery").textContent = checkoutData[key].delivery
         document.getElementById("totalPrice1").textContent = "₹" + tp;
         document.getElementById("totalPrice2").textContent = "₹" + tp;
-    } 
-    else {
-        document.getElementById("totalPrice2").textContent = "₹" + tp ;
+    } else {
+        document.getElementById("totalPrice2").textContent = "₹" + tp;
     }
 
     // // -------- For Order summary ------

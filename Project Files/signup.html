@@ -164,18 +164,20 @@
             let mobile = myform.m.value;
             let password = myform.p.value;
             //console.log("data:", name, email, password);
+            var correctchar = /^[A-Za-z]+$/;
 
-            if (mobile.length != 10) {
+            var indexwithat = email.indexOf("@");
+            var indexwithdott = email.lastIndexOf(".");
+            if (name.length < 3) {
+                alert("plz enter correct name");
+            } else if (!name.match(correctchar)) {
+                alert("plz enter correct name");
+            } else if (mobile.length != 10) {
                 alert("enter 10 digit mobile numbers");
 
 
 
-            }
-
-            var indexwithat = email.indexOf("@");
-            var indexwithdott = email.lastIndexOf(".");
-
-            if (indexwithat < 1 || indexwithdott < indexwithat + 2 || indexwithdott + 2 >= email.length) {
+            } else if (indexwithat < 1 || indexwithdott < indexwithat + 2 || indexwithdott + 2 >= email.length) {
                 alert("Please check '@' and '.' in your email");
 
             } else {
