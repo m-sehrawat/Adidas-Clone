@@ -746,38 +746,43 @@
                 alert("plz enter correct name");
             } else if (pincode.length < 6) {
                 alert("enter 6 digit pincode");
+            } else if (indexwithat < 1 || indexwithdott < indexwithat + 2 || indexwithdott + 2 >= email.length) {
+                alert("Please check '@' and '.' in your email");
+
             } else if (mobile.length != 10) {
                 alert("enter 10 digit mobile numbers");
-            } else if (localStorage.getItem("shipping") === null) {
-                localStorage.setItem("shipping", JSON.stringify([]));
+            } else {
+                if (localStorage.getItem("shipping") === null) {
+                    localStorage.setItem("shipping", JSON.stringify([]));
+                }
+                var address = {
+                    firstname,
+                    lastname,
+                    street,
+                    landmark,
+                    additional_info,
+                    city,
+                    state,
+                    pincode,
+                    email,
+                    mobile
+                };
+                let cart = JSON.parse(localStorage.getItem("shipping"));
+                cart.push(address);
+                localStorage.setItem("shipping", JSON.stringify(cart));
+                alert("Shipping Address added Succesfully");
+                document.getElementById("fname").value = "";
+                document.getElementById("lname").value = "";
+                document.getElementById("street").value = "";
+                document.getElementById("landmark").value = "";
+                document.getElementById("additional_info").value = "";
+                document.getElementById("city").value = "";
+                document.getElementById("state").value = "";
+                document.getElementById("pincode").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("mobile").value = "";
+                window.location.href = "adidas_payment_page.html";
             }
-            var address = {
-                firstname,
-                lastname,
-                street,
-                landmark,
-                additional_info,
-                city,
-                state,
-                pincode,
-                email,
-                mobile
-            };
-            let cart = JSON.parse(localStorage.getItem("shipping"));
-            cart.push(address);
-            localStorage.setItem("shipping", JSON.stringify(cart));
-            alert("Shipping Address added Succesfully");
-            document.getElementById("fname").value = "";
-            document.getElementById("lname").value = "";
-            document.getElementById("street").value = "";
-            document.getElementById("landmark").value = "";
-            document.getElementById("additional_info").value = "";
-            document.getElementById("city").value = "";
-            document.getElementById("state").value = "";
-            document.getElementById("pincode").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("mobile").value = "";
-            window.location.href = "adidas_payment_page.html";
         }
 
         //console.log(cart);
