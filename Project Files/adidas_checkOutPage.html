@@ -742,6 +742,10 @@
             var indexwithdott = email.lastIndexOf(".");
             if (firstname.length < 3) {
                 alert("plz enter correct name");
+            } else if (street.length < 2) {
+                alert("plz enter valid street");
+            } else if (city.length < 3) {
+                alert("plz enter city name correctly");
             } else if (!firstname.match(correctchar)) {
                 alert("plz enter correct name");
             } else if (pincode.length < 6) {
