@@ -742,12 +742,15 @@
             var indexwithdott = email.lastIndexOf(".");
             if (firstname.length < 3) {
                 alert("plz enter correct name");
+            } else if (!firstname.match(correctchar)) {
+                alert("plz enter correct name");
             } else if (street.length < 2) {
                 alert("plz enter valid street");
             } else if (city.length < 3) {
                 alert("plz enter city name correctly");
-            } else if (!firstname.match(correctchar)) {
-                alert("plz enter correct name");
+            } else if (!(state === "Andhra Pradesh" || state === "Arunachal Pradesh" || state === "Bihar" || state === "Chhattisgarh" || state === "Goa" || state === "Haryana" ||
+                    state === "Jammu and Kashmir" || state === "Karnataka" || state === "Madhya Pradesh" || state === "Nagaland")) {
+                alert("plz select state");
             } else if (pincode.length < 6) {
                 alert("enter 6 digit pincode");
             } else if (indexwithat < 1 || indexwithdott < indexwithat + 2 || indexwithdott + 2 >= email.length) {

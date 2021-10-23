@@ -180,6 +180,31 @@
 
 
 
+            } else if (password.length < 8) {
+                alert("enter 8 length of password ");
+
+
+
+            } else if (password.search(/[0-9]/) == -1) {
+                alert("password contain alteast one number");
+
+
+
+            } else if (password.search(/[a-z]/) == -1) {
+                alert("password contain alteast one lower case character");
+
+
+
+            } else if (password.search(/[A-Z]/) == -1) {
+                alert("password contain alteast one UPPER CASE case character");
+
+
+
+            } else if (password.search(/[!\@\#\%\^\&\(\)\_\+\.\,\:\;]/) == -1) {
+                alert("password contain alteast one special character");
+
+
+
             } else {
                 if (localStorage.getItem('users') === null) {
 
