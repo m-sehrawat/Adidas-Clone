@@ -738,8 +738,6 @@
             // console.log("review data", firstname, lastname, street, landmark, additional_info, city, state, pincode, email, mobile);
             var correctchar = /^[A-Za-z]+$/;
 
-            var indexwithat = email.indexOf("@");
-            var indexwithdott = email.lastIndexOf(".");
             if (firstname.length < 3) {
                 alert("Please enter correct name");
             } else if (!firstname.match(correctchar)) {
@@ -753,8 +751,21 @@
                 alert("Please select your state");
             } else if (pincode.length < 6) {
                 alert("enter 6 digit pincode");
-            } else if (indexwithat < 1 || indexwithdott < indexwithat + 2 || indexwithdott + 2 >= email.length) {
-                alert("Please check '@' and '.' in your email");
+            } else if (email.search(/[@]/) == -1) {
+                alert("Email id contain @ character");
+
+
+
+            } else if (email.indexOf('@') <= 0) {
+                alert("invalid @ position");
+
+            } else if (email.search(/[.]/) == -1) {
+                alert("Email id contain . character");
+
+
+
+            } else if (email.charAt(email.length - 4) != '.') {
+                alert("invalid dott(.) position in email");
 
             } else if (mobile.length != 10) {
                 alert("enter 10 digit mobile numbers");
