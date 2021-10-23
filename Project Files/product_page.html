@@ -281,9 +281,9 @@
                 grid-template-columns: 32% 32% 32%;
             }
 
-            #rightSideBox{
+            #rightSideBox {
                 width: 30%;
-                margin-left: 50%;   
+                margin-left: 50%;
             }
         }
     </style>
@@ -299,7 +299,7 @@
     <div id="header">
         <div>
             <a href="adidas_home_page.html"><img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg"></a>
-            
+
         </div>
         <div id="rightSideBox">
             <a href="signup.html"><button>sign up</button></a>
@@ -1561,6 +1561,8 @@
 
     let parent = document.getElementById("parent");
 
+    let newProductData = [];
+
     let totalProductsCount = document.getElementById("totalProductsCount");
     totalProductsCount.textContent = "[" + data.length + "]";
 
@@ -1635,6 +1637,7 @@
 
     //Clear Filter Function
     function clearFilter() {
+        delete newProductData;
         location.reload();
     }
 
@@ -1672,26 +1675,57 @@
         var gender = document.getElementById("genderFilter").value;
 
         for (let i = 0; i < gender.length; i++) {
+            //Step-1: Check if the newProductData array is empty
+            if (newProductData.length === 0) {
 
-            if (gender == "men") {
-                let genderArrayMen = data.filter(function (element) {
-                    return (element.gender == "men");
-                });
-                showProducts(genderArrayMen);
-            }
+                if (gender == "men") {
+                    let genderArrayMen = data.filter(function (element) {
+                        return (element.gender == "men");
+                    });
+                    newProductData = [...genderArrayMen];
+                    showProducts(genderArrayMen);
+                }
 
-            if (gender == "women") {
-                let genderArrayWomen = data.filter(function (element) {
-                    return (element.gender == "women");
-                });
-                showProducts(genderArrayWomen);
-            }
+                if (gender == "women") {
+                    let genderArrayWomen = data.filter(function (element) {
+                        newProductData.push(element.gender == "women");
+                        return (element.gender == "women");
+                    });
+                    newProductData = [...genderArrayWomen];
+                    showProducts(genderArrayWomen);
+                }
 
-            if (gender == "kids") {
-                let genderArrayKids = data.filter(function (element) {
-                    return (element.gender == "kids");
-                });
-                showProducts(genderArrayKids);
+                if (gender == "kids") {
+                    let genderArrayKids = data.filter(function (element) {
+                        newProductData.push(element.gender == "kids");
+                        return (element.gender == "kids");
+                    });
+                    newProductData = [...genderArrayKids];
+                    showProducts(genderArrayKids);
+                }
+
+            } else if (newProductData.length > 0) {
+
+                if (gender == "men") {
+                    let genderArrayMen = newProductData.filter(function (element) {
+                        return (element.gender == "men");
+                    });
+                    showProducts(genderArrayMen);
+                }
+
+                if (gender == "women") {
+                    let genderArrayWomen = newProductData.filter(function (element) {
+                        return (element.gender == "women");
+                    });
+                    showProducts(genderArrayWomen);
+                }
+
+                if (gender == "kids") {
+                    let genderArrayKids = newProductData.filter(function (element) {
+                        return (element.gender == "kids");
+                    });
+                    showProducts(genderArrayKids);
+                }
             }
         }
     }
@@ -1703,25 +1737,54 @@
 
         for (let i = 0; i < division.length; i++) {
 
-            if (division == "clothing") {
-                let divisionClothing = data.filter(function (element) {
-                    return (element.division == "clothing");
-                });
-                showProducts(divisionClothing);
-            }
+            if (newProductData.length === 0) {
 
-            if (division == "shoes") {
-                let divisionShoes = data.filter(function (element) {
-                    return (element.division == "shoes");
-                });
-                showProducts(divisionShoes);
-            }
+                if (division == "clothing") {
+                    let divisionClothing = data.filter(function (element) {
+                        return (element.division == "clothing");
+                    });
+                    newProductData = [...divisionClothing];
+                    showProducts(divisionClothing);
+                }
 
-            if (division == "accessories") {
-                let divisionAccessories = data.filter(function (element) {
-                    return (element.division == "accessories");
-                });
-                showProducts(divisionAccessories);
+                if (division == "shoes") {
+                    let divisionShoes = data.filter(function (element) {
+                        return (element.division == "shoes");
+                    });
+                    newProductData = [...divisionShoes];
+                    showProducts(divisionShoes);
+                }
+
+                if (division == "accessories") {
+                    let divisionAccessories = data.filter(function (element) {
+                        return (element.division == "accessories");
+                    });
+                    newProductData = [...divisionAccessories];
+                    showProducts(divisionAccessories);
+                }
+
+            } else if (newProductData.length > 0) {
+
+                if (division == "clothing") {
+                    let divisionClothing = newProductData.filter(function (element) {
+                        return (element.division == "clothing");
+                    });
+                    showProducts(divisionClothing);
+                }
+
+                if (division == "shoes") {
+                    let divisionShoes = newProductData.filter(function (element) {
+                        return (element.division == "shoes");
+                    });
+                    showProducts(divisionShoes);
+                }
+
+                if (division == "accessories") {
+                    let divisionAccessories = newProductData.filter(function (element) {
+                        return (element.division == "accessories");
+                    });
+                    showProducts(divisionAccessories);
+                }
             }
         }
     }
@@ -1733,39 +1796,84 @@
 
         for (let i = 0; i < productType.length; i++) {
 
-            if (productType == "sneakers") {
-                let productTypeSneakers = data.filter(function (element) {
-                    return (element.productType == "sneakers");
-                });
-                showProducts(productTypeSneakers);
-            }
+            if (newProductData.length === 0) {
 
-            if (productType == "football") {
-                let productTypeFootball = data.filter(function (element) {
-                    return (element.productType == "football");
-                });
-                showProducts(productTypeFootball);
-            }
+                if (productType == "sneakers") {
+                    let productTypeSneakers = data.filter(function (element) {
+                        return (element.productType == "sneakers");
+                    });
+                    newProductData = [...productTypeSneakers];
+                    showProducts(productTypeSneakers);
+                }
 
-            if (productType == "sportsShoes") {
-                let productTypeSportsShoes = data.filter(function (element) {
-                    return (element.productType == "sportsShoes");
-                });
-                showProducts(productTypeSportsShoes);
-            }
+                if (productType == "football") {
+                    let productTypeFootball = data.filter(function (element) {
+                        return (element.productType == "football");
+                    });
+                    newProductData = [...productTypeFootball];
+                    showProducts(productTypeFootball);
+                }
 
-            if (productType == "Tshirts") {
-                let productTypeTshirts = data.filter(function (element) {
-                    return (element.productType == "Tshirts");
-                });
-                showProducts(productTypeTshirts);
-            }
+                if (productType == "sportsShoes") {
+                    let productTypeSportsShoes = data.filter(function (element) {
+                        return (element.productType == "sportsShoes");
+                    });
+                    newProductData = [...productTypeSportsShoes];
+                    showProducts(productTypeSportsShoes);
+                }
 
-            if (productType == "sportsWear") {
-                let productTypeSportsWear = data.filter(function (element) {
-                    return (element.productType == "sportsWear");
-                });
-                showProducts(productTypeSportsWear);
+                if (productType == "Tshirts") {
+                    let productTypeTshirts = data.filter(function (element) {
+                        return (element.productType == "Tshirts");
+                    });
+                    newProductData = [...productTypeTshirts];
+                    showProducts(productTypeTshirts);
+                }
+
+                if (productType == "sportsWear") {
+                    let productTypeSportsWear = data.filter(function (element) {
+                        return (element.productType == "sportsWear");
+                    });
+                    newProductData = [...productTypeSportsWear];
+                    showProducts(productTypeSportsWear);
+                }
+
+            } else if (newProductData.length > 0) {
+
+                if (productType == "sneakers") {
+                    let productTypeSneakers = newProductData.filter(function (element) {
+                        return (element.productType == "sneakers");
+                    });
+                    showProducts(productTypeSneakers);
+                }
+
+                if (productType == "football") {
+                    let productTypeFootball = newProductData.filter(function (element) {
+                        return (element.productType == "football");
+                    });
+                    showProducts(productTypeFootball);
+                }
+
+                if (productType == "sportsShoes") {
+                    let productTypeSportsShoes = newProductData.filter(function (element) {
+                        return (element.productType == "sportsShoes");
+                    });
+                    showProducts(productTypeSportsShoes);
+                }
+
+                if (productType == "Tshirts") {
+                    let productTypeTshirts = newProductData.filter(function (element) {
+                        return (element.productType == "Tshirts");
+                    });
+                    showProducts(productTypeTshirts);
+                }
+
+                if (productType == "sportsWear") {
+                    let productTypeSportsWear = newProductData.filter(function (element) {
+                        return (element.productType == "sportsWear");
+                    });
+                    showProducts(productTypeSportsWear);
+                }
             }
         }
     }
@@ -1778,32 +1886,70 @@
 
         for (let i = 0; i < brand.length; i++) {
 
-            if (brand == "performance") {
-                let brandPerformance = data.filter(function (element) {
-                    return (element.brand == "performance");
-                });
-                showProducts(brandPerformance);
-            }
+            if (newProductData.length === 0) {
 
-            if (brand == "originals") {
-                let brandOriginals = data.filter(function (element) {
-                    return (element.brand == "originals");
-                });
-                showProducts(brandOriginals);
-            }
+                if (brand == "performance") {
+                    let brandPerformance = data.filter(function (element) {
+                        return (element.brand == "performance");
+                    });
+                    newProductData = [...brandPerformance];
+                    showProducts(brandPerformance);
+                }
 
-            if (brand == "sportsInspired") {
-                let brandSportsInspired = data.filter(function (element) {
-                    return (element.brand == "sportsInspired");
-                });
-                showProducts(brandSportsInspired);
-            }
+                if (brand == "originals") {
+                    let brandOriginals = data.filter(function (element) {
+                        return (element.brand == "originals");
+                    });
+                    newProductData = [...brandOriginals];
+                    showProducts(brandOriginals);
+                }
 
-            if (brand == "sportsWear") {
-                let brandSportsWear = data.filter(function (element) {
-                    return (element.brand == "sportsWear");
-                });
-                showProducts(brandSportsWear);
+                if (brand == "sportsInspired") {
+                    let brandSportsInspired = data.filter(function (element) {
+                        return (element.brand == "sportsInspired");
+                    });
+                    newProductData = [...brandSportsInspired];
+                    showProducts(brandSportsInspired);
+                }
+
+                if (brand == "sportsWear") {
+                    let brandSportsWear = data.filter(function (element) {
+                        return (element.brand == "sportsWear");
+                    });
+                    newProductData = [...brandSportsWear];
+                    showProducts(brandSportsWear);
+                }
+
+            } else if (newProductData.length > 0) {
+
+                if (brand == "performance") {
+                    let brandPerformance = newProductData.filter(function (element) {
+                        return (element.brand == "performance");
+                    });
+                    showProducts(brandPerformance);
+                }
+
+                if (brand == "originals") {
+                    let brandOriginals = newProductData.filter(function (element) {
+                        return (element.brand == "originals");
+                    });
+                    showProducts(brandOriginals);
+                }
+
+                if (brand == "sportsInspired") {
+                    let brandSportsInspired = newProductData.filter(function (element) {
+                        return (element.brand == "sportsInspired");
+                    });
+                    showProducts(brandSportsInspired);
+                }
+
+                if (brand == "sportsWear") {
+                    let brandSportsWear = newProductData.filter(function (element) {
+                        return (element.brand == "sportsWear");
+                    });
+                    showProducts(brandSportsWear);
+                }
+
             }
         }
     }
@@ -1815,32 +1961,69 @@
 
         for (let i = 0; i < collection.length; i++) {
 
-            if (collection == "clima") {
-                let collectionClima = data.filter(function (element) {
-                    return (element.collection == "clima");
-                });
-                showProducts(collectionClima);
-            }
+            if (newProductData.length === 0) {
 
-            if (collection == "adicolor") {
-                let collectionAdicolor = data.filter(function (element) {
-                    return (element.collection == "adicolor");
-                });
-                showProducts(collectionAdicolor);
-            }
+                if (collection == "clima") {
+                    let collectionClima = data.filter(function (element) {
+                        return (element.collection == "clima");
+                    });
+                    newProductData = [...collectionClima];
+                    showProducts(collectionClima);
+                }
 
-            if (collection == "ultraBoost") {
-                let collectionUltraBoost = data.filter(function (element) {
-                    return (element.collection == "ultraBoost");
-                });
-                showProducts(collectionUltraBoost);
-            }
+                if (collection == "adicolor") {
+                    let collectionAdicolor = data.filter(function (element) {
+                        return (element.collection == "adicolor");
+                    });
+                    newProductData = [...collectionAdicolor];
+                    showProducts(collectionAdicolor);
+                }
 
-            if (collection == "superNova") {
-                let collectionSuperNova = data.filter(function (element) {
-                    return (element.collection == "superNova");
-                });
-                showProducts(collectionSuperNova);
+                if (collection == "ultraBoost") {
+                    let collectionUltraBoost = data.filter(function (element) {
+                        return (element.collection == "ultraBoost");
+                    });
+                    newProductData = [...collectionUltraBoost];
+                    showProducts(collectionUltraBoost);
+                }
+
+                if (collection == "superNova") {
+                    let collectionSuperNova = data.filter(function (element) {
+                        return (element.collection == "superNova");
+                    });
+                    newProductData = [...collectionSuperNova];
+                    showProducts(collectionSuperNova);
+                }
+
+            } else if (newProductData.length > 0) {
+
+                if (collection == "clima") {
+                    let collectionClima = newProductData.filter(function (element) {
+                        return (element.collection == "clima");
+                    });
+                    showProducts(collectionClima);
+                }
+
+                if (collection == "adicolor") {
+                    let collectionAdicolor = newProductData.filter(function (element) {
+                        return (element.collection == "adicolor");
+                    });
+                    showProducts(collectionAdicolor);
+                }
+
+                if (collection == "ultraBoost") {
+                    let collectionUltraBoost = newProductData.filter(function (element) {
+                        return (element.collection == "ultraBoost");
+                    });
+                    showProducts(collectionUltraBoost);
+                }
+
+                if (collection == "superNova") {
+                    let collectionSuperNova = newProductData.filter(function (element) {
+                        return (element.collection == "superNova");
+                    });
+                    showProducts(collectionSuperNova);
+                }
             }
         }
     }
@@ -1852,32 +2035,69 @@
 
         for (let i = 0; i < sustainability.length; i++) {
 
-            if (sustainability == "sustainable") {
-                let sustainabilitySustainable = data.filter(function (element) {
-                    return (element.sustainability == "sustainable");
-                });
-                showProducts(sustainabilitySustainable);
-            }
+            if (newProductData.length === 0) {
 
-            if (sustainability == "vegan") {
-                let sustainabilityVegan = data.filter(function (element) {
-                    return (element.sustainability == "vegan");
-                });
-                showProducts(sustainabilityVegan);
-            }
+                if (sustainability == "sustainable") {
+                    let sustainabilitySustainable = data.filter(function (element) {
+                        return (element.sustainability == "sustainable");
+                    });
+                    newProductData = [...sustainabilitySustainable];
+                    showProducts(sustainabilitySustainable);
+                }
 
-            if (sustainability == "organicCotton") {
-                let sustainabilityOrganicCotton = data.filter(function (element) {
-                    return (element.sustainability == "organicCotton");
-                });
-                showProducts(sustainabilityOrganicCotton);
-            }
+                if (sustainability == "vegan") {
+                    let sustainabilityVegan = data.filter(function (element) {
+                        return (element.sustainability == "vegan");
+                    });
+                    newProductData = [...sustainabilityVegan];
+                    showProducts(sustainabilityVegan);
+                }
 
-            if (sustainability == "colorWithCare") {
-                let sustainabilityColorWithCare = data.filter(function (element) {
-                    return (element.sustainability == "colorWithCare");
-                });
-                showProducts(sustainabilityColorWithCare);
+                if (sustainability == "organicCotton") {
+                    let sustainabilityOrganicCotton = data.filter(function (element) {
+                        return (element.sustainability == "organicCotton");
+                    });
+                    newProductData = [...sustainabilityOrganicCotton];
+                    showProducts(sustainabilityOrganicCotton);
+                }
+
+                if (sustainability == "colorWithCare") {
+                    let sustainabilityColorWithCare = data.filter(function (element) {
+                        return (element.sustainability == "colorWithCare");
+                    });
+                    newProductData = [...sustainabilityColorWithCare];
+                    showProducts(sustainabilityColorWithCare);
+                }
+
+            } else if (newProductData.length > 0) {
+
+                if (sustainability == "sustainable") {
+                    let sustainabilitySustainable = newProductData.filter(function (element) {
+                        return (element.sustainability == "sustainable");
+                    });
+                    showProducts(sustainabilitySustainable);
+                }
+
+                if (sustainability == "vegan") {
+                    let sustainabilityVegan = newProductData.filter(function (element) {
+                        return (element.sustainability == "vegan");
+                    });
+                    showProducts(sustainabilityVegan);
+                }
+
+                if (sustainability == "organicCotton") {
+                    let sustainabilityOrganicCotton = newProductData.filter(function (element) {
+                        return (element.sustainability == "organicCotton");
+                    });
+                    showProducts(sustainabilityOrganicCotton);
+                }
+
+                if (sustainability == "colorWithCare") {
+                    let sustainabilityColorWithCare = newProductData.filter(function (element) {
+                        return (element.sustainability == "colorWithCare");
+                    });
+                    showProducts(sustainabilityColorWithCare);
+                }
             }
         }
     }
