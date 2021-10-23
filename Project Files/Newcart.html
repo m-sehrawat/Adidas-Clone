@@ -93,6 +93,32 @@
             margin-left: 50%;
         }
 
+        /*--------Footer ----*/
+
+        #footer {
+            background-color: #363738;
+            font-style: normal;
+            color: #C8CBCC;
+            height: 80px;
+            margin-top: 10px;
+            font-size: 12px;
+            border: 1px solid #363738;
+        }
+
+        #footer>p:first-child {
+            display: inline-block;
+            margin: 0% 0% 2% 16%;
+        }
+
+        #footer>p:nth-child(2) {
+            display: inline-block;
+            margin: 1% 0% 2% 45%;
+        }
+
+        #footer>p:last-child {
+            margin: 0% 0% 2% 16%;
+        }
+
 
         /* ---------- Cart-part ----------- */
 
@@ -248,20 +274,7 @@
 
 
 
-        #footer {
-            background-color: #363738;
-            text-align: center;
-            font-style: normal;
-            color: white;
-            font-family: sans-serif;
-            padding: 1%;
-            margin-top: 10px;
-            font-size: 13px;
-            width: 100%;
-
-
-        }
-
+       
         #mouseOver {
             color: rgb(75, 75, 75);
         }
@@ -320,9 +333,10 @@
         }
 
         #btnr:hover {
-            background-color: black;
-            color: white;
-            color: rgb(214, 214, 214);
+            /* background-color: black; */
+            color: rgb(255, 0, 0);
+            /* color: rgb(214, 214, 214); */
+            cursor: pointer;
         }
 
 
@@ -362,6 +376,27 @@
 
             #imageProduct{
                 width: 100%;
+            } 
+
+
+
+            #footer {
+                margin-top: 10px;
+            }
+            #footer>p:first-child {
+                visibility: hidden;
+            }
+
+            #footer>p:nth-child(2) {
+                display: block;
+                text-align: center;
+                margin: 0px auto 25px;
+            }
+
+            #footer>p:last-child {
+                text-align: center;
+                display: block;
+                margin: auto;
             }
 
         }
@@ -503,15 +538,13 @@
     </div>
 
 
-    <footer id="footer">
-        <div id="footerDiv">
-
-            | &nbsp; &nbsp; Privacy Statement &nbsp; &nbsp;| &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp;
-            &nbsp;Imprint &nbsp; &nbsp; |
-
-            <p>© 2021 adidas India Marketing Private Limited</p>
-
+    <footer>
+        <div id="footer">
+            <p>India</p>
+            <p>Privacy Policy &nbsp; &nbsp; | &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp; &nbsp; Cookies</p>
+            <p>© 2021 adidas India Marketing Pvt Ltd</p>
         </div>
+    </footer>
 
 
 
