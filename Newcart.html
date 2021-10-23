@@ -257,6 +257,7 @@
             padding: 1%;
             margin-top: 10px;
             font-size: 13px;
+            width: 100%;
 
 
         }
@@ -337,6 +338,12 @@
                 display: grid;
                 grid-template-columns: auto;
                 gap: 5%;
+                
+            }
+
+            #mainBody>div{
+
+                 padding-right: 20px; 
             }
 
 
@@ -497,7 +504,7 @@
 
 
     <footer id="footer">
-        <div>
+        <div id="footerDiv">
 
             | &nbsp; &nbsp; Privacy Statement &nbsp; &nbsp;| &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp;
             &nbsp;Imprint &nbsp; &nbsp; |
@@ -664,6 +671,7 @@
 
 
             name.textContent = product.name
+            name.style="font-weight:bold"
             color.textContent = product.color
             size.textContent = "SIZE :" + product.size
             stock.textContent = product.stock
