@@ -166,14 +166,27 @@
             //console.log("data:", name, email, password);
             var correctchar = /^[A-Za-z]+$/;
 
-            var indexwithat = email.indexOf("@");
-            var indexwithdott = email.lastIndexOf(".");
+            //  var indexwithat = email.indexOf("@");
+            // var indexwithdott = email.lastIndexOf(".");
             if (name.length < 3) {
                 alert("Please enter your name correctly");
             } else if (!name.match(correctchar)) {
                 alert("Please enter correct name");
-            } else if (indexwithat < 1 || indexwithdott < indexwithat + 2 || indexwithdott + 2 >= email.length) {
-                alert("Please check '@' and '.' in your email");
+            } else if (email.search(/[@]/) == -1) {
+                alert("Email id contain @ character");
+
+
+
+            } else if (email.indexOf('@') <= 0) {
+                alert("invalid @ position");
+
+            } else if (email.search(/[.]/) == -1) {
+                alert("Email id contain . character");
+
+
+
+            } else if (email.charAt(email.length - 4) != '.') {
+                alert("invalid dott(.) position in email");
 
             } else if (mobile.length != 10) {
                 alert("enter 10 digit mobile numbers");
