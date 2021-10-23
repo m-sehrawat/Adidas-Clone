@@ -24,17 +24,6 @@
 
 
     <style>
-        /* ---------- Header-Part ----------- */
-
-
-        .hearderSlideContent {
-            margin: 10px auto;
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: white;
-        }
-
 
         #topHeader {
             display: flex;
@@ -51,56 +40,52 @@
             font-weight: bold;
             letter-spacing: 2px;
         }
-
-
-        #header {
+        #header{
             display: flex;
             height: 80px;
-            border-bottom: 1px solid rgb(226, 226, 226);
+            border-bottom: 1px solid #eaebec;
             margin-bottom: 40px;
             overflow: hidden;
         }
-
-        .adidasLogo {
+        .adidasLogo{
             width: 70px;
             margin-top: 15px;
-            margin-left: 50px;
+            margin-left: 50px;    
             cursor: pointer;
         }
-
-
         #rightSideBox {
             height: 100%;
             width: 10%;
             margin-top: 0.5%;
             margin-left: 80%;
-            border: 1px;
+            /* border: 1px solid red; */
         }
 
-        #rightSideBox>button {
+        #rightSideBox>a>button {
             margin-left: 1%;
-            width: auto;
             background-color: white;
-            border: 0px;
+            border: 0px solid white;
             color: black;
             cursor: pointer;
+        }
 
-
+        #rightSideBox>a>button:hover {
+            cursor: pointer;
         }
 
         #rightSideBox>p {
             margin-top: 5%;
             margin-left: 50%;
         }
+        /*------- Footer ----*/
 
-        /*--------Footer ----*/
-
+    
         #footer {
             background-color: #363738;
             font-style: normal;
             color: #C8CBCC;
-            height: 80px;
-            margin-top: 10px;
+            height: 110px;
+            margin-top: 12px;
             font-size: 12px;
             border: 1px solid #363738;
         }
@@ -119,7 +104,6 @@
             margin: 0% 0% 2% 16%;
         }
 
-
         /* ---------- Cart-part ----------- */
 
         * {
@@ -130,11 +114,7 @@
             margin: 0px;
         }
 
-        button {
-            width: 20%;
-            height: 25px;
-            background-color: white;
-        }
+       
 
         #mainBody {
             margin: auto;
@@ -143,12 +123,16 @@
             grid-template-columns: 59% 39%;
             gap: 5%;
         }
+        #mainBody>#Boxdiv{
+
+            width: 100%;
+        }
 
         #yourBag {
             font-size: 45px;
             line-height: 18px;
             font-family: sans-serif;
-            /* font-style: normal; */
+          
             font-weight: bold;
             margin-top: 0px;
             border: 1px;
@@ -244,6 +228,7 @@
             border-collapse: separate;
             border-spacing: 0 15px;
             font-size: 20px;
+          
 
         }
 
@@ -274,7 +259,7 @@
 
 
 
-       
+
         #mouseOver {
             color: rgb(75, 75, 75);
         }
@@ -294,6 +279,8 @@
 
 
         }
+
+        
 
 
         #promoCodebtn {
@@ -332,12 +319,19 @@
 
         }
 
-        #btnr:hover {
-            /* background-color: black; */
-            color: rgb(255, 0, 0);
-            /* color: rgb(214, 214, 214); */
+        .btnr{
+            font-size: 25px;
+            text-align: center;
+            /* border: 1px solid black; */
+        }
+
+        .btnr:hover{
+            font-size: 25px;
+            color: white;
+            background-color: black;
             cursor: pointer;
         }
+
 
 
         #mainHeader {
@@ -345,22 +339,38 @@
             height: 110px
         }
 
-        @media(max-width : 960px) {
+        @media(max-width : 600px) {
+
+            #header, #topHeader{
+                /* border: 1px solid red; */
+                width: 600px;
+            }
+
+            #topHeader div{
+                color: black;
+            }
+
+            #rightSideBox{
+                width: 25%;
+                height: 80%;
+                margin-left: 40%;
+                margin-top: 2%;
+                /* border: 1px solid red; */
+            }
+
+
             #mainBody {
                 margin: auto;
                 width: 90%;
                 display: grid;
                 grid-template-columns: auto;
-                gap: 5%;
-                
+                gap: 5%;  
             }
 
-            #mainBody>div{
+            #mainBody>#display{
 
-                 padding-right: 20px; 
+                width: 360px;
             }
-
-
 
 
             #needHelp {
@@ -376,13 +386,13 @@
 
             #imageProduct{
                 width: 100%;
-            } 
-
-
+                
+            }
 
             #footer {
-                margin-top: 10px;
+                width: 600px;
             }
+
             #footer>p:first-child {
                 visibility: hidden;
             }
@@ -398,54 +408,59 @@
                 display: block;
                 margin: auto;
             }
-
         }
 
-       
+        .hearderSlideContent {
+            /* width: 800px; */
+            margin: 10px auto;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: white;
+        }
 
 
-        
+        @media(max-width: 960px) {
+            #topHeader>div {
+                    display: none;
+                }
+            }
 
+        a{
+            color: black;
+        }
 
-       
     </style>
 
 </head>
 
 <body>
 
-    <header id="mainHeader">
+    <div id="topHeader">
+        <div>FREE DELIVERY FOR ALL ORDERS NOW</div>
+        <div>FREE RETURNS</div>
+        <div>SIGN UP & GET 15% OFF</div>
+    </div>
 
-        <div id="topHeader">
-            <div>FREE DELIVERY FOR ALL ORDERS NOW</div>
-            <div>FREE RETURNS</div>
-            <div>SIGN UP & GET 15% OFF</div>
+    <div id="header">
+        <div>
+            <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
         </div>
-
-        <div id="header">
-            <div>
-                <img class="adidasLogo"
-                    src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
-            </div>
-            <div id="rightSideBox">
-                <button onclick="signup()">sign up</button>
-                <button onclick="login()">log in</button>
-                <p>
-                    <i class="material-icons">shopping_bag</i>
-                </p>
-            </div>
+        <div id="rightSideBox">
+            <a href="signup.html"><button>sign up</button></a>
+            <a href="adidas_checkOutPage.html"><button>log in</button></a>
+            <p>
+               <i class="material-icons">shopping_bag</i>
+            </p>
         </div>
-
-
-
-    </header>
+    </div>
 
 
     <div id="mainBody">
 
         <div id="productSide">
 
-            <!-- <div id="userName"></div> -->
+        
             <div id="bagDetails">
 
                 <strong id="yourBag"> YOUR BAG </strong>
@@ -537,7 +552,6 @@
 
     </div>
 
-
     <footer>
         <div id="footer">
             <p>India</p>
@@ -547,9 +561,6 @@
     </footer>
 
 
-
-    </footer>
-
 </body>
 
 
@@ -558,18 +569,6 @@
 </html>
 
 <script>
-
-    // ----- signup  and login ----
-
-
-    function signup() {
-        window.location.href = "signup.html"
-    }
-
-    function login() {
-        window.location.href = "adidas_checkOutPage.html"
-    }
-    // ----- top header Script ----
 
     //Top Header slide show function
     function topHeaderSlideShow() {
@@ -633,7 +632,7 @@
 
             let div = document.createElement("div")
             div.setAttribute("id","Boxdiv")
-            div.style = "display : flex ; gap : 3%;border:1px solid rgb(80, 80, 80) ;height :218px; border-radius: 2px;"
+            div.style = "display : flex ; gap : 3%;border:1px solid rgb(80, 80, 80) ;height :218px; border-radius: 2px;width:100%"
 
 
             let div1 = document.createElement("div")
@@ -641,7 +640,7 @@
             div1.style = "box-sizing: border-box;width:300px;height:auto;border:1px "
 
             let div2 = document.createElement("div")
-            div2.style = "box-sizing: border-box;width:100%; border:1px ;display:grid;overflow:hidden;padding-bottom: 30px;"
+            div2.style = "box-sizing: border-box;width:100%;display:grid;overflow:hidden;padding-bottom: 30px;"
 
             div2.setAttribute("id","descip")
             let div3 = document.createElement("div")
@@ -650,30 +649,20 @@
 
             div4.setAttribute("id", "quantityBox")
             let div5 = document.createElement("div")
-            div5.style = "box-sizing: border-box; border :1px "
+            div5.style = "box-sizing: border-box"
             let div6 = document.createElement("div")
 
             let div7 = document.createElement("div")
             let div8 = document.createElement("div")
-            let btn = document.createElement("button")
-            btn.setAttribute("id", "btnr")
-            btn.style = "width: 100%;height:10% ;font-size:40px;padding-bottom: 50px; margin-bottom: -20px;border:2px solid white;"
+            let btn = document.createElement("p")
+            btn.textContent = "×";
+            btn.setAttribute("class", "btnr");
+            // btn.style = "text-align:center;font-size : 40px ; height:35px ;border:1px solid white;margin-top:0px;border-radius:5px"
 
-            btn.innerHTML = "×"
+            
 
-
-
-
-
-
-
-
-
-
-
-
-            div6.style = " box-sizing: border-box; border:1px ;display:flex;gap:3%;flex-grow: 1;margin-right:10px ;margin-top :10px"
-            div7.style = "box-sizing: border-box;border:1px  ;display:grid;gap:-10px;margin-right:2%"
+            div6.style = " box-sizing: border-box; display:flex;gap:3%;flex-grow: 1;margin-right:10px ;margin :10px"
+            div7.style = "box-sizing: border-box;border:1px;margin-right:2%"
             div8.style = "font-size:20px;border:1px ;flex-grow: 3;text-align: right;margin-right:4%"
 
 
@@ -695,12 +684,10 @@
             stock.style = "font-weight: bold;font-size:20px"
 
 
-            let icon2 = document.createElement("div")
+            let icon2 = document.createElement("p")
 
-            icon2.style = "border : 1px ;text-align:center;font-size : 35px ;   padding-bottom: 10px;   margin-top: -40px;"
+            icon2.style = "text-align:center;font-size : 35px ; height:40px ;border:1px ;margin-top:-25px;"
             icon2.textContent = "♡"
-
-
 
 
             name.textContent = product.name
@@ -709,10 +696,7 @@
             size.textContent = "SIZE :" + product.size
             stock.textContent = product.stock
             price.textContent = "₹" + product.price + ".00"
-            // price.style = ""
-
-
-
+         
 
             tp = tp + Number(product.price)
             ti = data.length
@@ -720,21 +704,12 @@
             totalPrice1.textContent = " ₹" + tp + ".00"
 
 
-
-
             div4.style = "width:50%;border:1px;margin-bottom :30px"
             let quan = document.createElement("input")
             let quantityText = document.createElement("p")
-            quantityText.textContent = "QUANTITY : 1"
-
-            quan.type = "number"
-
-            
+            quantityText.textContent = "QUANTITY : 1"              
 
             div4.append(quantityText)
-
-           
-
 
 
             if (tp <= 100 && tp > 0) {
@@ -784,8 +759,6 @@
                 totalPrice1.textContent = tp + ".00"
                 totalPrice2.textContent = tp + ".00"
 
-
-
             }
 
 
@@ -795,27 +768,16 @@
             }
 
 
-
-
-
             div8.append(price)
             div7.append(btn, icon2)
-
-
-
-
             div5.append(name, color, size, stock)
             div6.append(div8, div7)
-
             div3.append(div5, div6)
             div2.append(div3, div4)
 
             div.append(div1, div2)
 
             parent.append(div)
-
-
-
 
         })
     }
@@ -881,16 +843,8 @@
                         return
 
                     }
-
-
-
-
                 }
-
-
             })
-
-
 
 
             if (count == 0) {
@@ -898,30 +852,15 @@
 
             }
 
-
             else if (count > 1) {
                 alert("Promo Code Already Applied ")
             }
 
-
-
-
-
         }
-
-
-
 
         else {
             alert("No item In Bag")
         }
-
-
-
-
-
-
-
 
     }
 
@@ -966,10 +905,6 @@
 
         localStorage.setItem("DAR", JSON.stringify(DataAfterRemove))
 
-
-
-
-
     }
 
     // ---- On Removing item -----
@@ -1004,9 +939,6 @@
                 return
             }
         }
-
-
-
 
     }
 
