@@ -145,6 +145,7 @@
         .tileMen{
             background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/updated_gender_men_dt_tcm209-636698.jpg");
             background-size: cover;
+            cursor: pointer;
         }
         .tileMen > h3{
             text-align: center;
@@ -154,6 +155,7 @@
         .tileWomen{
             background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/updated_gender_women_dt_tcm209-636701.jpg");
             background-size: cover;
+            cursor: pointer;
         }
         .tileWomen > h3{
             text-align: center;
@@ -163,6 +165,7 @@
         .tileKids{
             background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/updated_gender_kids_dt_tcm209-636695.jpg");
             background-size: cover;
+            cursor: pointer;
         }
         .tileKids > h3{
             text-align: center;
@@ -335,11 +338,11 @@
     <div id="tileThree">
         <div class="tileThreeHeading">WHO ARE YOU SHOPPING FOR?</div>
         <div class="tileThreeImages">
-            <div class="tileMen">
+            <div onclick="showMen()" class="tileMen">
                 <h3>MEN</h3></div>
-            <div class="tileWomen">
+            <div  onclick="showWomen()" class="tileWomen">
                 <h3>WOMEN</h3></div>
-            <div class="tileKids">
+            <div  onclick="showKids()" class="tileKids">
                 <h3>KIDS</h3></div>
         </div>
     </div>
@@ -390,6 +393,18 @@
         x.addListener(showTextInHeader)
         }
         topHeaderSlideShow();
+
+        function showMen(){
+            window.location.href = "product_men.html";
+        }
+
+        function showWomen(){
+            window.location.href = "product_women.html";
+        }
+
+        function showKids(){
+            window.location.href = "product_kids.html";
+        }
     </script>
 </body>
 </html>
