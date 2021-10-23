@@ -325,7 +325,10 @@
         }
 
 
-
+        #mainHeader {
+            border: 1px;
+            height: 110px
+        }
 
         @media(max-width : 960px) {
             #mainBody {
@@ -336,16 +339,7 @@
                 gap: 5%;
             }
 
-            #Imgdiv {
-                width: 500px;
-                height: auto;
-            }
 
-            #Boxdiv{
-
-                width: 100%;
-                height: 200px;
-            }
 
 
             #needHelp {
@@ -365,73 +359,13 @@
 
         }
 
+       
 
 
-        @media(max-width : 360px) {
-            #mainBody {
-                margin: auto;
-                width: 90%;
-                display: grid;
-                grid-template-columns: auto;
-                gap: 5%;
-            }
-
-            /* #div1 {
-                width: 500px;
-                height: auto;
-            } */
-
-           
-
-            #Boxdiv{
-
-                width: 100%;
-                height: 200px;
-            }
-            #imageProduct{
-                /* height: 100%; */
-                width: 100%;
-            }
-
-            #needHelp {
-
-                margin-bottom: 80px;
-                border: 1px;
-            }
+        
 
 
-
-            #checkoutSide {
-                margin-top: 0px;
-                margin-bottom: 20px;
-            }
-
-        }
-
-
-        @media(max-width: 960px) {
-            #topHeader>div {
-                display: none;
-            }
-
-            #rightSideBox {
-                width: 30%;
-                margin-left: 50%;
-            }
-
-            #productDescription {
-                max-width: 600px;
-                height: 600px;
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-            }
-        }
-
-        #mainHeader {
-            border: 1px;
-            height: 110px
-        }
+       
     </style>
 
 </head>
@@ -664,10 +598,12 @@
 
             let div1 = document.createElement("div")
             div1.setAttribute("id", "Imgdiv")
-            div1.style = "box-sizing: border-box;width:40%;height:auto"
+            div1.style = "box-sizing: border-box;width:300px;height:auto;border:1px "
 
             let div2 = document.createElement("div")
-            div2.style = "box-sizing: border-box;width:100%; border:1px;display:grid"
+            div2.style = "box-sizing: border-box;width:100%; border:1px ;display:grid;overflow:hidden;padding-bottom: 30px;"
+
+            div2.setAttribute("id","descip")
             let div3 = document.createElement("div")
             div3.style = "display : flex; gap :5px;box-sizing: border-box;width : 100%; border:1px "
             let div4 = document.createElement("div")
@@ -704,7 +640,7 @@
             let image = document.createElement("img")
             image.src = product.img[0]
             image.setAttribute("id","imageProduct")
-            image.style = "height:100% "
+            image.style = "height:100%;width:100% "
 
             div1.append(image)
 
@@ -745,7 +681,7 @@
 
 
 
-            div4.style = "width:30%;border:1px;margin-bottom :30px"
+            div4.style = "width:50%;border:1px;margin-bottom :30px"
             let quan = document.createElement("input")
             let quantityText = document.createElement("p")
             quantityText.textContent = "QUANTITY : 1"
