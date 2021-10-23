@@ -33,10 +33,11 @@
             letter-spacing: 2px;
         }
         #header{
-            /* border: 1px solid gray; */
             display: flex;
-            min-height: 50px;
+            height: 80px;
             border-bottom: 1px solid #eaebec;
+            margin-bottom: 40px;
+            overflow: hidden;
         }
         .adidasLogo{
             width: 70px;
@@ -69,9 +70,11 @@
         }
 
         #tileOne{
-            width: 100%;
+            margin: auto;
+            margin-top: -40px;
+            width: 99.89%;
             height: 700px;
-            border: 1px solid white;
+            /* border: 1px solid white; */
             background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/y-3_ss21_drop3_hp_mh_d_tcm209-782054.jpg");
             background-size: cover;
         }
@@ -91,7 +94,8 @@
         }
 
         #tileTwo{
-            width: 100%;
+            margin: auto;
+            width: 80%;
             height: 300px;
             
         }
@@ -101,7 +105,7 @@
             margin-left: 40%;
             margin-top: 10%;
         }
-        #tileTwoDetails{
+        #tileTwoDetails{    
             display: flex;
             width: 800px;
             margin-top: 30px;
@@ -118,7 +122,7 @@
         }
 
         #tileThree{
-            width: 90%;
+            width: 80%;
             height: 400px;
             margin: auto;
             
@@ -173,7 +177,7 @@
             font-style: normal;
             color: #C8CBCC;
             height: 110px;
-            margin-top: 10px;
+            margin-top: 12px;
             font-size: 12px;
             border: 1px solid #363738;
         }
@@ -201,18 +205,20 @@
             }
 
             #rightSideBox{
-                width: 30%;
-                margin-left: 50%;   
+                width: 40%;
+                height: 80%;
+                margin-left: 30%;
+                margin-top: 2%;
             }
 
             #tileOne{
                 width: 600px;
                 height: 700px;
                 object-fit: cover;
-                border: 1px solid white;
+                /* border: 1px solid white; */
                 background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/y-3_ss21_drop3_hp_mh_d_tcm209-782054.jpg");
                 background-size:cover;
-                background-position-x:80%;
+                background-position-x:87.5%;
             }
 
             #tileTwo{
@@ -228,51 +234,45 @@
             }
 
             #tileThree{
-                width: 600px;
+                width: 350px;
                 height: 1200px;
                 margin: auto;
+                /* border: 1px solid red; */
             }
             .tileThreeHeading{
-                font-size: 24px;
+                font-size: 20px;
                 font-weight: 700;
                 margin-top: 1%;
-                margin-left: 45px;
+                margin-left: 15px;
             }
             .tileThreeImages{
                 width: 100%;
                 display: flex;
                 flex-wrap: wrap;
             }
+            .tileThreeImages h3{
+                margin-top: 40%;
+            }
             .tileThreeImages > div{
                 margin: 1.5%;
-                margin-left: 40px;
-                min-width: 400px;
-            }
-
-            #footer {
-                background-color: #363738;
-                font-style: normal;
-                color: #C8CBCC;
-                height: 110px;
-                margin-top: 1px;
-                font-size: 12px;
-                border: 1px solid #363738;
+                margin-left: 10px;
+                min-width: 330px;
             }
 
             #footer>p:first-child {
-                display: inline-block;
-                margin-left: 220px;
-                margin-top: 15px;
+                visibility: hidden;
             }
 
             #footer>p:nth-child(2) {
-                display: inline-block;
-                margin-left: 80px;
+                display: block;
+                text-align: center;
+                margin: 0px auto 25px;
             }
 
             #footer>p:last-child {
-                margin-top: 10px;
-                margin-left: 130px;
+                text-align: center;
+                display: block;
+                margin: auto;
             }
         }
 
