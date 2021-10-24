@@ -273,6 +273,13 @@
         }
 
         @media(max-width: 600px) {
+            #rightSideBox {
+                width: 30%;
+                margin-left: 50%;
+            }
+        }
+
+        @media(max-width: 400px) {
             #parent {
                 grid-template-columns: 48% 48%;
             }
@@ -283,8 +290,14 @@
             }
 
             #rightSideBox {
-                width: 30%;
-                margin-left: 50%;
+                width: 100%;
+                margin-left: 35%;
+                border: 1px solid red;
+
+            }
+
+            #rightSideBox>a>button {
+                font-size: 12px;
             }
         }
     </style>
@@ -1642,7 +1655,7 @@
         location.reload();
     }
 
-    function showSortFilter(arr){
+    function showSortFilter(arr) {
 
         let priceFilter = document.getElementById("priceFilter");
 
@@ -1667,16 +1680,16 @@
                 sortHL();
             }
         }
-        
+
     }
 
     //Price sort Function
     function priceSortFilter() {
 
-        if(newProductData.length != 0){
+        if (newProductData.length != 0) {
             showSortFilter(newProductData);
         }
-        else if(newProductData.length == 0){
+        else if (newProductData.length == 0) {
             showSortFilter(data);
         }
 
