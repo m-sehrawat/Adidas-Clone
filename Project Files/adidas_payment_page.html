@@ -619,47 +619,39 @@
                 }, 2000);
             }
 
-            var count = 0;
             if(card.checked){
-                
-                if(cardNum.value.length != 19){
-                    alert("Enter valid 16 digit Card Number");
-                    count++;
-                }
-                
-                if(checkNumbers(cardNum) == false){
-                    alert("Enter valid Card number with numbers and spaces");
-                    count++;
-                }
-
-                if(monYear.value.length != 5){
-                    alert("Enter valid 4 digit Expiry Date");
-                    count++;
-                }
-
-                if(checkNumbers(monYear) == false){
-                    alert("Enter valid Expiry Date with numbers and spaces");
-                    count++;
-                }
-
-                if(cvvDet.value.length != 3){
-                    alert("Enter three digit CVV number");
-                    count++;
-                }
 
                 if (cardNum.value == "" || cardNam.value == "" || monYear.value == "" || cvvDet.value == "") {
                     alert("Please fill in all the details");
-                    count++;
+                }
+                
+                else if(cardNum.value.length != 19){
+                    alert("Enter valid 16 digit Card Number");
+                }
+                
+                else if(checkNumbers(cardNum) == false){
+                    alert("Enter valid Card number with numbers and spaces");
                 }
 
-                if(count == 0){
+                else if(monYear.value.length != 5){
+                    alert("Enter valid 4 digit Expiry Date");
+                }
+
+                else if(checkNumbers(monYear) == false){
+                    alert("Enter valid Expiry Date with numbers and spaces");
+                }
+
+                else if(cvvDet.value.length != 3){
+                    alert("Enter three digit CVV number");
+                }
+
+                else{    
                     let interval = setTimeout(function () {
                         alert("Your order has been placed succesfully. Happy Shopping!");
                         window.location.href = "adidas_home_page.html";
                     }, 2000);
                 }
 
-                count = 0;
             }
 
         }
