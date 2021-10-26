@@ -23,7 +23,6 @@
             margin: 0px;
         }
 
-        /* header */
         #topHeader {
             display: flex;
             background-color: black;
@@ -41,7 +40,6 @@
         }
 
         #header {
-            /* border: 1px solid gray; */
             display: flex;
             min-height: 50px;
             border-bottom: 1px solid #eaebec;
@@ -55,7 +53,6 @@
         }
 
         #rightSideBox {
-            /* border: 1px solid red; */
             height: 100%;
             width: 10%;
             margin-top: 0.5%;
@@ -72,7 +69,6 @@
         }
 
         #rightSideBox>p {
-            /* border: 1px solid red; */
             margin-top: 5%;
             margin-left: 50%;
             cursor: pointer;
@@ -83,13 +79,11 @@
             height: 800px;
             margin: auto;
             display: flex;
-            /* border: 1px solid black; */
         }
 
         #leftBox {
             width: 60%;
             height: 500px;
-            /* border: 1px solid red; */
         }
 
         #paymentHeading {
@@ -109,13 +103,11 @@
             height: 400px;
             display: flex;
             flex-wrap: wrap;
-            /* border: 1px solid blue; */
         }
 
         #creditOptionBox {
             width: 100%;
             height: 75%;
-            /* border: 1px solid red; */
             border-bottom: 1px solid rgb(124, 121, 121);
         }
 
@@ -214,7 +206,6 @@
             width: 40%;
             height: 500px;
             margin-left: 40px;
-            /* border: 1px solid red; */
         }
 
         .orderSummary {
@@ -340,7 +331,6 @@
             color: black;
         }
 
-        /* Shippibg Details CSS */
         .deliveryConstants>p {
             margin: 1px auto;
             color: #898c91;
@@ -355,9 +345,7 @@
         @media (max-width: 600px){
 
             #topHeader div{
-                /* margin: 0.5% 0% 0% 15%; */
                 color: black
-                /* letter-spacing: 2px; */
             }
 
             #rightSideBox{
@@ -369,14 +357,12 @@
                 width: 600px;
                 display: flex;
                 flex-wrap: wrap;
-                /* border: 1px solid black; */
             }
 
             #leftBox {
                 width: 500px;
                 height: 500px;
                 margin-left: 40px;
-                /* border: 1px solid red; */
             }
 
             #rightBox {
@@ -384,7 +370,6 @@
                 height: 500px;
                 margin-left: 40px;
                 margin-top: 100px;
-                /* border: 1px solid red; */
             }
 
             #footer {
@@ -704,13 +689,10 @@
         }
 
 
-        // -------- For Order summary ------
         let checkoutData = JSON.parse(localStorage.getItem("checkout"));
         let key = checkoutData.length - 1;
         let ti = checkoutData[key].totalItem;
         let tp = checkoutData[key].totalPrice;
-
-        // console.log("checkoutData--", checkoutData)
 
         document.getElementById("item").textContent = ti + " " + "ITEM";
         document.getElementById("delivery").textContent = checkoutData[key].delivery
@@ -728,7 +710,7 @@
             document.getElementById("totalPrice2").textContent = "₹" + tp + ".00";
         }
 
-        // -----For order Details Part -----
+        
         let DAR1 = JSON.parse(localStorage.getItem("DAR"))
 
         let parent = document.getElementById("display")
@@ -750,7 +732,6 @@
 
             let div2 = document.createElement("div");
             div2.setAttribute("class", "productDetailsDiv");
-            // div2.style = "border:1px ;padding-bottom:18%;height : 50%"
 
             let name = document.createElement("div");
             name.setAttribute("class", "productDetailsDesc");

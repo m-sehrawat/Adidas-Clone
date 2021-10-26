@@ -721,28 +721,41 @@
             localStorage.setItem("adidasCart", JSON.stringify([]));
         }
 
-        // var count = 0;
-        let productQuantity = 0;
-
         function addtocart(p, s){
 
             if(btnCount == 0){
                 s.style.color = "red";
             }
 
-            if(productQuantity > 0){
-                alert("The product is already added to Cart.");
-            }
+            let flag = true;
+            var arrProducts = JSON.parse(localStorage.getItem("adidasCart"));
 
-            if((btnCount > 0) && (productQuantity == 0)){
-                var arrProducts = JSON.parse(localStorage.getItem("adidasCart"));
+            if(arrProducts.length == 0 && btnCount > 0){
                 arrProducts.push(p);
-                localStorage.setItem("adidasCart", JSON.stringify(arrProducts));
                 alert("Your Product has been succesfully added to Cart.");
-                productQuantity++;
+                localStorage.setItem("adidasCart", JSON.stringify(arrProducts));
             }
-            // count++;
 
+            else if(arrProducts.length > 0 && btnCount > 0){
+
+                for(let i = 0; i < arrProducts.length; i++){
+                    if(arrProducts[i].name == p.name){
+                        flag = false;
+                        break;
+                    }
+                }
+
+                if(flag == false){
+                    alert("The product is already added to Cart.");
+                }
+                else{
+                    arrProducts.push(p);
+                    alert("Your Product has been succesfully added to Cart.");
+                    localStorage.setItem("adidasCart", JSON.stringify(arrProducts));
+                }
+
+            }
+            
         }
 
         function buyNow(s){
