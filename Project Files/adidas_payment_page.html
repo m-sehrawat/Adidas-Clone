@@ -587,14 +587,14 @@
             cardBox.style.height = "75%";
         }
 
-        function checkNumbers(input){
+        function checkNumbers(input, specialVal){
             let inputNum = input.value;
             let flag = true;
 
             for(let i = 0; i < inputNum.length; i++){
                 if((inputNum[i] == "0") || (inputNum[i] == "1") || (inputNum[i] == "2") || (inputNum[i] == "3")
                 || (inputNum[i] == "4") || (inputNum[i] == "5") || (inputNum[i] == "6") || (inputNum[i] == "7")
-                || (inputNum[i] == "8") || (inputNum[i] == "9") || (inputNum[i] == " ")){
+                || (inputNum[i] == "8") || (inputNum[i] == "9") || (inputNum[i] == specialVal)){
                     continue;
                 }
                 else{
@@ -605,10 +605,49 @@
             return flag;
         }
 
+        function checkSlash(val){
+            let count = 0;
+            for(let i = 0; i < val.length; i++){
+                if(val[i] == "/"){
+                    count++;
+                }
+            }
+            if(count == 1){
+                return true;
+            }
+            else if(count == 0 || count >= 2){
+                console.log(count);
+                return false;
+            }
+        }
+
+        function checkChar(val){
+            let correctchar = /^[A-Za-z]+$/; 
+            let charCount = 0;
+            let spaceCount = 0;
+
+            for(let i = 0; i < val.length; i++){
+                if(val[i].match(correctchar)){
+                    charCount++;
+                }
+                if(val[i] == " "){
+                    spaceCount++;
+                }
+            }
+
+            if((charCount != 0 && spaceCount != 0) || (charCount != 0 && spaceCount == 0)){
+                return true;
+            }
+            else if(charCount == 0 && spaceCount != 0){
+                return false;
+            }
+        }
+
         var cardNum = document.getElementById("cardNumber");
         var cardNam = document.getElementById("cardName");
         var monYear = document.getElementById("cardDate");
         var cvvDet = document.getElementById("cvv");
+        var correctchar = /^[A-Za-z]+$/;
 
         function payment() {
 
@@ -629,16 +668,24 @@
                     alert("Enter valid 16 digit Card Number");
                 }
                 
-                else if(checkNumbers(cardNum) == false){
+                else if(checkNumbers(cardNum, " ") == false){
                     alert("Enter valid Card number with numbers and spaces");
+                }
+
+                else if(checkChar(cardNam.value) == false){
+                    alert("Enter valid name");
                 }
 
                 else if(monYear.value.length != 5){
                     alert("Enter valid 4 digit Expiry Date");
                 }
 
-                else if(checkNumbers(monYear) == false){
-                    alert("Enter valid Expiry Date with numbers and spaces");
+                else if(checkNumbers(monYear, "/") == false){
+                    alert("Enter valid Expiry Date");
+                }
+
+                else if(checkSlash(monYear.value) == false){
+                    alert("Enter valid Expiry Date");
                 }
 
                 else if(cvvDet.value.length != 3){
