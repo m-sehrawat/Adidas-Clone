@@ -3,6 +3,11 @@
 <table>
 <tr>
 <td>
+We were a team of 4 from Masai Web-12 batch worked on cloning of adidas webpage as part of our second unit construct week. As a team we were given a project to clone adidas webpage. Our project demonstrates a basic flow of an e-commerce page, where a customer can view and filter products, add their product to cart and place his or her happy order.
+</td>
+</tr>
+<tr>
+<td>
 Adidas is a German multinational corporation, founded and headquartered in Herzogenaurach, Germany, that designs and manufactures shoes, clothing and accessories. It is the largest sportswear manufacturer in Europe, and the second largest in the world, after Nike.
 </td>
 </tr>
