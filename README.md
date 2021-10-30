@@ -59,7 +59,6 @@ To run, follow these steps:
 - HTML 5
 - CSS 3
 - Advance JavaScript (ES6)
-- Chrome DevTools
 
 ## Creators
 
