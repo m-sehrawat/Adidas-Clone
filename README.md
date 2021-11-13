@@ -3,7 +3,7 @@
 <table>
 <tr>
 <td>
-We were a team of 4 from Masai Web-12 batch worked on cloning of adidas webpage as part of our second unit construct week. As a team we were given a project to clone adidas webpage. Our project demonstrates a basic flow of an e-commerce page, where a customer can view and filter products, add their product to cart and place his or her happy order.
+We were a team of 4 from the Masai Web-12 batch who worked on cloning the Adidas website as part of our Unit-2 construct week. As a team, we were given a project to clone the Adidas website. Our project demonstrates a basic flow of an e-commerce page, where a customer can view and filter products, add their product to a cart and place his or her happy order.
 </td>
 </tr>
 <tr>
