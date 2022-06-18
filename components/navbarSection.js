@@ -6,6 +6,7 @@ export const navbarSection = (token, user) => {
                     <a href="index.html"><img src="./assets/adidasLogo.png" alt="adidasLogo"></a>
                 </div>
                 <div id="navbar-section">
+                    <div><a href="products.html">ALL PRODUCTS</a></div>
                     <div><a href="products.html">MEN</a></div>
                     <div><a href="products.html">WOMEN</a></div>
                     <div><a href="products.html">KIDS</a></div>
