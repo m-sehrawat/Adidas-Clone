@@ -1,0 +1,53 @@
+#navbar {
+    border-bottom: 1px solid rgb(228, 228, 228);
+    height: 50px;
+}
+
+#navbar-menu {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+#navbar-logo img {
+    height: 80%;
+    margin-top: 5px;
+}
+
+#navbar-section {
+    display: flex;
+    gap: 30px;
+    font-weight: 400;
+    margin: auto
+}
+
+#navbar-section>div>a {
+    color: rgb(69, 69, 69);
+    text-decoration: none;
+}
+
+#navbar-section>div>a:hover {
+    color: black;
+    font-weight: 600;
+}
+
+#navbar-user {
+    display: flex;
+    gap: 30px;
+}
+
+#navbar-user div {
+    margin-top: 15px;
+}
+
+#navbar-user>img {
+    height: 40%;
+    margin: auto;
+}
+
+@media screen and (max-width: 480px) {
+    #navbar-section {
+        display: none;
+    }
+}
