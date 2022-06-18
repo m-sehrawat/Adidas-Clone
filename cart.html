@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adidas Online Shop | adidas IN </title>
+    <link rel="icon" href="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet" type="text/css" />
+    <link rel="icon" href=" https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+    <style>
+        #topHeader {
+            display: flex;
+            background-color: black;
+            color: white;
+            height: 30px;
+            flex-grow: 0px;
+            overflow: hidden;
+        }
+
+        #topHeader div {
+            margin: 0.5% 0% 0% 15%;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        #header {
+            display: flex;
+            height: 80px;
+            border-bottom: 1px solid #eaebec;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .adidasLogo {
+            width: 70px;
+            margin-top: 15px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+
+        #rightSideBox {
+            height: 100%;
+            width: 10%;
+            margin-top: 0.5%;
+            margin-left: 80%;
+            /* border: 1px solid red; */
+        }
+
+        #rightSideBox>a>button {
+            margin-left: 1%;
+            background-color: white;
+            border: 0px solid white;
+            color: black;
+            cursor: pointer;
+        }
+
+        #rightSideBox>a>button:hover {
+            cursor: pointer;
+        }
+
+        #rightSideBox>p {
+            margin-top: 5%;
+            margin-left: 50%;
+        }
+
+        /*------- Footer ----*/
+
+
+        #footer {
+            background-color: #363738;
+            font-style: normal;
+            color: #C8CBCC;
+            height: 110px;
+            margin-top: 12px;
+            font-size: 12px;
+            border: 1px solid #363738;
+        }
+
+        #footer>p:first-child {
+            display: inline-block;
+            margin: 0% 0% 2% 16%;
+        }
+
+        #footer>p:nth-child(2) {
+            display: inline-block;
+            margin: 1% 0% 2% 45%;
+        }
+
+        #footer>p:last-child {
+            margin: 0% 0% 2% 16%;
+        }
+
+        /* ---------- Cart-part ----------- */
+
+        * {
+            font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+
+
+        #mainBody {
+            margin: auto;
+            width: 70%;
+            display: grid;
+            grid-template-columns: 59% 39%;
+            gap: 5%;
+        }
+
+        #mainBody>#Boxdiv {
+
+            width: 100%;
+        }
+
+        #yourBag {
+            font-size: 45px;
+            line-height: 18px;
+            font-family: sans-serif;
+
+            font-weight: bold;
+            margin-top: 0px;
+            border: 1px;
+
+        }
+
+        #bagDetails {
+            margin-top: 3%;
+        }
+
+        #display {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 3%;
+            border: 1px;
+
+        }
+
+        #productSide {
+            margin-bottom: 30px;
+            border: 1px;
+        }
+
+        #checkoutSide {
+            margin-top: 100px;
+        }
+
+        #checkOut {
+            box-sizing: border-box;
+            height: 60px;
+            width: 100%;
+            border: 0px;
+            border-radius: 4px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 20px 0px 10px 15px;
+            font-size: 18px;
+            box-shadow: 10px 5px 5px grey;
+            font-style: normal;
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+
+        #checkOut:hover {
+            cursor: pointer;
+        }
+
+        #checkOut>div {
+            height: auto;
+        }
+
+        #checkOut>div:nth-child(2) {
+            text-align: right;
+            margin-right: 10%;
+            font-size: large;
+        }
+
+        #checkOut>div:nth-child(2):hover {
+            color: rgb(199, 199, 199);
+            cursor: pointer;
+
+        }
+
+        #checkOut>div {
+            height: auto;
+        }
+
+        #features {
+            margin-top: 5%;
+            color: grey;
+        }
+
+        #orderSummery {
+            font-size: 20px;
+
+        }
+
+        .orderSummery {
+
+            margin-top: 10%;
+            margin-bottom: 5%;
+            border: 1px solid rgb(233, 233, 233);
+            background-color: rgb(255, 255, 255);
+        }
+
+        #table {
+
+            width: 100%;
+            border-color: 1px solid rgb(133, 133, 133);
+            margin-top: 5%;
+            border: 1px;
+            margin-bottom: 5%;
+            border-collapse: separate;
+            border-spacing: 0 15px;
+            font-size: 20px;
+
+
+        }
+
+        #totalPrice {
+            margin-bottom: 40px;
+            margin-top: 10px;
+        }
+
+        #totalPrice2,
+        #delivery,
+        #totalPrice1 {
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        #paymentCardImg {
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+
+        #needHelp {
+
+            margin-bottom: 80px;
+            border: 1px;
+
+
+        }
+
+
+
+
+        #mouseOver {
+            color: rgb(75, 75, 75);
+        }
+
+        #mouseOver:hover {
+            background-color: black;
+            color: white;
+            cursor: pointer;
+
+        }
+
+        #mouseOver_chekout:hover {
+
+            color: rgb(199, 199, 199);
+            cursor: pointer;
+
+
+
+        }
+
+
+
+
+        #promoCodebtn {
+            width: 84%;
+            height: 50px;
+            font-size: 20px;
+            margin-bottom: 2%;
+            padding-left: 5%;
+            border: 1px solid grey;
+
+        }
+
+        #promocodeForm {
+            margin-bottom: 5%;
+        }
+
+        #applyBtn {
+
+            width: 90%;
+            text-align: left;
+            font-size: 20px;
+            padding-left: 5%;
+            height: 48px;
+            border-radius: 5px;
+            box-shadow: 10px 5px 5px grey;
+            border: 1px solid grey;
+
+
+        }
+
+        #applyBtn:hover {
+            color: white;
+            background-color: black;
+            cursor: pointer;
+
+
+        }
+
+        .btnr {
+            font-size: 25px;
+            text-align: center;
+            /* border: 1px solid black; */
+        }
+
+        .btnr:hover {
+            font-size: 25px;
+            color: white;
+            background-color: black;
+            cursor: pointer;
+        }
+
+
+
+        #mainHeader {
+            border: 1px;
+            height: 110px
+        }
+
+        @media(max-width : 600px) {
+
+            #header,
+            #topHeader {
+                /* border: 1px solid red; */
+                width: 600px;
+            }
+
+            #topHeader div {
+                color: black;
+            }
+
+            #rightSideBox {
+                width: 25%;
+                height: 80%;
+                margin-left: 40%;
+                margin-top: 2%;
+                /* border: 1px solid red; */
+            }
+
+
+            #mainBody {
+                margin: auto;
+                width: 90%;
+                display: grid;
+                grid-template-columns: auto;
+                gap: 5%;
+            }
+
+            #mainBody>#display {
+
+                width: 360px;
+            }
+
+
+            #needHelp {
+
+                margin-bottom: 80px;
+                border: 1px;
+            }
+
+            #checkoutSide {
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+
+            #imageProduct {
+                width: 100%;
+
+            }
+
+            #footer {
+                width: 600px;
+            }
+
+            #footer>p:first-child {
+                visibility: hidden;
+            }
+
+            #footer>p:nth-child(2) {
+                display: block;
+                text-align: center;
+                margin: 0px auto 25px;
+            }
+
+            #footer>p:last-child {
+                text-align: center;
+                display: block;
+                margin: auto;
+            }
+        }
+
+        .hearderSlideContent {
+            /* width: 800px; */
+            margin: 10px auto;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+
+        @media(max-width: 960px) {
+            #topHeader>div {
+                display: none;
+            }
+        }
+
+        a {
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="topHeader">
+        <div>FREE DELIVERY FOR ALL ORDERS NOW</div>
+        <div>FREE RETURNS</div>
+        <div>SIGN UP & GET 15% OFF</div>
+    </div>
+
+    <div id="header">
+        <div>
+            <img class="adidasLogo" src="https://www.adidas.co.in/glass/react/16d1049/assets/img/icon-adidas-logo.svg">
+        </div>
+        <div id="rightSideBox">
+            <a href="signup.html"><button>sign up</button></a>
+            <a href="adidas_checkOutPage.html"><button>log in</button></a>
+            <p>
+                <i class="material-icons">shopping_bag</i>
+            </p>
+        </div>
+    </div>
+
+
+    <div id="mainBody">
+
+        <div id="productSide">
+
+
+            <div id="bagDetails">
+
+                <strong id="yourBag"> YOUR BAG </strong>
+                <p id="totalPrice">
+
+                </p>
+
+            </div>
+
+            <div id="display">
+
+            </div>
+
+
+
+            <br>
+            <div id=" features">
+                <span id="mouseOver"> <i class="fas fa-truck"></i> &nbsp; <u onclick="freeDelivery()">Free
+                        delivery</u></span> <br><br>
+                <span id="mouseOver"> <i class="fas fa-exchange-alt"></i> &nbsp;<u onclick="returns()">30* day free
+                        returns</u></span>
+                <br><br>
+                <span id="mouseOver"> <i class="fas fa-lock"></i> &nbsp;<u onclick="safeSecure()">Safe & Secure payment
+                        options</u></span>
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+        <div id="checkoutSide">
+            <div id="checkOut" style="width: 90%" onclick="checkOut()">
+                <div id="mouseOver_chekout">CHECKOUT</div>
+                <div>→</div>
+            </div>
+
+            <div class="orderSummery">
+                <strong id="orderSummery"> ORDER SUMMARY </strong>
+
+                <table id="table">
+
+
+                    <tr id="tableRow">
+                        <td id="totalItem">Total item</td>
+                        <td id="totalPrice1">₹0.00</td>
+                    </tr>
+                    <tr id="tableRow">
+                        <td>Delivery</td>
+                        <td id="delivery"> Your Bag is EMPTY! </td>
+                    </tr>
+                    <tr id="tableRow">
+                        <td> <strong>Total</strong> <br>(Inclusive of all taxes) </td>
+                        <td id="totalPrice2">₹0.00</td>
+                    </tr>
+                </table>
+            </div>
+
+            <form onsubmit="promo(event)" id="promocodeForm">
+
+                <input type="text" id="promoCodebtn" placeholder="Enter Your Promocode Here" required />
+                <button type="submit" id="applyBtn">Apply</button>
+
+            </form>
+
+
+            <div id="needHelp">
+                <p> <strong> Need Help?</strong></p>
+
+                <span id="mouseOver"><u onclick="deliveryonRight()">Delivery</u></span> <br><br>
+                <span id="mouseOver"><u onclick="returnonRight()">Return & Refund</u></span> <br><br>
+                <span id="mouseOver"><u onclick="orderonRight()">Ordering & Payment</u></span><br><br>
+                <span id="mouseOver"><u onclick="promotiononRight()">Promotion & Voucher</u></span>
+
+                <p id="paymentCardImg"> <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/visa-master-rupay-cd_tcm209-732258.png" alt=""></p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div id="footer">
+            <p>India</p>
+            <p>Privacy Policy &nbsp; &nbsp; | &nbsp; &nbsp; Terms and Conditions &nbsp; &nbsp; | &nbsp; &nbsp; Cookies</p>
+            <p>© 2021 adidas India Marketing Pvt Ltd</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
+
+<script src="./scripts/cart.js"></script>
