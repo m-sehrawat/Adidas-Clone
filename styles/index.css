@@ -1,0 +1,304 @@
+body {
+    margin: 0px;
+}
+
+* {
+    font-family: sans-serif;
+}
+
+#topHeader {
+    display: flex;
+    background-color: black;
+    color: white;
+    height: 30px;
+    flex-grow: 0px;
+    overflow: hidden;
+}
+
+#topHeader div {
+    margin: 0.5% 0% 0% 15%;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#header {
+    display: flex;
+    height: 80px;
+    border-bottom: 1px solid #eaebec;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.adidasLogo {
+    width: 70px;
+    margin-top: 15px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+#rightSideBox {
+    height: 100%;
+    width: 10%;
+    margin-top: 0.5%;
+    margin-left: 80%;
+}
+
+#rightSideBox>a>button {
+    margin-left: 1%;
+    background-color: white;
+    border: 0px solid white;
+    color: black;
+    cursor: pointer;
+}
+
+#rightSideBox>a>button:hover {
+    cursor: pointer;
+}
+
+#rightSideBox>p {
+    margin-top: 5%;
+    margin-left: 50%;
+}
+
+#tileOne {
+    margin: auto;
+    margin-top: -40px;
+    width: 99.89%;
+    height: 700px;
+    background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/y-3_ss21_drop3_hp_mh_d_tcm209-782054.jpg");
+    background-size: cover;
+}
+
+.btns>button {
+    width: 200px;
+    margin-left: 150px;
+    margin-top: 330px;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    text-align: left;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 5px 10px 5px grey;
+    font-style: normal;
+}
+
+#tileTwo {
+    margin: auto;
+    width: 80%;
+    height: 300px;
+
+}
+
+.tileTwoHeading {
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 40%;
+    margin-top: 10%;
+}
+
+#tileTwoDetails {
+    display: flex;
+    width: 800px;
+    margin-top: 30px;
+    margin-left: 26%;
+}
+
+#tileTwoDetails>a {
+    display: flex;
+    margin: 1%;
+    height: 20px;
+    padding: 10px;
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+#tileThree {
+    width: 80%;
+    height: 400px;
+    margin: auto;
+
+}
+
+.tileThreeHeading {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.tileThreeImages {
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+
+.tileThreeImages>div {
+    margin: 1.5%;
+    min-width: 30%;
+}
+
+.tileMen {
+    background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/updated_gender_men_dt_tcm209-636698.jpg");
+    background-size: cover;
+    cursor: pointer;
+}
+
+.tileMen>h3 {
+    text-align: center;
+    margin-top: 34%;
+    color: white;
+}
+
+.tileWomen {
+    background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/updated_gender_women_dt_tcm209-636701.jpg");
+    background-size: cover;
+    cursor: pointer;
+}
+
+.tileWomen>h3 {
+    text-align: center;
+    margin-top: 34%;
+    color: white;
+}
+
+.tileKids {
+    background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/updated_gender_kids_dt_tcm209-636695.jpg");
+    background-size: cover;
+    cursor: pointer;
+}
+
+.tileKids>h3 {
+    text-align: center;
+    margin-top: 34%;
+    color: white;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#footer {
+    background-color: #363738;
+    font-style: normal;
+    color: #C8CBCC;
+    height: 110px;
+    margin-top: 12px;
+    font-size: 12px;
+    border: 1px solid #363738;
+}
+
+#footer>p:first-child {
+    display: inline-block;
+    margin: 0% 0% 2% 16%;
+}
+
+#footer>p:nth-child(2) {
+    display: inline-block;
+    margin: 1% 0% 2% 45%;
+}
+
+#footer>p:last-child {
+    margin: 0% 0% 2% 16%;
+}
+
+@media(max-width: 600px) {
+
+    #topHeader div {
+        color: black;
+    }
+
+    #rightSideBox {
+        width: 40%;
+        height: 80%;
+        margin-left: 30%;
+        margin-top: 2%;
+    }
+
+    #tileOne {
+        width: 600px;
+        height: 700px;
+        object-fit: cover;
+        background-image: url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enIN/Images/y-3_ss21_drop3_hp_mh_d_tcm209-782054.jpg");
+        background-size: cover;
+        background-position-x: 87.5%;
+    }
+
+    #tileTwo {
+        width: 100%;
+        height: 0px;
+    }
+
+    .tileTwoHeading {
+        color: white;
+    }
+
+    #tileTwoDetails>a {
+        color: white;
+        border: 0px solid white;
+    }
+
+    #tileThree {
+        width: 350px;
+        height: 1200px;
+        margin: auto;
+    }
+
+    .tileThreeHeading {
+        font-size: 20px;
+        font-weight: 700;
+        margin-top: 1%;
+        margin-left: 15px;
+    }
+
+    .tileThreeImages {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tileThreeImages h3 {
+        margin-top: 40%;
+    }
+
+    .tileThreeImages>div {
+        margin: 1.5%;
+        margin-left: 10px;
+        min-width: 330px;
+    }
+
+    #footer>p:first-child {
+        visibility: hidden;
+    }
+
+    #footer>p:nth-child(2) {
+        display: block;
+        text-align: center;
+        margin: 0px auto 25px;
+    }
+
+    #footer>p:last-child {
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+}
+
+.hearderSlideContent {
+    margin: 10px auto;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+}
+
+@media(max-width: 960px) {
+    #topHeader>div {
+        display: none;
+    }
+}
