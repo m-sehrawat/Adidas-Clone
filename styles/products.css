@@ -1,57 +1,3 @@
-#topHeader {
-    display: flex;
-    background-color: black;
-    color: white;
-    height: 30px;
-    flex-grow: 0px;
-    overflow: hidden;
-}
-
-#topHeader div {
-    margin: 0.5% 0% 0% 15%;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-#header {
-    display: flex;
-    height: 80px;
-    border-bottom: 1px solid #eaebec;
-    margin-bottom: 40px;
-    overflow: hidden;
-}
-
-.adidasLogo {
-    width: 70px;
-    margin-top: 15px;
-    margin-left: 50px;
-    cursor: pointer;
-}
-
-#rightSideBox {
-    height: 100%;
-    width: 10%;
-    margin-top: 0.5%;
-    margin-left: 80%;
-}
-
-#rightSideBox>a>button {
-    margin-left: 1%;
-    background-color: white;
-    border: 0px solid white;
-    color: black;
-}
-
-#rightSideBox>a>button:hover {
-    cursor: pointer;
-}
-
-#rightSideBox>p {
-    margin-top: 5%;
-    margin-left: 50%;
-}
-
 #parent {
     display: grid;
     gap: 3px;
@@ -86,29 +32,6 @@ img {
     margin-left: 15px;
 }
 
-#footer {
-    background-color: #363738;
-    font-style: normal;
-    color: #C8CBCC;
-    height: 110px;
-    margin-top: 10px;
-    font-size: 12px;
-    border: 1px solid #363738;
-}
-
-#footer>p:first-child {
-    display: inline-block;
-    margin: 0% 0% 2% 16%;
-}
-
-#footer>p:nth-child(2) {
-    display: inline-block;
-    margin: 1% 0% 2% 45%;
-}
-
-#footer>p:last-child {
-    margin: 0% 0% 2% 16%;
-}
 
 .buttonsDiv {
     /* position: fixed; */
@@ -223,39 +146,12 @@ a {
         margin-left: 2%;
     }
 
-    #rightSideBox {
-        margin-left: 70%;
-    }
 
-
-    #footer>p:first-child {
-        visibility: hidden;
-    }
-
-    #footer>p:nth-child(2) {
-        display: block;
-        text-align: center;
-        margin: 0px auto 25px;
-    }
-
-    #footer>p:last-child {
-        text-align: center;
-        display: block;
-        margin: auto;
-    }
-
-    #topHeader>div {
-        display: none;
-    }
+   
 
 }
 
-@media(max-width: 600px) {
-    #rightSideBox {
-        width: 30%;
-        margin-left: 50%;
-    }
-}
+
 
 @media(max-width: 400px) {
     #parent {
@@ -265,14 +161,5 @@ a {
     .buttonsDiv {
         display: grid;
         grid-template-columns: 32% 32% 32%;
-    }
-
-    #rightSideBox {
-        width: 100%;
-        margin-left: 35%;
-    }
-
-    #rightSideBox>a>button {
-        font-size: 12px;
     }
 }

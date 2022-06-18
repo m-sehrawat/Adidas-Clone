@@ -1,32 +1,5 @@
-#topHeader {
-    display: flex;
-    background-color: black;
-    color: white;
-    height: 30px;
-    flex-grow: 0px;
-    overflow: hidden;
-}
 
-#topHeader div {
-    margin: 0.5% 0% 0% 15%;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
 
-#header {
-    display: flex;
-    height: 80px;
-    border-bottom: 1px solid #eaebec;
-    overflow: hidden;
-}
-
-.adidasLogo {
-    width: 70px;
-    margin-top: 15px;
-    margin-left: 50px;
-    cursor: pointer;
-}
 
 .hearderSlideContent {
     margin: 10px auto;
@@ -84,9 +57,6 @@
         max-width: 80%;
     }
 
-    #topHeader>div {
-        display: none;
-    }
 }
 
 @media(max-width:600px) {

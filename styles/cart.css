@@ -1,85 +1,3 @@
-#topHeader {
-    display: flex;
-    background-color: black;
-    color: white;
-    height: 30px;
-    flex-grow: 0px;
-    overflow: hidden;
-}
-
-#topHeader div {
-    margin: 0.5% 0% 0% 15%;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-#header {
-    display: flex;
-    height: 80px;
-    border-bottom: 1px solid #eaebec;
-    margin-bottom: 40px;
-    overflow: hidden;
-}
-
-.adidasLogo {
-    width: 70px;
-    margin-top: 15px;
-    margin-left: 50px;
-    cursor: pointer;
-}
-
-#rightSideBox {
-    height: 100%;
-    width: 10%;
-    margin-top: 0.5%;
-    margin-left: 80%;
-    /* border: 1px solid red; */
-}
-
-#rightSideBox>a>button {
-    margin-left: 1%;
-    background-color: white;
-    border: 0px solid white;
-    color: black;
-    cursor: pointer;
-}
-
-#rightSideBox>a>button:hover {
-    cursor: pointer;
-}
-
-#rightSideBox>p {
-    margin-top: 5%;
-    margin-left: 50%;
-}
-
-/*------- Footer ----*/
-
-
-#footer {
-    background-color: #363738;
-    font-style: normal;
-    color: #C8CBCC;
-    height: 110px;
-    margin-top: 12px;
-    font-size: 12px;
-    border: 1px solid #363738;
-}
-
-#footer>p:first-child {
-    display: inline-block;
-    margin: 0% 0% 2% 16%;
-}
-
-#footer>p:nth-child(2) {
-    display: inline-block;
-    margin: 1% 0% 2% 45%;
-}
-
-#footer>p:last-child {
-    margin: 0% 0% 2% 16%;
-}
 
 /* ---------- Cart-part ----------- */
 
@@ -309,25 +227,6 @@
 
 @media(max-width : 600px) {
 
-    #header,
-    #topHeader {
-        /* border: 1px solid red; */
-        width: 600px;
-    }
-
-    #topHeader div {
-        color: black;
-    }
-
-    #rightSideBox {
-        width: 25%;
-        height: 80%;
-        margin-left: 40%;
-        margin-top: 2%;
-        /* border: 1px solid red; */
-    }
-
-
     #mainBody {
         margin: auto;
         width: 90%;
@@ -386,13 +285,6 @@
     font-weight: bold;
     letter-spacing: 2px;
     color: white;
-}
-
-
-@media(max-width: 960px) {
-    #topHeader>div {
-        display: none;
-    }
 }
 
 a {
