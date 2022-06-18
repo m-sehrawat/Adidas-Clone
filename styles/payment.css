@@ -1,0 +1,397 @@
+* {
+    font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+#topHeader {
+    display: flex;
+    background-color: black;
+    color: white;
+    height: 30px;
+    flex-grow: 0px;
+    overflow: hidden;
+}
+
+#topHeader div {
+    margin: 0.5% 0% 0% 15%;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#header {
+    display: flex;
+    min-height: 50px;
+    border-bottom: 1px solid #eaebec;
+}
+
+.adidasLogo {
+    width: 70px;
+    margin-top: 15px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+#rightSideBox {
+    height: 100%;
+    width: 10%;
+    margin-top: 0.5%;
+    margin-left: 80%;
+    cursor: pointer;
+}
+
+#rightSideBox>button {
+    margin-left: 1%;
+    background-color: white;
+    border: 0px solid white;
+    color: black;
+    cursor: pointer;
+}
+
+#rightSideBox>p {
+    margin-top: 5%;
+    margin-left: 50%;
+    cursor: pointer;
+}
+
+#container {
+    width: 1200px;
+    height: 800px;
+    margin: auto;
+    display: flex;
+}
+
+#leftBox {
+    width: 60%;
+    height: 500px;
+}
+
+#paymentHeading {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 2% 0% 0% 2%;
+}
+
+.subHead {
+    margin: 2% 0% 4% 2%;
+    font-size: 16px;
+    color: rgb(53, 50, 50);
+}
+
+#cardDetails {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#creditOptionBox {
+    width: 100%;
+    height: 75%;
+    border-bottom: 1px solid rgb(124, 121, 121);
+}
+
+.creditcardBtn {
+    margin-left: 10px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+
+    position: relative;
+    top: 4px;
+}
+
+.creditcardBtn:checked {
+    border: 6px solid black;
+}
+
+#codBtn {
+    margin-left: 10px;
+    margin-top: 30px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+
+    position: relative;
+    top: 4px;
+}
+
+#codBtn:checked {
+    border: 6px solid black;
+}
+
+.creditCardOption {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#cardNumber {
+    width: 80%;
+    height: 40px;
+    margin: 3%;
+}
+
+#cardName {
+    width: 80%;
+    height: 40px;
+    margin: 3%;
+}
+
+#cardDate {
+    width: 36%;
+    height: 40px;
+    margin: 3%;
+}
+
+#cvv {
+    width: 36%;
+    height: 40px;
+    margin: 3%;
+}
+
+#submitBtn {
+    width: 100%;
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    text-align: left;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 10px 5px 5px grey;
+    font-style: normal;
+}
+
+#rightBox {
+    width: 40%;
+    height: 500px;
+    margin-left: 40px;
+}
+
+.orderSummary {
+    width: 80%;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(216, 209, 209);
+}
+
+.orderHeading {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 5%;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.orderDetails {
+    width: 80%;
+    height: 500px;
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(216, 209, 209);
+}
+
+#orderSummary,
+#orderDetails {
+    width: 75%;
+    min-height: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(231, 226, 226);
+}
+
+#orderDetails {
+    border: 0px solid rgb(255, 255, 255);
+    border-top: 1px solid rgb(216, 209, 209);
+}
+
+.orderHeading {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 5%;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.orderHeadingDetails {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 5%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.orderSumStyle {
+    padding: 5px;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.orderSumTotalPrice {
+    padding: 5px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.productDetails {
+    height: 130px;
+    display: flex;
+    margin: 1%;
+    border-bottom: 1px solid rgb(216, 209, 209);
+}
+
+.productImgDiv {
+    width: 30%;
+}
+
+.productDetailsDiv {
+    width: 60%;
+}
+
+.productDetailsDesc {
+    font-size: 12px;
+    color: black;
+    margin: 2%;
+}
+
+#footer {
+    background-color: #363738;
+    font-style: normal;
+    color: #C8CBCC;
+    height: 80px;
+    margin-top: 500px;
+    font-size: 12px;
+    border: 1px solid #363738;
+}
+
+#footer>p:first-child {
+    display: inline-block;
+    margin: 0% 0% 2% 16%;
+}
+
+#footer>p:nth-child(2) {
+    display: inline-block;
+    margin: 1% 0% 2% 45%;
+}
+
+#footer>p:last-child {
+    margin: 0% 0% 2% 16%;
+}
+
+a {
+    color: black;
+}
+
+.deliveryConstants>p {
+    margin: 1px auto;
+    color: #898c91;
+    font-size: 14px;
+}
+
+.extraDetails {
+    border: 1px solid #BDBDBD;
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+
+    #topHeader div {
+        color: black
+    }
+
+    #rightSideBox {
+        width: 30%;
+        margin-left: 50%;
+    }
+
+    #container {
+        width: 600px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #leftBox {
+        width: 500px;
+        height: 500px;
+        margin-left: 40px;
+    }
+
+    #rightBox {
+        width: 500px;
+        height: 500px;
+        margin-left: 40px;
+        margin-top: 100px;
+    }
+
+    #footer {
+        background-color: #363738;
+        font-style: normal;
+        color: #C8CBCC;
+        height: 110px;
+        margin-top: 1200px;
+        font-size: 12px;
+        border: 1px solid #363738;
+    }
+
+    #footer>p:first-child {
+        display: inline-block;
+        margin-left: 220px;
+        margin-top: 15px;
+    }
+
+    #footer>p:nth-child(2) {
+        display: inline-block;
+        margin-left: 80px;
+    }
+
+    #footer>p:last-child {
+        margin-top: 10px;
+        margin-left: 130px;
+    }
+}
+
+.hearderSlideContent {
+    margin: 10px auto;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+}
+
+@media(max-width: 960px) {
+    #topHeader>div {
+        display: none;
+    }
+}
