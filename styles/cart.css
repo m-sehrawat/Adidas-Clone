@@ -83,14 +83,6 @@
 
 /* ---------- Cart-part ----------- */
 
-* {
-    font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
-}
-
-body {
-    margin: 0px;
-}
-
 
 
 #mainBody {
@@ -109,8 +101,6 @@ body {
 #yourBag {
     font-size: 45px;
     line-height: 18px;
-    font-family: sans-serif;
-
     font-weight: bold;
     margin-top: 0px;
     border: 1px;
