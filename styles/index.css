@@ -175,29 +175,7 @@ a {
     text-decoration: none;
 }
 
-#footer {
-    background-color: #363738;
-    font-style: normal;
-    color: #C8CBCC;
-    height: 110px;
-    margin-top: 12px;
-    font-size: 12px;
-    border: 1px solid #363738;
-}
 
-#footer>p:first-child {
-    display: inline-block;
-    margin: 0% 0% 2% 16%;
-}
-
-#footer>p:nth-child(2) {
-    display: inline-block;
-    margin: 1% 0% 2% 45%;
-}
-
-#footer>p:last-child {
-    margin: 0% 0% 2% 16%;
-}
 
 @media(max-width: 600px) {
 

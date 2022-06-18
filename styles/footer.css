@@ -1,0 +1,21 @@
+#footer {
+    background-color: #363738;
+    color: #C8CBCC;
+    height: 180px;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#footer a {
+    text-decoration: none;
+    color: white;
+}
+
+#footer a:hover {
+    color: rgb(255, 22, 22);
+}
+
+#footer>div {
+    margin: 20px auto;
+}
