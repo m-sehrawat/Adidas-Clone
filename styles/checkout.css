@@ -1,0 +1,462 @@
+* {
+    font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+/* header */
+
+#topHeader {
+    display: flex;
+    background-color: black;
+    color: white;
+    height: 30px;
+    flex-grow: 0px;
+    overflow: hidden;
+}
+
+#topHeader div {
+    margin: 0.5% 0% 0% 15%;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#header {
+    /* border: 1px solid gray; */
+    display: flex;
+    min-height: 50px;
+    border-bottom: 1px solid #eaebec;
+}
+
+.adidasLogo {
+    width: 70px;
+    margin-top: 15px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+#rightSideBox {
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 10%;
+    margin-top: 0.5%;
+    margin-left: 80%;
+    cursor: pointer;
+}
+
+#rightSideBox>button {
+    margin-left: 1%;
+    background-color: white;
+    border: 0px solid white;
+    color: black;
+    cursor: pointer;
+}
+
+#rightSideBox>p {
+    /* border: 1px solid red; */
+    margin-top: 5%;
+    margin-left: 50%;
+    cursor: pointer;
+}
+
+#signUpBtn {
+    text-decoration: none;
+}
+
+.bottom {
+    display: flex;
+}
+
+.left {
+    width: 55%;
+    margin: 1% 0% 0% 8%;
+    /* border: 1px solid red; */
+}
+
+#el,
+#pass {
+    width: 86%;
+    height: 40px;
+    margin: 20px;
+}
+
+#fname,
+#lname {
+    width: 42%;
+    height: 44px;
+    margin-left: 20px;
+}
+
+#additional_info,
+#city,
+#pincode,
+#email,
+#mobile {
+    width: 42%;
+    height: 44px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+#street,
+#landmark {
+    width: 88%;
+    height: 44px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+#state {
+    width: 43%;
+    height: 50px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.country {
+    margin: 20px;
+}
+
+.standard {
+    border: 1px solid rgb(196, 186, 186);
+    height: 80px;
+    width: 89%;
+    margin: 20px;
+}
+
+.standard>div:nth-child(1) {
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.van {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgb(56, 54, 54);
+}
+
+.info {
+    margin: 20px;
+    margin-top: 50px;
+    /* border: 1px solid red; */
+}
+
+#contactEmail {
+    margin-left: 1px;
+    width: 46%;
+    height: 44px;
+}
+
+#mobile {
+    margin-left: 1px;
+    width: 46%;
+}
+
+#rev {
+    width: 30%;
+    margin-left: 2%;
+    margin-top: 40px;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    text-align: left;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 10px 5px 5px grey;
+    font-style: normal;
+}
+
+#right {
+    width: 40%;
+    height: 1000px;
+    margin-top: 20px;
+    /* border: 1px solid blue; */
+}
+
+#login {
+    width: 65%;
+    height: 400px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(216, 209, 209);
+}
+
+.heading {
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 5%;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+#email {
+    width: 88%;
+    height: 44px;
+    margin-left: 5%;
+}
+
+#password {
+    margin-top: 30px;
+    width: 88%;
+    height: 44px;
+    margin-left: 5%;
+}
+
+#submit {
+    text-align: center;
+    margin: 20px 20px;
+    height: 60px;
+    width: 88%;
+    border: none;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    box-shadow: 10px 5px 5px grey;
+}
+
+#submit:hover {
+    cursor: pointer;
+}
+
+#orderSummary,
+#orderDetails {
+    width: 65%;
+    min-height: 200px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(216, 209, 209);
+}
+
+#orderDetails {
+    border: 0px solid rgb(255, 255, 255);
+    border-top: 1px solid rgb(216, 209, 209);
+}
+
+.orderHeading {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+
+#footer {
+    background-color: #363738;
+    font-style: normal;
+    color: #C8CBCC;
+    height: 110px;
+    margin-top: 500px;
+    font-size: 12px;
+    border: 1px solid #363738;
+}
+
+#footer>p:first-child {
+    display: inline-block;
+    margin: 0% 0% 2% 16%;
+}
+
+#footer>p:nth-child(2) {
+    display: inline-block;
+    margin: 1% 0% 2% 45%;
+}
+
+#footer>p:last-child {
+    margin: 0% 0% 2% 16%;
+}
+
+.orderSumStyle {
+    padding: 5px;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.orderSumTotalPrice {
+    padding: 5px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.productDetails {
+    height: 130px;
+    display: flex;
+    margin: 1%;
+    border-bottom: 1px solid rgb(216, 209, 209);
+}
+
+.productImgDiv {
+    width: 30%;
+}
+
+.productDetailsDiv {
+    width: 60%;
+}
+
+.productDetailsDesc {
+    font-size: 12px;
+    color: black;
+    margin: 2%;
+}
+
+a {
+    color: black;
+}
+
+#log {
+    width: 80%;
+    margin-left: 6%;
+    margin-top: 40px;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    text-align: left;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 10px 5px 5px grey;
+    font-style: normal;
+}
+
+#reset {
+    width: 60%;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+#reset:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.mob {
+    display: flex;
+    width: 1000px;
+    margin-top: 5px;
+    /* border: 1px solid red; */
+}
+
+#emailBox {
+    width: 50%;
+}
+
+#mobBox {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    #topHeader div {
+        /* margin: 0.5% 0% 0% 15%; */
+        color: black
+            /* letter-spacing: 2px; */
+    }
+
+    #rightSideBox {
+        width: 30%;
+        margin-left: 50%;
+    }
+
+    .bottom {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .left {
+        width: 400px;
+        margin: 0% 0% 0% 10%;
+        /* border: 1px solid red; */
+    }
+
+    #street,
+    #landmark {
+        width: 92%;
+    }
+
+    .mob {
+        display: flex;
+        flex-wrap: wrap;
+        width: 400px;
+        margin-top: 5px;
+        /* border: 1px solid red; */
+    }
+
+    #emailBox {
+        width: 90%;
+    }
+
+    #mobile {
+        margin-left: 16px;
+        width: 80%;
+    }
+
+    #rev {
+        width: 70%;
+        margin-top: 40px;
+        margin-left: 20px;
+    }
+
+    #right {
+        width: 500px;
+        margin-top: 20px;
+        margin-left: 18%;
+        /* border: 1px solid blue; */
+    }
+
+    #login {
+        width: 80%;
+    }
+
+    #orderSummary,
+    #orderDetails {
+        width: 80%;
+    }
+
+    #footer {
+        background-color: #363738;
+        font-style: normal;
+        color: #C8CBCC;
+        height: 110px;
+        margin-top: 500px;
+        font-size: 12px;
+        border: 1px solid #363738;
+    }
+
+    #footer>p:first-child {
+        display: inline-block;
+        margin-left: 220px;
+        margin-top: 15px;
+    }
+
+    #footer>p:nth-child(2) {
+        display: inline-block;
+        margin-left: 80px;
+    }
+
+    #footer>p:last-child {
+        margin-top: 10px;
+        margin-left: 130px;
+    }
+}
+
+.hearderSlideContent {
+    margin: 10px auto;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+}
+
+@media(max-width: 960px) {
+    #topHeader>div {
+        display: none;
+    }
+}
